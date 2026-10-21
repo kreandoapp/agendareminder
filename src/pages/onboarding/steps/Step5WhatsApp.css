@@ -1,0 +1,1370 @@
+/* =========================================================
+   STEP 5 — WHATSAPP
+   ========================================================= */
+
+.step5-whatsapp {
+  --step5-primary: var(--color-primary);
+  --step5-primary-hover: var(--color-primary-hover);
+  --step5-primary-soft: var(--color-primary-soft);
+
+  --step5-bg: var(--color-bg);
+  --step5-surface: var(--color-surface);
+  --step5-surface-secondary: var(--color-surface-secondary);
+
+  --step5-text: var(--color-text);
+  --step5-text-secondary: var(--color-text-secondary);
+  --step5-text-muted: var(--color-text-muted);
+
+  --step5-border: var(--color-border);
+  --step5-success: var(--color-success);
+  --step5-warning: var(--color-warning);
+  --step5-danger: var(--color-danger);
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding: 38px 20px 55px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      var(--step5-primary-soft),
+      transparent 34%
+    ),
+    var(--step5-bg);
+
+  color: var(--step5-text);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+.step5-whatsapp *,
+.step5-whatsapp *::before,
+.step5-whatsapp *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.step5-container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.step5-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  margin-bottom: 34px;
+}
+
+.step5-brand-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--step5-primary-soft);
+  border-radius: 12px;
+
+  background: var(--step5-primary-soft);
+
+  color: var(--step5-primary);
+
+  font-size: 19px;
+}
+
+.step5-brand-name {
+  color: var(--step5-text);
+
+  font-size: 18px;
+  font-weight: 750;
+
+  letter-spacing: -0.02em;
+}
+
+.step5-brand-name span {
+  color: var(--step5-primary);
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.step5-progress {
+  margin-bottom: 22px;
+}
+
+.step5-progress-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 9px;
+
+  color: var(--step5-text-muted);
+
+  font-size: 12px;
+}
+
+.step5-progress-info strong {
+  color: var(--step5-text-secondary);
+  font-weight: 650;
+}
+
+.step5-progress-track {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--step5-border);
+}
+
+.step5-progress-bar {
+  width: 100%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--step5-primary);
+
+  box-shadow:
+    0 0 18px var(--step5-primary-soft);
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.step5-card {
+  width: 100%;
+  min-height: 540px;
+
+  padding: 36px 38px 34px;
+
+  border: 1px solid var(--step5-border);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--step5-surface),
+      var(--step5-surface-secondary)
+    );
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(128, 128, 128, 0.03);
+
+  text-align: center;
+}
+
+[data-theme="dark"] .step5-card {
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.step5-icon-box {
+  width: 50px;
+  height: 50px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--step5-primary-soft);
+  border-radius: 15px;
+
+  background: var(--step5-primary-soft);
+
+  color: var(--step5-primary);
+
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.step5-card h1 {
+  margin: 0;
+
+  color: var(--step5-text);
+
+  font-size: clamp(25px, 4vw, 31px);
+  font-weight: 760;
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+}
+
+.step5-description {
+  max-width: 570px;
+
+  margin: 13px auto 28px;
+
+  color: var(--step5-text-secondary);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   STATES
+   ========================================================= */
+
+.step5-state,
+.step5-message-state,
+.step5-connected {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto;
+}
+
+.step5-state {
+  padding: 44px 20px 15px;
+}
+
+.step5-state-icon,
+.step5-message-icon {
+  font-size: 38px;
+  line-height: 1;
+}
+
+.step5-state h2,
+.step5-message-state h2,
+.step5-connected h2 {
+  margin: 17px 0 8px;
+
+  color: var(--step5-text);
+
+  font-size: 20px;
+  font-weight: 720;
+}
+
+.step5-state p,
+.step5-message-state p,
+.step5-connected p {
+  margin: 0 auto;
+
+  color: var(--step5-text-secondary);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SPINNER
+   ========================================================= */
+
+.step5-spinner {
+  width: 24px;
+  height: 24px;
+
+  margin: 24px auto 0;
+
+  border: 3px solid var(--step5-border);
+  border-top-color: var(--step5-primary);
+
+  border-radius: 50%;
+
+  animation:
+    step5-spin 0.75s linear infinite;
+}
+
+@keyframes step5-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.step5-primary-button {
+  min-width: 205px;
+  min-height: 46px;
+
+  margin-top: 25px;
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: var(--step5-primary);
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 28px var(--step5-primary-soft);
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.step5-primary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  background: var(--step5-primary-hover);
+
+  box-shadow:
+    0 15px 32px var(--step5-primary-soft);
+}
+
+.step5-primary-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   QR LAYOUT — DESKTOP
+   ========================================================= */
+
+.step5-qr-layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 260px)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 36px;
+
+  padding: 28px 4px;
+}
+
+.step5-qr-column {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step5-qr-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   QR BADGE
+   ========================================================= */
+
+.step5-qr-badge {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  width: fit-content;
+
+  margin-bottom: 14px;
+  padding: 8px 14px;
+
+  border: 1px solid var(--step5-primary-soft);
+  border-radius: 999px;
+
+  background: var(--step5-primary-soft);
+
+  color: var(--step5-primary);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step5-live-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--step5-primary);
+
+  box-shadow:
+    0 0 8px var(--step5-primary-soft);
+}
+
+
+/* =========================================================
+   QR TITLE
+   ========================================================= */
+
+.step5-qr-content h2 {
+  width: 100%;
+
+  margin: 0 0 10px;
+
+  color: var(--step5-text);
+
+  font-size: 27px;
+  font-weight: 760;
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+}
+
+.step5-qr-help {
+  width: 100%;
+  max-width: 470px;
+
+  margin: 0 0 20px;
+
+  color: var(--step5-text-secondary);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   QR FRAME
+   ========================================================= */
+
+.step5-qr-frame {
+  width: 250px;
+  height: 250px;
+
+  flex-shrink: 0;
+
+  padding: 12px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.18);
+}
+
+[data-theme="dark"] .step5-qr-frame {
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.40);
+}
+
+.step5-qr {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* =========================================================
+   STEPS
+   ========================================================= */
+
+.step5-steps {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  margin-bottom: 18px;
+}
+
+.step5-step {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  color: var(--step5-text-secondary);
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.step5-step-number {
+  width: 30px;
+  height: 30px;
+
+  min-width: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--step5-border);
+  border-radius: 50%;
+
+  background: var(--step5-surface-secondary);
+
+  color: var(--step5-text-secondary);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   HELP
+   ========================================================= */
+
+.step5-help {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--step5-text-muted);
+
+  font-size: 13px;
+}
+
+.step5-help > span:first-child {
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--step5-border);
+  border-radius: 50%;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   EXPIRATION
+   ========================================================= */
+
+.step5-qr-expiration {
+  width: 100%;
+
+  margin-top: 16px;
+
+  color: var(--step5-text-muted);
+
+  font-size: 12px;
+}
+
+.step5-progress-qr {
+  width: 100%;
+  height: 6px;
+
+  margin-top: 8px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--step5-border);
+}
+
+.step5-progress-qr > div {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--step5-primary);
+
+  transition:
+    width 0.25s linear;
+}
+
+
+/* =========================================================
+   CONNECTED
+   ========================================================= */
+
+.step5-connected-minimal {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 34px 20px 20px;
+
+  text-align: center;
+}
+
+.step5-connected-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border: 1px solid var(--step5-primary-soft);
+  border-radius: 50%;
+
+  background: var(--step5-primary-soft);
+
+  color: var(--step5-primary);
+
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.step5-connected-badge {
+  margin-bottom: 7px;
+
+  color: var(--step5-text);
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.step5-phone {
+  display: inline-block;
+
+  max-width: 100%;
+
+  margin-bottom: 22px;
+  padding: 10px 14px;
+
+  border: 1px solid var(--step5-primary-soft);
+  border-radius: 9px;
+
+  background: var(--step5-surface-secondary);
+
+  color: var(--step5-primary);
+
+  font-size: 15px;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+.step5-finalize-button {
+  min-width: 255px;
+
+  margin-top: 0;
+}
+
+.step5-finalize-now {
+  margin-top: 15px;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--step5-text-secondary);
+
+  font-family: inherit;
+  font-size: 14px;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  cursor: pointer;
+}
+
+.step5-finalize-now:hover:not(:disabled) {
+  color: var(--step5-primary);
+}
+
+.step5-finalize-now:disabled {
+  opacity: 0.5;
+
+  cursor: default;
+}
+
+.step5-connected-note {
+  max-width: 420px;
+
+  margin-top: 24px;
+
+  color: var(--step5-text-muted);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.step5-error {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 20px auto 0;
+  padding: 12px 13px;
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 10px;
+
+  background: rgba(239, 68, 68, 0.07);
+
+  color: var(--step5-danger);
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .step5-whatsapp {
+    padding:
+      32px
+      20px
+      48px;
+  }
+
+  .step5-container {
+    max-width: 680px;
+  }
+
+  .step5-card {
+    padding:
+      34px
+      28px;
+  }
+
+  .step5-qr-layout {
+    grid-template-columns:
+      225px
+      minmax(0, 1fr);
+
+    gap: 28px;
+  }
+
+  .step5-qr-frame {
+    width: 220px;
+    height: 220px;
+  }
+
+  .step5-qr-content h2 {
+    font-size: 24px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 640px
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .step5-whatsapp {
+    min-height: 100dvh;
+
+    padding:
+      22px
+      12px
+      35px;
+  }
+
+  .step5-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* BRAND */
+
+  .step5-brand {
+    gap: 9px;
+
+    margin-bottom: 23px;
+  }
+
+  .step5-brand-icon {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+  }
+
+  .step5-brand-name {
+    font-size: 16px;
+  }
+
+
+  /* PROGRESS */
+
+  .step5-progress {
+    margin-bottom: 18px;
+  }
+
+  .step5-progress-info {
+    font-size: 11px;
+  }
+
+  .step5-progress-info strong {
+    font-size: 11px;
+  }
+
+  .step5-progress-track {
+    height: 4px;
+  }
+
+
+  /* CARD */
+
+  .step5-card {
+    min-height: 0;
+
+    padding:
+      27px
+      16px
+      28px;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+  }
+
+
+  /* HEADER */
+
+  .step5-icon-box {
+    width: 47px;
+    height: 47px;
+
+    margin-bottom: 16px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+  }
+
+  .step5-card h1 {
+    width: 100%;
+
+    font-size: 25px;
+
+    text-align: center;
+  }
+
+  .step5-description {
+    width: 100%;
+
+    margin:
+      11px
+      auto
+      23px;
+
+    font-size: 13px;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     QR — UNA COLUMNA
+     ======================================================= */
+
+  .step5-qr-layout {
+    width: 100% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: flex-start !important;
+
+    gap: 0 !important;
+
+    padding:
+      5px
+      0
+      5px !important;
+
+    margin: 0 !important;
+
+    grid-template-columns: none !important;
+  }
+
+
+  /* QR */
+
+  .step5-qr-column {
+    width: 100% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    order: 1;
+  }
+
+  .step5-qr-frame {
+    width: min(245px, 100%) !important;
+
+    height: auto !important;
+
+    aspect-ratio: 1 / 1;
+
+    margin:
+      4px
+      auto
+      22px;
+
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .step5-qr {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+
+  /* CONTENT */
+
+  .step5-qr-content {
+    width: 100% !important;
+
+    min-width: 0;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    order: 2;
+
+    text-align: center !important;
+  }
+
+
+  /* BADGE */
+
+  .step5-qr-badge {
+    margin:
+      0
+      auto
+      13px;
+
+    align-self: center;
+
+    font-size: 11px;
+  }
+
+
+  /* TITLE */
+
+  .step5-qr-content h2 {
+    width: 100%;
+
+    margin:
+      0
+      auto
+      9px;
+
+    font-size: 23px;
+
+    text-align: center;
+  }
+
+
+  /* DESCRIPTION */
+
+  .step5-qr-help {
+    width: 100%;
+
+    max-width: 390px;
+
+    margin:
+      0
+      auto
+      20px;
+
+    font-size: 12.5px;
+
+    text-align: center;
+  }
+
+
+  /* STEPS */
+
+  .step5-steps {
+    width: 100%;
+    max-width: 390px;
+
+    gap: 10px;
+
+    margin:
+      0
+      auto
+      18px;
+  }
+
+  .step5-step {
+    width: 100%;
+
+    gap: 10px;
+
+    font-size: 12.5px;
+
+    text-align: left;
+  }
+
+  .step5-step-number {
+    width: 29px;
+    height: 29px;
+
+    min-width: 29px;
+
+    font-size: 11px;
+  }
+
+
+  /* HELP */
+
+  .step5-help {
+    align-self: center;
+
+    font-size: 12px;
+  }
+
+
+  /* EXPIRATION */
+
+  .step5-qr-expiration {
+    width: 100%;
+    max-width: 390px;
+
+    margin:
+      17px
+      auto
+      0;
+
+    text-align: center;
+
+    font-size: 11px;
+  }
+
+  .step5-progress-qr {
+    width: 100%;
+    max-width: 390px;
+
+    height: 5px;
+
+    margin:
+      8px
+      auto
+      0;
+  }
+
+
+  /* OTHER STATES */
+
+  .step5-state,
+  .step5-message-state,
+  .step5-connected {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    text-align: center;
+  }
+
+  .step5-state h2,
+  .step5-message-state h2 {
+    font-size: 19px;
+  }
+
+  .step5-state p,
+  .step5-message-state p {
+    font-size: 12px;
+  }
+
+
+  /* BUTTON */
+
+  .step5-primary-button {
+    width: 100%;
+
+    min-width: 0;
+    min-height: 49px;
+  }
+
+
+  /* CONNECTED */
+
+  .step5-connected-minimal {
+    padding:
+      30px
+      8px
+      10px;
+  }
+
+  .step5-connected-icon {
+    width: 62px;
+    height: 62px;
+
+    font-size: 29px;
+  }
+
+  .step5-connected-badge {
+    font-size: 20px;
+  }
+
+  .step5-phone {
+    font-size: 13px;
+  }
+
+  .step5-connected-note {
+    font-size: 11px;
+  }
+
+
+  /* ERROR */
+
+  .step5-error {
+    margin-top: 16px;
+
+    font-size: 11px;
+
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 380px
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .step5-whatsapp {
+    padding:
+      17px
+      9px
+      30px;
+  }
+
+  .step5-brand {
+    margin-bottom: 20px;
+  }
+
+  .step5-brand-icon {
+    width: 35px;
+    height: 35px;
+
+    font-size: 16px;
+  }
+
+  .step5-brand-name {
+    font-size: 15px;
+  }
+
+  .step5-card {
+    padding:
+      23px
+      13px
+      25px;
+  }
+
+  .step5-card h1 {
+    font-size: 23px;
+  }
+
+  .step5-description {
+    font-size: 12px;
+  }
+
+  .step5-qr-frame {
+    width: min(220px, 100%) !important;
+
+    margin-bottom: 20px;
+  }
+
+  .step5-qr-content h2 {
+    font-size: 21px;
+  }
+
+  .step5-qr-help {
+    font-size: 11.5px;
+  }
+
+  .step5-step {
+    font-size: 11.5px;
+  }
+
+  .step5-step-number {
+    width: 27px;
+    height: 27px;
+
+    min-width: 27px;
+  }
+
+  .step5-help {
+    font-size: 11px;
+  }
+
+  .step5-qr-expiration {
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL — 320px
+   ========================================================= */
+
+@media (max-width: 330px) {
+
+  .step5-whatsapp {
+    padding:
+      15px
+      7px
+      26px;
+  }
+
+  .step5-card {
+    padding:
+      20px
+      11px
+      22px;
+  }
+
+  .step5-card h1 {
+    font-size: 21px;
+  }
+
+  .step5-description {
+    font-size: 11px;
+  }
+
+  .step5-qr-frame {
+    width: 205px !important;
+
+    padding: 9px;
+
+    margin-bottom: 18px;
+  }
+
+  .step5-qr-content h2 {
+    font-size: 20px;
+  }
+
+  .step5-qr-help {
+    font-size: 11px;
+  }
+
+  .step5-step {
+    font-size: 11px;
+  }
+
+  .step5-step-number {
+    width: 26px;
+    height: 26px;
+
+    min-width: 26px;
+
+    font-size: 10px;
+  }
+
+  .step5-qr-expiration {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .step5-primary-button,
+  .step5-progress-qr > div {
+    transition: none;
+  }
+
+  .step5-spinner {
+    animation: none;
+  }
+}

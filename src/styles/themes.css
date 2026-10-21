@@ -1,0 +1,59 @@
+/* =========================================================
+   AGENDaREMINDER — THEME SYSTEM
+   ========================================================= */
+
+
+/* =========================================================
+   LIGHT — DEFAULT
+   ========================================================= */
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #f5f7f8;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafb;
+
+  --color-text: #172026;
+  --color-text-secondary: #66727a;
+  --color-text-muted: #929da4;
+
+  --color-border: #e1e6e9;
+
+  --color-primary: #22c55e;
+  --color-primary-hover: #16a34a;
+  --color-primary-soft: rgba(34, 197, 94, 0.10);
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+}
+
+
+/* =========================================================
+   DARK
+   ========================================================= */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #0b0f14;
+  --color-surface: #151b21;
+  --color-surface-secondary: #11161c;
+
+  --color-text: #f1f5f3;
+  --color-text-secondary: #9aa5ae;
+  --color-text-muted: #69747d;
+
+  --color-border: #293139;
+
+  --color-primary: #22c55e;
+  --color-primary-hover: #16a34a;
+  --color-primary-soft: rgba(34, 197, 94, 0.12);
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+}

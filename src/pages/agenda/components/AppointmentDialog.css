@@ -1,0 +1,2975 @@
+/* =========================================================
+   APPOINTMENT DIALOG
+   AgendaReminder — Light / Dark Theme
+========================================================= */
+
+
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+
+:root {
+  --dialog-bg: var(--color-bg);
+  --dialog-surface: var(--color-surface);
+  --dialog-surface-2: var(--color-surface-secondary);
+  --dialog-surface-3: var(--color-surface-secondary);
+
+  --dialog-border: var(--color-border);
+  --dialog-border-hover: var(--color-text-muted);
+
+  --dialog-text: var(--color-text);
+  --dialog-text-soft: var(--color-text-secondary);
+  --dialog-muted: var(--color-text-secondary);
+  --dialog-muted-2: var(--color-text-muted);
+
+  --dialog-green: var(--color-primary);
+  --dialog-green-light: var(--color-primary);
+  --dialog-green-dark: var(--color-primary-hover);
+
+  --dialog-green-bg: var(--color-primary-soft);
+
+  --dialog-input-bg: var(--color-surface-secondary);
+  --dialog-hover-bg: #eef2f4;
+
+  --dialog-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.18),
+    0 10px 30px rgba(15, 23, 42, 0.08);
+
+  --dialog-radius: 18px;
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+[data-theme="dark"] {
+  --dialog-bg: #0d1117;
+  --dialog-surface: #121820;
+  --dialog-surface-2: #171e27;
+  --dialog-surface-3: #1b232d;
+
+  --dialog-border: rgba(148, 163, 184, 0.16);
+  --dialog-border-hover: rgba(148, 163, 184, 0.28);
+
+  --dialog-text: #f4f7fa;
+  --dialog-text-soft: #c4ccd6;
+  --dialog-muted: #7f8b99;
+  --dialog-muted-2: #657180;
+
+  --dialog-input-bg: #171e27;
+  --dialog-hover-bg: #202934;
+
+  --dialog-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.60),
+    0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.appointment-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(47, 112, 72, 0.10),
+      transparent 38%
+    ),
+    rgba(15, 23, 42, 0.42);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+[data-theme="dark"] .appointment-dialog-overlay {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(47, 112, 72, 0.14),
+      transparent 38%
+    ),
+    rgba(3, 6, 10, 0.78);
+}
+
+
+/* =========================================================
+   MAIN DIALOG
+========================================================= */
+
+.appointment-dialog {
+  position: relative;
+
+  width: min(940px, 100%);
+
+  max-height: calc(100dvh - 48px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--dialog-surface),
+      var(--dialog-bg)
+    );
+
+  color: var(--dialog-text);
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 22px;
+
+  box-shadow: var(--dialog-shadow);
+
+  animation:
+    appointmentDialogEnter
+    0.22s ease-out;
+}
+
+
+@keyframes appointmentDialogEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.appointment-dialog-header {
+  position: relative;
+
+  min-height: 112px;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(190px, auto)
+    minmax(0, 1fr)
+    42px;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid var(--dialog-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--dialog-surface-2),
+      var(--dialog-surface)
+    );
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.appointment-header-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.appointment-dialog-title-icon {
+  width: 58px;
+  height: 58px;
+
+  flex: 0 0 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(52, 211, 153, 0.18),
+      rgba(27, 99, 63, 0.22)
+    );
+
+  border: 1px solid rgba(69, 217, 138, 0.32);
+
+  box-shadow:
+    0 0 0 5px rgba(69, 217, 138, 0.045),
+    0 8px 25px rgba(32, 180, 103, 0.10);
+
+  font-size: 27px;
+}
+
+
+.appointment-dialog-header h2 {
+  margin: 0;
+
+  color: var(--dialog-text);
+
+  font-size: 24px;
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -0.4px;
+}
+
+
+.appointment-dialog-header p {
+  margin: 6px 0 0;
+
+  color: var(--dialog-muted);
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  text-transform: capitalize;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.appointment-dialog-close {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  justify-self: end;
+
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: var(--dialog-muted);
+
+  font-size: 29px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+
+.appointment-dialog-close:hover {
+  background: var(--dialog-hover-bg);
+  border-color: var(--dialog-border);
+  color: var(--dialog-text);
+}
+
+
+.appointment-dialog-close:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   REVIEW WARNING
+========================================================= */
+
+.appointment-review-warning {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.10),
+      rgba(245, 158, 11, 0.035)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+.appointment-review-warning-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(245, 158, 11, 0.12);
+
+  border: 1px solid rgba(245, 158, 11, 0.20);
+
+  font-size: 22px;
+}
+
+
+.appointment-review-warning-content {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.appointment-review-warning-content strong {
+  color: #d97706;
+
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+
+[data-theme="dark"] .appointment-review-warning-content strong {
+  color: #fbbf24;
+}
+
+
+.appointment-review-warning-content span {
+  color: var(--dialog-muted);
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+.appointment-review-warning-button {
+  min-height: 36px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border: 1px solid rgba(245, 158, 11, 0.38);
+  border-radius: 9px;
+
+  background: rgba(245, 158, 11, 0.08);
+
+  color: #d97706;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+[data-theme="dark"] .appointment-review-warning-button {
+  color: #fbbf24;
+}
+
+
+.appointment-review-warning-button:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: rgba(245, 158, 11, 0.62);
+
+  transform: translateY(-1px);
+}
+
+
+.appointment-review-warning-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.appointment-dialog-body {
+  flex: 1;
+
+  padding: 22px 24px 24px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: #b5bec7 transparent;
+}
+
+
+[data-theme="dark"] .appointment-dialog-body {
+  scrollbar-color: #394351 transparent;
+}
+
+
+.appointment-dialog-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.appointment-dialog-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.appointment-dialog-body::-webkit-scrollbar-thumb {
+  background: #b5bec7;
+  border-radius: 999px;
+}
+
+
+[data-theme="dark"] .appointment-dialog-body::-webkit-scrollbar-thumb {
+  background: #394351;
+}
+
+
+/* =========================================================
+   GENERIC SECTION
+========================================================= */
+
+.compact-section {
+  margin-bottom: 22px;
+}
+
+
+.compact-section-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 11px;
+}
+
+
+.compact-section-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(59, 130, 246, 0.10);
+
+  border: 1px solid rgba(59, 130, 246, 0.16);
+
+  font-size: 19px;
+}
+
+
+.compact-section-icon.purple {
+  background: rgba(168, 85, 247, 0.10);
+  border-color: rgba(168, 85, 247, 0.16);
+}
+
+
+.compact-section-icon.orange {
+  background: rgba(245, 158, 11, 0.10);
+  border-color: rgba(245, 158, 11, 0.16);
+}
+
+
+.compact-section-icon.green {
+  background: rgba(69, 217, 138, 0.10);
+  border-color: rgba(69, 217, 138, 0.18);
+}
+
+
+.compact-section-header > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.compact-section-header strong {
+  color: var(--dialog-text);
+
+  font-size: 15px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+.compact-section-header span {
+  color: var(--dialog-muted);
+
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   CUSTOMER
+========================================================= */
+
+.customer-row {
+  display: flex;
+  align-items: stretch;
+
+  gap: 10px;
+}
+
+
+.customer-search {
+  min-width: 0;
+  flex: 1;
+
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 15px;
+
+  background: var(--dialog-input-bg);
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  color: var(--dialog-muted);
+
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.customer-search:focus-within {
+  border-color: rgba(69, 217, 138, 0.42);
+
+  box-shadow:
+    0 0 0 3px rgba(69, 217, 138, 0.07);
+}
+
+
+.customer-search span {
+  font-size: 18px;
+}
+
+
+.customer-search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--dialog-text);
+
+  font-size: 13px;
+}
+
+
+.customer-search input::placeholder {
+  color: var(--dialog-muted-2);
+}
+
+
+.new-customer-button {
+  height: 50px;
+
+  padding: 0 20px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  background: var(--dialog-input-bg);
+
+  color: var(--dialog-text-soft);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.new-customer-button:hover {
+  background: var(--dialog-hover-bg);
+  border-color: var(--dialog-border-hover);
+  transform: translateY(-1px);
+}
+
+
+.selected-customer {
+  width: 100%;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 7px 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--dialog-surface-2),
+      var(--dialog-surface)
+    );
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+}
+
+
+.customer-avatar {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #64748b,
+      #475569
+    );
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+.selected-customer-info,
+.customer-option-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.selected-customer-info strong,
+.customer-option-info strong {
+  overflow: hidden;
+
+  color: var(--dialog-text);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.selected-customer-info span,
+.customer-option-info span {
+  overflow: hidden;
+
+  color: var(--dialog-muted);
+
+  font-size: 10px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.change-customer-button {
+  margin-left: auto;
+
+  padding: 8px 11px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 8px;
+
+  background: var(--dialog-hover-bg);
+
+  color: var(--dialog-text-soft);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.change-customer-button:hover {
+  background: var(--dialog-surface-3);
+  color: var(--dialog-text);
+}
+
+
+/* =========================================================
+   CUSTOMER LIST
+========================================================= */
+
+.customer-list {
+  margin-top: 8px;
+
+  max-height: 210px;
+
+  overflow-y: auto;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  background: var(--dialog-surface);
+
+  scrollbar-width: thin;
+}
+
+
+.customer-option {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 12px;
+
+  border: 0;
+  border-bottom: 1px solid var(--dialog-border);
+
+  background: transparent;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.customer-option:last-child {
+  border-bottom: 0;
+}
+
+
+.customer-option:hover {
+  background: var(--dialog-hover-bg);
+}
+
+
+.customer-select-icon {
+  margin-left: auto;
+
+  color: var(--dialog-muted);
+
+  font-size: 20px;
+}
+
+
+.customer-state {
+  padding: 18px;
+
+  text-align: center;
+
+  color: var(--dialog-muted);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TWO COLUMN AREA
+========================================================= */
+
+.compact-two-column {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   SERVICE
+========================================================= */
+
+.service-inline {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.service-inline select,
+.edit-status-row select {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  outline: none;
+
+  background: var(--dialog-input-bg);
+  color: var(--dialog-text);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.service-inline select:focus,
+.edit-status-row select:focus,
+.compact-field input:focus,
+.compact-notes textarea:focus {
+  border-color: rgba(69, 217, 138, 0.42);
+
+  box-shadow:
+    0 0 0 3px rgba(69, 217, 138, 0.06);
+}
+
+
+.service-info-inline {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  background: var(--dialog-surface-2);
+
+  white-space: nowrap;
+}
+
+
+.service-info-inline strong {
+  color: var(--dialog-text);
+
+  font-size: 12px;
+}
+
+
+.service-info-inline span {
+  color: var(--dialog-muted);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPLOYEE GRID
+========================================================= */
+
+.employee-mini-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+  min-height: 50px;
+}
+
+
+.employee-mini {
+  position: relative;
+
+  min-width: 0;
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px 10px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--dialog-surface-2),
+      var(--dialog-surface)
+    );
+
+  color: var(--dialog-text-soft);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.employee-mini:hover.available {
+  border-color: var(--dialog-border-hover);
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--dialog-hover-bg),
+      var(--dialog-surface)
+    );
+
+  transform: translateY(-1px);
+}
+
+
+.employee-mini.selected {
+  border-color: var(--dialog-green);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(69, 217, 138, 0.15),
+      rgba(28, 155, 89, 0.06)
+    );
+
+  box-shadow:
+    0 0 0 2px rgba(69, 217, 138, 0.07),
+    0 8px 25px rgba(69, 217, 138, 0.08);
+}
+
+
+.employee-mini.unavailable {
+  opacity: 0.38;
+
+  cursor: not-allowed;
+}
+
+
+.employee-mini-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+
+.employee-mini > div:nth-child(2) {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.employee-mini strong {
+  overflow: hidden;
+
+  color: var(--dialog-text);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.employee-mini span {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: var(--dialog-muted);
+
+  font-size: 9px;
+}
+
+
+.employee-mini span i {
+  width: 6px;
+  height: 6px;
+
+  flex: 0 0 6px;
+
+  border-radius: 50%;
+
+  background: #9ca3af;
+}
+
+
+.employee-mini.available span i {
+  background: #45d98a;
+
+  box-shadow:
+    0 0 6px rgba(69, 217, 138, 0.35);
+}
+
+
+.employee-mini > b {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--dialog-green);
+
+  color: #07140d;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+
+.mini-empty {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: 1px dashed var(--dialog-border);
+  border-radius: 13px;
+
+  background: var(--dialog-surface-2);
+
+  color: var(--dialog-muted);
+
+  font-size: 11px;
+}
+
+
+.mini-empty.danger {
+  color: #b91c1c;
+
+  border-color: rgba(239, 68, 68, 0.22);
+
+  background: rgba(127, 29, 29, 0.06);
+}
+
+
+[data-theme="dark"] .mini-empty.danger {
+  color: #d29b9b;
+
+  background: rgba(127, 29, 29, 0.08);
+}
+
+
+/* =========================================================
+   DATE + TIME
+========================================================= */
+
+.date-time-inline {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    auto;
+
+  gap: 12px;
+
+  align-items: end;
+}
+
+
+.compact-field {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.compact-field label {
+  color: var(--dialog-muted);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+
+.compact-field input {
+  width: 100%;
+  height: 50px;
+
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  outline: none;
+
+  background: var(--dialog-input-bg);
+  color: var(--dialog-text);
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.compact-field input::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+
+  cursor: pointer;
+}
+
+
+.time-result {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(69, 217, 138, 0.18);
+  border-radius: 13px;
+
+  background: rgba(69, 217, 138, 0.06);
+}
+
+
+.time-result > span {
+  font-size: 17px;
+}
+
+
+.time-result div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.time-result small {
+  color: var(--dialog-muted);
+
+  font-size: 9px;
+}
+
+
+.time-result strong {
+  color: var(--dialog-green);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   AVAILABILITY SUCCESS
+========================================================= */
+
+.appointment-availability-success {
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(69, 217, 138, 0.25);
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(69, 217, 138, 0.11),
+      rgba(69, 217, 138, 0.04)
+    );
+
+  color: var(--dialog-green);
+}
+
+
+.appointment-availability-success strong {
+  font-size: 12px;
+}
+
+
+.appointment-availability-success span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--dialog-muted);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.compact-summary {
+  margin-top: 2px;
+  margin-bottom: 22px;
+
+  padding: 15px 16px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--dialog-surface-2),
+      var(--dialog-surface)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+.summary-main {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.summary-item {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.summary-item small {
+  color: var(--dialog-muted);
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+.summary-item strong {
+  max-width: 150px;
+
+  overflow: hidden;
+
+  color: var(--dialog-text);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.summary-separator {
+  width: 1px;
+  height: 30px;
+
+  flex: 0 0 1px;
+
+  background: var(--dialog-border);
+}
+
+
+.summary-price {
+  margin-left: auto;
+
+  color: var(--dialog-green);
+
+  font-size: 16px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.compact-notes {
+  margin-bottom: 22px;
+}
+
+
+.compact-notes-label {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 9px;
+
+  color: var(--dialog-text-soft);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.compact-notes-label em {
+  color: var(--dialog-muted);
+
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.compact-notes textarea {
+  width: 100%;
+
+  min-height: 88px;
+  max-height: 160px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  padding: 13px 14px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 13px;
+
+  outline: none;
+
+  background: var(--dialog-input-bg);
+  color: var(--dialog-text);
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.compact-notes textarea::placeholder {
+  color: var(--dialog-muted-2);
+}
+
+
+/* =========================================================
+   EDIT STATUS
+========================================================= */
+
+.edit-status-row {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.edit-status-row label {
+  color: var(--dialog-muted);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+.edit-status-row select {
+  width: auto;
+  min-width: 180px;
+
+  height: 42px;
+}
+
+
+/* =========================================================
+   AUTOMATIONS
+========================================================= */
+
+.compact-automations {
+  margin-top: 4px;
+  margin-bottom: 14px;
+
+  padding: 15px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 14px;
+
+  background: var(--dialog-surface-2);
+}
+
+
+.compact-automations-header {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 11px;
+
+  color: var(--dialog-text-soft);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.compact-automation-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 8px;
+}
+
+
+.compact-automation {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 0 11px;
+
+  border: 1px solid var(--dialog-border);
+  border-radius: 10px;
+
+  background: var(--dialog-surface);
+
+}
+
+
+.compact-automation > span {
+  color: var(--dialog-muted);
+
+  font-size: 10px;
+}
+
+
+.automation-switch {
+  position: relative;
+
+  width: 34px;
+  height: 19px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #cbd5e1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease;
+}
+
+
+[data-theme="dark"] .automation-switch {
+  background: #343c47;
+}
+
+
+.automation-switch i {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+
+.automation-switch.active {
+  background: var(--dialog-green-dark);
+}
+
+
+.automation-switch.active i {
+  transform: translateX(15px);
+
+  background: #ffffff;
+}
+
+
+.automation-loading {
+  color: var(--dialog-muted);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.appointment-message {
+  margin-top: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+
+.appointment-message.error {
+  border: 1px solid rgba(239, 68, 68, 0.24);
+
+  background: rgba(127, 29, 29, 0.08);
+
+  color: #b91c1c;
+}
+
+
+[data-theme="dark"] .appointment-message.error {
+  background: rgba(127, 29, 29, 0.13);
+  color: #f0b0b0;
+}
+
+
+.appointment-message.success {
+  border: 1px solid rgba(69, 217, 138, 0.24);
+
+  background: rgba(69, 217, 138, 0.08);
+
+  color: #15803d;
+}
+
+
+[data-theme="dark"] .appointment-message.success {
+  color: #a9e8bf;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.appointment-dialog-footer {
+  min-height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding: 16px 24px;
+
+  border-top: 1px solid var(--dialog-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--dialog-surface-2),
+      var(--dialog-surface)
+    );
+
+  flex-shrink: 0;
+}
+
+
+.appointment-dialog-cancel,
+.appointment-dialog-create {
+  height: 50px;
+
+  padding: 0 25px;
+
+  border-radius: 13px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+}
+
+
+.appointment-dialog-cancel {
+  min-width: 150px;
+
+  border: 1px solid var(--dialog-border);
+
+  background: var(--dialog-surface-2);
+
+  color: var(--dialog-text-soft);
+}
+
+
+.appointment-dialog-cancel:hover {
+  background: var(--dialog-hover-bg);
+
+  border-color: var(--dialog-border-hover);
+
+  color: var(--dialog-text);
+
+  transform: translateY(-1px);
+}
+
+
+.appointment-dialog-create {
+  min-width: 190px;
+
+  border: 1px solid rgba(69, 217, 138, 0.65);
+
+  background:
+    linear-gradient(
+      135deg,
+      #4bd98b,
+      #29b96f
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(39, 190, 112, 0.18);
+}
+
+
+.appointment-dialog-create:hover:not(:disabled) {
+  background:
+    linear-gradient(
+      135deg,
+      #63e79d,
+      #35ca7b
+    );
+
+  box-shadow:
+    0 11px 30px rgba(39, 190, 112, 0.26);
+
+  transform: translateY(-1px);
+}
+
+
+.appointment-dialog-create:active:not(:disabled),
+.appointment-dialog-cancel:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+.appointment-dialog-create:disabled,
+.appointment-dialog-cancel:disabled {
+  opacity: 0.42;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   REVIEW LINK DIALOG
+========================================================= */
+
+.review-link-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  background: rgba(15, 23, 42, 0.50);
+
+  backdrop-filter: blur(8px);
+}
+
+
+[data-theme="dark"] .review-link-dialog-overlay {
+  background: rgba(2, 6, 12, 0.78);
+}
+
+
+.review-link-dialog {
+  position: relative;
+
+  width: min(900px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  border: 1px solid var(--dialog-border);
+
+  border-radius: 18px;
+
+  background: var(--dialog-surface);
+
+  box-shadow: var(--dialog-shadow);
+}
+
+
+.review-link-dialog-header {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 13px;
+
+  padding: 22px;
+
+  border-bottom: 1px solid var(--dialog-border);
+}
+
+
+.review-link-dialog-icon {
+  width: 46px;
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: rgba(245, 158, 11, 0.12);
+
+  border: 1px solid rgba(245, 158, 11, 0.22);
+
+  font-size: 22px;
+}
+
+
+.review-link-dialog-header h2 {
+  margin: 0;
+
+  color: var(--dialog-text);
+
+  font-size: 18px;
+}
+
+
+.review-link-dialog-header p {
+  margin: 6px 0 0;
+
+  color: var(--dialog-muted);
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+.review-link-dialog-close {
+  margin-left: auto;
+
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: var(--dialog-muted);
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+
+.review-link-dialog-close:hover {
+  background: var(--dialog-hover-bg);
+  color: var(--dialog-text);
+}
+
+
+.review-link-dialog-body {
+  padding: 22px;
+
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: #b5bec7 transparent;
+}
+
+
+.review-link-dialog-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.review-link-dialog-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.review-link-dialog-body::-webkit-scrollbar-thumb {
+  background: #b5bec7;
+  border-radius: 999px;
+}
+
+
+[data-theme="dark"] .review-link-dialog-body {
+  scrollbar-color: #394351 transparent;
+}
+
+
+[data-theme="dark"] .review-link-dialog-body::-webkit-scrollbar-thumb {
+  background: #394351;
+}
+
+
+.review-guide-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.review-guide-step {
+  min-width: 0;
+
+  padding: 18px;
+
+  border: 1px solid var(--dialog-border);
+
+  border-radius: 15px;
+
+  background: var(--dialog-surface-2);
+}
+
+
+.review-guide-number {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 13px;
+
+  border-radius: 50%;
+
+  background: #2f9e68;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.review-guide-step h3 {
+  margin: 0 0 8px;
+
+  color: var(--dialog-text);
+
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+
+.review-guide-step p {
+  margin: 0 0 14px;
+
+  color: var(--dialog-muted);
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+.review-guide-example,
+.review-guide-business-card,
+.review-guide-copy-card {
+  min-height: 135px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+
+  color: #0f172a;
+}
+
+
+.review-guide-google {
+  margin-bottom: 14px;
+
+  text-align: center;
+
+  font-size: 27px;
+  font-weight: 700;
+}
+
+
+.google-g {
+  color: #4285f4;
+}
+
+.google-o1 {
+  color: #ea4335;
+}
+
+.google-o2 {
+  color: #fbbc05;
+}
+
+.google-g2 {
+  color: #4285f4;
+}
+
+.google-l {
+  color: #34a853;
+}
+
+.google-e {
+  color: #ea4335;
+}
+
+
+.review-guide-account {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 9px;
+}
+
+
+.review-guide-account > span {
+  font-size: 21px;
+}
+
+
+.review-guide-account strong,
+.review-guide-account small {
+  display: block;
+}
+
+
+.review-guide-account strong {
+  font-size: 11px;
+}
+
+
+.review-guide-account small {
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+.review-guide-business-card > strong,
+.review-guide-business-card > small {
+  display: block;
+}
+
+
+.review-guide-business-card > strong {
+  font-size: 13px;
+}
+
+
+.review-guide-business-card > small {
+  margin-top: 5px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+
+.review-guide-business-actions {
+  display: flex;
+
+  gap: 6px;
+
+  margin-top: 20px;
+}
+
+
+.review-guide-business-actions span,
+.review-guide-business-actions b {
+  padding: 7px 6px;
+
+  border-radius: 7px;
+
+  font-size: 8px;
+
+  text-align: center;
+}
+
+
+.review-guide-business-actions span {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+
+.review-guide-business-actions b {
+  color: #fff;
+  background: #2196f3;
+}
+
+
+.review-guide-copy-card > strong,
+.review-guide-copy-card > small {
+  display: block;
+}
+
+
+.review-guide-copy-card > strong {
+  font-size: 13px;
+}
+
+
+.review-guide-copy-card > small {
+  margin-top: 5px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+
+.review-guide-url-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 7px;
+
+  margin-top: 16px;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  background: #eef2f7;
+
+  font-size: 8px;
+}
+
+
+.review-guide-url-preview span {
+  overflow: hidden;
+
+  color: #64748b;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.review-guide-url-preview b {
+  flex-shrink: 0;
+
+  padding: 6px 8px;
+
+  border-radius: 6px;
+
+  background: #2196f3;
+
+  color: #ffffff;
+}
+
+
+.review-guide-action {
+  width: 100%;
+
+  margin-top: 10px;
+
+  min-height: 38px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: #2196f3;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.review-guide-tip {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(59, 130, 246, 0.20);
+
+  border-radius: 12px;
+
+  background: rgba(59, 130, 246, 0.07);
+}
+
+
+.review-guide-tip-icon {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(59, 130, 246, 0.13);
+
+  color: #60a5fa;
+}
+
+
+.review-guide-tip strong,
+.review-guide-tip span {
+  display: block;
+}
+
+
+.review-guide-tip strong {
+  color: var(--dialog-text);
+
+  font-size: 11px;
+}
+
+
+.review-guide-tip span {
+  margin-top: 3px;
+
+  color: var(--dialog-muted);
+
+  font-size: 10px;
+}
+
+
+.review-guide-divider {
+  height: 1px;
+
+  margin: 18px 0;
+
+  background: var(--dialog-border);
+}
+
+
+.review-link-dialog-field {
+  margin-bottom: 2px;
+}
+
+
+.review-link-dialog-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--dialog-text-soft);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.review-link-input-wrapper {
+  position: relative;
+}
+
+
+.review-link-dialog-input {
+  width: 100%;
+
+  min-height: 46px;
+
+  box-sizing: border-box;
+
+  padding: 0 45px 0 13px;
+
+  border: 1px solid var(--dialog-border);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: var(--dialog-input-bg);
+
+  color: var(--dialog-text);
+
+  font-size: 12px;
+}
+
+
+.review-link-dialog-input:focus {
+  border-color: rgba(69, 217, 138, 0.42);
+
+  box-shadow:
+    0 0 0 3px rgba(69, 217, 138, 0.06);
+}
+
+
+.review-link-input-icon {
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  opacity: 0.65;
+}
+
+
+.review-link-dialog-hint {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--dialog-muted-2);
+
+  font-size: 10px;
+
+  line-height: 1.45;
+}
+
+
+.review-link-dialog-error {
+  margin-top: 9px;
+
+  color: #dc2626;
+
+  font-size: 11px;
+}
+
+
+[data-theme="dark"] .review-link-dialog-error {
+  color: #fca5a5;
+}
+
+
+.review-link-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 9px;
+
+  padding: 15px 22px 20px;
+
+  border-top: 1px solid var(--dialog-border);
+}
+
+
+.review-link-dialog-cancel,
+.review-link-dialog-save {
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.review-link-dialog-cancel {
+  border: 1px solid var(--dialog-border);
+
+  background: var(--dialog-surface-2);
+
+  color: var(--dialog-text-soft);
+}
+
+
+.review-link-dialog-save {
+  border: 1px solid #2dbd73;
+
+  background: #32c879;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .appointment-dialog-overlay {
+    align-items: center;
+
+    padding: 10px;
+  }
+
+
+  .appointment-dialog {
+    width: 100%;
+
+    max-height: calc(100dvh - 20px);
+
+    border-radius: 18px;
+  }
+
+
+  .appointment-dialog-header {
+    min-height: auto;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      40px;
+
+    gap: 12px;
+
+    padding: 17px;
+  }
+
+
+  .appointment-header-left {
+    grid-column: 1;
+  }
+
+
+  .appointment-dialog-close {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+
+  .appointment-review-warning {
+    grid-column: 1 / -1;
+
+    padding: 11px;
+
+    gap: 10px;
+  }
+
+
+  .appointment-review-warning-content span {
+    display: none;
+  }
+
+
+  .appointment-review-warning-button {
+    min-height: 36px;
+
+    padding: 0 10px;
+  }
+
+
+  .appointment-dialog-title-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-basis: 48px;
+
+    border-radius: 14px;
+
+    font-size: 23px;
+  }
+
+
+  .appointment-dialog-header h2 {
+    font-size: 20px;
+  }
+
+
+  .appointment-dialog-header p {
+    font-size: 11px;
+  }
+
+
+  .appointment-dialog-body {
+    padding: 19px 16px 22px;
+  }
+
+
+  .compact-two-column {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  .compact-section {
+    margin-bottom: 21px;
+  }
+
+
+  .compact-section-header {
+    margin-bottom: 10px;
+  }
+
+
+  .compact-section-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+
+  .customer-row {
+    flex-direction: column;
+  }
+
+
+  .customer-search {
+    height: 50px;
+  }
+
+
+  .new-customer-button {
+    width: 100%;
+  }
+
+
+  .service-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+
+  .service-inline select {
+    height: 50px;
+  }
+
+
+  .service-info-inline {
+    width: fit-content;
+  }
+
+
+  .employee-mini-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .employee-mini {
+    min-height: 66px;
+  }
+
+
+  .date-time-inline {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .time-result {
+    grid-column: 1 / -1;
+
+    width: fit-content;
+  }
+
+
+  .summary-main {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+  }
+
+
+  .summary-separator {
+    display: none;
+  }
+
+
+  .summary-price {
+    margin-left: 0;
+  }
+
+
+  .compact-notes textarea {
+    min-height: 95px;
+  }
+
+
+  .compact-automation-list {
+    grid-template-columns: 1fr;
+
+    display: grid;
+  }
+
+
+  .appointment-dialog-footer {
+    min-height: 74px;
+
+    padding: 12px 16px;
+
+    gap: 9px;
+  }
+
+
+  .appointment-dialog-cancel,
+  .appointment-dialog-create {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 48px;
+
+    padding: 0 12px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .appointment-dialog-overlay {
+    padding: 6px;
+  }
+
+
+  .appointment-dialog {
+    max-height: calc(100dvh - 12px);
+
+    border-radius: 16px;
+  }
+
+
+  .appointment-dialog-header {
+    padding: 14px;
+  }
+
+
+  .appointment-dialog-body {
+    padding: 17px 13px 20px;
+  }
+
+
+  .appointment-dialog-title-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-basis: 44px;
+
+    border-radius: 13px;
+
+    font-size: 21px;
+  }
+
+
+  .appointment-dialog-header h2 {
+    font-size: 18px;
+  }
+
+
+  .appointment-dialog-header p {
+    margin-top: 4px;
+
+    font-size: 10px;
+  }
+
+
+  .appointment-dialog-close {
+    width: 38px;
+    height: 38px;
+
+    font-size: 26px;
+  }
+
+
+  .appointment-review-warning-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+
+    font-size: 18px;
+  }
+
+
+  .appointment-review-warning-content strong {
+    font-size: 10px;
+  }
+
+
+  .appointment-review-warning-button {
+    padding: 0 9px;
+
+    font-size: 9px;
+  }
+
+
+  .compact-section-header strong {
+    font-size: 14px;
+  }
+
+
+  .compact-section-header span {
+    font-size: 10px;
+  }
+
+
+  .employee-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .employee-mini {
+    min-height: 62px;
+  }
+
+
+  .employee-mini-avatar {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+  }
+
+
+  .date-time-inline {
+    grid-template-columns: 1fr;
+  }
+
+
+  .time-result {
+    grid-column: auto;
+
+    width: 100%;
+  }
+
+
+  .summary-main {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .summary-item strong {
+    max-width: 100%;
+  }
+
+
+  .appointment-dialog-footer {
+    padding: 10px 12px;
+  }
+
+
+  .appointment-dialog-cancel,
+  .appointment-dialog-create {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL — 320px
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .appointment-dialog-body {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+
+  .appointment-dialog-header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .appointment-review-warning-button span:first-child {
+    display: none;
+  }
+
+
+  .summary-main {
+    grid-template-columns: 1fr;
+  }
+
+
+  .summary-price {
+    padding-top: 3px;
+  }
+
+
+  .appointment-dialog-cancel,
+  .appointment-dialog-create {
+    padding: 0 8px;
+  }
+}
+
+
+/* =========================================================
+   REVIEW GUIDE RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .review-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .review-link-dialog {
+    width: min(680px, calc(100vw - 28px));
+  }
+}
+
+
+@media (max-width: 560px) {
+
+  .review-link-dialog-overlay {
+    padding: 10px;
+  }
+
+
+  .review-link-dialog {
+    width: 100%;
+
+    max-height: calc(100vh - 20px);
+  }
+
+
+  .review-link-dialog-header {
+    padding: 17px;
+  }
+
+
+  .review-link-dialog-body {
+    padding: 17px;
+  }
+
+
+  .review-guide-step {
+    padding: 15px;
+  }
+
+
+  .review-link-dialog-footer {
+    padding: 13px 17px 17px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.appointment-dialog button:focus-visible,
+.appointment-dialog input:focus-visible,
+.appointment-dialog select:focus-visible,
+.appointment-dialog textarea:focus-visible {
+  outline: 2px solid rgba(69, 217, 138, 0.65);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .appointment-dialog,
+  .appointment-dialog *,
+  .appointment-dialog *::before,
+  .appointment-dialog *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,912 @@
+{
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "loading": "Wird geladen...",
+    "search": "Suchen",
+    "confirm": "Bestätigen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "continue": "Fortfahren",
+    "saving": "Wird gespeichert...",
+    "saveChanges": "Änderungen speichern"
+  },
+  "layout": "Vorlagen",
+  "sidebar": {
+    "brandSubtitle": "Verwaltung und Automatisierung",
+    "closeMenu": "Menü schließen",
+    "user": "Benutzer",
+    "mainMenu": "Hauptmenü",
+    "home": "Startseite",
+    "agenda": "Kalender",
+    "clients": "Kunden",
+    "employees": "Mitarbeiter",
+    "services": "Dienstleistungen",
+    "messages": "Nachrichten",
+    "whatsapp": "WhatsApp",
+    "hours": "Öffnungszeiten",
+    "settings": "Einstellungen",
+    "connected": "Verbunden",
+    "notConnected": "Nicht verbunden",
+    "logout": "Abmelden",
+    "templates": "Vorlagen"
+  },
+  "home": {
+    "eyebrow": "HAUPTÜBERSICHT",
+    "welcome": "Hallo,",
+    "welcomeFallback": "willkommen",
+    "description": "Verwalte dein Unternehmen und automatisiere deine Kommunikation.",
+    "whatsapp": "WHATSAPP",
+    "connected": "Verbunden",
+    "notConnected": "Nicht verbunden",
+    "account": "KONTO",
+    "active": "Aktiv",
+    "automation": "AUTOMATISIERUNG",
+    "ready": "Bereit zur Nutzung",
+    "remindersAndMessages": "Erinnerungen und Nachrichten",
+    "whatsappConnectedTitle": "WhatsApp verbunden",
+    "whatsappDisconnectedTitle": "WhatsApp nicht verbunden",
+    "whatsappConnectedDescription": "Dein Konto ist verbunden und einsatzbereit.",
+    "whatsappDisconnectedDescription": "Verbinde WhatsApp, um Nachrichten zu senden.",
+    "manageWhatsapp": "WhatsApp verwalten"
+  },
+  "agenda": {
+    "eyebrow": "VERWALTUNG",
+    "title": "Kalender",
+    "description": "Organisiere deine Termine, Öffnungszeiten und Verfügbarkeiten.",
+    "calendarLabel": "Terminkalender",
+    "loading": "Kalender wird geladen...",
+    "errorTitle": "Der Kalender konnte nicht geladen werden",
+    "retry": "Erneut versuchen",
+    "refreshing": "Kalender wird aktualisiert...",
+    "errors": {
+      "invalidSession": "Ungültige Sitzung.",
+      "invalidBusinessId": "Ungültige Business-ID.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen.",
+      "loadAppointments": "Termine konnten nicht geladen werden.",
+      "loadBusinessHours": "Öffnungszeiten konnten nicht geladen werden."
+    }
+  },
+  "calendar": {
+    "today": "Heute",
+    "day": "Tag",
+    "week": "Woche",
+    "month": "Monat",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "employees": "Mitarbeiter",
+    "employee": "Mitarbeiter",
+    "selectEmployee": "Mitarbeiter auswählen",
+    "allEmployees": "Alle Mitarbeiter",
+    "employeesCount": "{count} Mitarbeiter",
+    "selectedEmployee": "Ausgewählter Mitarbeiter",
+    "employeesHeading": "MITARBEITER",
+    "active": "Aktiv",
+    "loading": {
+      "title": "AgendaReminder",
+      "text": "Dein Kalender wird geladen...",
+      "preparing": "Mitarbeiter und Kalender werden vorbereitet"
+    },
+    "empty": {
+      "noEmployees": "Keine aktiven Mitarbeiter",
+      "addEmployee": "Füge einen Mitarbeiter hinzu, um zu beginnen."
+    },
+    "closed": {
+      "title": "Geschäft geschlossen",
+      "description": "Für diesen Tag sind keine Öffnungszeiten festgelegt.",
+      "short": "Geschlossen"
+    },
+    "refreshing": "Kalender wird aktualisiert...",
+    "customer": "Kunde",
+    "weekdays": {
+      "monday": "Mo",
+      "tuesday": "Di",
+      "wednesday": "Mi",
+      "thursday": "Do",
+      "friday": "Fr",
+      "saturday": "Sa",
+      "sunday": "So"
+    },
+    "errors": {
+      "invalidSession": "Ungültige Sitzung.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen.",
+      "loadAppointments": "Termine konnten nicht geladen werden.",
+      "loadEmployees": "Mitarbeiter konnten nicht geladen werden.",
+      "loadBusinessHours": "Öffnungszeiten konnten nicht geladen werden."
+    }
+  },
+  "clients": {
+    "eyebrow": "VERWALTUNG",
+    "title": "Kunden",
+    "description": "Verwalte alle Informationen deiner Kunden.",
+    "actions": {
+      "new": "Neuer Kunde",
+      "create": "Kunden erstellen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    },
+    "search": {
+      "placeholder": "Nach Name, Telefon oder E-Mail suchen...",
+      "aria": "Kunden suchen",
+      "clear": "Suche löschen"
+    },
+    "results": {
+      "singular": "Kunde",
+      "plural": "Kunden"
+    },
+    "summary": {
+      "total": "Kunden insgesamt",
+      "matches": "Treffer"
+    },
+    "loading": {
+      "title": "Kunden werden geladen",
+      "description": "Deine Kundenliste wird vorbereitet."
+    },
+    "empty": {
+      "title": "Du hast noch keine Kunden",
+      "description": "Erstelle deinen ersten Kunden, um zu beginnen.",
+      "searchTitle": "Keine Kunden gefunden",
+      "searchDescription": "Versuche es mit einem anderen Namen, einer anderen Telefonnummer oder E-Mail-Adresse.",
+      "addCustomersTitle": "Fügen Sie Ihre Kunden hinzu",
+      "addCustomersDescription": "Speichern Sie Name, Telefonnummer und weitere Daten, damit alle Informationen übersichtlich organisiert sind.",
+      "createAppointmentsTitle": "Termine einfacher erstellen",
+      "createAppointmentsDescription": "Sobald Sie Kunden hinzugefügt haben, können Sie sie direkt in Ihrem Kalender auswählen."
+    },
+    "table": {
+      "client": "Kunde",
+      "contact": "Kontakt",
+      "notes": "Notizen",
+      "actions": "Aktionen"
+    },
+    "footer": {
+      "showing": "Angezeigt werden",
+      "of": "von"
+    },
+    "fallbacks": {
+      "noName": "Kein Name",
+      "noPhone": "Keine Telefonnummer",
+      "noNotes": "Keine Notizen"
+    },
+    "phone": {
+      "manualCode": "Manuelle Vorwahl",
+      "manualOption": "🌎 Andere / manuell",
+      "selectCountry": "Land auswählen",
+      "selectCountryHint": "Wähle ein Land aus.",
+      "manualHint": "Du kannst die internationale Vorwahl manuell eingeben.",
+      "invalid": "Gib eine gültige Telefonnummer ein.",
+      "validFor": "Gültige Telefonnummer für",
+      "rangePrefix": "Sie muss zwischen",
+      "rangeMiddle": "und",
+      "rangeSuffix": "Ziffern enthalten.",
+      "countrySuffix": "Ziffern."
+    },
+    "form": {
+      "fullName": "Vollständiger Name",
+      "fullNamePlaceholder": "z. B. Maria Garcia",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "emailPlaceholder": "kunde@email.com",
+      "notes": "Notizen",
+      "notesPlaceholder": "Notizen zum Kunden...",
+      "language": "Sprache"
+    },
+    "modal": {
+      "eyebrowEdit": "KUNDE",
+      "eyebrowNew": "NEUER KUNDE",
+      "editTitle": "Kunden bearbeiten",
+      "newTitle": "Neuer Kunde",
+      "description": "Vervollständige die Informationen des Kunden."
+    },
+    "delete": {
+      "eyebrow": "KUNDE LÖSCHEN",
+      "title": "Kunden löschen?",
+      "confirmPrefix": "Möchtest du wirklich löschen",
+      "irreversible": "Diese Aktion kann nicht rückgängig gemacht werden.",
+      "deleting": "Wird gelöscht..."
+    },
+    "errors": {
+      "invalidSession": "Ungültige Sitzung.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen.",
+      "loadClients": "Kunden konnten nicht geladen werden.",
+      "saveClient": "Der Kunde konnte nicht gespeichert werden.",
+      "deleteClient": "Der Kunde konnte nicht gelöscht werden."
+    }
+  },
+  "employees": {
+    "eyebrow": "VERWALTUNG",
+    "title": "Mitarbeiter",
+    "description": "Verwalte die Personen, die zu deinem Unternehmen gehören.",
+    "newEmployee": "Neuer Mitarbeiter",
+    "searchPlaceholder": "🔎 Mitarbeiter suchen...",
+    "loading": "Mitarbeiter werden geladen...",
+    "empty": {
+      "searchTitle": "Keine Mitarbeiter gefunden",
+      "searchText": "Versuche es mit einem anderen Namen.",
+      "title": "Du hast noch keine Mitarbeiter",
+      "text": "Erstelle deinen ersten Mitarbeiter, um zu beginnen."
+    },
+    "createEmployee": "Mitarbeiter erstellen",
+    "noName": "Kein Name",
+    "noPhone": "Keine Telefonnummer",
+    "table": {
+      "employee": "Mitarbeiter",
+      "schedule": "Arbeitszeit",
+      "status": "Status",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "dialog": {
+      "createTitle": "Neuer Mitarbeiter",
+      "editTitle": "Mitarbeiter bearbeiten",
+      "createDescription": "Füge eine Person zu deinem Team hinzu.",
+      "editDescription": "Aktualisiere die Informationen des Mitarbeiters.",
+      "saveChanges": "Änderungen speichern",
+      "createEmployee": "Mitarbeiter erstellen"
+    },
+    "fields": {
+      "firstName": "Vorname",
+      "firstNamePlaceholder": "z. B. Matias",
+      "lastName": "Nachname",
+      "lastNamePlaceholder": "z. B. Diaz",
+      "phone": "Telefon",
+      "phonePlaceholder": "z. B. 612345678",
+      "phoneHelp": "Optional. Du kannst die Nummer jetzt oder später hinzufügen.",
+      "startTime": "Startzeit",
+      "endTime": "Endzeit",
+      "color": "Mitarbeiterfarbe",
+      "colorHelp": "Diese Farbe wird verwendet, um die Termine des Mitarbeiters im Kalender zu kennzeichnen.",
+      "status": "Status"
+    },
+    "form": {
+      "active": "Aktiver Mitarbeiter",
+      "inactive": "Inaktiver Mitarbeiter"
+    },
+    "deleteDialog": {
+      "title": "Mitarbeiter löschen",
+      "question": "Möchtest du wirklich löschen",
+      "warning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+      "deleting": "Wird gelöscht..."
+    },
+    "footer": {
+      "showing": "{shown} von {total} Mitarbeitern werden angezeigt"
+    },
+    "errors": {
+      "invalidSession": "Ungültige Sitzung.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen.",
+      "loadEmployees": "Mitarbeiter konnten nicht geladen werden.",
+      "firstNameRequired": "Der Vorname ist erforderlich.",
+      "lastNameRequired": "Der Nachname ist erforderlich.",
+      "startTimeRequired": "Die Startzeit ist erforderlich.",
+      "endTimeRequired": "Die Endzeit ist erforderlich.",
+      "endTimeAfterStart": "Die Endzeit muss nach der Startzeit liegen.",
+      "saveEmployee": "Der Mitarbeiter konnte nicht gespeichert werden.",
+      "deleteEmployee": "Der Mitarbeiter konnte nicht gelöscht werden.",
+      "toggleStatus": "Der Status konnte nicht geändert werden."
+    }
+  },
+  "services": {
+    "eyebrow": "VERWALTUNG",
+    "title": "Dienstleistungen",
+    "description": "Verwalte die Dienstleistungen, die dein Unternehmen anbietet.",
+    "newService": "Neue Dienstleistung",
+    "createService": "Dienstleistung erstellen",
+    "searchPlaceholder": "🔎 Dienstleistung suchen...",
+    "loading": "Dienstleistungen werden geladen...",
+    "noDescription": "Keine Beschreibung",
+    "noPrice": "Kein Preis",
+    "minutes": "Min.",
+    "empty": {
+      "searchTitle": "Keine Dienstleistungen gefunden",
+      "searchText": "Versuche es mit einer anderen Suche.",
+      "title": "Du hast noch keine Dienstleistungen",
+      "text": "Erstelle deine erste Dienstleistung, um zu beginnen."
+    },
+    "table": {
+      "service": "Dienstleistung",
+      "duration": "Dauer",
+      "price": "Preis",
+      "status": "Status",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "dialog": {
+      "createTitle": "Neue Dienstleistung",
+      "editTitle": "Dienstleistung bearbeiten",
+      "createDescription": "Füge eine Dienstleistung zu deinem Unternehmen hinzu.",
+      "editDescription": "Aktualisiere die Informationen der Dienstleistung.",
+      "saveChanges": "Änderungen speichern",
+      "createService": "Dienstleistung erstellen"
+    },
+    "fields": {
+      "name": "Name der Dienstleistung",
+      "namePlaceholder": "z. B. Haarschnitt",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung...",
+      "duration": "Dauer",
+      "price": "Preis",
+      "color": "Farbe der Dienstleistung",
+      "colorHelp": "Diese Farbe kann verwendet werden, um die Dienstleistung im Kalender zu kennzeichnen.",
+      "status": "Status"
+    },
+    "form": {
+      "active": "Aktive Dienstleistung",
+      "inactive": "Inaktive Dienstleistung"
+    },
+    "deleteDialog": {
+      "title": "Dienstleistung löschen",
+      "question": "Möchtest du wirklich löschen",
+      "warning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+      "deleting": "Wird gelöscht..."
+    },
+    "footer": {
+      "showing": "{shown} von {total} Dienstleistungen werden angezeigt"
+    },
+    "errors": {
+      "invalidSession": "Ungültige Sitzung.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen.",
+      "loadServices": "Dienstleistungen konnten nicht geladen werden.",
+      "nameRequired": "Der Name der Dienstleistung ist erforderlich.",
+      "durationInvalid": "Die Dauer muss größer als 0 Minuten sein.",
+      "priceNegative": "Der Preis darf nicht negativ sein.",
+      "colorInvalid": "Die Farbe ist ungültig.",
+      "saveService": "Die Dienstleistung konnte nicht gespeichert werden.",
+      "deleteService": "Die Dienstleistung konnte nicht gelöscht werden.",
+      "toggleStatus": "Der Status konnte nicht geändert werden."
+    }
+  },
+  "whatsappStatus": {
+    "eyebrow": "VERBINDUNG",
+    "description": "Aktueller Verbindungsstatus.",
+    "logoAlt": "WhatsApp",
+    "status": {
+      "connected": "VERBUNDEN",
+      "notConnected": "NICHT VERBUNDEN"
+    },
+    "main": {
+      "connectedHighlight": "verbunden",
+      "notConnectedTitle": "WhatsApp nicht verbunden",
+      "connectedDescription": "Dein WhatsApp-Konto ist aktiv und bereit, Erinnerungen, Bestätigungen und automatische Nachrichten an deine Kunden zu senden.",
+      "notConnectedDescription": "Verbinde ein WhatsApp-Konto, um die Automatisierungen von AgendaReminder zu nutzen."
+    },
+    "phone": {
+      "connectedNumber": "Verbundene Nummer"
+    },
+    "disconnect": {
+      "button": "WhatsApp trennen",
+      "description": "Aktuelle Verbindung beenden"
+    },
+    "pending": {
+      "title": "Verbindung ausstehend",
+      "description": "Es ist kein Konto verbunden."
+    },
+    "system": {
+      "automaticMessages": "Automatische Nachrichten",
+      "active": "Aktiv",
+      "customerCommunication": "Kundenkommunikation",
+      "enabled": "Aktiviert",
+      "systemWorking": "System funktioniert",
+      "noErrors": "Keine Fehler"
+    },
+    "information": {
+      "title": "Was passiert, wenn du die Verbindung trennst?",
+      "description": "Automatische Nachrichten und Erinnerungen werden angehalten. Du kannst WhatsApp jederzeit wieder verbinden."
+    },
+    "disconnectDialog": {
+      "title": "WhatsApp trennen?",
+      "description": "Die aktuelle WhatsApp-Verbindung wird beendet. Automatische Nachrichten werden angehalten, bis du das Konto wieder verbindest.",
+      "confirm": "Trennen"
+    }
+  },
+  "hours": {
+    "eyebrow": "VERWALTUNG",
+    "title": "Öffnungszeiten",
+    "description": "Lege die Tage und Zeiten fest, an denen dein Unternehmen geöffnet ist.",
+    "saveButton": "Öffnungszeiten speichern",
+    "loading": "Öffnungszeiten werden geladen...",
+    "thisDay": "dieser Tag",
+    "closedBusiness": "Geschäft geschlossen",
+    "fields": {
+      "from": "Von",
+      "until": "Bis"
+    },
+    "applyAll": {
+      "title": "Auf alle Tage anwenden",
+      "description": "Lege dieselben Öffnungszeiten für die gesamte Woche fest.",
+      "button": "Auf alle anwenden",
+      "applying": "Wird angewendet..."
+    },
+    "weekly": {
+      "title": "Wochenplan",
+      "description": "Du kannst jeden Tag individuell anpassen."
+    },
+    "status": {
+      "open": "Geöffnet",
+      "closed": "Geschlossen"
+    },
+    "days": {
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag",
+      "sunday": "Sonntag"
+    },
+    "aria": {
+      "closeDay": "{day} schließen",
+      "openDay": "{day} öffnen"
+    },
+    "success": {
+      "saved": "Öffnungszeiten erfolgreich gespeichert.",
+      "appliedToAll": "Öffnungszeiten wurden auf alle Tage angewendet."
+    },
+    "errors": {
+      "sessionExpired": "Deine Sitzung ist abgelaufen.",
+      "sessionExpiredSave": "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an.",
+      "loadHours": "Öffnungszeiten konnten nicht geladen werden.",
+      "saveHours": "Öffnungszeiten konnten nicht gespeichert werden.",
+      "completeDay": "Vervollständige die Öffnungszeiten für {day}.",
+      "openBeforeClose": "Die Öffnungszeit muss vor der Schließzeit für {day} liegen.",
+      "selectTimes": "Du musst die Öffnungs- und Schließzeit angeben.",
+      "openBeforeCloseGlobal": "Die Öffnungszeit muss vor der Schließzeit liegen."
+    }
+  },
+  "settings": {
+    "eyebrow": "SYSTEM",
+    "title": "Einstellungen",
+    "description": "Allgemeine Einstellungen für dein Unternehmen.",
+    "loading": "Einstellungen werden geladen...",
+    "business": {
+      "title": "Unternehmensinformationen",
+      "description": "Grundlegende Informationen, die AgendaReminder verwendet."
+    },
+    "regional": {
+      "title": "Regionale Einstellungen",
+      "description": "Legt Telefonnummern, Zeitzone und Währung fest."
+    },
+    "fields": {
+      "businessName": "Unternehmensname",
+      "businessNamePlaceholder": "z. B. Glow Skin Studio",
+      "address": "Adresse",
+      "addressPlaceholder": "Adresse des Unternehmens",
+      "reviewUrl": "Google-Bewertungen-URL",
+      "reviewUrlPlaceholder": "https://g.page/...",
+      "country": "Land",
+      "selectCountry": "Land auswählen",
+      "timezone": "Zeitzone",
+      "timezoneHelp": "Wird für Termine und Automatisierungen verwendet.",
+      "currency": "Währung",
+      "currencyHelp": "Wird automatisch anhand des Landes bestimmt."
+    },
+    "values": {
+      "notConfigured": "Nicht konfiguriert"
+    },
+    "language": {
+      "title": "Sprache",
+      "description": "Hauptsprache von AgendaReminder.",
+      "label": "Sprache der Anwendung"
+    },
+    "appearance": {
+      "title": "Darstellung",
+      "description": "Wähle aus, wie du AgendaReminder sehen möchtest.",
+      "themeLabel": "Design",
+      "themeAria": "Anwendungsdesign",
+      "light": {
+        "title": "Hell",
+        "description": "Eine helle und klare Benutzeroberfläche."
+      },
+      "dark": {
+        "title": "Dunkel",
+        "description": "Eine dunkle Benutzeroberfläche für Umgebungen mit wenig Licht."
+      }
+    },
+    "saveButton": "Einstellungen speichern",
+    "success": {
+      "saved": "Einstellungen erfolgreich gespeichert."
+    },
+    "errors": {
+      "loadCountries": "Länder konnten nicht geladen werden.",
+      "loadSettings": "Einstellungen konnten nicht geladen werden.",
+      "nameRequired": "Der Unternehmensname ist erforderlich.",
+      "addressRequired": "Die Adresse ist erforderlich.",
+      "reviewUrlRequired": "Die Google-Bewertungen-URL ist erforderlich.",
+      "reviewUrlInvalid": "Die Google-Bewertungen-URL ist ungültig.",
+      "countryRequired": "Bitte wähle ein Land aus.",
+      "dialCodeMissing": "Für das ausgewählte Land ist keine internationale Vorwahl hinterlegt.",
+      "timezoneMissing": "Für das ausgewählte Land ist keine Zeitzone konfiguriert.",
+      "currencyMissing": "Für das ausgewählte Land ist keine Währung konfiguriert.",
+      "currencySymbolMissing": "Für das ausgewählte Land ist kein Währungssymbol konfiguriert.",
+      "languageRequired": "Bitte wähle eine Sprache aus.",
+      "saveSettings": "Einstellungen konnten nicht gespeichert werden."
+    }
+  },
+  "appointmentDialog": {
+    "createTitle": "Neuer Termin",
+    "editTitle": "Termin bearbeiten",
+    "selectDate": "Datum auswählen",
+    "createAppointment": "Termin erstellen",
+    "saveChanges": "Änderungen speichern",
+    "reviewWarning": {
+      "title": "Du hast noch keinen Bewertungslink eingerichtet",
+      "description": "Richte ihn ein, damit deine Kunden nach ihrem Termin eine Bewertung abgeben können.",
+      "configure": "Konfigurieren"
+    },
+    "customer": {
+      "title": "Kunde",
+      "subtitle": "Für wen ist der Termin?",
+      "searchPlaceholder": "Kunden nach Name oder Telefonnummer suchen...",
+      "noPhone": "Keine Telefonnummer",
+      "change": "Ändern",
+      "new": "Neuer Kunde",
+      "noResults": "Keine Kunden gefunden."
+    },
+    "service": {
+      "title": "Dienstleistung",
+      "subtitle": "Dienstleistung und Dauer",
+      "select": "Dienstleistung auswählen"
+    },
+    "employee": {
+      "title": "Mitarbeiter",
+      "availability": "Verfügbarkeit",
+      "available": "verfügbar",
+      "availablePlural": "verfügbar",
+      "checking": "Wird geprüft...",
+      "checkingAvailability": "Verfügbarkeit wird geprüft...",
+      "selectService": "Wähle eine Dienstleistung aus.",
+      "noAvailable": "Keine Mitarbeiter sind verfügbar.",
+      "outsideHours": "Außerhalb der Arbeitszeit",
+      "busy": "Belegt"
+    },
+    "dateTime": {
+      "title": "Datum und Uhrzeit",
+      "subtitle": "Wähle aus, wann der Termin stattfinden soll",
+      "durationUntil": "Dauer bis",
+      "ends": "Endet"
+    },
+    "notes": {
+      "title": "Notizen",
+      "optional": "optional",
+      "placeholder": "Notiz zu diesem Termin hinzufügen..."
+    },
+    "status": {
+      "title": "Status",
+      "scheduled": "Geplant",
+      "confirmed": "Bestätigt",
+      "completed": "Abgeschlossen",
+      "cancelled": "Storniert"
+    },
+    "automations": {
+      "title": "WhatsApp-Benachrichtigungen"
+    },
+    "reviewConfig": {
+      "title": "Bewertungslink konfigurieren",
+      "description": "Folge diesen 3 einfachen Schritten, um deinen Bewertungslink von Google zu erhalten.",
+      "step1": {
+        "title": "Mit dem Konto des Inhabers bei Google anmelden",
+        "description": "Melde dich mit dem Konto an, das dein Google-Unternehmensprofil verwaltet."
+      },
+      "step2": {
+        "title": "Auf „Um Bewertungen bitten“ klicken",
+        "description": "Finde dein Unternehmensprofil und klicke auf „Um Bewertungen bitten“. Google kann diese Option auch als „Mehr Bewertungen erhalten“ anzeigen."
+      },
+      "step3": {
+        "title": "Link kopieren",
+        "description": "Google öffnet ein Fenster mit deinem Bewertungslink. Klicke auf „Link kopieren“."
+      },
+      "ownerAccount": "Inhaberkonto",
+      "ownerAccountDescription": "Verwaltet dein Google-Unternehmensprofil",
+      "openGoogle": "Google öffnen",
+      "loadingBusiness": "Unternehmensdaten werden geladen...",
+      "yourBusiness": "Dein Unternehmen",
+      "googleBusinessProfile": "Google-Unternehmensprofil",
+      "editProfile": "Profil bearbeiten",
+      "readReviews": "Bewertungen lesen",
+      "requestReviews": "Um Bewertungen bitten",
+      "shareLinkDescription": "Teile diesen Link mit deinen Kunden, damit sie eine Bewertung abgeben können.",
+      "copyLink": "Link kopieren",
+      "notFoundTitle": "Du findest „Um Bewertungen bitten“ nicht?",
+      "notFoundDescription": "Stelle sicher, dass du mit dem Konto angemeldet bist, das das Unternehmen verwaltet.",
+      "linkLabel": "Bewertungslink hier einfügen",
+      "linkHint": "Dieser Link wird verwendet, um deine Kunden nach ihrem Termin automatisch zur Bewertung weiterzuleiten.",
+      "saveLink": "Link speichern",
+      "errors": {
+        "loadBusiness": "Die Unternehmensinformationen konnten nicht geladen werden.",
+        "missingLink": "Füge zuerst den Bewertungslink ein.",
+        "saveLink": "Der Link konnte nicht gespeichert werden."
+      }
+    },
+    "errors": {
+      "invalidSession": "Ungültige Sitzung.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen.",
+      "loadCustomers": "Kunden konnten nicht geladen werden.",
+      "loadServices": "Dienstleistungen konnten nicht geladen werden.",
+      "loadAutomations": "Benachrichtigungen konnten nicht geladen werden.",
+      "checkAvailability": "Verfügbarkeit konnte nicht geprüft werden.",
+      "selectCustomer": "Wähle einen Kunden aus.",
+      "selectService": "Wähle eine Dienstleistung aus.",
+      "selectDate": "Wähle ein Datum aus.",
+      "selectTime": "Wähle eine Uhrzeit aus.",
+      "noEmployee": "Zu dieser Zeit ist kein Mitarbeiter verfügbar.",
+      "saveAppointment": "Der Termin konnte nicht gespeichert werden.",
+      "updateAutomation": "Die Benachrichtigung konnte nicht aktualisiert werden."
+    }
+  },
+  "onboarding": {
+    "initialSetup": "Ersteinrichtung",
+    "stepProgress": "Schritt 2 von 5",
+    "continue": "Fortfahren",
+    "step1": {
+      "initialSetup": "Ersteinrichtung",
+      "language": "Sprache",
+      "detectedLanguage": "Sprache automatisch erkannt",
+      "progress": "Schritt 1 von 5",
+      "title": "Richte dein Unternehmen ein",
+      "description": "Zuerst benötigen wir einige grundlegende Informationen über dein Unternehmen. Diese Informationen werden verwendet, um deinen Kalender, deine Nachrichten und deine Automatisierungen zu konfigurieren.",
+      "businessName": "Unternehmensname",
+      "businessNamePlaceholder": "z. B. Matias Hair Salon",
+      "country": "Land",
+      "loadingCountries": "Länder werden geladen...",
+      "selectCountry": "Wähle dein Land",
+      "searchCountry": "Land suchen...",
+      "noCountryResults": "Kein Land gefunden.",
+      "detectedCountry": "Wir haben erkannt, dass du dich möglicherweise in",
+      "saving": "Wird gespeichert...",
+      "continue": "Fortfahren",
+      "success": "Konfiguration erfolgreich gespeichert.",
+      "errors": {
+        "loadCountries": "Die Länder konnten nicht geladen werden.",
+        "loadBusiness": "Die Unternehmensinformationen konnten nicht geladen werden.",
+        "saveSettings": "Die Konfiguration konnte nicht gespeichert werden.",
+        "advance": "Die Konfiguration wurde gespeichert, aber wir konnten nicht mit Schritt 2 fortfahren."
+      }
+    },
+    "step2": {
+      "progress": "Schritt 2 von 5",
+      "title": "Wie sind deine Öffnungszeiten?",
+      "description": "Gib deine üblichen Öffnungszeiten ein. Zunächst werden diese auf jeden Wochentag angewendet.",
+      "quickSetup": {
+        "title": "Schnelle Einrichtung",
+        "description": "Du kannst die Öffnungszeiten später für jeden Tag unter Einstellungen anpassen."
+      },
+      "openingTime": "Öffnungszeit",
+      "closingTime": "Schließzeit",
+      "until": "bis",
+      "preview": {
+        "title": "Reguläre Öffnungszeiten",
+        "appliesToSevenDays": "werden auf alle 7 Tage angewendet"
+      },
+      "saving": "Wird gespeichert...",
+      "success": "Öffnungszeiten erfolgreich gespeichert.",
+      "errors": {
+        "selectTimes": "Wähle die Öffnungs- und Schließzeit aus.",
+        "closeAfterOpen": "Die Schließzeit muss später als die Öffnungszeit sein.",
+        "saveHours": "Die Öffnungszeiten konnten nicht gespeichert werden.",
+        "advance": "Die Öffnungszeiten wurden gespeichert, aber wir konnten nicht mit Schritt 3 fortfahren."
+      }
+    },
+    "step3": {
+      "progress": "Schritt 3 von 5",
+      "title": "Erstelle deine erste Dienstleistung",
+      "description": "Definiere die Dienstleistung, die du deinen Kunden anbieten möchtest. Weitere Dienstleistungen kannst du später hinzufügen und bearbeiten.",
+      "serviceName": "Name der Dienstleistung",
+      "serviceNamePlaceholder": "z. B. Haarschnitt",
+      "descriptionLabel": "Beschreibung",
+      "descriptionPlaceholder": "Beschreibe diese Dienstleistung kurz...",
+      "duration": "Dauer",
+      "minutes": "Min.",
+      "price": "Preis",
+      "color": "Farbe der Dienstleistung",
+      "colorDescription": "Diese Farbe hilft dabei, die Dienstleistung im Kalender zu erkennen.",
+      "creating": "Wird erstellt...",
+      "createButton": "Dienstleistung erstellen",
+      "success": "Dienstleistung erfolgreich erstellt.",
+      "errors": {
+        "loadBusiness": "Die Unternehmenseinstellungen konnten nicht geladen werden.",
+        "invalidForm": "Gib einen Namen und eine gültige Dauer ein. Die Dauer muss ein Vielfaches von 5 Minuten sein.",
+        "missingCurrency": "Die Währung des Unternehmens konnte nicht bestimmt werden. Gehe zurück zu Schritt 1 und überprüfe das Land.",
+        "createService": "Die Dienstleistung konnte nicht erstellt werden.",
+        "advance": "Die Dienstleistung wurde erstellt, aber wir konnten nicht mit Schritt 4 fortfahren."
+      }
+    },
+    "step4": {
+      "progress": "Schritt 4 von 5",
+      "title": "Erstelle deinen ersten Mitarbeiter",
+      "description": "Füge die erste Person zu deinem Team hinzu. Arbeitszeit und Farbe werden verwendet, um Termine im Kalender zu organisieren.",
+      "firstName": "Vorname",
+      "firstNamePlaceholder": "z. B. Matias",
+      "lastName": "Nachname",
+      "lastNamePlaceholder": "z. B. Diaz",
+      "employeeColor": "Mitarbeiterfarbe",
+      "selectColor": "Farbe auswählen",
+      "custom": "Benutzerdefiniert",
+      "customColor": "Benutzerdefinierte Farbe",
+      "colorHelp": "Diese Farbe kennzeichnet den Mitarbeiter in den Terminkarten des Kalenders.",
+      "startTime": "Startzeit",
+      "endTime": "Endzeit",
+      "scheduleNote": "Lege die üblichen Arbeitszeiten dieses Mitarbeiters fest. Du kannst sie später unter Mitarbeiter ändern.",
+      "creating": "Wird erstellt...",
+      "createButton": "Mitarbeiter erstellen",
+      "success": "Mitarbeiter erfolgreich erstellt.",
+      "errors": {
+        "invalidForm": "Gib einen Vor- und Nachnamen sowie einen gültigen Arbeitsplan ein.",
+        "createEmployee": "Der Mitarbeiter konnte nicht erstellt werden.",
+        "advance": "Der Mitarbeiter wurde erstellt, aber wir konnten nicht mit Schritt 5 fortfahren."
+      }
+    },
+    "step5": {
+      "progress": "Schritt 5 von 5",
+      "initialLoading": {
+        "title": "WhatsApp wird vorbereitet",
+        "text": "Die Verbindung wird überprüft..."
+      },
+      "title": "Verbinde dein WhatsApp",
+      "description": "Verknüpfe die WhatsApp-Nummer, die du verwenden möchtest, um Erinnerungen und Nachrichten an deine Kunden zu senden.",
+      "checking": {
+        "title": "Verbindung wird überprüft",
+        "text": "Dienststatus wird überprüft..."
+      },
+      "preparing": {
+        "title": "WhatsApp wird vorbereitet",
+        "text": "Die sichere Verbindung wird vorbereitet..."
+      },
+      "connecting": {
+        "title": "Verbindung mit WhatsApp wird hergestellt",
+        "text": "Wir warten auf eine Antwort von WhatsApp..."
+      },
+      "connected": {
+        "title": "WhatsApp verbunden",
+        "note": "Du wirst automatisch zu deinem Kalender weitergeleitet."
+      },
+      "finalizing": "Wird abgeschlossen...",
+      "finalizeIn": "Abschluss in",
+      "finalizeNow": "Jetzt abschließen",
+      "serverError": {
+        "title": "Wir konnten keine Verbindung zum Server herstellen",
+        "text": "Der WhatsApp-Dienst hat nicht geantwortet. Du kannst es erneut versuchen."
+      },
+      "generalError": {
+        "title": "WhatsApp konnte nicht vorbereitet werden"
+      },
+      "retry": {
+        "checking": "Wird überprüft...",
+        "connection": "Verbindung erneut versuchen",
+        "generic": "Erneut versuchen"
+      },
+      "expired": {
+        "title": "Der QR-Code ist abgelaufen",
+        "text": "Erstelle einen neuen Code und scanne ihn über WhatsApp auf deinem Telefon.",
+        "button": "Neuen QR-Code erstellen"
+      },
+      "qr": {
+        "active": "QR-Code aktiv",
+        "title": "Verbinde dein WhatsApp",
+        "help": "Scanne diesen Code mit WhatsApp auf deinem Telefon, um dein Konto zu verknüpfen.",
+        "step1": "Öffne WhatsApp auf deinem Telefon",
+        "step2": "Gehe zu Verknüpfte Geräte",
+        "step3": "Tippe auf Gerät verknüpfen und scanne den Code",
+        "helpLink": "Brauchst du Hilfe?",
+        "validFor": "Code gültig für",
+        "seconds": "Sekunden"
+      },
+      "connectButton": "WhatsApp verbinden",
+      "errors": {
+        "invalidBusinessId": "Wir konnten keine gültige Business-ID finden.",
+        "serverResponse": "Der Server hat einen Fehler zurückgegeben.",
+        "serverTimeout": "Der WhatsApp-Server hat zu lange für eine Antwort gebraucht.",
+        "serverConnection": "Es konnte keine Verbindung zum WhatsApp-Server hergestellt werden.",
+        "connectFailed": "WhatsApp konnte nicht gestartet werden.",
+        "finalize": "Die Einrichtung konnte nicht abgeschlossen werden.",
+        "notCompleted": "WhatsApp ist verbunden, aber die Einrichtung wurde noch nicht als abgeschlossen markiert.",
+        "finalizeTimeout": "Der Server hat zu lange gebraucht, um den Abschluss zu bestätigen."
+      }
+    }
+  },
+  "auth": {
+    "languageSelector": "Sprache",
+    "changeToLightTheme": "Helles Design aktivieren",
+    "changeToDarkTheme": "Dunkles Design aktivieren",
+    "lightTheme": "Helles Design",
+    "darkTheme": "Dunkles Design",
+    "login": {
+      "title": "Agendareminder",
+      "subtitle": "Intelligente Verwaltung von Erinnerungen",
+      "email": "E-Mail",
+      "emailPlaceholder": "du@email.com",
+      "password": "Passwort",
+      "showPassword": "Passwort anzeigen",
+      "hidePassword": "Passwort ausblenden",
+      "forgotPassword": "Passwort vergessen?",
+      "loading": "Anmeldung...",
+      "submit": "Anmelden"
+    },
+    "forgotPassword": {
+      "back": "Zurück",
+      "title": "Passwort zurücksetzen",
+      "description": "Gib deine E-Mail-Adresse ein und wir senden dir einen Code zum Zurücksetzen deines Passworts.",
+      "email": "E-Mail",
+      "emailPlaceholder": "du@email.com",
+      "loading": "Wird gesendet...",
+      "submit": "Code senden"
+    },
+    "verifyResetCode": {
+      "back": "Zurück",
+      "title": "Code eingeben",
+      "description": "Wir haben einen 4-stelligen Code an deine E-Mail-Adresse gesendet.",
+      "codeValidity": "Der Code ist 10 Minuten gültig.",
+      "submit": "Code bestätigen"
+    },
+    "resetPassword": {
+      "back": "Zurück",
+      "title": "Neues Passwort",
+      "description": "Gib ein neues Passwort für dein Konto ein.",
+      "newPassword": "Neues Passwort",
+      "passwordPlaceholder": "Mindestens 8 Zeichen",
+      "showPassword": "Passwort anzeigen",
+      "hidePassword": "Passwort ausblenden",
+      "passwordValidation": "Das Passwort muss mindestens 8 Zeichen enthalten.",
+      "confirmPassword": "Passwort bestätigen",
+      "confirmPasswordPlaceholder": "Passwort erneut eingeben",
+      "passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
+      "loading": "Wird geändert...",
+      "submit": "Passwort ändern"
+    },
+    "passwordResetSuccess": {
+      "brandName": "Agenda",
+      "brandNameSuffix": "Reminder",
+      "brandSubtitle": "Dein Unternehmen immer verbunden",
+      "headerText": "Einfachere Terminverwaltung",
+      "titleFirstLine": "Passwort",
+      "titleSecondLine": "aktualisiert!",
+      "descriptionFirstLine": "Dein Passwort wurde erfolgreich geändert.",
+      "descriptionSecondLine": "Du kannst dich jetzt mit deinem neuen Passwort anmelden.",
+      "securityTitle": "Dein Konto ist sicher",
+      "securityText": "Wir empfehlen, dein Passwort an einem sicheren Ort aufzubewahren.",
+      "login": "Anmelden",
+      "footer": "Danke, dass du AgendaReminder vertraust"
+    }
+  },
+  "templates": {
+    "title": "WhatsApp-Vorlagen",
+    "subtitle": "Passe die Nachrichten an, die deine Kunden erhalten.",
+    "appointment24": "Erinnerung 24 Stunden",
+    "appointment1": "Erinnerung 1 Stunde",
+    "review": "Bewertungsanfrage",
+    "before24": "Wird 24 Stunden vor dem Termin gesendet.",
+    "before1": "Wird 1 Stunde vor dem Termin gesendet.",
+    "after2": "Wird 2 Stunden nach dem Termin gesendet.",
+    "formal": "Formell",
+    "friendly": "Freundlich",
+    "formalDescription": "Eine professionelle und elegante Nachricht zur Erinnerung an den Termin.",
+    "friendlyDescription": "Eine wärmere und persönlichere Nachricht für deine Kunden.",
+    "formalReviewDescription": "Eine professionelle Anfrage für eine Bewertung.",
+    "friendlyReviewDescription": "Eine persönlichere Anfrage für eine Bewertung.",
+    "selected": "Ausgewählt",
+    "select": "Auswählen",
+    "loading": "Vorlagen werden geladen...",
+    "error": "Die Vorlagen konnten nicht geladen werden.",
+    "retry": "Erneut versuchen",
+    "noTemplates": "Keine Vorlagen verfügbar.",
+    "preview": "Vorschau",
+    "whatsapp": "WhatsApp",
+    "customer": "Alex Morgan",
+    "service": "Haarschnitt",
+    "employee": "Alex Morgan",
+    "business": "Agenda Reminder",
+    "date": "25.09.2026",
+    "time": "22:30",
+    "reviewUrl": "https://example.com/review",
+    "saving": "Wird gespeichert...",
+    "saved": "Gespeichert",
+    "saveError": "Die Auswahl konnte nicht gespeichert werden.",
+    "address": "Adresse"
+  }
+}

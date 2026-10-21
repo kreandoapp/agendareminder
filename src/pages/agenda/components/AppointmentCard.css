@@ -1,0 +1,15 @@
+.appointment-card {
+  padding: 2px;
+}
+
+.appointment-card-name {
+  color: #dff8e8;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.appointment-card-info {
+  margin-top: 3px;
+  color: #82b995;
+  font-size: 10px;
+}

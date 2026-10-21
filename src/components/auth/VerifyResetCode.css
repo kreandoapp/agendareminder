@@ -1,0 +1,440 @@
+/* =====================================================
+   PÁGINA
+===================================================== */
+
+.verify-reset-page {
+  --verify-bg: var(--color-bg);
+  --verify-surface: var(--color-surface);
+  --verify-surface-secondary: var(--color-surface-secondary);
+  --verify-text: var(--color-text);
+  --verify-text-secondary: var(--color-text-secondary);
+  --verify-text-muted: var(--color-text-muted);
+  --verify-border: var(--color-border);
+  --verify-primary: var(--color-primary);
+  --verify-primary-hover: var(--color-primary-hover);
+  --verify-primary-soft: var(--color-primary-soft);
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  box-sizing: border-box;
+
+  background: var(--verify-bg);
+  color: var(--verify-text);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.verify-reset-card {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 42px;
+  box-sizing: border-box;
+
+  background: var(--verify-surface);
+
+  border: 1px solid var(--verify-border);
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =====================================================
+   VOLVER
+===================================================== */
+
+.verify-reset-back {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 28px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: var(--verify-primary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.verify-reset-back:hover {
+  opacity: 0.8;
+}
+
+
+/* =====================================================
+   CABECERA
+===================================================== */
+
+.verify-reset-header {
+  text-align: center;
+
+  margin-bottom: 34px;
+}
+
+
+/* =====================================================
+   ICONO
+===================================================== */
+
+.verify-reset-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--verify-primary),
+      var(--verify-primary-hover)
+    );
+
+  font-size: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(34, 197, 94, 0.18);
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.verify-reset-header h1 {
+  margin: 0;
+
+  color: var(--verify-text);
+
+  font-size: 27px;
+  font-weight: 750;
+
+  line-height: 1.2;
+}
+
+
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.verify-reset-header > p {
+  margin-top: 9px;
+  margin-bottom: 0;
+
+  color: var(--verify-text-secondary);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   EMAIL
+===================================================== */
+
+.verify-reset-header .verify-reset-email {
+  margin-top: 8px;
+
+  color: var(--verify-text-secondary);
+
+  font-size: 13px;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   CÓDIGO
+===================================================== */
+
+.verify-reset-code {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-bottom: 28px;
+
+  width: 100%;
+}
+
+
+/* =====================================================
+   INPUT DEL CÓDIGO
+===================================================== */
+
+.verify-reset-code-input {
+  width: 56px;
+  height: 62px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--verify-border);
+
+  background: var(--verify-surface-secondary);
+
+  color: var(--verify-text);
+
+  outline: none;
+
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.verify-reset-code-input:focus {
+  border-color: var(--verify-primary);
+
+  box-shadow:
+    0 0 0 3px var(--verify-primary-soft);
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.verify-reset-info {
+  text-align: center;
+
+  margin-bottom: 24px;
+
+  color: var(--verify-text-secondary);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.verify-reset-submit {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: var(--verify-primary);
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(34, 197, 94, 0.18);
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.verify-reset-submit:hover:not(:disabled) {
+  background: var(--verify-primary-hover);
+
+  transform: translateY(-1px);
+}
+
+.verify-reset-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.verify-reset-submit.disabled,
+.verify-reset-submit:disabled {
+  background: var(--verify-text-muted);
+
+  box-shadow: none;
+
+  cursor: not-allowed;
+
+  opacity: 0.65;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+  .verify-reset-page {
+    align-items: flex-start;
+
+    padding: 20px 16px;
+  }
+
+  .verify-reset-card {
+    margin-top: 20px;
+
+    padding: 30px 22px;
+
+    border-radius: 18px;
+  }
+
+  .verify-reset-header h1 {
+    font-size: 25px;
+  }
+
+  .verify-reset-code {
+    gap: 8px;
+  }
+
+  .verify-reset-code-input {
+    width: 54px;
+    height: 60px;
+  }
+}
+
+
+/* =====================================================
+   TELÉFONOS PEQUEÑOS
+===================================================== */
+
+@media (max-width: 380px) {
+  .verify-reset-page {
+    padding: 16px 12px;
+  }
+
+  .verify-reset-card {
+    margin-top: 12px;
+
+    padding: 26px 18px;
+
+    border-radius: 16px;
+  }
+
+  .verify-reset-header {
+    margin-bottom: 28px;
+  }
+
+  .verify-reset-header h1 {
+    font-size: 23px;
+  }
+
+  .verify-reset-header > p {
+    font-size: 13px;
+  }
+
+  .verify-reset-code {
+    gap: 6px;
+  }
+
+  .verify-reset-code-input {
+    width: 52px;
+    height: 58px;
+
+    font-size: 22px;
+  }
+
+  .verify-reset-submit {
+    min-height: 50px;
+  }
+}
+
+
+/* =====================================================
+   TELÉFONOS MUY PEQUEÑOS
+===================================================== */
+
+@media (max-width: 330px) {
+  .verify-reset-card {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .verify-reset-code {
+    gap: 4px;
+  }
+
+  .verify-reset-code-input {
+    width: 48px;
+    height: 54px;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .verify-reset-page,
+  .verify-reset-card,
+  .verify-reset-back,
+  .verify-reset-code-input,
+  .verify-reset-submit {
+    transition: none;
+  }
+
+  .verify-reset-submit:hover:not(:disabled) {
+    transform: none;
+  }
+}

@@ -1,0 +1,911 @@
+{
+  "common": {
+    "save": "Salvează",
+    "cancel": "Anulează",
+    "close": "Închide",
+    "edit": "Editează",
+    "delete": "Șterge",
+    "loading": "Se încarcă...",
+    "search": "Caută",
+    "confirm": "Confirmă",
+    "back": "Înapoi",
+    "next": "Următorul",
+    "continue": "Continuă",
+    "saving": "Se salvează...",
+    "saveChanges": "Salvează modificările"
+  },
+  "auth": {
+    "languageSelector": "Limbă",
+    "changeToLightTheme": "Schimbă la tema deschisă",
+    "changeToDarkTheme": "Schimbă la tema întunecată",
+    "lightTheme": "Temă deschisă",
+    "darkTheme": "Temă întunecată",
+    "login": {
+      "title": "AgendaReminder",
+      "subtitle": "Gestionarea inteligentă a mementourilor",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "password": "Parolă",
+      "showPassword": "Afișează parola",
+      "hidePassword": "Ascunde parola",
+      "forgotPassword": "Ai uitat parola?",
+      "loading": "Se autentifică...",
+      "submit": "Autentificare"
+    },
+    "forgotPassword": {
+      "back": "Înapoi",
+      "title": "Recuperează parola",
+      "description": "Introdu adresa ta de email și îți vom trimite un cod pentru resetarea parolei.",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "loading": "Se trimite...",
+      "submit": "Trimite codul"
+    },
+    "verifyResetCode": {
+      "back": "Înapoi",
+      "title": "Introdu codul",
+      "description": "Ți-am trimis un cod de 4 cifre pe email.",
+      "codeValidity": "Codul este valabil timp de 10 minute.",
+      "submit": "Verifică codul"
+    },
+    "resetPassword": {
+      "back": "Înapoi",
+      "title": "Parolă nouă",
+      "description": "Ingresá una nueva contraseña para tu cuenta.",
+      "newPassword": "Parolă nouă",
+      "passwordPlaceholder": "Minimum 8 caractere",
+      "showPassword": "Afișează parola",
+      "hidePassword": "Ascunde parola",
+      "passwordValidation": "Parola trebuie să conțină cel puțin 8 caractere.",
+      "confirmPassword": "Confirmă parola",
+      "confirmPasswordPlaceholder": "Reintrodu parola",
+      "passwordsDoNotMatch": "Parolele nu coincid.",
+      "loading": "Se schimbă...",
+      "submit": "Schimbă parola"
+    },
+    "passwordResetSuccess": {
+      "brandName": "Agendă",
+      "brandNameSuffix": "Reminder",
+      "brandSubtitle": "Afacerea ta mereu conectată",
+      "headerText": "Gestionarea mai simplă a programărilor",
+      "titleFirstLine": "Parolă",
+      "titleSecondLine": "actualizată!",
+      "descriptionFirstLine": "Parola a fost schimbată cu succes.",
+      "descriptionSecondLine": "Acum te poți autentifica cu noua parolă.",
+      "securityTitle": "Contul tău este în siguranță",
+      "securityText": "Îți recomandăm să păstrezi parola într-un loc sigur.",
+      "login": "Autentificare",
+      "footer": "Îți mulțumim pentru încrederea acordată AgendaReminder"
+    }
+  },
+  "appointmentDialog": {
+    "createTitle": "Programare nouă",
+    "editTitle": "Editează programarea",
+    "selectDate": "Selectează o dată",
+    "createAppointment": "Creează programarea",
+    "saveChanges": "Salvează modificările",
+    "reviewWarning": {
+      "title": "Nu ai configurat încă linkul pentru recenzii",
+      "description": "Configurează-l pentru ca clienții tăi să poată lăsa o recenzie după programare.",
+      "configure": "Configurează"
+    },
+    "customer": {
+      "title": "Client",
+      "subtitle": "Pentru cine este programarea?",
+      "searchPlaceholder": "Caută clientul după nume sau telefon...",
+      "noPhone": "Fără telefon",
+      "change": "Schimbă",
+      "new": "Client nou",
+      "noResults": "Nu au fost găsiți clienți."
+    },
+    "service": {
+      "title": "Serviciu",
+      "subtitle": "Serviciu și durată",
+      "select": "Selectează serviciul"
+    },
+    "employee": {
+      "title": "Angajat",
+      "availability": "Disponibilitate",
+      "available": "disponibil",
+      "availablePlural": "disponibili",
+      "checking": "Se verifică...",
+      "checkingAvailability": "Se verifică disponibilitatea...",
+      "selectService": "Selectează un serviciu.",
+      "noAvailable": "Nu există angajați disponibili.",
+      "outsideHours": "În afara programului",
+      "busy": "Ocupat"
+    },
+    "dateTime": {
+      "title": "Data și ora",
+      "subtitle": "Selectează când are loc programarea",
+      "durationUntil": "Durată până la",
+      "ends": "Se termină"
+    },
+    "notes": {
+      "title": "Notițe",
+      "optional": "opțional",
+      "placeholder": "Adaugă o notiță despre această programare..."
+    },
+    "status": {
+      "title": "Status",
+      "scheduled": "Programată",
+      "confirmed": "Confirmată",
+      "completed": "Finalizată",
+      "cancelled": "Anulată"
+    },
+    "automations": {
+      "title": "Notificări WhatsApp"
+    },
+    "reviewConfig": {
+      "title": "Configurează linkul pentru recenzii",
+      "description": "Urmează acești 3 pași simpli pentru a obține linkul de recenzii al afacerii tale pe Google.",
+      "step1": {
+        "title": "Intră pe Google cu contul proprietarului",
+        "description": "Conectează-te cu contul care administrează Profilul Companiei tale."
+      },
+      "step2": {
+        "title": "Pulsa «Pedir reseñas»",
+        "description": "Busca el panel de tu negocio y pulsa «Pedir reseñas». Google también puede mostrarlo como «Consigue más reseñas»."
+      },
+      "step3": {
+        "title": "Copia el enlace",
+        "description": "Google abrirá una ventana con tu enlace para pedir reseñas. Pulsa «Copiar enlace»."
+      },
+      "ownerAccount": "Contul proprietarului",
+      "ownerAccountDescription": "Administrează Profilul Companiei",
+      "openGoogle": "Deschide Google",
+      "loadingBusiness": "Se încarcă afacerea...",
+      "yourBusiness": "Afacerea ta",
+      "googleBusinessProfile": "Profilul Companiei pe Google",
+      "editProfile": "Editează profilul",
+      "readReviews": "Citește recenziile",
+      "requestReviews": "Cere recenzii",
+      "shareLinkDescription": "Distribuie acest link clienților tăi pentru a putea lăsa o recenzie.",
+      "copyLink": "Copiază linkul",
+      "notFoundTitle": "¿No encuentras «Pedir reseñas»?",
+      "notFoundDescription": "Asegúrate de haber iniciado sesión con la cuenta que administra el negocio.",
+      "linkLabel": "Lipește aici linkul pentru recenzii",
+      "linkHint": "Acest link va fi folosit pentru a le trimite automat clienților tăi invitația de a lăsa o recenzie după programare.",
+      "saveLink": "Salvează linkul",
+      "errors": {
+        "loadBusiness": "No se pudo cargar la información del negocio.",
+        "missingLink": "Pega primero el enlace de reseñas.",
+        "saveLink": "No se pudo guardar el enlace."
+      }
+    },
+    "errors": {
+      "invalidSession": "Sesión no válida.",
+      "sessionExpired": "Tu sesión ha expirado.",
+      "loadCustomers": "No se pudieron cargar los clientes.",
+      "loadServices": "No se pudieron cargar los servicios.",
+      "loadAutomations": "No se pudieron cargar las notificaciones.",
+      "checkAvailability": "No se pudo comprobar la disponibilidad.",
+      "selectCustomer": "Selecciona un cliente.",
+      "selectService": "Selectează un serviciu.",
+      "selectDate": "Selecciona una fecha.",
+      "selectTime": "Selecciona una hora.",
+      "noEmployee": "No hay un empleado disponible para este horario.",
+      "saveAppointment": "No se pudo guardar la cita.",
+      "updateAutomation": "No se pudo actualizar una notificación."
+    }
+  },
+  "sidebar": {
+    "brandSubtitle": "Gestión y automatización",
+    "closeMenu": "Cerrar menú",
+    "user": "Usuario",
+    "mainMenu": "Menú principal",
+    "home": "Acasă",
+    "agenda": "Agendă",
+    "clients": "Clientes",
+    "employees": "Empleados",
+    "services": "Servicios",
+    "layout": "Plantillas",
+    "whatsapp": "WhatsApp",
+    "hours": "Program",
+    "settings": "Setări",
+    "connected": "Conectat",
+    "notConnected": "Neconectat",
+    "logout": "Cerrar sesión",
+    "templates": "Plantillas"
+  },
+  "home": {
+    "eyebrow": "PANEL PRINCIPAL",
+    "welcome": "Hola,",
+    "welcomeFallback": "bienvenido",
+    "description": "Gestionează-ți afacerea și automatizează comunicările.",
+    "whatsapp": "WHATSAPP",
+    "connected": "Conectat",
+    "notConnected": "Neconectat",
+    "account": "CUENTA",
+    "active": "Activă",
+    "automation": "AUTOMATIZARE",
+    "ready": "Gata de utilizare",
+    "remindersAndMessages": "Mementouri și mesaje",
+    "whatsappConnectedTitle": "WhatsApp conectat",
+    "whatsappDisconnectedTitle": "WhatsApp neconectat",
+    "whatsappConnectedDescription": "Contul tău este conectat și gata de utilizare.",
+    "whatsappDisconnectedDescription": "Conectează WhatsApp pentru a începe să trimiți mesaje.",
+    "manageWhatsapp": "Gestionează WhatsApp"
+  },
+  "agenda": {
+    "eyebrow": "GESTIÓN",
+    "title": "Agendă",
+    "description": "Organizá las citas, horarios y disponibilidad de tu negocio.",
+    "calendarLabel": "Agenda de citas",
+    "loading": "Cargando agenda...",
+    "errorTitle": "No se pudo cargar la agenda",
+    "retry": "Încearcă din nou",
+    "refreshing": "Actualizando agenda...",
+    "errors": {
+      "invalidSession": "Sesión no válida.",
+      "invalidBusinessId": "Business ID inválido.",
+      "sessionExpired": "Tu sesión ha expirado.",
+      "loadAppointments": "No se pudieron cargar las citas.",
+      "loadBusinessHours": "No se pudieron cargar los horarios."
+    }
+  },
+  "calendar": {
+    "today": "Hoy",
+    "day": "Día",
+    "week": "Semana",
+    "month": "Mes",
+    "previous": "Anterior",
+    "next": "Următorul",
+    "employees": "Empleados",
+    "employee": "Angajat",
+    "selectEmployee": "Seleccionar empleado",
+    "allEmployees": "Todos los empleados",
+    "employeesCount": "{count} empleados",
+    "selectedEmployee": "Empleado seleccionado",
+    "employeesHeading": "EMPLEADOS",
+    "active": "Activ",
+    "loading": {
+      "title": "AgendaReminder",
+      "text": "Cargando tu agenda...",
+      "preparing": "Preparando empleados y calendario"
+    },
+    "empty": {
+      "noEmployees": "No hay empleados activos",
+      "addEmployee": "Añade un empleado para comenzar."
+    },
+    "closed": {
+      "title": "Afacere închisă",
+      "description": "El negocio no tiene horario de apertura para este día.",
+      "short": "Închis"
+    },
+    "refreshing": "Actualizando agenda...",
+    "customer": "Client",
+    "weekdays": {
+      "monday": "Lun",
+      "tuesday": "Mar",
+      "wednesday": "Mié",
+      "thursday": "Jue",
+      "friday": "Vie",
+      "saturday": "Sáb",
+      "sunday": "Dom"
+    },
+    "errors": {
+      "invalidSession": "Sesión no válida.",
+      "sessionExpired": "Tu sesión ha expirado.",
+      "loadAppointments": "No se pudieron cargar las citas.",
+      "loadEmployees": "No se pudieron cargar los empleados.",
+      "loadBusinessHours": "No se pudo cargar el horario del negocio."
+    }
+  },
+  "clients": {
+    "eyebrow": "Gestionare",
+    "title": "Clientes",
+    "description": "Gestionează toate informațiile clienților tăi.",
+    "actions": {
+      "new": "Client nou",
+      "create": "Crear cliente",
+      "edit": "Editează",
+      "delete": "Șterge"
+    },
+    "search": {
+      "placeholder": "Buscar por nombre, teléfono o email...",
+      "aria": "Buscar clientes",
+      "clear": "Limpiar búsqueda"
+    },
+    "results": {
+      "singular": "cliente",
+      "plural": "clientes"
+    },
+    "summary": {
+      "total": "Clientes totales",
+      "matches": "Coincidencias"
+    },
+    "loading": {
+      "title": "Cargando clientes",
+      "description": "Estamos preparando tu lista."
+    },
+    "empty": {
+      "title": "Todavía no tenés clientes",
+      "description": "Creá tu primer cliente para comenzar.",
+      "searchTitle": "No encontramos clientes",
+      "searchDescription": "Probá con otro nombre, teléfono o email.",
+      "addCustomersTitle": "Adaugă-ți clienții",
+      "addCustomersDescription": "Salvează numele, numărul de telefon și alte date pentru a avea toate informațiile organizate.",
+      "createAppointmentsTitle": "Creează programări mai ușor",
+      "createAppointmentsDescription": "După ce ai clienți înregistrați, îi vei putea selecta direct din agendă."
+    },
+    "table": {
+      "client": "Client",
+      "contact": "Contacto",
+      "notes": "Notițe",
+      "actions": "Acțiuni"
+    },
+    "footer": {
+      "showing": "Mostrando",
+      "of": "de"
+    },
+    "fallbacks": {
+      "noName": "Sin nombre",
+      "noPhone": "Fără telefon",
+      "noNotes": "Sin notas"
+    },
+    "phone": {
+      "manualCode": "Código manual",
+      "manualOption": "🌎 Otro / manual",
+      "selectCountry": "Seleccioná un país",
+      "selectCountryHint": "Seleccioná un país.",
+      "manualHint": "Podés introducir una característica manual.",
+      "invalid": "Ingresá un teléfono válido.",
+      "validFor": "Teléfono válido para",
+      "rangePrefix": "Debe tener entre",
+      "rangeMiddle": "y",
+      "rangeSuffix": "dígitos.",
+      "countrySuffix": "cifre."
+    },
+    "form": {
+      "fullName": "Nombre completo",
+      "fullNamePlaceholder": "Ej. María García",
+      "phone": "Teléfono",
+      "email": "Email",
+      "emailPlaceholder": "cliente@email.com",
+      "notes": "Notițe",
+      "notesPlaceholder": "Notas sobre el cliente...",
+      "language": "Limbă"
+    },
+    "modal": {
+      "eyebrowEdit": "CLIENTE",
+      "eyebrowNew": "NUEVO CLIENTE",
+      "editTitle": "Editar cliente",
+      "newTitle": "Client nou",
+      "description": "Completá la información del cliente."
+    },
+    "delete": {
+      "eyebrow": "ELIMINAR CLIENTE",
+      "title": "¿Eliminar cliente?",
+      "confirmPrefix": "¿Seguro que querés eliminar a",
+      "irreversible": "Esta acción no se puede deshacer.",
+      "deleting": "Eliminando..."
+    },
+    "errors": {
+      "invalidSession": "Sesión no válida.",
+      "sessionExpired": "Tu sesión ha expirado.",
+      "loadClients": "No se pudieron cargar los clientes.",
+      "saveClient": "No se pudo guardar el cliente.",
+      "deleteClient": "No se pudo eliminar el cliente."
+    }
+  },
+  "employees": {
+    "eyebrow": "Gestionare",
+    "title": "Empleados",
+    "description": "Gestionează persoanele care fac parte din afacerea ta.",
+    "newEmployee": "Angajat nou",
+    "searchPlaceholder": "🔎 Buscar empleado...",
+    "loading": "Se încarcă angajații...",
+    "empty": {
+      "searchTitle": "Nu am găsit angajați",
+      "searchText": "Încearcă alt nume.",
+      "title": "Nu ai încă angajați",
+      "text": "Creează primul tău angajat pentru a începe."
+    },
+    "createEmployee": "Creează angajatul",
+    "noName": "Sin nombre",
+    "noPhone": "Fără telefon",
+    "table": {
+      "employee": "Angajat",
+      "schedule": "Program",
+      "status": "Status",
+      "actions": "Acțiuni"
+    },
+    "status": {
+      "active": "Activ",
+      "inactive": "Inactiv"
+    },
+    "dialog": {
+      "createTitle": "Angajat nou",
+      "editTitle": "Editar empleado",
+      "createDescription": "Agregá una persona a tu equipo.",
+      "editDescription": "Actualizá la información del empleado.",
+      "saveChanges": "Salvează modificările",
+      "createEmployee": "Creează angajatul"
+    },
+    "fields": {
+      "firstName": "Nume",
+      "firstNamePlaceholder": "Ej. Matías",
+      "lastName": "Nume de familie",
+      "lastNamePlaceholder": "Ej. Díaz",
+      "phone": "Teléfono",
+      "phonePlaceholder": "Ej. 612345678",
+      "phoneHelp": "Opcional. Podés agregarlo ahora o más adelante.",
+      "startTime": "Hora de inicio",
+      "endTime": "Hora de fin",
+      "color": "Color del empleado",
+      "colorHelp": "Este color se utilizará para identificar las tarjetas del empleado en la agenda.",
+      "status": "Status"
+    },
+    "form": {
+      "active": "Angajat activ",
+      "inactive": "Angajat inactiv"
+    },
+    "deleteDialog": {
+      "title": "Eliminar empleado",
+      "question": "¿Seguro que querés eliminar a",
+      "warning": "Esta acción no se puede deshacer.",
+      "deleting": "Eliminando..."
+    },
+    "footer": {
+      "showing": "Mostrando {shown} de {total} empleados"
+    },
+    "errors": {
+      "invalidSession": "Sesión no válida.",
+      "sessionExpired": "Tu sesión ha expirado.",
+      "loadEmployees": "No se pudieron cargar los empleados.",
+      "firstNameRequired": "El nombre es obligatorio.",
+      "lastNameRequired": "El apellido es obligatorio.",
+      "startTimeRequired": "La hora de inicio es obligatoria.",
+      "endTimeRequired": "La hora de fin es obligatoria.",
+      "endTimeAfterStart": "La hora de fin debe ser posterior a la hora de inicio.",
+      "saveEmployee": "No se pudo guardar el empleado.",
+      "deleteEmployee": "No se pudo eliminar el empleado.",
+      "toggleStatus": "No se pudo cambiar el estado."
+    }
+  },
+  "services": {
+    "eyebrow": "Gestionare",
+    "title": "Servicios",
+    "description": "Gestionează serviciile oferite de afacerea ta.",
+    "newService": "Serviciu nou",
+    "createService": "Crear servicio",
+    "searchPlaceholder": "🔎 Buscar servicio...",
+    "loading": "Se încarcă serviciile...",
+    "noDescription": "Fără descriere",
+    "noPrice": "Fără preț",
+    "minutes": "min",
+    "empty": {
+      "searchTitle": "Nu am găsit servicii",
+      "searchText": "Încearcă o altă căutare.",
+      "title": "Nu ai încă servicii",
+      "text": "Creează primul tău serviciu pentru a începe."
+    },
+    "table": {
+      "service": "Serviciu",
+      "duration": "Durată",
+      "price": "Preț",
+      "status": "Status",
+      "actions": "Acțiuni"
+    },
+    "status": {
+      "active": "Activ",
+      "inactive": "Inactiv"
+    },
+    "dialog": {
+      "createTitle": "Serviciu nou",
+      "editTitle": "Editar servicio",
+      "createDescription": "Agregá un servicio a tu negocio.",
+      "editDescription": "Actualizá los datos del servicio.",
+      "saveChanges": "Salvează modificările",
+      "createService": "Crear servicio"
+    },
+    "fields": {
+      "name": "Numele serviciului",
+      "namePlaceholder": "Ej. Corte de cabello",
+      "description": "Descriere",
+      "descriptionPlaceholder": "Descriere opțională...",
+      "duration": "Durată",
+      "price": "Preț",
+      "color": "Culoarea serviciului",
+      "colorHelp": "Este color podrá utilizarse para identificar el servicio en la agenda.",
+      "status": "Status"
+    },
+    "form": {
+      "active": "Servicio activo",
+      "inactive": "Servicio inactivo"
+    },
+    "deleteDialog": {
+      "title": "Eliminar servicio",
+      "question": "¿Seguro que querés eliminar",
+      "warning": "Esta acción no se puede deshacer.",
+      "deleting": "Eliminando..."
+    },
+    "footer": {
+      "showing": "Mostrando {shown} de {total} servicios"
+    },
+    "errors": {
+      "invalidSession": "Sesión no válida.",
+      "sessionExpired": "Tu sesión ha expirado.",
+      "loadServices": "No se pudieron cargar los servicios.",
+      "nameRequired": "El nombre del servicio es obligatorio.",
+      "durationInvalid": "La duración debe ser mayor a 0 minutos.",
+      "priceNegative": "El precio no puede ser negativo.",
+      "colorInvalid": "El color no es válido.",
+      "saveService": "No se pudo guardar el servicio.",
+      "deleteService": "No se pudo eliminar el servicio.",
+      "toggleStatus": "No se pudo cambiar el estado."
+    }
+  },
+  "whatsappStatus": {
+    "eyebrow": "CONEXIÓN",
+    "description": "Estado actual de tu conexión.",
+    "logoAlt": "WhatsApp",
+    "status": {
+      "connected": "CONECTADO",
+      "notConnected": "NO CONECTADO"
+    },
+    "main": {
+      "connectedHighlight": "conectado",
+      "notConnectedTitle": "WhatsApp neconectat",
+      "connectedDescription": "Tu cuenta de WhatsApp está activa y lista para enviar recordatorios, confirmaciones y mensajes automáticos a tus clientes.",
+      "notConnectedDescription": "Conectá una cuenta de WhatsApp para comenzar a utilizar las automatizaciones de AgendaReminder."
+    },
+    "phone": {
+      "connectedNumber": "Número conectado"
+    },
+    "disconnect": {
+      "button": "Deconectează WhatsApp",
+      "description": "Încheie conexiunea actuală"
+    },
+    "pending": {
+      "title": "Conexiune în așteptare",
+      "description": "Nu există niciun cont conectat."
+    },
+    "system": {
+      "automaticMessages": "Mesaje automate",
+      "active": "Active",
+      "customerCommunication": "Comunicarea cu clienții",
+      "enabled": "Activată",
+      "systemWorking": "Sistem funcțional",
+      "noErrors": "Fără erori"
+    },
+    "information": {
+      "title": "¿Qué sucede si desconectás?",
+      "description": "Se detendrán los mensajes automáticos y recordatorios. Podrás volver a conectar WhatsApp en cualquier momento."
+    },
+    "disconnectDialog": {
+      "title": "¿Desconectar WhatsApp?",
+      "description": "Se finalizará la conexión actual de WhatsApp. Los mensajes automáticos dejarán de enviarse hasta que vuelvas a conectar la cuenta.",
+      "confirm": "Desconectar"
+    }
+  },
+  "hours": {
+    "eyebrow": "Gestionare",
+    "title": "Program",
+    "description": "Configurează zilele și orele în care afacerea ta este deschisă.",
+    "saveButton": "Salvează programul",
+    "loading": "Cargando horarios...",
+    "thisDay": "în această zi",
+    "closedBusiness": "Afacere închisă",
+    "fields": {
+      "from": "De la",
+      "until": "Până la"
+    },
+    "applyAll": {
+      "title": "Aplică tuturor zilelor",
+      "description": "Setează același program pentru toată săptămâna.",
+      "button": "Aplică tuturor",
+      "applying": "Se aplică..."
+    },
+    "weekly": {
+      "title": "Program săptămânal",
+      "description": "Poți personaliza fiecare zi individual."
+    },
+    "status": {
+      "open": "Deschis",
+      "closed": "Închis"
+    },
+    "days": {
+      "monday": "Luni",
+      "tuesday": "Marți",
+      "wednesday": "Miercuri",
+      "thursday": "Joi",
+      "friday": "Vineri",
+      "saturday": "Sâmbătă",
+      "sunday": "Duminică"
+    },
+    "aria": {
+      "closeDay": "Cerrar {day}",
+      "openDay": "Abrir {day}"
+    },
+    "success": {
+      "saved": "Programul a fost salvat cu succes.",
+      "appliedToAll": "Programul a fost aplicat tuturor zilelor."
+    },
+    "errors": {
+      "sessionExpired": "Tu sesión ha expirado.",
+      "sessionExpiredSave": "Tu sesión ha expirado. Vuelve a iniciar sesión.",
+      "loadHours": "No se pudieron cargar los horarios.",
+      "saveHours": "No se pudieron guardar los horarios.",
+      "completeDay": "Completa el horario de {day}.",
+      "openBeforeClose": "La apertura debe ser anterior al cierre en {day}.",
+      "selectTimes": "Debes indicar la hora de apertura y cierre.",
+      "openBeforeCloseGlobal": "La hora de apertura debe ser anterior a la hora de cierre."
+    }
+  },
+  "settings": {
+    "eyebrow": "SISTEMA",
+    "title": "Setări",
+    "description": "Setările generale ale afacerii tale.",
+    "loading": "Cargando configuración...",
+    "business": {
+      "title": "Informațiile afacerii",
+      "description": "Informații de bază utilizate de AgendaReminder."
+    },
+    "regional": {
+      "title": "Setări regionale",
+      "description": "Determină telefoanele, programul și moneda."
+    },
+    "fields": {
+      "businessName": "Numele afacerii",
+      "businessNamePlaceholder": "Ej. Glow Skin Studio",
+      "address": "Adresă",
+      "addressPlaceholder": "Dirección del negocio",
+      "reviewUrl": "URL Google Reviews",
+      "reviewUrlPlaceholder": "https://g.page/...",
+      "country": "Țară",
+      "selectCountry": "Selectează țara",
+      "timezone": "Fus orar",
+      "timezoneHelp": "Folosit pentru programări și automatizări.",
+      "currency": "Monedă",
+      "currencyHelp": "Este obținută automat în funcție de țară."
+    },
+    "values": {
+      "notConfigured": "Neconfigurat"
+    },
+    "language": {
+      "title": "Limbă",
+      "description": "Limba principală a AgendaReminder.",
+      "label": "Limba aplicației"
+    },
+    "appearance": {
+      "title": "Aspect",
+      "description": "Alege cum vrei să vezi AgendaReminder.",
+      "themeLabel": "Temă",
+      "themeAria": "Tema de la aplicación",
+      "light": {
+        "title": "Deschis",
+        "description": "Interfață clară și luminoasă."
+      },
+      "dark": {
+        "title": "Întunecat",
+        "description": "Interfață întunecată pentru medii cu lumină redusă."
+      }
+    },
+    "saveButton": "Salvează setările",
+    "success": {
+      "saved": "Setările au fost salvate cu succes."
+    },
+    "errors": {
+      "loadCountries": "No se pudieron cargar los países.",
+      "loadSettings": "No se pudo cargar la configuración.",
+      "nameRequired": "El nombre del negocio es obligatorio.",
+      "addressRequired": "La dirección es obligatoria.",
+      "reviewUrlRequired": "La URL de Google Reviews es obligatoria.",
+      "reviewUrlInvalid": "La URL de Google Reviews no es válida.",
+      "countryRequired": "Seleccioná un país.",
+      "dialCodeMissing": "El país seleccionado no tiene característica telefónica.",
+      "timezoneMissing": "El país seleccionado no tiene zona horaria.",
+      "currencyMissing": "El país seleccionado no tiene moneda configurada.",
+      "currencySymbolMissing": "El país seleccionado no tiene símbolo de moneda configurado.",
+      "languageRequired": "Seleccioná un idioma.",
+      "saveSettings": "No se pudo guardar la configuración."
+    }
+  },
+  "onboarding": {
+    "initialSetup": "Configurare inițială",
+    "stepProgress": "Pasul 2 din 5",
+    "continue": "Continuă",
+    "step1": {
+      "initialSetup": "Configurare inițială",
+      "detectedLanguage": "Idioma detectado automáticamente",
+      "language": "Limbă",
+      "progress": "Paso 1 de 5",
+      "title": "Să configurăm afacerea ta",
+      "description": "Mai întâi avem nevoie de câteva informații de bază despre afacerea ta. Aceste informații vor fi folosite pentru configurarea agendei, mesajelor și automatizărilor.",
+      "businessName": "Numele afacerii",
+      "businessNamePlaceholder": "Ej. Peluquería Matias",
+      "country": "Țară",
+      "loadingCountries": "Se încarcă țările...",
+      "selectCountry": "Selectează țara",
+      "searchCountry": "Caută țara...",
+      "noCountryResults": "Nu am găsit această țară.",
+      "detectedCountry": "Am detectat că ai putea fi în",
+      "saving": "Se salvează...",
+      "continue": "Continuă",
+      "success": "Setările au fost salvate cu succes.",
+      "errors": {
+        "loadCountries": "No pudimos cargar los países.",
+        "loadBusiness": "No se pudieron cargar los datos del negocio.",
+        "saveSettings": "No se pudo guardar la configuración.",
+        "advance": "La configuración se guardó, pero no se pudo avanzar al Paso 2."
+      }
+    },
+    "step2": {
+      "progress": "Pasul 2 din 5",
+      "title": "Care este programul afacerii tale?",
+      "description": "Indică programul obișnuit de funcționare. Îl vom aplica inițial tuturor zilelor săptămânii.",
+      "quickSetup": {
+        "title": "Configurare rapidă",
+        "description": "Vei putea personaliza programul fiecărei zile mai târziu din Setări."
+      },
+      "openingTime": "Ora de deschidere",
+      "closingTime": "Ora de închidere",
+      "until": "până la",
+      "preview": {
+        "title": "Program obișnuit",
+        "appliesToSevenDays": "se va aplica tuturor celor 7 zile"
+      },
+      "saving": "Se salvează...",
+      "success": "Programul a fost salvat cu succes.",
+      "errors": {
+        "selectTimes": "Selecciona la hora de apertura y de cierre.",
+        "closeAfterOpen": "La hora de cierre debe ser posterior a la apertura.",
+        "saveHours": "No se pudieron guardar los horarios.",
+        "advance": "Los horarios se guardaron, pero no se pudo avanzar al Paso 3."
+      }
+    },
+    "step3": {
+      "progress": "Paso 3 de 5",
+      "title": "Creează primul tău serviciu",
+      "description": "Definește serviciul pe care îl vei oferi clienților. Vei putea adăuga și modifica alte servicii mai târziu.",
+      "serviceName": "Numele serviciului",
+      "serviceNamePlaceholder": "Ej. Corte de cabello",
+      "descriptionLabel": "Descriere",
+      "descriptionPlaceholder": "Describe brevemente este servicio...",
+      "duration": "Durată",
+      "minutes": "min",
+      "price": "Preț",
+      "color": "Culoarea serviciului",
+      "colorDescription": "Această culoare va ajuta la identificarea serviciului în agendă.",
+      "creating": "Se creează...",
+      "createButton": "Crear servicio",
+      "success": "Serviciul a fost creat cu succes.",
+      "errors": {
+        "loadBusiness": "No se pudo cargar la configuración del negocio.",
+        "invalidForm": "Completa el nombre y una duración válida. La duración debe ser múltiplo de 5 minutos.",
+        "missingCurrency": "No se pudo determinar la moneda del negocio. Regresa al Paso 1 y verifica el país.",
+        "createService": "No se pudo crear el servicio.",
+        "advance": "El servicio se creó, pero no se pudo avanzar al Paso 4."
+      }
+    },
+    "step4": {
+      "progress": "Paso 4 de 5",
+      "title": "Creează primul tău angajat",
+      "description": "Adaugă prima persoană din echipa ta. Programul și culoarea sa vor fi folosite pentru organizarea programărilor în agendă.",
+      "firstName": "Nume",
+      "firstNamePlaceholder": "Ej. Matias",
+      "lastName": "Nume de familie",
+      "lastNamePlaceholder": "Ej. Diaz",
+      "employeeColor": "Color del empleado",
+      "selectColor": "Selectează culoarea",
+      "custom": "Personalizat",
+      "customColor": "Culoare personalizată",
+      "colorHelp": "Este color identificará al empleado en las tarjetas de la agenda.",
+      "startTime": "Ora de început",
+      "endTime": "Ora de sfârșit",
+      "scheduleNote": "Define el horario habitual de este empleado. Podrás modificarlo más adelante desde Empleados.",
+      "creating": "Se creează...",
+      "createButton": "Creează angajatul",
+      "success": "Empleado creado correctamente.",
+      "errors": {
+        "invalidForm": "Completa nombre, apellido y un horario válido.",
+        "createEmployee": "No se pudo crear el empleado.",
+        "advance": "El empleado se creó, pero no se pudo avanzar al Paso 5."
+      }
+    },
+    "step5": {
+      "progress": "Paso 5 de 5",
+      "initialLoading": {
+        "title": "Se pregătește WhatsApp",
+        "text": "Estamos verificando la conexión..."
+      },
+      "title": "Conectează WhatsApp",
+      "description": "Conectează numărul de WhatsApp pe care îl vei folosi pentru a trimite mementouri și mesaje clienților.",
+      "checking": {
+        "title": "Se verifică conexiunea",
+        "text": "Se verifică starea serviciului..."
+      },
+      "preparing": {
+        "title": "Se pregătește WhatsApp",
+        "text": "Pregătim conexiunea securizată..."
+      },
+      "connecting": {
+        "title": "Se conectează la WhatsApp",
+        "text": "Se așteaptă răspunsul WhatsApp..."
+      },
+      "connected": {
+        "title": "WhatsApp conectat",
+        "note": "Vei fi redirecționat automat către agendă."
+      },
+      "finalizing": "Se finalizează...",
+      "finalizeIn": "Finalizar en",
+      "finalizeNow": "Finalizează acum",
+      "serverError": {
+        "title": "Nu ne-am putut conecta la server",
+        "text": "Serviciul WhatsApp nu a răspuns. Poți încerca din nou."
+      },
+      "generalError": {
+        "title": "Nu s-a putut pregăti WhatsApp"
+      },
+      "retry": {
+        "checking": "Se verifică...",
+        "connection": "Reîncearcă conexiunea",
+        "generic": "Încearcă din nou"
+      },
+      "expired": {
+        "title": "Codul QR a expirat",
+        "text": "Generează un cod nou și scanează-l din WhatsApp de pe telefon.",
+        "button": "Generează un cod QR nou"
+      },
+      "qr": {
+        "active": "Cod QR activ",
+        "title": "Conectează WhatsApp",
+        "help": "Scanează acest cod cu WhatsApp de pe telefon pentru a conecta contul.",
+        "step1": "Deschide WhatsApp pe telefon",
+        "step2": "Mergi la Dispozitive conectate",
+        "step3": "Apasă Conectează un dispozitiv și scanează codul",
+        "helpLink": "¿Necesitas ayuda?",
+        "validFor": "Cod valabil timp de",
+        "seconds": "secunde"
+      },
+      "connectButton": "Conectează WhatsApp",
+      "errors": {
+        "invalidBusinessId": "No encontramos un Business ID válido.",
+        "serverResponse": "El servidor respondió con un error.",
+        "serverTimeout": "El servidor de WhatsApp tardó demasiado en responder.",
+        "serverConnection": "No se pudo conectar con el servidor de WhatsApp.",
+        "connectFailed": "No se pudo iniciar WhatsApp.",
+        "finalize": "No se pudo finalizar la configuración.",
+        "notCompleted": "WhatsApp está conectado, pero la configuración todavía no aparece como completada.",
+        "finalizeTimeout": "El servidor tardó demasiado en confirmar la finalización."
+      }
+    }
+  },
+  "templates": {
+    "title": "Șabloane de mesaje",
+    "subtitle": "Selectează șabloanele pe care AgendaReminder le va folosi pentru a trimite mesajele automate.",
+    "appointment24": "Memento cu 24 de ore înainte",
+    "appointment1": "Memento cu 1 oră înainte",
+    "review": "Solicitare recenzie",
+    "before24": "Mesaj trimis cu 24 de ore înainte de programare.",
+    "before1": "Mesaj trimis cu 1 oră înainte de programare.",
+    "after2": "Mesaj trimis la 2 ore după programare.",
+    "formal": "Formal",
+    "friendly": "Prietenos",
+    "formalDescription": "Un mesaj clar și profesional pentru clienții tăi.",
+    "friendlyDescription": "Un mesaj apropiat și cordial pentru clienții tăi.",
+    "formalReviewDescription": "Un mesaj clar și profesional pentru a solicita o recenzie.",
+    "friendlyReviewDescription": "Un mesaj apropiat pentru a-ți invita clienții să lase o recenzie.",
+    "selected": "Selectat",
+    "select": "Selectează",
+    "loading": "Se încarcă șabloanele...",
+    "error": "Nu s-au putut încărca șabloanele.",
+    "retry": "Încearcă din nou",
+    "noTemplates": "Nu există șabloane disponibile.",
+    "preview": "Previzualizare",
+    "whatsapp": "WhatsApp",
+    "customer": "Client",
+    "service": "Serviciu",
+    "employee": "Angajat",
+    "business": "Negocio",
+    "date": "Fecha",
+    "time": "Hora",
+    "reviewUrl": "Link pentru recenzie",
+    "address": "Adresă",
+    "saving": "Se salvează...",
+    "saved": "Salvat",
+    "saveError": "Șablonul nu a putut fi salvat."
+  }
+}

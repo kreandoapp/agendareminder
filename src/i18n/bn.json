@@ -1,0 +1,911 @@
+{
+  "common": {
+    "save": "সংরক্ষণ করুন",
+    "cancel": "বাতিল করুন",
+    "close": "বন্ধ করুন",
+    "edit": "সম্পাদনা করুন",
+    "delete": "মুছুন",
+    "loading": "লোড হচ্ছে...",
+    "search": "খুঁজুন",
+    "confirm": "নিশ্চিত করুন",
+    "back": "ফিরে যান",
+    "next": "পরবর্তী",
+    "continue": "চালিয়ে যান",
+    "saving": "সংরক্ষণ করা হচ্ছে...",
+    "saveChanges": "পরিবর্তন সংরক্ষণ করুন"
+  },
+  "auth": {
+    "languageSelector": "ভাষা",
+    "changeToLightTheme": "লাইট থিমে পরিবর্তন করুন",
+    "changeToDarkTheme": "ডার্ক থিমে পরিবর্তন করুন",
+    "lightTheme": "লাইট থিম",
+    "darkTheme": "ডার্ক থিম",
+    "login": {
+      "title": "Wilbuk",
+      "subtitle": "স্মার্ট রিমাইন্ডার ব্যবস্থাপনা",
+      "email": "ইমেইল",
+      "emailPlaceholder": "tu@email.com",
+      "password": "পাসওয়ার্ড",
+      "showPassword": "পাসওয়ার্ড দেখান",
+      "hidePassword": "পাসওয়ার্ড লুকান",
+      "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন?",
+      "loading": "লগইন করা হচ্ছে...",
+      "submit": "লগইন করুন"
+    },
+    "forgotPassword": {
+      "back": "ফিরে যান",
+      "title": "পাসওয়ার্ড পুনরুদ্ধার করুন",
+      "description": "আপনার ইমেইল লিখুন, আমরা পাসওয়ার্ড পুনরায় সেট করার জন্য একটি কোড পাঠাব।",
+      "email": "ইমেইল",
+      "emailPlaceholder": "tu@email.com",
+      "loading": "পাঠানো হচ্ছে...",
+      "submit": "কোড পাঠান"
+    },
+    "verifyResetCode": {
+      "back": "ফিরে যান",
+      "title": "কোডটি লিখুন",
+      "description": "আমরা আপনার ইমেইলে ৪ সংখ্যার একটি কোড পাঠিয়েছি।",
+      "codeValidity": "কোডটি ১০ মিনিট পর্যন্ত বৈধ।",
+      "submit": "কোড যাচাই করুন"
+    },
+    "resetPassword": {
+      "back": "ফিরে যান",
+      "title": "নতুন পাসওয়ার্ড",
+      "description": "আপনার অ্যাকাউন্টের জন্য একটি নতুন পাসওয়ার্ড লিখুন।",
+      "newPassword": "নতুন পাসওয়ার্ড",
+      "passwordPlaceholder": "কমপক্ষে ৮টি অক্ষর",
+      "showPassword": "পাসওয়ার্ড দেখান",
+      "hidePassword": "পাসওয়ার্ড লুকান",
+      "passwordValidation": "পাসওয়ার্ডে কমপক্ষে ৮টি অক্ষর থাকতে হবে।",
+      "confirmPassword": "পাসওয়ার্ড নিশ্চিত করুন",
+      "confirmPasswordPlaceholder": "আপনার পাসওয়ার্ড আবার লিখুন",
+      "passwordsDoNotMatch": "পাসওয়ার্ডগুলো মিলছে না।",
+      "loading": "পরিবর্তন করা হচ্ছে...",
+      "submit": "পাসওয়ার্ড পরিবর্তন করুন"
+    },
+    "passwordResetSuccess": {
+      "brandName": "অ্যাপয়েন্টমেন্ট",
+      "brandNameSuffix": "রিমাইন্ডার",
+      "brandSubtitle": "আপনার ব্যবসা সবসময় সংযুক্ত",
+      "headerText": "সহজ অ্যাপয়েন্টমেন্ট ব্যবস্থাপনা",
+      "titleFirstLine": "পাসওয়ার্ড",
+      "titleSecondLine": "আপডেট হয়েছে!",
+      "descriptionFirstLine": "আপনার পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে।",
+      "descriptionSecondLine": "এখন আপনি নতুন পাসওয়ার্ড দিয়ে লগইন করতে পারেন।",
+      "securityTitle": "আপনার অ্যাকাউন্ট নিরাপদ",
+      "securityText": "আপনার পাসওয়ার্ড নিরাপদ স্থানে রাখার পরামর্শ দিচ্ছি।",
+      "login": "লগইন করুন",
+      "footer": "Wilbuk-এ আস্থা রাখার জন্য ধন্যবাদ"
+    }
+  },
+  "appointmentDialog": {
+    "createTitle": "নতুন অ্যাপয়েন্টমেন্ট",
+    "editTitle": "অ্যাপয়েন্টমেন্ট সম্পাদনা করুন",
+    "selectDate": "একটি তারিখ নির্বাচন করুন",
+    "createAppointment": "অ্যাপয়েন্টমেন্ট তৈরি করুন",
+    "saveChanges": "পরিবর্তন সংরক্ষণ করুন",
+    "reviewWarning": {
+      "title": "আপনার রিভিউ লিংক এখনও সেট করা হয়নি",
+      "description": "এটি সেট করুন, যাতে আপনার গ্রাহকরা অ্যাপয়েন্টমেন্টের পরে রিভিউ দিতে পারেন।",
+      "configure": "সেট আপ করুন"
+    },
+    "customer": {
+      "title": "গ্রাহক",
+      "subtitle": "অ্যাপয়েন্টমেন্টটি কার জন্য?",
+      "searchPlaceholder": "নাম বা ফোন নম্বর দিয়ে গ্রাহক খুঁজুন...",
+      "noPhone": "ফোন নম্বর নেই",
+      "change": "পরিবর্তন করুন",
+      "new": "নতুন গ্রাহক",
+      "noResults": "কোনো গ্রাহক পাওয়া যায়নি।"
+    },
+    "service": {
+      "title": "সেবা",
+      "subtitle": "সেবা ও সময়কাল",
+      "select": "সেবা নির্বাচন করুন"
+    },
+    "employee": {
+      "title": "কর্মী",
+      "availability": "উপলভ্যতা",
+      "available": "উপলভ্য",
+      "availablePlural": "উপলভ্য",
+      "checking": "যাচাই করা হচ্ছে...",
+      "checkingAvailability": "উপলভ্যতা যাচাই করা হচ্ছে...",
+      "selectService": "একটি সেবা নির্বাচন করুন।",
+      "noAvailable": "কোনো কর্মী উপলভ্য নেই।",
+      "outsideHours": "কাজের সময়ের বাইরে",
+      "busy": "ব্যস্ত"
+    },
+    "dateTime": {
+      "title": "তারিখ ও সময়",
+      "subtitle": "অ্যাপয়েন্টমেন্টের সময় নির্বাচন করুন",
+      "durationUntil": "সময়কাল শেষ হবে",
+      "ends": "শেষ হবে"
+    },
+    "notes": {
+      "title": "নোট",
+      "optional": "ঐচ্ছিক",
+      "placeholder": "এই অ্যাপয়েন্টমেন্ট সম্পর্কে একটি নোট যোগ করুন..."
+    },
+    "status": {
+      "title": "স্ট্যাটাস",
+      "scheduled": "নির্ধারিত",
+      "confirmed": "নিশ্চিত",
+      "completed": "সম্পন্ন",
+      "cancelled": "বাতিল"
+    },
+    "automations": {
+      "title": "WhatsApp নোটিফিকেশন"
+    },
+    "reviewConfig": {
+      "title": "আপনার রিভিউ লিংক সেট করুন",
+      "description": "Google-এ আপনার ব্যবসার রিভিউ লিংক পেতে এই ৩টি সহজ ধাপ অনুসরণ করুন।",
+      "step1": {
+        "title": "মালিকের অ্যাকাউন্ট দিয়ে Google-এ প্রবেশ করুন",
+        "description": "আপনার ব্যবসার Business Profile পরিচালনা করে এমন অ্যাকাউন্ট দিয়ে লগইন করুন।"
+      },
+      "step2": {
+        "title": "«রিভিউ চাইুন» চাপুন",
+        "description": "আপনার ব্যবসার প্যানেল খুঁজে «রিভিউ চাইুন» চাপুন। Google এটিকে «আরও রিভিউ পান» হিসেবেও দেখাতে পারে।"
+      },
+      "step3": {
+        "title": "লিংক কপি করুন",
+        "description": "Google রিভিউ চাওয়ার লিংকসহ একটি উইন্ডো খুলবে। «লিংক কপি করুন» চাপুন।"
+      },
+      "ownerAccount": "মালিকের অ্যাকাউন্ট",
+      "ownerAccountDescription": "আপনার Business Profile পরিচালনা করুন",
+      "openGoogle": "Google খুলুন",
+      "loadingBusiness": "ব্যবসার তথ্য লোড হচ্ছে...",
+      "yourBusiness": "আপনার ব্যবসা",
+      "googleBusinessProfile": "Google Business Profile",
+      "editProfile": "প্রোফাইল সম্পাদনা করুন",
+      "readReviews": "রিভিউ পড়ুন",
+      "requestReviews": "রিভিউ চাইুন",
+      "shareLinkDescription": "এই লিংকটি আপনার গ্রাহকদের সঙ্গে শেয়ার করুন, যাতে তারা রিভিউ দিতে পারেন।",
+      "copyLink": "লিংক কপি করুন",
+      "notFoundTitle": "«রিভিউ চাইুন» খুঁজে পাচ্ছেন না?",
+      "notFoundDescription": "ব্যবসাটি পরিচালনা করে এমন অ্যাকাউন্ট দিয়ে লগইন করেছেন কিনা নিশ্চিত করুন।",
+      "linkLabel": "আপনার রিভিউ লিংক এখানে পেস্ট করুন",
+      "linkHint": "অ্যাপয়েন্টমেন্টের পরে আপনার গ্রাহকদের স্বয়ংক্রিয়ভাবে রিভিউ দিতে পাঠাতে এই লিংক ব্যবহার করা হবে।",
+      "saveLink": "লিংক সংরক্ষণ করুন",
+      "errors": {
+        "loadBusiness": "ব্যবসার তথ্য লোড করা যায়নি।",
+        "missingLink": "প্রথমে রিভিউ লিংক পেস্ট করুন।",
+        "saveLink": "লিংক সংরক্ষণ করা যায়নি।"
+      }
+    },
+    "errors": {
+      "invalidSession": "সেশন অবৈধ।",
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়েছে।",
+      "loadCustomers": "গ্রাহকদের লোড করা যায়নি।",
+      "loadServices": "সেবাগুলো লোড করা যায়নি।",
+      "loadAutomations": "নোটিফিকেশনগুলো লোড করা যায়নি।",
+      "checkAvailability": "উপলভ্যতা যাচাই করা যায়নি।",
+      "selectCustomer": "একজন গ্রাহক নির্বাচন করুন।",
+      "selectService": "একটি সেবা নির্বাচন করুন।",
+      "selectDate": "একটি তারিখ নির্বাচন করুন।",
+      "selectTime": "একটি সময় নির্বাচন করুন।",
+      "noEmployee": "এই সময়ে কোনো কর্মী উপলভ্য নেই।",
+      "saveAppointment": "অ্যাপয়েন্টমেন্ট সংরক্ষণ করা যায়নি।",
+      "updateAutomation": "একটি নোটিফিকেশন আপডেট করা যায়নি।"
+    }
+  },
+  "sidebar": {
+    "brandSubtitle": "ব্যবস্থাপনা ও অটোমেশন",
+    "closeMenu": "মেনু বন্ধ করুন",
+    "user": "ব্যবহারকারী",
+    "mainMenu": "প্রধান মেনু",
+    "home": "হোম",
+    "agenda": "অ্যাপয়েন্টমেন্ট",
+    "clients": "গ্রাহকরা",
+    "employees": "কর্মীরা",
+    "services": "সেবাসমূহ",
+    "layout": "টেমপ্লেট",
+    "whatsapp": "WhatsApp",
+    "hours": "সময়সূচি",
+    "settings": "সেটিংস",
+    "connected": "সংযুক্ত",
+    "notConnected": "সংযুক্ত নয়",
+    "logout": "লগআউট করুন",
+    "templates": "টেমপ্লেট"
+  },
+  "home": {
+    "eyebrow": "প্রধান ড্যাশবোর্ড",
+    "welcome": "হ্যালো,",
+    "welcomeFallback": "স্বাগতম",
+    "description": "আপনার ব্যবসা পরিচালনা করুন এবং যোগাযোগ স্বয়ংক্রিয় করুন।",
+    "whatsapp": "WHATSAPP",
+    "connected": "সংযুক্ত",
+    "notConnected": "সংযুক্ত নয়",
+    "account": "অ্যাকাউন্ট",
+    "active": "সক্রিয়",
+    "automation": "অটোমেশন",
+    "ready": "ব্যবহারের জন্য প্রস্তুত",
+    "remindersAndMessages": "রিমাইন্ডার ও বার্তা",
+    "whatsappConnectedTitle": "WhatsApp সংযুক্ত",
+    "whatsappDisconnectedTitle": "WhatsApp সংযুক্ত নয়",
+    "whatsappConnectedDescription": "আপনার অ্যাকাউন্ট সংযুক্ত এবং কাজের জন্য প্রস্তুত।",
+    "whatsappDisconnectedDescription": "বার্তা পাঠানো শুরু করতে WhatsApp সংযুক্ত করুন।",
+    "manageWhatsapp": "WhatsApp পরিচালনা করুন"
+  },
+  "agenda": {
+    "eyebrow": "ব্যবস্থাপনা",
+    "title": "অ্যাপয়েন্টমেন্ট",
+    "description": "আপনার ব্যবসার অ্যাপয়েন্টমেন্ট, সময়সূচি ও উপলভ্যতা পরিচালনা করুন।",
+    "calendarLabel": "অ্যাপয়েন্টমেন্ট ক্যালেন্ডার",
+    "loading": "ক্যালেন্ডার লোড হচ্ছে...",
+    "errorTitle": "ক্যালেন্ডার লোড করা যায়নি",
+    "retry": "আবার চেষ্টা করুন",
+    "refreshing": "ক্যালেন্ডার আপডেট হচ্ছে...",
+    "errors": {
+      "invalidSession": "সেশন অবৈধ।",
+      "invalidBusinessId": "Business ID অবৈধ।",
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়েছে।",
+      "loadAppointments": "অ্যাপয়েন্টমেন্টগুলো লোড করা যায়নি।",
+      "loadBusinessHours": "সময়সূচি লোড করা যায়নি।"
+    }
+  },
+  "calendar": {
+    "today": "আজ",
+    "day": "দিন",
+    "week": "সপ্তাহ",
+    "month": "মাস",
+    "previous": "আগের",
+    "next": "পরবর্তী",
+    "employees": "কর্মীরা",
+    "employee": "কর্মী",
+    "selectEmployee": "কর্মী নির্বাচন করুন",
+    "allEmployees": "সব কর্মী",
+    "employeesCount": "{count} জন কর্মী",
+    "selectedEmployee": "নির্বাচিত কর্মী",
+    "employeesHeading": "কর্মীরা",
+    "active": "সক্রিয়",
+    "loading": {
+      "title": "Wilbuk",
+      "text": "আপনার ক্যালেন্ডার লোড হচ্ছে...",
+      "preparing": "কর্মী ও ক্যালেন্ডার প্রস্তুত করা হচ্ছে"
+    },
+    "empty": {
+      "noEmployees": "কোনো সক্রিয় কর্মী নেই",
+      "addEmployee": "শুরু করতে একজন কর্মী যোগ করুন।"
+    },
+    "closed": {
+      "title": "ব্যবসা বন্ধ",
+      "description": "এই দিনের জন্য ব্যবসার কোনো খোলার সময় নির্ধারিত নেই।",
+      "short": "বন্ধ"
+    },
+    "refreshing": "ক্যালেন্ডার আপডেট হচ্ছে...",
+    "customer": "গ্রাহক",
+    "weekdays": {
+      "monday": "সোম",
+      "tuesday": "মঙ্গল",
+      "wednesday": "বুধ",
+      "thursday": "বৃহস্পতি",
+      "friday": "শুক্র",
+      "saturday": "শনি",
+      "sunday": "রবি"
+    },
+    "errors": {
+      "invalidSession": "সেশন অবৈধ।",
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়েছে।",
+      "loadAppointments": "অ্যাপয়েন্টমেন্টগুলো লোড করা যায়নি।",
+      "loadEmployees": "কর্মীদের লোড করা যায়নি।",
+      "loadBusinessHours": "ব্যবসার সময়সূচি লোড করা যায়নি।"
+    }
+  },
+  "clients": {
+    "eyebrow": "ব্যবস্থাপনা",
+    "title": "গ্রাহকরা",
+    "description": "আপনার গ্রাহকদের সব তথ্য পরিচালনা করুন।",
+    "actions": {
+      "new": "নতুন গ্রাহক",
+      "create": "গ্রাহক তৈরি করুন",
+      "edit": "সম্পাদনা করুন",
+      "delete": "মুছুন"
+    },
+    "search": {
+      "placeholder": "নাম, ফোন বা ইমেইল দিয়ে খুঁজুন...",
+      "aria": "গ্রাহক খুঁজুন",
+      "clear": "সার্চ পরিষ্কার করুন"
+    },
+    "results": {
+      "singular": "গ্রাহক",
+      "plural": "গ্রাহকরা"
+    },
+    "summary": {
+      "total": "মোট গ্রাহক",
+      "matches": "মিল"
+    },
+    "loading": {
+      "title": "গ্রাহক লোড হচ্ছে",
+      "description": "আপনার তালিকা প্রস্তুত করা হচ্ছে।"
+    },
+    "empty": {
+      "title": "এখনও কোনো গ্রাহক নেই",
+      "description": "শুরু করতে আপনার প্রথম গ্রাহক তৈরি করুন।",
+      "searchTitle": "কোনো গ্রাহক পাওয়া যায়নি",
+      "searchDescription": "অন্য নাম, ফোন বা ইমেইল দিয়ে চেষ্টা করুন।",
+      "addCustomersTitle": "আপনার গ্রাহকদের যোগ করুন",
+      "addCustomersDescription": "তাদের নাম, ফোন ও অন্যান্য তথ্য সংরক্ষণ করে সবকিছু গোছানো রাখুন।",
+      "createAppointmentsTitle": "আরও সহজে অ্যাপয়েন্টমেন্ট তৈরি করুন",
+      "createAppointmentsDescription": "গ্রাহক যোগ করার পর আপনি সরাসরি ক্যালেন্ডার থেকে তাদের নির্বাচন করতে পারবেন।"
+    },
+    "table": {
+      "client": "গ্রাহক",
+      "contact": "যোগাযোগ",
+      "notes": "নোট",
+      "actions": "অ্যাকশন"
+    },
+    "footer": {
+      "showing": "দেখানো হচ্ছে",
+      "of": "এর মধ্যে"
+    },
+    "fallbacks": {
+      "noName": "নাম নেই",
+      "noPhone": "ফোন নম্বর নেই",
+      "noNotes": "নোট নেই"
+    },
+    "phone": {
+      "manualCode": "ম্যানুয়াল কোড",
+      "manualOption": "🌎 অন্য / ম্যানুয়াল",
+      "selectCountry": "একটি দেশ নির্বাচন করুন",
+      "selectCountryHint": "একটি দেশ নির্বাচন করুন।",
+      "manualHint": "আপনি ম্যানুয়ালি কান্ট্রি কোড দিতে পারেন।",
+      "invalid": "একটি বৈধ ফোন নম্বর লিখুন।",
+      "validFor": "ফোন নম্বর বৈধ",
+      "rangePrefix": "এতে অবশ্যই থাকতে হবে",
+      "rangeMiddle": "এবং",
+      "rangeSuffix": "টি সংখ্যা।",
+      "countrySuffix": "টি সংখ্যা।"
+    },
+    "form": {
+      "fullName": "পুরো নাম",
+      "fullNamePlaceholder": "যেমন: María García",
+      "phone": "ফোন",
+      "email": "ইমেইল",
+      "emailPlaceholder": "cliente@email.com",
+      "notes": "নোট",
+      "notesPlaceholder": "গ্রাহক সম্পর্কে নোট...",
+      "language": "ভাষা"
+    },
+    "modal": {
+      "eyebrowEdit": "গ্রাহক",
+      "eyebrowNew": "নতুন গ্রাহক",
+      "editTitle": "গ্রাহক সম্পাদনা করুন",
+      "newTitle": "নতুন গ্রাহক",
+      "description": "গ্রাহকের তথ্য পূরণ করুন।"
+    },
+    "delete": {
+      "eyebrow": "গ্রাহক মুছুন",
+      "title": "গ্রাহক মুছবেন?",
+      "confirmPrefix": "আপনি কি সত্যিই মুছতে চান",
+      "irreversible": "এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।",
+      "deleting": "মুছে ফেলা হচ্ছে..."
+    },
+    "errors": {
+      "invalidSession": "সেশন অবৈধ।",
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়েছে।",
+      "loadClients": "গ্রাহকদের লোড করা যায়নি।",
+      "saveClient": "গ্রাহক সংরক্ষণ করা যায়নি।",
+      "deleteClient": "গ্রাহক মুছে ফেলা যায়নি।"
+    }
+  },
+  "employees": {
+    "eyebrow": "ব্যবস্থাপনা",
+    "title": "কর্মীরা",
+    "description": "আপনার ব্যবসার দলের সদস্যদের পরিচালনা করুন।",
+    "newEmployee": "নতুন কর্মী",
+    "searchPlaceholder": "🔎 কর্মী খুঁজুন...",
+    "loading": "কর্মী লোড হচ্ছে...",
+    "empty": {
+      "searchTitle": "কোনো কর্মী পাওয়া যায়নি",
+      "searchText": "অন্য নাম দিয়ে চেষ্টা করুন।",
+      "title": "এখনও কোনো কর্মী নেই",
+      "text": "শুরু করতে আপনার প্রথম কর্মী তৈরি করুন।"
+    },
+    "createEmployee": "কর্মী তৈরি করুন",
+    "noName": "নাম নেই",
+    "noPhone": "ফোন নম্বর নেই",
+    "table": {
+      "employee": "কর্মী",
+      "schedule": "সময়সূচি",
+      "status": "স্ট্যাটাস",
+      "actions": "অ্যাকশন"
+    },
+    "status": {
+      "active": "সক্রিয়",
+      "inactive": "নিষ্ক্রিয়"
+    },
+    "dialog": {
+      "createTitle": "নতুন কর্মী",
+      "editTitle": "কর্মী সম্পাদনা করুন",
+      "createDescription": "আপনার দলে একজন সদস্য যোগ করুন।",
+      "editDescription": "কর্মীর তথ্য আপডেট করুন।",
+      "saveChanges": "পরিবর্তন সংরক্ষণ করুন",
+      "createEmployee": "কর্মী তৈরি করুন"
+    },
+    "fields": {
+      "firstName": "নাম",
+      "firstNamePlaceholder": "যেমন: Matías",
+      "lastName": "পদবি",
+      "lastNamePlaceholder": "যেমন: Díaz",
+      "phone": "ফোন",
+      "phonePlaceholder": "যেমন: 612345678",
+      "phoneHelp": "ঐচ্ছিক। এখন বা পরে যোগ করতে পারেন।",
+      "startTime": "শুরুর সময়",
+      "endTime": "শেষের সময়",
+      "color": "কর্মীর রং",
+      "colorHelp": "ক্যালেন্ডারে কর্মীর কার্ড শনাক্ত করতে এই রং ব্যবহার করা হবে।",
+      "status": "স্ট্যাটাস"
+    },
+    "form": {
+      "active": "সক্রিয় কর্মী",
+      "inactive": "নিষ্ক্রিয় কর্মী"
+    },
+    "deleteDialog": {
+      "title": "কর্মী মুছুন",
+      "question": "আপনি কি সত্যিই মুছতে চান",
+      "warning": "এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।",
+      "deleting": "মুছে ফেলা হচ্ছে..."
+    },
+    "footer": {
+      "showing": "{total} জনের মধ্যে {shown} জন দেখানো হচ্ছে"
+    },
+    "errors": {
+      "invalidSession": "সেশন অবৈধ।",
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়েছে।",
+      "loadEmployees": "কর্মীদের লোড করা যায়নি।",
+      "firstNameRequired": "নাম আবশ্যক।",
+      "lastNameRequired": "পদবি আবশ্যক।",
+      "startTimeRequired": "শুরুর সময় আবশ্যক।",
+      "endTimeRequired": "শেষের সময় আবশ্যক।",
+      "endTimeAfterStart": "শেষের সময় শুরুর সময়ের পরে হতে হবে।",
+      "saveEmployee": "কর্মী সংরক্ষণ করা যায়নি।",
+      "deleteEmployee": "কর্মী মুছে ফেলা যায়নি।",
+      "toggleStatus": "স্ট্যাটাস পরিবর্তন করা যায়নি।"
+    }
+  },
+  "services": {
+    "eyebrow": "ব্যবস্থাপনা",
+    "title": "সেবাসমূহ",
+    "description": "আপনার ব্যবসার দেওয়া সেবাগুলো পরিচালনা করুন।",
+    "newService": "নতুন সেবা",
+    "createService": "সেবা তৈরি করুন",
+    "searchPlaceholder": "🔎 সেবা খুঁজুন...",
+    "loading": "সেবা লোড হচ্ছে...",
+    "noDescription": "বিবরণ নেই",
+    "noPrice": "মূল্য নেই",
+    "minutes": "মিনিট",
+    "empty": {
+      "searchTitle": "কোনো সেবা পাওয়া যায়নি",
+      "searchText": "অন্যভাবে খুঁজে দেখুন।",
+      "title": "এখনও কোনো সেবা নেই",
+      "text": "শুরু করতে আপনার প্রথম সেবা তৈরি করুন।"
+    },
+    "table": {
+      "service": "সেবা",
+      "duration": "সময়কাল",
+      "price": "মূল্য",
+      "status": "স্ট্যাটাস",
+      "actions": "অ্যাকশন"
+    },
+    "status": {
+      "active": "সক্রিয়",
+      "inactive": "নিষ্ক্রিয়"
+    },
+    "dialog": {
+      "createTitle": "নতুন সেবা",
+      "editTitle": "সেবা সম্পাদনা করুন",
+      "createDescription": "আপনার ব্যবসায় একটি সেবা যোগ করুন।",
+      "editDescription": "সেবার তথ্য আপডেট করুন।",
+      "saveChanges": "পরিবর্তন সংরক্ষণ করুন",
+      "createService": "সেবা তৈরি করুন"
+    },
+    "fields": {
+      "name": "সেবার নাম",
+      "namePlaceholder": "যেমন: চুল কাটার সেবা",
+      "description": "বিবরণ",
+      "descriptionPlaceholder": "ঐচ্ছিক বিবরণ...",
+      "duration": "সময়কাল",
+      "price": "মূল্য",
+      "color": "সেবার রং",
+      "colorHelp": "ক্যালেন্ডারে সেবা শনাক্ত করতে এই রং ব্যবহার করা যেতে পারে।",
+      "status": "স্ট্যাটাস"
+    },
+    "form": {
+      "active": "সক্রিয় সেবা",
+      "inactive": "নিষ্ক্রিয় সেবা"
+    },
+    "deleteDialog": {
+      "title": "সেবা মুছুন",
+      "question": "আপনি কি সত্যিই মুছতে চান",
+      "warning": "এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।",
+      "deleting": "মুছে ফেলা হচ্ছে..."
+    },
+    "footer": {
+      "showing": "{total}টি সেবার মধ্যে {shown}টি দেখানো হচ্ছে"
+    },
+    "errors": {
+      "invalidSession": "সেশন অবৈধ।",
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়েছে।",
+      "loadServices": "সেবাগুলো লোড করা যায়নি।",
+      "nameRequired": "সেবার নাম আবশ্যক।",
+      "durationInvalid": "সময়কাল ০ মিনিটের বেশি হতে হবে।",
+      "priceNegative": "মূল্য ঋণাত্মক হতে পারে না।",
+      "colorInvalid": "রংটি বৈধ নয়।",
+      "saveService": "সেবা সংরক্ষণ করা যায়নি।",
+      "deleteService": "সেবা মুছে ফেলা যায়নি।",
+      "toggleStatus": "স্ট্যাটাস পরিবর্তন করা যায়নি।"
+    }
+  },
+  "whatsappStatus": {
+    "eyebrow": "সংযোগ",
+    "description": "আপনার সংযোগের বর্তমান অবস্থা।",
+    "logoAlt": "WhatsApp",
+    "status": {
+      "connected": "সংযুক্ত",
+      "notConnected": "সংযুক্ত নয়"
+    },
+    "main": {
+      "connectedHighlight": "সংযুক্ত",
+      "notConnectedTitle": "WhatsApp সংযুক্ত নয়",
+      "connectedDescription": "আপনার WhatsApp অ্যাকাউন্ট সক্রিয় এবং গ্রাহকদের রিমাইন্ডার, নিশ্চিতকরণ ও স্বয়ংক্রিয় বার্তা পাঠানোর জন্য প্রস্তুত।",
+      "notConnectedDescription": "Wilbuk-এর অটোমেশন ব্যবহার শুরু করতে একটি WhatsApp অ্যাকাউন্ট সংযুক্ত করুন।"
+    },
+    "phone": {
+      "connectedNumber": "সংযুক্ত নম্বর"
+    },
+    "disconnect": {
+      "button": "WhatsApp সংযোগ বিচ্ছিন্ন করুন",
+      "description": "বর্তমান সংযোগ শেষ করুন"
+    },
+    "pending": {
+      "title": "সংযোগ অপেক্ষমাণ",
+      "description": "কোনো অ্যাকাউন্ট সংযুক্ত নেই।"
+    },
+    "system": {
+      "automaticMessages": "স্বয়ংক্রিয় বার্তা",
+      "active": "সক্রিয়",
+      "customerCommunication": "গ্রাহকদের সঙ্গে যোগাযোগ",
+      "enabled": "সক্রিয়",
+      "systemWorking": "সিস্টেম চলছে",
+      "noErrors": "কোনো ত্রুটি নেই"
+    },
+    "information": {
+      "title": "সংযোগ বিচ্ছিন্ন করলে কী হবে?",
+      "description": "স্বয়ংক্রিয় বার্তা ও রিমাইন্ডার বন্ধ হয়ে যাবে। আপনি যেকোনো সময় আবার WhatsApp সংযুক্ত করতে পারবেন।"
+    },
+    "disconnectDialog": {
+      "title": "WhatsApp সংযোগ বিচ্ছিন্ন করবেন?",
+      "description": "বর্তমান WhatsApp সংযোগ শেষ হবে। আপনি আবার অ্যাকাউন্ট সংযুক্ত না করা পর্যন্ত স্বয়ংক্রিয় বার্তা পাঠানো বন্ধ থাকবে।",
+      "confirm": "সংযোগ বিচ্ছিন্ন করুন"
+    }
+  },
+  "hours": {
+    "eyebrow": "ব্যবস্থাপনা",
+    "title": "সময়সূচি",
+    "description": "আপনার ব্যবসা যে দিন ও সময় খোলা থাকে তা সেট করুন।",
+    "saveButton": "সময়সূচি সংরক্ষণ করুন",
+    "loading": "সময়সূচি লোড হচ্ছে...",
+    "thisDay": "এই দিন",
+    "closedBusiness": "ব্যবসা বন্ধ",
+    "fields": {
+      "from": "থেকে",
+      "until": "পর্যন্ত"
+    },
+    "applyAll": {
+      "title": "সব দিনে প্রয়োগ করুন",
+      "description": "সারা সপ্তাহে একই সময়সূচি সেট করুন।",
+      "button": "সবগুলিতে প্রয়োগ করুন",
+      "applying": "প্রয়োগ করা হচ্ছে..."
+    },
+    "weekly": {
+      "title": "সাপ্তাহিক সময়সূচি",
+      "description": "প্রতিটি দিন আলাদাভাবে কাস্টমাইজ করতে পারেন।"
+    },
+    "status": {
+      "open": "খোলা",
+      "closed": "বন্ধ"
+    },
+    "days": {
+      "monday": "সোমবার",
+      "tuesday": "মঙ্গলবার",
+      "wednesday": "বুধবার",
+      "thursday": "বৃহস্পতিবার",
+      "friday": "শুক্রবার",
+      "saturday": "শনিবার",
+      "sunday": "রবিবার"
+    },
+    "aria": {
+      "closeDay": "{day} বন্ধ করুন",
+      "openDay": "{day} খুলুন"
+    },
+    "success": {
+      "saved": "সময়সূচি সফলভাবে সংরক্ষণ করা হয়েছে।",
+      "appliedToAll": "সময়সূচি সব দিনে প্রয়োগ করা হয়েছে।"
+    },
+    "errors": {
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়েছে।",
+      "sessionExpiredSave": "আপনার সেশনের মেয়াদ শেষ হয়েছে। আবার লগইন করুন।",
+      "loadHours": "সময়সূচি লোড করা যায়নি।",
+      "saveHours": "সময়সূচি সংরক্ষণ করা যায়নি।",
+      "completeDay": "{day}-এর সময়সূচি সম্পূর্ণ করুন।",
+      "openBeforeClose": "{day}-এ খোলার সময় বন্ধের সময়ের আগে হতে হবে।",
+      "selectTimes": "খোলার ও বন্ধের সময় দিতে হবে।",
+      "openBeforeCloseGlobal": "খোলার সময় বন্ধের সময়ের আগে হতে হবে।"
+    }
+  },
+  "settings": {
+    "eyebrow": "সিস্টেম",
+    "title": "সেটিংস",
+    "description": "আপনার ব্যবসার সাধারণ সেটিংস।",
+    "loading": "সেটিংস লোড হচ্ছে...",
+    "business": {
+      "title": "ব্যবসার তথ্য",
+      "description": "Wilbuk ব্যবহার করে এমন মৌলিক তথ্য।"
+    },
+    "regional": {
+      "title": "আঞ্চলিক সেটিংস",
+      "description": "ফোন নম্বর, সময়সূচি ও মুদ্রা নির্ধারণ করে।"
+    },
+    "fields": {
+      "businessName": "ব্যবসার নাম",
+      "businessNamePlaceholder": "যেমন: Glow Skin Studio",
+      "address": "ঠিকানা",
+      "addressPlaceholder": "ব্যবসার ঠিকানা",
+      "reviewUrl": "Google Reviews URL",
+      "reviewUrlPlaceholder": "https://g.page/...",
+      "country": "দেশ",
+      "selectCountry": "দেশ নির্বাচন করুন",
+      "timezone": "টাইম জোন",
+      "timezoneHelp": "অ্যাপয়েন্টমেন্ট ও অটোমেশনের জন্য ব্যবহৃত হয়।",
+      "currency": "মুদ্রা",
+      "currencyHelp": "দেশ অনুযায়ী স্বয়ংক্রিয়ভাবে নির্ধারিত হয়।"
+    },
+    "values": {
+      "notConfigured": "সেট করা হয়নি"
+    },
+    "language": {
+      "title": "ভাষা",
+      "description": "Wilbuk-এর প্রধান ভাষা।",
+      "label": "অ্যাপের ভাষা"
+    },
+    "appearance": {
+      "title": "চেহারা",
+      "description": "আপনি Wilbuk কীভাবে দেখতে চান তা বেছে নিন।",
+      "themeLabel": "থিম",
+      "themeAria": "অ্যাপের থিম",
+      "light": {
+        "title": "লাইট",
+        "description": "উজ্জ্বল ও পরিষ্কার ইন্টারফেস।"
+      },
+      "dark": {
+        "title": "ডার্ক",
+        "description": "কম আলোতে ব্যবহারের জন্য ডার্ক ইন্টারফেস।"
+      }
+    },
+    "saveButton": "সেটিংস সংরক্ষণ করুন",
+    "success": {
+      "saved": "সেটিংস সফলভাবে সংরক্ষণ করা হয়েছে।"
+    },
+    "errors": {
+      "loadCountries": "দেশগুলো লোড করা যায়নি।",
+      "loadSettings": "সেটিংস লোড করা যায়নি।",
+      "nameRequired": "ব্যবসার নাম আবশ্যক।",
+      "addressRequired": "ঠিকানা আবশ্যক।",
+      "reviewUrlRequired": "Google Reviews URL আবশ্যক।",
+      "reviewUrlInvalid": "Google Reviews URL বৈধ নয়।",
+      "countryRequired": "একটি দেশ নির্বাচন করুন।",
+      "dialCodeMissing": "নির্বাচিত দেশের ফোন কোড সেট করা নেই।",
+      "timezoneMissing": "নির্বাচিত দেশের টাইম জোন সেট করা নেই।",
+      "currencyMissing": "নির্বাচিত দেশের মুদ্রা সেট করা নেই।",
+      "currencySymbolMissing": "নির্বাচিত দেশের মুদ্রার প্রতীক সেট করা নেই।",
+      "languageRequired": "একটি ভাষা নির্বাচন করুন।",
+      "saveSettings": "সেটিংস সংরক্ষণ করা যায়নি।"
+    }
+  },
+  "onboarding": {
+    "initialSetup": "প্রাথমিক সেটআপ",
+    "stepProgress": "ধাপ ২ / ৫",
+    "continue": "চালিয়ে যান",
+    "step1": {
+      "initialSetup": "প্রাথমিক সেটআপ",
+      "detectedLanguage": "ভাষা স্বয়ংক্রিয়ভাবে শনাক্ত হয়েছে",
+      "language": "ভাষা",
+      "progress": "ধাপ ১ / ৫",
+      "title": "আপনার ব্যবসা সেট আপ করি",
+      "description": "প্রথমে আপনার ব্যবসার কিছু মৌলিক তথ্য দরকার। এই তথ্য আপনার ক্যালেন্ডার, বার্তা ও অটোমেশন সেট করতে ব্যবহার করা হবে।",
+      "businessName": "ব্যবসার নাম",
+      "businessNamePlaceholder": "যেমন: Matias Hair Salon",
+      "country": "দেশ",
+      "loadingCountries": "দেশগুলো লোড হচ্ছে...",
+      "selectCountry": "আপনার দেশ নির্বাচন করুন",
+      "searchCountry": "দেশ খুঁজুন...",
+      "noCountryResults": "এই দেশটি পাওয়া যায়নি।",
+      "detectedCountry": "আমরা শনাক্ত করেছি যে আপনি সম্ভবত এখানে আছেন",
+      "saving": "সংরক্ষণ করা হচ্ছে...",
+      "continue": "চালিয়ে যান",
+      "success": "সেটিংস সফলভাবে সংরক্ষণ করা হয়েছে।",
+      "errors": {
+        "loadCountries": "দেশগুলো লোড করা যায়নি।",
+        "loadBusiness": "ব্যবসার তথ্য লোড করা যায়নি।",
+        "saveSettings": "সেটিংস সংরক্ষণ করা যায়নি।",
+        "advance": "সেটিংস সংরক্ষিত হয়েছে, কিন্তু ধাপ ২-এ যাওয়া যায়নি।"
+      }
+    },
+    "step2": {
+      "progress": "ধাপ ২ / ৫",
+      "title": "আপনার ব্যবসার সময়সূচি কী?",
+      "description": "আপনার সাধারণ খোলার সময় দিন। শুরুতে এটি সপ্তাহের সব দিনে প্রয়োগ করা হবে।",
+      "quickSetup": {
+        "title": "দ্রুত সেটআপ",
+        "description": "পরে সেটিংস থেকে প্রতিটি দিনের সময়সূচি আলাদাভাবে কাস্টমাইজ করতে পারবেন।"
+      },
+      "openingTime": "খোলার সময়",
+      "closingTime": "বন্ধের সময়",
+      "until": "পর্যন্ত",
+      "preview": {
+        "title": "সাধারণ সময়সূচি",
+        "appliesToSevenDays": "৭ দিনেই প্রয়োগ হবে"
+      },
+      "saving": "সংরক্ষণ করা হচ্ছে...",
+      "success": "সময়সূচি সফলভাবে সংরক্ষণ করা হয়েছে।",
+      "errors": {
+        "selectTimes": "খোলার ও বন্ধের সময় নির্বাচন করুন।",
+        "closeAfterOpen": "বন্ধের সময় খোলার সময়ের পরে হতে হবে।",
+        "saveHours": "সময়সূচি সংরক্ষণ করা যায়নি।",
+        "advance": "সময়সূচি সংরক্ষিত হয়েছে, কিন্তু ধাপ ৩-এ যাওয়া যায়নি।"
+      }
+    },
+    "step3": {
+      "progress": "ধাপ ৩ / ৫",
+      "title": "আপনার প্রথম সেবা তৈরি করুন",
+      "description": "আপনি গ্রাহকদের যে সেবা দেবেন তা নির্ধারণ করুন। পরে আরও সেবা যোগ ও পরিবর্তন করতে পারবেন।",
+      "serviceName": "সেবার নাম",
+      "serviceNamePlaceholder": "যেমন: চুল কাটার সেবা",
+      "descriptionLabel": "বিবরণ",
+      "descriptionPlaceholder": "এই সেবাটি সংক্ষেপে বর্ণনা করুন...",
+      "duration": "সময়কাল",
+      "minutes": "মিনিট",
+      "price": "মূল্য",
+      "color": "সেবার রং",
+      "colorDescription": "ক্যালেন্ডারে সেবা শনাক্ত করতে এই রং সাহায্য করবে।",
+      "creating": "তৈরি করা হচ্ছে...",
+      "createButton": "সেবা তৈরি করুন",
+      "success": "সেবা সফলভাবে তৈরি হয়েছে।",
+      "errors": {
+        "loadBusiness": "ব্যবসার সেটিংস লোড করা যায়নি।",
+        "invalidForm": "নাম ও বৈধ সময়কাল পূরণ করুন। সময়কাল অবশ্যই ৫ মিনিটের গুণিতক হতে হবে।",
+        "missingCurrency": "ব্যবসার মুদ্রা নির্ধারণ করা যায়নি। ধাপ ১-এ ফিরে দেশ যাচাই করুন।",
+        "createService": "সেবা তৈরি করা যায়নি।",
+        "advance": "সেবা তৈরি হয়েছে, কিন্তু ধাপ ৪-এ যাওয়া যায়নি।"
+      }
+    },
+    "step4": {
+      "progress": "ধাপ ৪ / ৫",
+      "title": "আপনার প্রথম কর্মী তৈরি করুন",
+      "description": "আপনার দলের প্রথম সদস্য যোগ করুন। তার সময়সূচি ও রং ক্যালেন্ডারে অ্যাপয়েন্টমেন্ট সাজাতে ব্যবহার হবে।",
+      "firstName": "নাম",
+      "firstNamePlaceholder": "যেমন: Matias",
+      "lastName": "পদবি",
+      "lastNamePlaceholder": "যেমন: Diaz",
+      "employeeColor": "কর্মীর রং",
+      "selectColor": "রং নির্বাচন করুন",
+      "custom": "কাস্টম",
+      "customColor": "কাস্টম রং",
+      "colorHelp": "ক্যালেন্ডারের কার্ডে এই রং কর্মীকে শনাক্ত করবে।",
+      "startTime": "প্রবেশের সময়",
+      "endTime": "বের হওয়ার সময়",
+      "scheduleNote": "এই কর্মীর সাধারণ সময়সূচি নির্ধারণ করুন। পরে কর্মী বিভাগ থেকে এটি পরিবর্তন করতে পারবেন।",
+      "creating": "তৈরি করা হচ্ছে...",
+      "createButton": "কর্মী তৈরি করুন",
+      "success": "কর্মী সফলভাবে তৈরি হয়েছে।",
+      "errors": {
+        "invalidForm": "নাম, পদবি ও একটি বৈধ সময়সূচি পূরণ করুন।",
+        "createEmployee": "কর্মী তৈরি করা যায়নি।",
+        "advance": "কর্মী তৈরি হয়েছে, কিন্তু ধাপ ৫-এ যাওয়া যায়নি।"
+      }
+    },
+    "step5": {
+      "progress": "ধাপ ৫ / ৫",
+      "initialLoading": {
+        "title": "WhatsApp প্রস্তুত করা হচ্ছে",
+        "text": "আমরা সংযোগ যাচাই করছি..."
+      },
+      "title": "আপনার WhatsApp সংযুক্ত করুন",
+      "description": "গ্রাহকদের রিমাইন্ডার ও বার্তা পাঠাতে যে WhatsApp নম্বর ব্যবহার করবেন সেটি সংযুক্ত করুন।",
+      "checking": {
+        "title": "সংযোগ যাচাই করা হচ্ছে",
+        "text": "সেবার অবস্থা যাচাই করা হচ্ছে..."
+      },
+      "preparing": {
+        "title": "WhatsApp প্রস্তুত করা হচ্ছে",
+        "text": "নিরাপদ সংযোগ প্রস্তুত করা হচ্ছে..."
+      },
+      "connecting": {
+        "title": "WhatsApp-এর সঙ্গে সংযোগ করা হচ্ছে",
+        "text": "WhatsApp-এর উত্তরের অপেক্ষায়..."
+      },
+      "connected": {
+        "title": "WhatsApp সংযুক্ত",
+        "note": "আপনাকে স্বয়ংক্রিয়ভাবে ক্যালেন্ডারে পাঠানো হবে।"
+      },
+      "finalizing": "শেষ করা হচ্ছে...",
+      "finalizeIn": "শেষ হবে",
+      "finalizeNow": "এখনই শেষ করুন",
+      "serverError": {
+        "title": "সার্ভারের সঙ্গে সংযোগ করা যায়নি",
+        "text": "WhatsApp সেবা সাড়া দেয়নি। আবার চেষ্টা করতে পারেন।"
+      },
+      "generalError": {
+        "title": "WhatsApp প্রস্তুত করা যায়নি"
+      },
+      "retry": {
+        "checking": "যাচাই করা হচ্ছে...",
+        "connection": "সংযোগ আবার চেষ্টা করুন",
+        "generic": "আবার চেষ্টা করুন"
+      },
+      "expired": {
+        "title": "QR কোডের মেয়াদ শেষ হয়েছে",
+        "text": "একটি নতুন কোড তৈরি করে ফোনের WhatsApp দিয়ে স্ক্যান করুন।",
+        "button": "নতুন QR তৈরি করুন"
+      },
+      "qr": {
+        "active": "সক্রিয় QR কোড",
+        "title": "আপনার WhatsApp সংযুক্ত করুন",
+        "help": "অ্যাকাউন্ট সংযুক্ত করতে ফোনের WhatsApp দিয়ে এই কোড স্ক্যান করুন।",
+        "step1": "মোবাইলে WhatsApp খুলুন",
+        "step2": "Linked Devices-এ যান",
+        "step3": "Link a device-এ ট্যাপ করে কোডটি স্ক্যান করুন",
+        "helpLink": "সাহায্য দরকার?",
+        "validFor": "কোডটি বৈধ থাকবে",
+        "seconds": "সেকেন্ড"
+      },
+      "connectButton": "WhatsApp সংযুক্ত করুন",
+      "errors": {
+        "invalidBusinessId": "কোনো বৈধ Business ID পাওয়া যায়নি।",
+        "serverResponse": "সার্ভার একটি ত্রুটি দিয়েছে।",
+        "serverTimeout": "WhatsApp সার্ভার সাড়া দিতে বেশি সময় নিয়েছে।",
+        "serverConnection": "WhatsApp সার্ভারের সঙ্গে সংযোগ করা যায়নি।",
+        "connectFailed": "WhatsApp চালু করা যায়নি।",
+        "finalize": "সেটআপ শেষ করা যায়নি।",
+        "notCompleted": "WhatsApp সংযুক্ত, কিন্তু সেটআপ এখনও সম্পন্ন হিসেবে দেখাচ্ছে না।",
+        "finalizeTimeout": "সমাপ্তি নিশ্চিত করতে সার্ভার বেশি সময় নিয়েছে।"
+      }
+    }
+  },
+  "templates": {
+    "title": "বার্তার টেমপ্লেট",
+    "subtitle": "স্বয়ংক্রিয় বার্তা পাঠাতে Wilbuk যে টেমপ্লেট ব্যবহার করবে সেগুলো নির্বাচন করুন।",
+    "appointment24": "২৪ ঘণ্টা আগে রিমাইন্ডার",
+    "appointment1": "১ ঘণ্টা আগে রিমাইন্ডার",
+    "review": "রিভিউ অনুরোধ",
+    "before24": "অ্যাপয়েন্টমেন্টের ২৪ ঘণ্টা আগে পাঠানো বার্তা।",
+    "before1": "অ্যাপয়েন্টমেন্টের ১ ঘণ্টা আগে পাঠানো বার্তা।",
+    "after2": "অ্যাপয়েন্টমেন্টের ২ ঘণ্টা পরে পাঠানো বার্তা।",
+    "formal": "আনুষ্ঠানিক",
+    "friendly": "বন্ধুসুলভ",
+    "formalDescription": "আপনার গ্রাহকদের জন্য পরিষ্কার ও পেশাদার বার্তা।",
+    "friendlyDescription": "আপনার গ্রাহকদের জন্য আন্তরিক ও বন্ধুসুলভ বার্তা।",
+    "formalReviewDescription": "রিভিউ চাওয়ার জন্য পরিষ্কার ও পেশাদার বার্তা।",
+    "friendlyReviewDescription": "গ্রাহকদের রিভিউ দিতে আমন্ত্রণ জানানোর জন্য আন্তরিক বার্তা।",
+    "selected": "নির্বাচিত",
+    "select": "নির্বাচন করুন",
+    "loading": "টেমপ্লেট লোড হচ্ছে...",
+    "error": "টেমপ্লেট লোড করা যায়নি।",
+    "retry": "আবার চেষ্টা করুন",
+    "noTemplates": "কোনো টেমপ্লেট উপলভ্য নেই।",
+    "preview": "প্রিভিউ",
+    "whatsapp": "WhatsApp",
+    "customer": "গ্রাহক",
+    "service": "সেবা",
+    "employee": "কর্মী",
+    "business": "ব্যবসা",
+    "date": "তারিখ",
+    "time": "সময়",
+    "reviewUrl": "রিভিউ লিংক",
+    "address": "ঠিকানা",
+    "saving": "সংরক্ষণ করা হচ্ছে...",
+    "saved": "সংরক্ষিত",
+    "saveError": "টেমপ্লেট সংরক্ষণ করা যায়নি।"
+  }
+}

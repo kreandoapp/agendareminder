@@ -1,0 +1,34 @@
+.agenda-toolbar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.agenda-toolbar-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #8b94a1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.agenda-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25d366;
+}
+
+.agenda-toolbar-info {
+  color: #5f6875;
+  font-size: 11px;
+}
+
+@media (max-width: 650px) {
+  .agenda-toolbar-info {
+    display: none;
+  }
+}

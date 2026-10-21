@@ -1,0 +1,982 @@
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.countries-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+  box-sizing: border-box;
+  color: var(--color-text);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.countries-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.countries-heading {
+  min-width: 0;
+}
+
+.countries-eyebrow {
+  margin-bottom: 6px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.countries-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.countries-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.countries-description {
+  margin: 8px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.countries-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.countries-primary-button:hover {
+  opacity: 0.9;
+}
+
+.countries-primary-button:active {
+  transform: scale(0.98);
+}
+
+.countries-primary-button span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+
+/* =====================================================
+   ERROR
+   ===================================================== */
+
+.countries-error {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid #ef444455;
+  border-radius: 10px;
+  background: #ef44440d;
+  color: #ef4444;
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.countries-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.countries-search-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.countries-search {
+  width: 100%;
+  height: 44px;
+  padding: 0 42px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  outline: none;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.countries-search::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.countries-search:focus {
+  border-color: var(--color-primary);
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--color-primary) 12%,
+      transparent
+    );
+}
+
+.countries-search-clear {
+  position: absolute;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.countries-search-clear:hover {
+  background: var(--color-surface-secondary);
+}
+
+
+/* =====================================================
+   LIST
+   ===================================================== */
+
+.countries-list {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+}
+
+.countries-list-header,
+.countries-row {
+  display: grid;
+  grid-template-columns:
+    minmax(240px, 1.7fr)
+    110px
+    120px
+    120px
+    80px;
+  align-items: center;
+  column-gap: 18px;
+  padding: 0 18px;
+}
+
+.countries-list-header {
+  min-height: 44px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.countries-row {
+  min-height: 76px;
+  border-bottom: 1px solid var(--color-border);
+  transition:
+    background-color 0.15s ease;
+}
+
+.countries-row:last-of-type {
+  border-bottom: 0;
+}
+
+.countries-row:hover {
+  background: var(--color-surface-secondary);
+}
+
+
+/* =====================================================
+   COUNTRY INFO
+   ===================================================== */
+
+.country-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.country-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--color-surface-secondary);
+  font-size: 25px;
+}
+
+.country-text {
+  min-width: 0;
+}
+
+.country-name {
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.country-code {
+  margin-top: 3px;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+
+/* =====================================================
+   PHONE / CURRENCY
+   ===================================================== */
+
+.country-phone {
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.country-currency {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text);
+  font-size: 13px;
+}
+
+.country-currency strong {
+  font-weight: 700;
+}
+
+.country-currency span {
+  color: var(--color-text-secondary);
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.country-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.country-status.active {
+  color: #16a34a;
+  background: #22c55e14;
+}
+
+.country-status.inactive {
+  color: var(--color-text-secondary);
+  background: var(--color-surface-secondary);
+}
+
+.country-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.country-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.country-edit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.country-edit-button:hover {
+  background: var(--color-surface-secondary);
+}
+
+.country-edit-button:active {
+  transform: scale(0.95);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.countries-footer {
+  padding: 13px 18px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.countries-footer strong {
+  color: var(--color-text);
+}
+
+
+/* =====================================================
+   STATES
+   ===================================================== */
+
+.countries-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.countries-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: 32px;
+  text-align: center;
+}
+
+.countries-empty-icon {
+  margin-bottom: 14px;
+  font-size: 42px;
+}
+
+.countries-empty-title {
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.countries-empty-text {
+  max-width: 360px;
+  margin: 7px 0 18px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   DIALOG OVERLAY
+   ===================================================== */
+
+.countries-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.48);
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   DIALOG
+   ===================================================== */
+
+.countries-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(560px, 100%);
+  max-height: min(760px, 92vh);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+.countries-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.countries-dialog-header h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.countries-dialog-header p {
+  margin: 5px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.countries-dialog-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.countries-dialog-close:hover {
+  background: var(--color-surface-secondary);
+  color: var(--color-text);
+}
+
+
+/* =====================================================
+   DIALOG BODY
+   ===================================================== */
+
+.countries-dialog-body {
+  overflow-y: auto;
+  padding: 20px 22px;
+}
+
+.countries-dialog-error {
+  margin-bottom: 16px;
+  padding: 11px 12px;
+  border: 1px solid #ef444455;
+  border-radius: 9px;
+  background: #ef44440d;
+  color: #ef4444;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.countries-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.country-main-grid {
+  grid-template-columns: 1.7fr 0.8fr;
+}
+
+.countries-field {
+  margin-bottom: 14px;
+}
+
+.countries-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.countries-field input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  outline: none;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.countries-field input:focus {
+  border-color: var(--color-primary);
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--color-primary) 12%,
+      transparent
+    );
+}
+
+.countries-field input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.65;
+}
+
+.countries-field input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.countries-field small {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+}
+
+.countries-section-label {
+  margin: 20px 0 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   TOGGLE
+   ===================================================== */
+
+.countries-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.countries-toggle-track {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: #d1d1d6;
+  transition:
+    background-color 0.2s ease;
+}
+
+.countries-toggle.active
+  .countries-toggle-track {
+  background: #34c759;
+}
+
+.countries-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s ease;
+}
+
+.countries-toggle.active
+  .countries-toggle-thumb {
+  transform: translateX(18px);
+}
+
+
+/* =====================================================
+   DIALOG FOOTER
+   ===================================================== */
+
+.countries-dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 22px;
+  border-top: 1px solid var(--color-border);
+}
+
+.countries-dialog-footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-left: auto;
+}
+
+.countries-secondary-button,
+.countries-save-button,
+.countries-delete-button,
+.countries-delete-confirm-button {
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.countries-secondary-button {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.countries-secondary-button:hover {
+  background: var(--color-surface-secondary);
+}
+
+.countries-save-button {
+  border: 0;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.countries-save-button:hover {
+  opacity: 0.9;
+}
+
+.countries-delete-button {
+  border: 0;
+  background: transparent;
+  color: #ef4444;
+}
+
+.countries-delete-button:hover {
+  background: #ef44440d;
+}
+
+.countries-secondary-button:active,
+.countries-save-button:active,
+.countries-delete-button:active,
+.countries-delete-confirm-button:active {
+  transform: scale(0.98);
+}
+
+.countries-secondary-button:disabled,
+.countries-save-button:disabled,
+.countries-delete-button:disabled,
+.countries-delete-confirm-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   DELETE DIALOG
+   ===================================================== */
+
+.countries-delete-dialog {
+  width: min(400px, 100%);
+  padding: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.22);
+  text-align: center;
+}
+
+.countries-delete-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 14px;
+  border-radius: 14px;
+  background: #ef444414;
+  font-size: 24px;
+}
+
+.countries-delete-dialog h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 18px;
+}
+
+.countries-delete-dialog p {
+  margin: 10px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.countries-delete-dialog strong {
+  color: var(--color-text);
+}
+
+.countries-delete-warning {
+  color: #ef4444 !important;
+}
+
+.countries-delete-dialog
+  .countries-dialog-error {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.countries-delete-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.countries-delete-confirm-button {
+  border: 0;
+  background: #ef4444;
+  color: #fff;
+}
+
+.countries-delete-confirm-button:hover {
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+[data-theme="dark"]
+  .countries-dialog-overlay {
+  background: rgba(0, 0, 0, 0.68);
+}
+
+[data-theme="dark"]
+  .countries-toggle-track {
+  background: #48484a;
+}
+
+[data-theme="dark"]
+  .countries-status {
+  background: transparent;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .countries-page {
+    padding: 20px;
+  }
+
+  .countries-list-header {
+    display: none;
+  }
+
+  .countries-row {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto
+      auto;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .country-info {
+    grid-column: 1;
+  }
+
+  .country-phone {
+    grid-column: 2;
+  }
+
+  .country-currency {
+    display: none;
+  }
+
+  .country-status {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .country-actions {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .countries-page {
+    padding: 16px;
+  }
+
+  .countries-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .countries-primary-button {
+    width: 100%;
+  }
+
+  .countries-title {
+    font-size: 24px;
+  }
+
+  .countries-description {
+    font-size: 13px;
+  }
+
+  .countries-form-grid,
+  .country-main-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .countries-dialog-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .countries-dialog {
+    width: 100%;
+    max-height: 94vh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .countries-dialog-header,
+  .countries-dialog-body,
+  .countries-dialog-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .countries-dialog-footer {
+    flex-wrap: wrap;
+  }
+
+  .countries-delete-button {
+    order: 2;
+  }
+
+  .countries-dialog-footer-right {
+    width: 100%;
+  }
+
+  .countries-dialog-footer-right
+    button {
+    flex: 1;
+  }
+
+  .countries-delete-dialog {
+    width: calc(100% - 32px);
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .countries-primary-button,
+  .country-edit-button,
+  .countries-search,
+  .countries-field input,
+  .countries-toggle-track,
+  .countries-toggle-thumb {
+    transition: none;
+  }
+
+}

@@ -1,0 +1,743 @@
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: var(--background-color, #0b1013);
+
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.login-card {
+  width: 100%;
+  max-width: 438px;
+
+  box-sizing: border-box;
+
+  padding: 28px 36px 36px;
+
+  border-radius: 18px;
+
+  background: var(--card-background, #151b20);
+
+  border: 1px solid var(--border-color, #283138);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+
+  position: relative;
+}
+
+
+/* =========================================================
+   TOP CONTROLS
+   LANGUAGE + THEME
+   ========================================================= */
+
+.login-top-controls {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+.login-language {
+  display: flex;
+  align-items: center;
+}
+
+.login-language select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  min-width: 112px;
+
+  padding: 8px 28px 8px 10px;
+
+  border: 1px solid var(--border-color, #283138);
+
+  border-radius: 9px;
+
+  background-color: var(--input-background, #10161b);
+
+  color: var(--text-color, #f2f4f5);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.login-language select:hover {
+  border-color: #3a474f;
+}
+
+.login-language select:focus {
+  border-color: #22c55e;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+.login-theme-toggle {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border-color, #283138);
+
+  border-radius: 50%;
+
+  background: var(--input-background, #10161b);
+
+  color: var(--text-color, #f2f4f5);
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.login-theme-toggle:hover {
+  transform: scale(1.05);
+
+  border-color: #3a474f;
+}
+
+.login-theme-toggle:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.login-header {
+  text-align: center;
+
+  margin-bottom: 32px;
+}
+
+.login-logo {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 14px;
+
+  border-radius: 16px;
+
+  background: rgba(34, 197, 94, 0.10);
+
+  border: 1px solid rgba(34, 197, 94, 0.35);
+
+  font-size: 30px;
+
+  box-shadow:
+    0 0 24px rgba(34, 197, 94, 0.08);
+}
+
+.login-header h1 {
+  margin: 0;
+
+  color: var(--text-color, #f2f4f5);
+
+  font-size: 28px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.login-header p {
+  margin: 8px 0 0;
+
+  color: var(--secondary-text-color, #8d989f);
+
+  font-size: 14px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   FIELD
+   ========================================================= */
+
+.login-field {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.login-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--text-color, #f2f4f5);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+   ========================================================= */
+
+.login-input-wrapper {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border-color, #283138);
+
+  border-radius: 10px;
+
+  background: var(--input-background, #10161b);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-input-wrapper:focus-within {
+  border-color: #22c55e;
+
+  box-shadow:
+    0 0 0 2px rgba(34, 197, 94, 0.10);
+}
+
+
+/* =========================================================
+   INPUT ICON
+   ========================================================= */
+
+.login-input-icon {
+  width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 15px;
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.login-input-wrapper input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  padding: 0 12px 0 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text-color, #f2f4f5);
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.login-input-wrapper input::placeholder {
+  color: #647078;
+}
+
+.login-input-wrapper input:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+   ========================================================= */
+
+.login-password-toggle {
+  width: 44px;
+  height: 100%;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-color, #f2f4f5);
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  opacity: 0.85;
+}
+
+.login-password-toggle:hover {
+  opacity: 1;
+}
+
+.login-password-toggle:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+   ========================================================= */
+
+.login-forgot {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: -4px;
+
+  margin-bottom: 20px;
+}
+
+.login-forgot button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #22c55e;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.login-forgot button:hover {
+  opacity: 0.8;
+}
+
+.login-forgot button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.login-error {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  box-sizing: border-box;
+
+  margin-bottom: 16px;
+
+  padding: 11px 12px;
+
+  border-radius: 9px;
+
+  background: rgba(239, 68, 68, 0.10);
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  color: #fca5a5;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.login-submit {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: 0;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #22c55e;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease,
+    opacity 0.2s ease;
+}
+
+.login-submit:hover:not(:disabled) {
+  background: #1eaf55;
+}
+
+.login-submit:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.login-submit:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.login-submit-spinner {
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color: #ffffff;
+
+  animation: login-spinner 0.7s linear infinite;
+}
+
+@keyframes login-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+[data-theme='light'] .login-page {
+  background: #f5f7f8;
+}
+
+[data-theme='light'] .login-card {
+  background: #ffffff;
+
+  border-color: #e2e7ea;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .login-language select {
+  background: #ffffff;
+
+  border-color: #dce2e6;
+
+  color: #172026;
+}
+
+[data-theme='light'] .login-theme-toggle {
+  background: #f5f7f8;
+
+  border-color: #dce2e6;
+
+  color: #172026;
+}
+
+[data-theme='light'] .login-input-wrapper {
+  background: #f8fafb;
+
+  border-color: #dce2e6;
+}
+
+[data-theme='light'] .login-input-wrapper input {
+  color: #172026;
+}
+
+[data-theme='light'] .login-input-wrapper input::placeholder {
+  color: #89949b;
+}
+
+[data-theme='light'] .login-header h1 {
+  color: #172026;
+}
+
+[data-theme='light'] .login-header p {
+  color: #68757d;
+}
+
+[data-theme='light'] .login-field label {
+  color: #27333a;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .login-page {
+    min-height: 100dvh;
+
+    padding: 16px;
+  }
+
+  .login-card {
+    max-width: 100%;
+
+    padding: 22px 22px 28px;
+
+    border-radius: 16px;
+  }
+
+  .login-top-controls {
+    margin-bottom: 22px;
+  }
+
+  .login-language select {
+    min-width: 105px;
+
+    font-size: 12px;
+
+    padding: 8px 25px 8px 9px;
+  }
+
+  .login-theme-toggle {
+    width: 36px;
+    height: 36px;
+
+    font-size: 16px;
+  }
+
+  .login-header {
+    margin-bottom: 28px;
+  }
+
+  .login-logo {
+    width: 58px;
+    height: 58px;
+
+    font-size: 28px;
+  }
+
+  .login-header h1 {
+    font-size: 25px;
+  }
+
+  .login-header p {
+    font-size: 13px;
+  }
+
+  .login-input-wrapper {
+    height: 48px;
+  }
+
+  .login-submit {
+    height: 48px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   320px - 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .login-page {
+    padding: 12px;
+  }
+
+  .login-card {
+    padding: 18px 16px 22px;
+  }
+
+  .login-language select {
+    min-width: 98px;
+
+    font-size: 11px;
+  }
+
+  .login-header h1 {
+    font-size: 23px;
+  }
+
+  .login-header p {
+    font-size: 12px;
+  }
+
+  .login-field {
+    margin-bottom: 17px;
+  }
+
+}
+
+/* ==========================================
+   WILBUK BRAND
+   ========================================== */
+
+.wilbuk-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.wilbuk-brand-icon {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.wilbuk-brand-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+  line-height: 0.95;
+  font-weight: 800;
+
+  letter-spacing: -2.6px;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.wilbuk-brand-wil {
+  color: #15233d;
+}
+
+.wilbuk-brand-buk {
+  background: linear-gradient(
+    135deg,
+    #08bdf5 0%,
+    #168cff 42%,
+    #6638ff 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .wilbuk-brand-wil {
+  color: #f4f6f8;
+}
+
+.login-header > p {
+  margin-top: 12px;
+}

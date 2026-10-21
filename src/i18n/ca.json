@@ -1,0 +1,911 @@
+{
+  "common": {
+    "save": "Desa",
+    "cancel": "Cancel·la",
+    "close": "Tanca",
+    "edit": "Edita",
+    "delete": "Elimina",
+    "loading": "Carregant...",
+    "search": "Cerca",
+    "confirm": "Confirma",
+    "back": "Torna",
+    "next": "Següent",
+    "continue": "Continua",
+    "saving": "Desant...",
+    "saveChanges": "Desa els canvis"
+  },
+  "auth": {
+    "languageSelector": "Idioma",
+    "changeToLightTheme": "Canviar a tema claro",
+    "changeToDarkTheme": "Canviar a tema oscuro",
+    "lightTheme": "Tema clar",
+    "darkTheme": "Tema fosc",
+    "login": {
+      "title": "AgendaReminder",
+      "subtitle": "Gestió intel·ligent de recordatoris",
+      "email": "Correu electrònic",
+      "emailPlaceholder": "tu@email.com",
+      "password": "Contrasenya",
+      "showPassword": "Mostra la contrasenya",
+      "hidePassword": "Oculta la contrasenya",
+      "forgotPassword": "Has oblidat la contrasenya?",
+      "loading": "Iniciant sessió...",
+      "submit": "Inicia sessió"
+    },
+    "forgotPassword": {
+      "back": "Torna",
+      "title": "Recupera la contrasenya",
+      "description": "Introdueix el teu correu electrònic i t'enviarem un codi per restablir la contrasenya.",
+      "email": "Correu electrònic",
+      "emailPlaceholder": "tu@email.com",
+      "loading": "Enviant...",
+      "submit": "Envia el codi"
+    },
+    "verifyResetCode": {
+      "back": "Torna",
+      "title": "Introdueix el codi",
+      "description": "T'hem enviat un codi de 4 dígits al teu correu electrònic.",
+      "codeValidity": "El codi és vàlid durant 10 minuts.",
+      "submit": "Verifica el codi"
+    },
+    "resetPassword": {
+      "back": "Torna",
+      "title": "Nova contrasenya",
+      "description": "Introdueix una nova contrasenya per al teu compte.",
+      "newPassword": "Nova contrasenya",
+      "passwordPlaceholder": "Mínim 8 caràcters",
+      "showPassword": "Mostra la contrasenya",
+      "hidePassword": "Oculta la contrasenya",
+      "passwordValidation": "La contraseña ha de tener al menys 8 caracteres.",
+      "confirmPassword": "Confirma la contrasenya",
+      "confirmPasswordPlaceholder": "Repeteix la teva contrasenya",
+      "passwordsDoNotMatch": "Les contrasenyes no coincideixen.",
+      "loading": "Canviant...",
+      "submit": "Canvia la contrasenya"
+    },
+    "passwordResetSuccess": {
+      "brandName": "Agenda",
+      "brandNameSuffix": "Reminder",
+      "brandSubtitle": "El teu negoci sempre connectat",
+      "headerText": "Gestió de cites més senzilla",
+      "titleFirstLine": "Contrasenya",
+      "titleSecondLine": "actualitzada!",
+      "descriptionFirstLine": "La teva contrasenya s'ha canviat correctament.",
+      "descriptionSecondLine": "Ja pots iniciar sessió amb la teva nova contrasenya.",
+      "securityTitle": "El teu compte és segur",
+      "securityText": "Et recomanem mantenir la teva contrasenya en un lloc segur.",
+      "login": "Inicia sessió",
+      "footer": "Gràcies per confiar en AgendaReminder"
+    }
+  },
+  "appointmentDialog": {
+    "createTitle": "Nova cita",
+    "editTitle": "Edita la cita",
+    "selectDate": "Selecciona una data",
+    "createAppointment": "Crea la cita",
+    "saveChanges": "Desa els canvis",
+    "reviewWarning": {
+      "title": "Encara no tens configurat l'enllaç de ressenyes",
+      "description": "Configura'l perquè els teus clients puguin deixar una ressenya després de la seva cita.",
+      "configure": "Configura"
+    },
+    "customer": {
+      "title": "Client",
+      "subtitle": "¿Para quién és la cita?",
+      "searchPlaceholder": "Cerca un client per nom o telèfon...",
+      "noPhone": "Sense telèfon",
+      "change": "Canviar",
+      "new": "Nou client",
+      "noResults": "No s'han trobat clients."
+    },
+    "service": {
+      "title": "Servei",
+      "subtitle": "Servei i durada",
+      "select": "Selecciona un servei"
+    },
+    "employee": {
+      "title": "Empleat",
+      "availability": "Disponibilitat",
+      "available": "disponible",
+      "availablePlural": "disponibles",
+      "checking": "Comprovant...",
+      "checkingAvailability": "Comprovant la disponibilitat...",
+      "selectService": "Selecciona un servei.",
+      "noAvailable": "No hi ha empleats disponibles.",
+      "outsideHours": "Fora de l'horari",
+      "busy": "Ocupat"
+    },
+    "dateTime": {
+      "title": "Data i hora",
+      "subtitle": "Selecciona quan fer la cita",
+      "durationUntil": "Durada fins a les",
+      "ends": "Finalitza"
+    },
+    "notes": {
+      "title": "Notes",
+      "optional": "opcional",
+      "placeholder": "Afegeix una nota sobre aquesta cita..."
+    },
+    "status": {
+      "title": "Estat",
+      "scheduled": "Programada",
+      "confirmed": "Confirmada",
+      "completed": "Completada",
+      "cancelled": "Cancel·lada"
+    },
+    "automations": {
+      "title": "Notificacions de WhatsApp"
+    },
+    "reviewConfig": {
+      "title": "Configura el teu enllaç de ressenyes",
+      "description": "Segueix aquests 3 passos senzills per obtenir l'enllaç de ressenyes del teu negoci a Google.",
+      "step1": {
+        "title": "Entra a Google amb el compte del propietari",
+        "description": "Inicia sessió amb el compte que administra el Perfil d'Empresa del teu negoci."
+      },
+      "step2": {
+        "title": "Prem «Demanar ressenyes»",
+        "description": "Busca el tauler del teu negoci i prem «Demanar ressenyes». Google també pot mostrar-ho com «Aconsegueix més ressenyes»."
+      },
+      "step3": {
+        "title": "Copia l'enllaç",
+        "description": "Google obrirà una finestra amb el teu enllaç per demanar ressenyes. Prem «Copiar enllaç»."
+      },
+      "ownerAccount": "Compte del propietari",
+      "ownerAccountDescription": "Administra el teu Perfil d'Empresa",
+      "openGoogle": "Obre Google",
+      "loadingBusiness": "Carregant el negoci...",
+      "yourBusiness": "El teu negoci",
+      "googleBusinessProfile": "Perfil d'Empresa a Google",
+      "editProfile": "Edita el perfil",
+      "readReviews": "Llegeix les ressenyes",
+      "requestReviews": "Demanar ressenyes",
+      "shareLinkDescription": "Comparteix aquest enllaç amb els teus clients perquè puguin deixar una ressenya.",
+      "copyLink": "Copia l'enllaç",
+      "notFoundTitle": "No trobes «Demanar ressenyes»?",
+      "notFoundDescription": "Assegura't d'haver iniciat sessió amb el compte que administra el negoci.",
+      "linkLabel": "Enganxa aquí el teu enllaç de ressenyes",
+      "linkHint": "Aquest enllaç s'utilitzarà per enviar automàticament els teus clients a deixar una ressenya després de la seva cita.",
+      "saveLink": "Desa l'enllaç",
+      "errors": {
+        "loadBusiness": "No s'ha pogut carregar la informació del negoci.",
+        "missingLink": "Enganxa primer l'enllaç de ressenyes.",
+        "saveLink": "No s'ha pogut desar l'enllaç."
+      }
+    },
+    "errors": {
+      "invalidSession": "Sessió no vàlida.",
+      "sessionExpired": "La teva sessió ha caducat.",
+      "loadCustomers": "No s'han pogut carregar els clients.",
+      "loadServices": "No s'han pogut carregar els serveis.",
+      "loadAutomations": "No s'han pogut carregar les notificacions.",
+      "checkAvailability": "No s'ha pogut comprovar la disponibilitat.",
+      "selectCustomer": "Selecciona un client.",
+      "selectService": "Selecciona un servei.",
+      "selectDate": "Selecciona una data.",
+      "selectTime": "Selecciona una hora.",
+      "noEmployee": "No hi ha cap empleat disponible per a aquest horari.",
+      "saveAppointment": "No s'ha pogut desar la cita.",
+      "updateAutomation": "No s'ha pogut actualitzar una notificació."
+    }
+  },
+  "sidebar": {
+    "brandSubtitle": "Gestió i automatització",
+    "closeMenu": "Tancar menú",
+    "user": "Usuari",
+    "mainMenu": "Menú principal",
+    "home": "Inici",
+    "agenda": "Agenda",
+    "clients": "Clients",
+    "employees": "Empleats",
+    "services": "Serveis",
+    "layout": "Plantilles",
+    "whatsapp": "WhatsApp",
+    "hours": "Horaris",
+    "settings": "Configuració",
+    "connected": "Connectat",
+    "notConnected": "No connectat",
+    "logout": "Tanca la sessió",
+    "templates": "Plantilles"
+  },
+  "home": {
+    "eyebrow": "TAULER PRINCIPAL",
+    "welcome": "Hola,",
+    "welcomeFallback": "benvingut",
+    "description": "Gestiona el teu negoci i automatitza les teves comunicacions.",
+    "whatsapp": "WHATSAPP",
+    "connected": "Connectat",
+    "notConnected": "No connectat",
+    "account": "COMPTE",
+    "active": "Activa",
+    "automation": "AUTOMATITZACIÓ",
+    "ready": "A punt per utilitzar",
+    "remindersAndMessages": "Recordatoris i missatges",
+    "whatsappConnectedTitle": "WhatsApp connectat",
+    "whatsappDisconnectedTitle": "WhatsApp no connectat",
+    "whatsappConnectedDescription": "El teu compte està connectat i llest per treballar.",
+    "whatsappDisconnectedDescription": "Connecta WhatsApp per començar a enviar missatges.",
+    "manageWhatsapp": "Gestiona WhatsApp"
+  },
+  "agenda": {
+    "eyebrow": "GESTIÓ",
+    "title": "Agenda",
+    "description": "Organitza les cites, els horaris i la disponibilitat del teu negoci.",
+    "calendarLabel": "Agenda de cites",
+    "loading": "Carregant l'agenda...",
+    "errorTitle": "No s'ha pogut carregar l'agenda",
+    "retry": "Torna-ho a provar",
+    "refreshing": "Actualitzant l'agenda...",
+    "errors": {
+      "invalidSession": "Sessió no vàlida.",
+      "invalidBusinessId": "L'ID del negoci no és vàlid.",
+      "sessionExpired": "La teva sessió ha caducat.",
+      "loadAppointments": "No s'han pogut carregar les cites.",
+      "loadBusinessHours": "No s'han pogut carregar els horaris."
+    }
+  },
+  "calendar": {
+    "today": "Avui",
+    "day": "Dia",
+    "week": "Setmana",
+    "month": "Mes",
+    "previous": "Anterior",
+    "next": "Següent",
+    "employees": "Empleats",
+    "employee": "Empleat",
+    "selectEmployee": "Selecciona un empleat",
+    "allEmployees": "Tots els empleats",
+    "employeesCount": "{count} empleats",
+    "selectedEmployee": "Empleat seleccionat",
+    "employeesHeading": "EMPLEATS",
+    "active": "Actiu",
+    "loading": {
+      "title": "AgendaReminder",
+      "text": "Carregant la teva agenda...",
+      "preparing": "Preparant empleats i calendari"
+    },
+    "empty": {
+      "noEmployees": "No hi ha empleats actius",
+      "addEmployee": "Afegeix un empleat per començar."
+    },
+    "closed": {
+      "title": "Negoci tancat",
+      "description": "El negoci no té horari d'obertura per a aquest dia.",
+      "short": "Tancat"
+    },
+    "refreshing": "Actualitzant l'agenda...",
+    "customer": "Client",
+    "weekdays": {
+      "monday": "Dl",
+      "tuesday": "Dt",
+      "wednesday": "Dc",
+      "thursday": "Dj",
+      "friday": "Dv",
+      "saturday": "Ds",
+      "sunday": "Dg"
+    },
+    "errors": {
+      "invalidSession": "Sessió no vàlida.",
+      "sessionExpired": "La teva sessió ha caducat.",
+      "loadAppointments": "No s'han pogut carregar les cites.",
+      "loadEmployees": "No s'han pogut carregar els empleats.",
+      "loadBusinessHours": "No s'ha pogut carregar l'horari del negoci."
+    }
+  },
+  "clients": {
+    "eyebrow": "Gestió",
+    "title": "Clients",
+    "description": "Gestiona tota la informació dels teus clients.",
+    "actions": {
+      "new": "Nou client",
+      "create": "Crea el client",
+      "edit": "Edita",
+      "delete": "Elimina"
+    },
+    "search": {
+      "placeholder": "Cerca per nom, telèfon o correu electrònic...",
+      "aria": "Cerca clients",
+      "clear": "Neteja la cerca"
+    },
+    "results": {
+      "singular": "client",
+      "plural": "clients"
+    },
+    "summary": {
+      "total": "Clients totals",
+      "matches": "Coincidències"
+    },
+    "loading": {
+      "title": "Carregant clients",
+      "description": "Estem preparant la teva llista."
+    },
+    "empty": {
+      "title": "Encara no tens clients",
+      "description": "Crea el teu primer client per començar.",
+      "searchTitle": "No hem trobat clients",
+      "searchDescription": "Prova amb un altre nom, telèfon o correu electrònic.",
+      "addCustomersTitle": "Afegeix els teus clients",
+      "addCustomersDescription": "Desa el nom, el telèfon i altres dades per tenir tota la informació organitzada.",
+      "createAppointmentsTitle": "Crea cites més fàcilment",
+      "createAppointmentsDescription": "Quan tinguis clients registrats, els podràs seleccionar directament des de l'agenda."
+    },
+    "table": {
+      "client": "Client",
+      "contact": "Contacte",
+      "notes": "Notes",
+      "actions": "Accions"
+    },
+    "footer": {
+      "showing": "Mostrant",
+      "of": "de"
+    },
+    "fallbacks": {
+      "noName": "Sense nom",
+      "noPhone": "Sense telèfon",
+      "noNotes": "Sense notes"
+    },
+    "phone": {
+      "manualCode": "Codi manual",
+      "manualOption": "🌎 Altre / manual",
+      "selectCountry": "Selecciona un país",
+      "selectCountryHint": "Selecciona un país.",
+      "manualHint": "Pots introduir un prefix manual.",
+      "invalid": "Introdueix un telèfon vàlid.",
+      "validFor": "Telèfon vàlid per a",
+      "rangePrefix": "Ha de tenir entre",
+      "rangeMiddle": "i",
+      "rangeSuffix": "dígits.",
+      "countrySuffix": "dígits."
+    },
+    "form": {
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Ex. Maria Garcia",
+      "phone": "Telèfon",
+      "email": "Correu electrònic",
+      "emailPlaceholder": "client@email.com",
+      "notes": "Notes",
+      "notesPlaceholder": "Notes sobre el client...",
+      "language": "Idioma"
+    },
+    "modal": {
+      "eyebrowEdit": "CLIENT",
+      "eyebrowNew": "NOU CLIENT",
+      "editTitle": "Edita el client",
+      "newTitle": "Nou client",
+      "description": "Completa la informació del client."
+    },
+    "delete": {
+      "eyebrow": "ELIMINA EL CLIENT",
+      "title": "Vols eliminar el client?",
+      "confirmPrefix": "Segur que vols eliminar",
+      "irreversible": "Aquesta acció no es pot desfer.",
+      "deleting": "Eliminant..."
+    },
+    "errors": {
+      "invalidSession": "Sessió no vàlida.",
+      "sessionExpired": "La teva sessió ha caducat.",
+      "loadClients": "No s'han pogut carregar els clients.",
+      "saveClient": "No s'ha pogut desar el client.",
+      "deleteClient": "No s'ha pogut eliminar el client."
+    }
+  },
+  "employees": {
+    "eyebrow": "Gestió",
+    "title": "Empleats",
+    "description": "Gestiona les persones que formen part del teu negoci.",
+    "newEmployee": "Nou empleat",
+    "searchPlaceholder": "🔎 Cerca un empleat...",
+    "loading": "Carregant empleats...",
+    "empty": {
+      "searchTitle": "No hem trobat empleats",
+      "searchText": "Prova amb un altre nom.",
+      "title": "Encara no tens empleats",
+      "text": "Crea el teu primer empleat per començar."
+    },
+    "createEmployee": "Crea l'empleat",
+    "noName": "Sense nom",
+    "noPhone": "Sense telèfon",
+    "table": {
+      "employee": "Empleat",
+      "schedule": "Horari",
+      "status": "Estat",
+      "actions": "Accions"
+    },
+    "status": {
+      "active": "Actiu",
+      "inactive": "Inactiu"
+    },
+    "dialog": {
+      "createTitle": "Nou empleat",
+      "editTitle": "Edita l'empleat",
+      "createDescription": "Afegeix una persona al teu equip.",
+      "editDescription": "Actualitza la informació de l'empleat.",
+      "saveChanges": "Desa els canvis",
+      "createEmployee": "Crea l'empleat"
+    },
+    "fields": {
+      "firstName": "Nom",
+      "firstNamePlaceholder": "Ex. Matías",
+      "lastName": "Cognom",
+      "lastNamePlaceholder": "Ex. Díaz",
+      "phone": "Telèfon",
+      "phonePlaceholder": "Ex. 612345678",
+      "phoneHelp": "Opcional. Pots afegir-lo ara o més endavant.",
+      "startTime": "Hora d'inici",
+      "endTime": "Hora de finalització",
+      "color": "Color de l'empleat",
+      "colorHelp": "Aquest color s'utilitzarà per identificar les targetes de l'empleat a l'agenda.",
+      "status": "Estat"
+    },
+    "form": {
+      "active": "Empleat actiu",
+      "inactive": "Empleat inactiu"
+    },
+    "deleteDialog": {
+      "title": "Elimina l'empleat",
+      "question": "Segur que vols eliminar",
+      "warning": "Aquesta acció no es pot desfer.",
+      "deleting": "Eliminant..."
+    },
+    "footer": {
+      "showing": "Mostrant {shown} de {total} empleats"
+    },
+    "errors": {
+      "invalidSession": "Sessió no vàlida.",
+      "sessionExpired": "La teva sessió ha caducat.",
+      "loadEmployees": "No s'han pogut carregar els empleats.",
+      "firstNameRequired": "El nom és obligatori.",
+      "lastNameRequired": "El cognom és obligatori.",
+      "startTimeRequired": "L'hora d'inici és obligatòria.",
+      "endTimeRequired": "L'hora de finalització és obligatòria.",
+      "endTimeAfterStart": "L'hora de finalització ha de ser posterior a l'hora d'inici.",
+      "saveEmployee": "No s'ha pogut desar l'empleat.",
+      "deleteEmployee": "No s'ha pogut eliminar l'empleat.",
+      "toggleStatus": "No s'ha pogut canviar l'estat."
+    }
+  },
+  "services": {
+    "eyebrow": "Gestió",
+    "title": "Serveis",
+    "description": "Gestiona els serveis que ofereix el teu negoci.",
+    "newService": "Nou servei",
+    "createService": "Crea el servei",
+    "searchPlaceholder": "🔎 Cercar servicio...",
+    "loading": "Carregant serveis...",
+    "noDescription": "Sense descripció",
+    "noPrice": "Sense preu",
+    "minutes": "min",
+    "empty": {
+      "searchTitle": "No hem trobat serveis",
+      "searchText": "Prova amb una altra cerca.",
+      "title": "Encara no tens serveis",
+      "text": "Crea el teu primer servei per començar."
+    },
+    "table": {
+      "service": "Servei",
+      "duration": "Durada",
+      "price": "Preu",
+      "status": "Estat",
+      "actions": "Accions"
+    },
+    "status": {
+      "active": "Actiu",
+      "inactive": "Inactiu"
+    },
+    "dialog": {
+      "createTitle": "Nou servei",
+      "editTitle": "Edita el servei",
+      "createDescription": "Agregá un servicio a el teu negoci.",
+      "editDescription": "Actualizá els datos del servicio.",
+      "saveChanges": "Desa els canvis",
+      "createService": "Crea el servei"
+    },
+    "fields": {
+      "name": "Nom del servei",
+      "namePlaceholder": "Ex. Tall de cabell",
+      "description": "Descripció",
+      "descriptionPlaceholder": "Descripció opcional...",
+      "duration": "Durada",
+      "price": "Preu",
+      "color": "Color del servei",
+      "colorHelp": "Aquest color es podrà utilitzar per identificar el servei a l'agenda.",
+      "status": "Estat"
+    },
+    "form": {
+      "active": "Servei actiu",
+      "inactive": "Servei inactiu"
+    },
+    "deleteDialog": {
+      "title": "Elimina el servei",
+      "question": "Segur que vols eliminar",
+      "warning": "Aquesta acció no es pot desfer.",
+      "deleting": "Eliminant..."
+    },
+    "footer": {
+      "showing": "Mostrando {shown} de {total} serveis"
+    },
+    "errors": {
+      "invalidSession": "Sessió no vàlida.",
+      "sessionExpired": "La teva sessió ha caducat.",
+      "loadServices": "No s'han pogut carregar els serveis.",
+      "nameRequired": "El nombre del servicio és obligatori.",
+      "durationInvalid": "La durada ha de ser superior a 0 minuts.",
+      "priceNegative": "El preu no pot ser negatiu.",
+      "colorInvalid": "El color no és vàlid.",
+      "saveService": "No s'ha pogut desar el servei.",
+      "deleteService": "No s'ha pogut eliminar el servei.",
+      "toggleStatus": "No s'ha pogut canviar l'estat."
+    }
+  },
+  "whatsappStatus": {
+    "eyebrow": "CONNEXIÓ",
+    "description": "Estat actual de la teva connexió.",
+    "logoAlt": "WhatsApp",
+    "status": {
+      "connected": "CONNECTAT",
+      "notConnected": "NO CONNECTAT"
+    },
+    "main": {
+      "connectedHighlight": "connectat",
+      "notConnectedTitle": "WhatsApp no connectat",
+      "connectedDescription": "El teu compte de WhatsApp està actiu i llest per enviar recordatoris, confirmacions i missatges automàtics als teus clients.",
+      "notConnectedDescription": "Connecta un compte de WhatsApp per començar a utilitzar les automatitzacions d'AgendaReminder."
+    },
+    "phone": {
+      "connectedNumber": "Número connectat"
+    },
+    "disconnect": {
+      "button": "Desconnecta WhatsApp",
+      "description": "Finalitza la connexió actual"
+    },
+    "pending": {
+      "title": "Connexió pendent",
+      "description": "No hi ha cap compte connectat."
+    },
+    "system": {
+      "automaticMessages": "Missatges automàtics",
+      "active": "Actius",
+      "customerCommunication": "Comunicació amb clients",
+      "enabled": "Habilitada",
+      "systemWorking": "Sistema funcionant",
+      "noErrors": "Sense errors"
+    },
+    "information": {
+      "title": "Què passa si desconnectes?",
+      "description": "S'aturaran els missatges automàtics i els recordatoris. Podràs tornar a connectar WhatsApp en qualsevol moment."
+    },
+    "disconnectDialog": {
+      "title": "Vols desconnectar WhatsApp?",
+      "description": "Es finalitzarà la connexió actual de WhatsApp. Els missatges automàtics deixaran d'enviar-se fins que tornis a connectar el compte.",
+      "confirm": "Desconnecta"
+    }
+  },
+  "hours": {
+    "eyebrow": "Gestió",
+    "title": "Horaris",
+    "description": "Configura els dies i horaris en què el teu negoci està obert.",
+    "saveButton": "Desa els horaris",
+    "loading": "Carregant horaris...",
+    "thisDay": "aquest dia",
+    "closedBusiness": "Negoci tancat",
+    "fields": {
+      "from": "Des de",
+      "until": "Fins a"
+    },
+    "applyAll": {
+      "title": "Aplica a tots els dies",
+      "description": "Estableix el mateix horari per a tota la setmana.",
+      "button": "Aplica a tots",
+      "applying": "Aplicant..."
+    },
+    "weekly": {
+      "title": "Horari setmanal",
+      "description": "Pots personalitzar cada dia individualment."
+    },
+    "status": {
+      "open": "Obert",
+      "closed": "Tancat"
+    },
+    "days": {
+      "monday": "Dilluns",
+      "tuesday": "Dimarts",
+      "wednesday": "Dimecres",
+      "thursday": "Dijous",
+      "friday": "Divendres",
+      "saturday": "Dissabte",
+      "sunday": "Diumenge"
+    },
+    "aria": {
+      "closeDay": "Tanca {day}",
+      "openDay": "Obre {day}"
+    },
+    "success": {
+      "saved": "Horaris desats correctament.",
+      "appliedToAll": "Horari aplicat a tots els dies."
+    },
+    "errors": {
+      "sessionExpired": "La teva sessió ha caducat.",
+      "sessionExpiredSave": "Tu sessió ha expirado. Vuelve a iniciar sessió.",
+      "loadHours": "No s'han pogut carregar els horaris.",
+      "saveHours": "No s'han pogut desar els horaris.",
+      "completeDay": "Completa l'horari de {day}.",
+      "openBeforeClose": "L'obertura ha de ser anterior al tancament de {day}.",
+      "selectTimes": "Has d'indicar l'hora d'obertura i de tancament.",
+      "openBeforeCloseGlobal": "L'hora d'obertura ha de ser anterior a l'hora de tancament."
+    }
+  },
+  "settings": {
+    "eyebrow": "SISTEMA",
+    "title": "Configuració",
+    "description": "Configuració general del teu negoci.",
+    "loading": "Carregant la configuració...",
+    "business": {
+      "title": "Informació del negoci",
+      "description": "Informació bàsica que utilitza AgendaReminder."
+    },
+    "regional": {
+      "title": "Configuració regional",
+      "description": "Determina telèfons, horaris i moneda."
+    },
+    "fields": {
+      "businessName": "Nom del negoci",
+      "businessNamePlaceholder": "Ex. Glow Skin Studio",
+      "address": "Adreça",
+      "addressPlaceholder": "Adreça del negoci",
+      "reviewUrl": "URL de Google Reviews",
+      "reviewUrlPlaceholder": "https://g.page/...",
+      "country": "País",
+      "selectCountry": "Selecciona un país",
+      "timezone": "Zona horària",
+      "timezoneHelp": "Utilitzada per a cites i automatitzacions.",
+      "currency": "Moneda",
+      "currencyHelp": "S'obté automàticament segons el país."
+    },
+    "values": {
+      "notConfigured": "Sense configurar"
+    },
+    "language": {
+      "title": "Idioma",
+      "description": "Idioma principal d'AgendaReminder.",
+      "label": "Idioma de l'aplicació"
+    },
+    "appearance": {
+      "title": "Aparença",
+      "description": "Tria com vols veure AgendaReminder.",
+      "themeLabel": "Tema",
+      "themeAria": "Tema de l'aplicació",
+      "light": {
+        "title": "Clar",
+        "description": "Interfície clara i lluminosa."
+      },
+      "dark": {
+        "title": "Fosc",
+        "description": "Interfície fosca per a ambients amb poca llum."
+      }
+    },
+    "saveButton": "Desa la configuració",
+    "success": {
+      "saved": "Configuració desada correctament."
+    },
+    "errors": {
+      "loadCountries": "No s'han pogut carregar els països.",
+      "loadSettings": "No s'ha pogut carregar la configuració.",
+      "nameRequired": "El nom del negoci és obligatori.",
+      "addressRequired": "L'adreça és obligatòria.",
+      "reviewUrlRequired": "La URL de Google Reviews és obligatòria.",
+      "reviewUrlInvalid": "La URL de Google Reviews no és vàlida.",
+      "countryRequired": "Selecciona un país.",
+      "dialCodeMissing": "El país seleccionat no té prefix telefònic.",
+      "timezoneMissing": "El país seleccionat no té zona horària.",
+      "currencyMissing": "El país seleccionat no té moneda configurada.",
+      "currencySymbolMissing": "El país seleccionat no té símbol de moneda configurat.",
+      "languageRequired": "Selecciona un idioma.",
+      "saveSettings": "No s'ha pogut desar la configuració."
+    }
+  },
+  "onboarding": {
+    "initialSetup": "Configuració inicial",
+    "stepProgress": "Pas 2 de 5",
+    "continue": "Continua",
+    "step1": {
+      "initialSetup": "Configuració inicial",
+      "detectedLanguage": "Idioma detectat automàticament",
+      "language": "Idioma",
+      "progress": "Pas 1 de 5",
+      "title": "Configurem el teu negoci",
+      "description": "Primer necessitem algunes dades bàsiques del teu negoci. Aquesta informació s'utilitzarà per configurar la teva agenda, els teus missatges i les teves automatitzacions.",
+      "businessName": "Nom del negoci",
+      "businessNamePlaceholder": "Ex. Perruqueria Matias",
+      "country": "País",
+      "loadingCountries": "Carregant països...",
+      "selectCountry": "Selecciona el teu país",
+      "searchCountry": "Cerca un país...",
+      "noCountryResults": "No hem trobat aquest país.",
+      "detectedCountry": "Hem detectat que podries ser a",
+      "saving": "Desant...",
+      "continue": "Continua",
+      "success": "Configuració desada correctament.",
+      "errors": {
+        "loadCountries": "No hem pogut carregar els països.",
+        "loadBusiness": "No s'han pogut carregar les dades del negoci.",
+        "saveSettings": "No s'ha pogut desar la configuració.",
+        "advance": "La configuració s'ha desat, però no s'ha pogut avançar al Pas 2."
+      }
+    },
+    "step2": {
+      "progress": "Pas 2 de 5",
+      "title": "Quin és l'horari del teu negoci?",
+      "description": "Indica el teu horari habitual d'atenció. L'aplicarem inicialment a tots els dies de la setmana.",
+      "quickSetup": {
+        "title": "Configuració ràpida",
+        "description": "Podràs personalitzar els horaris de cada dia més endavant des de Configuració."
+      },
+      "openingTime": "Hora d'obertura",
+      "closingTime": "Hora de tancament",
+      "until": "fins a",
+      "preview": {
+        "title": "Horari habitual",
+        "appliesToSevenDays": "s'aplicarà als 7 dies"
+      },
+      "saving": "Desant...",
+      "success": "Horari desat correctament.",
+      "errors": {
+        "selectTimes": "Selecciona la hora de obertura i de tancament.",
+        "closeAfterOpen": "L'hora de tancament ha de ser posterior a l'obertura.",
+        "saveHours": "No s'han pogut desar els horaris.",
+        "advance": "Els horaris s'han desat, però no s'ha pogut avançar al Pas 3."
+      }
+    },
+    "step3": {
+      "progress": "Pas 3 de 5",
+      "title": "Crea el teu primer servei",
+      "description": "Defineix el servei que oferiràs als teus clients. Podràs afegir i modificar més serveis després.",
+      "serviceName": "Nom del servei",
+      "serviceNamePlaceholder": "Ex. Tall de cabell",
+      "descriptionLabel": "Descripció",
+      "descriptionPlaceholder": "Descriu breument aquest servei...",
+      "duration": "Durada",
+      "minutes": "min",
+      "price": "Preu",
+      "color": "Color del servei",
+      "colorDescription": "Este color ayudará a identificar el servicio a la agenda.",
+      "creating": "Creant...",
+      "createButton": "Crea el servei",
+      "success": "Servei creat correctament.",
+      "errors": {
+        "loadBusiness": "No s'ha pogut carregar la configuració del negoci.",
+        "invalidForm": "Completa el nom i una durada vàlida. La durada ha de ser múltiple de 5 minuts.",
+        "missingCurrency": "No s'ha pogut determinar la moneda del negoci. Torna al Pas 1 i verifica el país.",
+        "createService": "No s'ha pogut crear el servei.",
+        "advance": "El servei s'ha creat, però no s'ha pogut avançar al Pas 4."
+      }
+    },
+    "step4": {
+      "progress": "Pas 4 de 5",
+      "title": "Crea el teu primer empleat",
+      "description": "Afegeix la primera persona del teu equip. El seu horari i color s'utilitzaran per organitzar les cites a l'agenda.",
+      "firstName": "Nom",
+      "firstNamePlaceholder": "Ex. Matias",
+      "lastName": "Cognom",
+      "lastNamePlaceholder": "Ex. Diaz",
+      "employeeColor": "Color de l'empleat",
+      "selectColor": "Selecciona un color",
+      "custom": "Personalitzat",
+      "customColor": "Color personalitzat",
+      "colorHelp": "Aquest color identificarà l'empleat a les targetes de l'agenda.",
+      "startTime": "Hora d'entrada",
+      "endTime": "Hora de sortida",
+      "scheduleNote": "Defineix l'horari habitual d'aquest empleat. Podràs modificar-lo més endavant des d'Empleats.",
+      "creating": "Creant...",
+      "createButton": "Crea l'empleat",
+      "success": "Empleat creat correctament.",
+      "errors": {
+        "invalidForm": "Completa el nom, cognom i un horari vàlid.",
+        "createEmployee": "No s'ha pogut crear l'empleat.",
+        "advance": "L'empleat s'ha creat, però no s'ha pogut avançar al Pas 5."
+      }
+    },
+    "step5": {
+      "progress": "Pas 5 de 5",
+      "initialLoading": {
+        "title": "Preparant WhatsApp",
+        "text": "Estem verificant la connexió..."
+      },
+      "title": "Connecta el teu WhatsApp",
+      "description": "Vincula el número de WhatsApp que utilitzaràs per enviar recordatoris i missatges als teus clients.",
+      "checking": {
+        "title": "Verificant la connexió",
+        "text": "Comprovant l'estat del servei..."
+      },
+      "preparing": {
+        "title": "Preparant WhatsApp",
+        "text": "Estem preparant la connexió segura..."
+      },
+      "connecting": {
+        "title": "Connectant amb WhatsApp",
+        "text": "Esperant la resposta de WhatsApp..."
+      },
+      "connected": {
+        "title": "WhatsApp connectat",
+        "note": "Se't redirigirà automàticament a la teva agenda."
+      },
+      "finalizing": "Finalitzant...",
+      "finalizeIn": "Finalitzar en",
+      "finalizeNow": "Finalitza ara",
+      "serverError": {
+        "title": "No hem pogut connectar amb el servidor",
+        "text": "El servei de WhatsApp no ha respost. Pots tornar-ho a intentar."
+      },
+      "generalError": {
+        "title": "No s'ha pogut preparar WhatsApp"
+      },
+      "retry": {
+        "checking": "Comprovant...",
+        "connection": "Torna a intentar la connexió",
+        "generic": "Torna-ho a provar"
+      },
+      "expired": {
+        "title": "El codi QR ha caducat",
+        "text": "Genera un codi nou i escaneja'l des de WhatsApp al teu telèfon.",
+        "button": "Genera un QR nou"
+      },
+      "qr": {
+        "active": "Codi QR actiu",
+        "title": "Connecta el teu WhatsApp",
+        "help": "Escaneja aquest codi amb WhatsApp des del teu telèfon per vincular el teu compte.",
+        "step1": "Obre WhatsApp al teu mòbil",
+        "step2": "Ves a Dispositius vinculats",
+        "step3": "Toca «Vincula un dispositiu» i escaneja el codi",
+        "helpLink": "Necessites ajuda?",
+        "validFor": "Codi vàlid durant",
+        "seconds": "segons"
+      },
+      "connectButton": "Connecta WhatsApp",
+      "errors": {
+        "invalidBusinessId": "No hem trobat un Business ID vàlid.",
+        "serverResponse": "El servidor ha respost amb un error.",
+        "serverTimeout": "El servidor de WhatsApp ha trigat massa a respondre.",
+        "serverConnection": "No s'ha pogut connectar amb el servidor de WhatsApp.",
+        "connectFailed": "No s'ha pogut iniciar WhatsApp.",
+        "finalize": "No s'ha pogut finalitzar la configuració.",
+        "notCompleted": "WhatsApp està connectat, però la configuració encara no apareix com a completada.",
+        "finalizeTimeout": "El servidor ha trigat massa a confirmar la finalització."
+      }
+    }
+  },
+  "templates": {
+    "title": "Plantilles de missatges",
+    "subtitle": "Selecciona les plantilles que utilitzarà AgendaReminder per enviar els teus missatges automàtics.",
+    "appointment24": "Recordatori 24 hores abans",
+    "appointment1": "Recordatori 1 hora abans",
+    "review": "Sol·licitud de ressenya",
+    "before24": "Missatge enviat 24 hores abans de la cita.",
+    "before1": "Missatge enviat 1 hora abans de la cita.",
+    "after2": "Missatge enviat 2 hores després de la cita.",
+    "formal": "Formal",
+    "friendly": "Amable",
+    "formalDescription": "Un missatge clar i professional per als teus clients.",
+    "friendlyDescription": "Un missatge proper i cordial per als teus clients.",
+    "formalReviewDescription": "Un missatge clar i professional per sol·licitar una ressenya.",
+    "friendlyReviewDescription": "Un missatge proper per convidar els teus clients a deixar una ressenya.",
+    "selected": "Seleccionada",
+    "select": "Selecciona",
+    "loading": "Carregant plantilles...",
+    "error": "No s'han pogut carregar les plantilles.",
+    "retry": "Torna-ho a provar",
+    "noTemplates": "No hi ha plantilles disponibles.",
+    "preview": "Vista prèvia",
+    "whatsapp": "WhatsApp",
+    "customer": "Client",
+    "service": "Servei",
+    "employee": "Empleat",
+    "business": "Negoci",
+    "date": "Data",
+    "time": "Hora",
+    "reviewUrl": "Enllaç de ressenya",
+    "address": "Adreça",
+    "saving": "Desant...",
+    "saved": "Desat",
+    "saveError": "No s'ha pogut desar la plantilla."
+  }
+}

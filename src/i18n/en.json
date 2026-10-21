@@ -1,0 +1,910 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "loading": "Loading...",
+    "search": "Search",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "saving": "Saving...",
+    "saveChanges": "Save changes"
+  },
+  "auth": {
+    "languageSelector": "Language",
+    "changeToLightTheme": "Switch to light theme",
+    "changeToDarkTheme": "Switch to dark theme",
+    "lightTheme": "Light theme",
+    "darkTheme": "Dark theme",
+    "login": {
+      "title": "Agendareminder",
+      "subtitle": "Smart reminder management",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "password": "Password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "forgotPassword": "Forgot your password?",
+      "loading": "Signing in...",
+      "submit": "Sign in"
+    },
+    "forgotPassword": {
+      "back": "Back",
+      "title": "Reset password",
+      "description": "Enter your email and we'll send you a code to reset your password.",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "loading": "Sending...",
+      "submit": "Send code"
+    },
+    "verifyResetCode": {
+      "back": "Back",
+      "title": "Enter the code",
+      "description": "We sent a 4-digit code to your email.",
+      "codeValidity": "The code is valid for 10 minutes.",
+      "submit": "Verify code"
+    },
+    "resetPassword": {
+      "back": "Back",
+      "title": "New password",
+      "description": "Enter a new password for your account.",
+      "newPassword": "New password",
+      "passwordPlaceholder": "Minimum 8 characters",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "passwordValidation": "Password must contain at least 8 characters.",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "Repeat your password",
+      "passwordsDoNotMatch": "Passwords do not match.",
+      "loading": "Changing...",
+      "submit": "Change password"
+    },
+    "passwordResetSuccess": {
+      "brandName": "Agenda",
+      "brandNameSuffix": "Reminder",
+      "brandSubtitle": "Your business always connected",
+      "headerText": "Simpler appointment management",
+      "titleFirstLine": "Password",
+      "titleSecondLine": "updated!",
+      "descriptionFirstLine": "Your password was changed successfully.",
+      "descriptionSecondLine": "You can now log in with your new password.",
+      "securityTitle": "Your account is secure",
+      "securityText": "We recommend keeping your password in a safe place.",
+      "login": "Log in",
+      "footer": "Thank you for trusting AgendaReminder"
+    }
+  },
+  "appointmentDialog": {
+    "createTitle": "New appointment",
+    "editTitle": "Edit appointment",
+    "selectDate": "Select a date",
+    "createAppointment": "Create appointment",
+    "saveChanges": "Save changes",
+    "reviewWarning": {
+      "title": "You haven't configured your review link yet",
+      "description": "Configure it so your clients can leave a review after their appointment.",
+      "configure": "Configure"
+    },
+    "customer": {
+      "title": "Customer",
+      "subtitle": "Who is the appointment for?",
+      "searchPlaceholder": "Search customer by name or phone...",
+      "noPhone": "No phone number",
+      "change": "Change",
+      "new": "New customer",
+      "noResults": "No customers found."
+    },
+    "service": {
+      "title": "Service",
+      "subtitle": "Service and duration",
+      "select": "Select service"
+    },
+    "employee": {
+      "title": "Employee",
+      "availability": "Availability",
+      "available": "available",
+      "availablePlural": "available",
+      "checking": "Checking...",
+      "checkingAvailability": "Checking availability...",
+      "selectService": "Select a service.",
+      "noAvailable": "No employees are available.",
+      "outsideHours": "Outside working hours",
+      "busy": "Busy"
+    },
+    "dateTime": {
+      "title": "Date and time",
+      "subtitle": "Select when to schedule the appointment",
+      "durationUntil": "Duration until",
+      "ends": "Ends"
+    },
+    "notes": {
+      "title": "Notes",
+      "optional": "optional",
+      "placeholder": "Add a note about this appointment..."
+    },
+    "status": {
+      "title": "Status",
+      "scheduled": "Scheduled",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "automations": {
+      "title": "WhatsApp notifications"
+    },
+    "reviewConfig": {
+      "title": "Configure your review link",
+      "description": "Follow these 3 simple steps to get your business review link from Google.",
+      "step1": {
+        "title": "Sign in to Google with the owner's account",
+        "description": "Sign in with the account that manages your business's Google Business Profile."
+      },
+      "step2": {
+        "title": "Click “Ask for reviews”",
+        "description": "Find your business panel and click “Ask for reviews”. Google may also display it as “Get more reviews”."
+      },
+      "step3": {
+        "title": "Copy the link",
+        "description": "Google will open a window with your review link. Click “Copy link”."
+      },
+      "ownerAccount": "Owner account",
+      "ownerAccountDescription": "Manages your Google Business Profile",
+      "openGoogle": "Open Google",
+      "loadingBusiness": "Loading business...",
+      "yourBusiness": "Your business",
+      "googleBusinessProfile": "Google Business Profile",
+      "editProfile": "Edit profile",
+      "readReviews": "Read reviews",
+      "requestReviews": "Ask for reviews",
+      "shareLinkDescription": "Share this link with your customers so they can leave a review.",
+      "copyLink": "Copy link",
+      "notFoundTitle": "Can't find “Ask for reviews”?",
+      "notFoundDescription": "Make sure you are signed in with the account that manages the business.",
+      "linkLabel": "Paste your review link here",
+      "linkHint": "This link will be used to automatically send your customers to leave a review after their appointment.",
+      "saveLink": "Save link",
+      "errors": {
+        "loadBusiness": "Could not load the business information.",
+        "missingLink": "Paste the review link first.",
+        "saveLink": "Could not save the link."
+      }
+    },
+    "errors": {
+      "invalidSession": "Invalid session.",
+      "sessionExpired": "Your session has expired.",
+      "loadCustomers": "Could not load customers.",
+      "loadServices": "Could not load services.",
+      "loadAutomations": "Could not load notifications.",
+      "checkAvailability": "Could not check availability.",
+      "selectCustomer": "Select a customer.",
+      "selectService": "Select a service.",
+      "selectDate": "Select a date.",
+      "selectTime": "Select a time.",
+      "noEmployee": "No employee is available at this time.",
+      "saveAppointment": "Could not save the appointment.",
+      "updateAutomation": "Could not update a notification."
+    }
+  },
+  "sidebar": {
+    "brandSubtitle": "Management and automation",
+    "closeMenu": "Close menu",
+    "user": "User",
+    "mainMenu": "Main menu",
+    "home": "Home",
+    "agenda": "Agenda",
+    "clients": "Clients",
+    "employees": "Employees",
+    "services": "Services",
+    "templates": "Templates",
+    "whatsapp": "WhatsApp",
+    "hours": "Business hours",
+    "settings": "Settings",
+    "connected": "Connected",
+    "notConnected": "Not connected",
+    "logout": "Log out"
+  },
+  "home": {
+    "eyebrow": "MAIN DASHBOARD",
+    "welcome": "Hello,",
+    "welcomeFallback": "welcome",
+    "description": "Manage your business and automate your communications.",
+    "whatsapp": "WHATSAPP",
+    "connected": "Connected",
+    "notConnected": "Not connected",
+    "account": "ACCOUNT",
+    "active": "Active",
+    "automation": "AUTOMATION",
+    "ready": "Ready to use",
+    "remindersAndMessages": "Reminders and messages",
+    "whatsappConnectedTitle": "WhatsApp connected",
+    "whatsappDisconnectedTitle": "WhatsApp not connected",
+    "whatsappConnectedDescription": "Your account is connected and ready to work.",
+    "whatsappDisconnectedDescription": "Connect WhatsApp to start sending messages.",
+    "manageWhatsapp": "Manage WhatsApp"
+  },
+  "agenda": {
+    "eyebrow": "MANAGEMENT",
+    "title": "Calendar",
+    "description": "Organize your appointments, business hours, and availability.",
+    "calendarLabel": "Appointment calendar",
+    "loading": "Loading calendar...",
+    "errorTitle": "Could not load the calendar",
+    "retry": "Retry",
+    "refreshing": "Updating calendar...",
+    "errors": {
+      "invalidSession": "Invalid session.",
+      "invalidBusinessId": "Invalid Business ID.",
+      "sessionExpired": "Your session has expired.",
+      "loadAppointments": "Could not load appointments.",
+      "loadBusinessHours": "Could not load business hours."
+    }
+  },
+  "calendar": {
+    "today": "Today",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "previous": "Previous",
+    "next": "Next",
+    "employees": "Employees",
+    "employee": "Employee",
+    "selectEmployee": "Select employee",
+    "allEmployees": "All employees",
+    "employeesCount": "{count} employees",
+    "selectedEmployee": "Selected employee",
+    "employeesHeading": "EMPLOYEES",
+    "active": "Active",
+    "loading": {
+      "title": "AgendaReminder",
+      "text": "Loading your calendar...",
+      "preparing": "Preparing employees and calendar"
+    },
+    "empty": {
+      "noEmployees": "No active employees",
+      "addEmployee": "Add an employee to get started."
+    },
+    "closed": {
+      "title": "Business closed",
+      "description": "The business has no opening hours for this day.",
+      "short": "Closed"
+    },
+    "refreshing": "Updating calendar...",
+    "customer": "Customer",
+    "weekdays": {
+      "monday": "Mon",
+      "tuesday": "Tue",
+      "wednesday": "Wed",
+      "thursday": "Thu",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun"
+    },
+    "errors": {
+      "invalidSession": "Invalid session.",
+      "sessionExpired": "Your session has expired.",
+      "loadAppointments": "Could not load appointments.",
+      "loadEmployees": "Could not load employees.",
+      "loadBusinessHours": "Could not load business hours."
+    }
+  },
+  "clients": {
+    "eyebrow": "Management",
+    "title": "Clients",
+    "description": "Manage all your client information.",
+    "actions": {
+      "new": "New client",
+      "create": "Create client",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "search": {
+      "placeholder": "Search by name, phone or email...",
+      "aria": "Search clients",
+      "clear": "Clear search"
+    },
+    "results": {
+      "singular": "client",
+      "plural": "clients"
+    },
+    "summary": {
+      "total": "Total clients",
+      "matches": "Matches"
+    },
+    "loading": {
+      "title": "Loading clients",
+      "description": "We're preparing your list."
+    },
+    "empty": {
+      "title": "You don't have any clients yet",
+      "description": "Create your first client to get started.",
+      "searchTitle": "No clients found",
+      "searchDescription": "Try another name, phone number or email.",
+      "addCustomersTitle": "Add your clients",
+      "addCustomersDescription": "Save their name, phone number and other details to keep all their information organized.",
+      "createAppointmentsTitle": "Create appointments more easily",
+      "createAppointmentsDescription": "Once you have clients registered, you can select them directly from your calendar."
+    },
+    "table": {
+      "client": "Client",
+      "contact": "Contact",
+      "notes": "Notes",
+      "actions": "Actions"
+    },
+    "footer": {
+      "showing": "Showing",
+      "of": "of"
+    },
+    "fallbacks": {
+      "noName": "No name",
+      "noPhone": "No phone",
+      "noNotes": "No notes"
+    },
+    "phone": {
+      "manualCode": "Manual code",
+      "manualOption": "🌎 Other / manual",
+      "selectCountry": "Select a country",
+      "selectCountryHint": "Select a country.",
+      "manualHint": "You can enter a country calling code manually.",
+      "invalid": "Enter a valid phone number.",
+      "validFor": "Valid phone number for",
+      "rangePrefix": "It must contain between",
+      "rangeMiddle": "and",
+      "rangeSuffix": "digits.",
+      "countrySuffix": "digits."
+    },
+    "form": {
+      "fullName": "Full name",
+      "fullNamePlaceholder": "e.g. Maria Garcia",
+      "phone": "Phone",
+      "email": "Email",
+      "emailPlaceholder": "client@email.com",
+      "notes": "Notes",
+      "notesPlaceholder": "Notes about the client...",
+      "language": "Language"
+    },
+    "modal": {
+      "eyebrowEdit": "CLIENT",
+      "eyebrowNew": "NEW CLIENT",
+      "editTitle": "Edit client",
+      "newTitle": "New client",
+      "description": "Complete the client's information."
+    },
+    "delete": {
+      "eyebrow": "DELETE CLIENT",
+      "title": "Delete client?",
+      "confirmPrefix": "Are you sure you want to delete",
+      "irreversible": "This action cannot be undone.",
+      "deleting": "Deleting..."
+    },
+    "errors": {
+      "invalidSession": "Invalid session.",
+      "sessionExpired": "Your session has expired.",
+      "loadClients": "Clients could not be loaded.",
+      "saveClient": "The client could not be saved.",
+      "deleteClient": "The client could not be deleted."
+    }
+  },
+  "employees": {
+    "eyebrow": "Management",
+    "title": "Employees",
+    "description": "Manage the people who are part of your business.",
+    "newEmployee": "New employee",
+    "searchPlaceholder": "🔎 Search employee...",
+    "loading": "Loading employees...",
+    "empty": {
+      "searchTitle": "No employees found",
+      "searchText": "Try another name.",
+      "title": "You don't have any employees yet",
+      "text": "Create your first employee to get started."
+    },
+    "createEmployee": "Create employee",
+    "noName": "No name",
+    "noPhone": "No phone",
+    "table": {
+      "employee": "Employee",
+      "schedule": "Schedule",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "dialog": {
+      "createTitle": "New employee",
+      "editTitle": "Edit employee",
+      "createDescription": "Add a person to your team.",
+      "editDescription": "Update the employee's information.",
+      "saveChanges": "Save changes",
+      "createEmployee": "Create employee"
+    },
+    "fields": {
+      "firstName": "First name",
+      "firstNamePlaceholder": "e.g. Matías",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "e.g. Díaz",
+      "phone": "Phone",
+      "phonePlaceholder": "e.g. 612345678",
+      "phoneHelp": "Optional. You can add it now or later.",
+      "startTime": "Start time",
+      "endTime": "End time",
+      "color": "Employee color",
+      "colorHelp": "This color will be used to identify the employee's cards in the calendar.",
+      "status": "Status"
+    },
+    "form": {
+      "active": "Active employee",
+      "inactive": "Inactive employee"
+    },
+    "deleteDialog": {
+      "title": "Delete employee",
+      "question": "Are you sure you want to delete",
+      "warning": "This action cannot be undone.",
+      "deleting": "Deleting..."
+    },
+    "footer": {
+      "showing": "Showing {shown} of {total} employees"
+    },
+    "errors": {
+      "invalidSession": "Invalid session.",
+      "sessionExpired": "Your session has expired.",
+      "loadEmployees": "Could not load employees.",
+      "firstNameRequired": "First name is required.",
+      "lastNameRequired": "Last name is required.",
+      "startTimeRequired": "Start time is required.",
+      "endTimeRequired": "End time is required.",
+      "endTimeAfterStart": "End time must be later than start time.",
+      "saveEmployee": "Could not save the employee.",
+      "deleteEmployee": "Could not delete the employee.",
+      "toggleStatus": "Could not change the status."
+    }
+  },
+  "services": {
+    "eyebrow": "Management",
+    "title": "Services",
+    "description": "Manage the services your business offers.",
+    "newService": "New service",
+    "createService": "Create service",
+    "searchPlaceholder": "🔎 Search service...",
+    "loading": "Loading services...",
+    "noDescription": "No description",
+    "noPrice": "No price",
+    "minutes": "min",
+    "empty": {
+      "searchTitle": "No services found",
+      "searchText": "Try another search.",
+      "title": "You don't have any services yet",
+      "text": "Create your first service to get started."
+    },
+    "table": {
+      "service": "Service",
+      "duration": "Duration",
+      "price": "Price",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "dialog": {
+      "createTitle": "New service",
+      "editTitle": "Edit service",
+      "createDescription": "Add a service to your business.",
+      "editDescription": "Update the service information.",
+      "saveChanges": "Save changes",
+      "createService": "Create service"
+    },
+    "fields": {
+      "name": "Service name",
+      "namePlaceholder": "e.g. Haircut",
+      "description": "Description",
+      "descriptionPlaceholder": "Optional description...",
+      "duration": "Duration",
+      "price": "Price",
+      "color": "Service color",
+      "colorHelp": "This color can be used to identify the service in the calendar.",
+      "status": "Status"
+    },
+    "form": {
+      "active": "Active service",
+      "inactive": "Inactive service"
+    },
+    "deleteDialog": {
+      "title": "Delete service",
+      "question": "Are you sure you want to delete",
+      "warning": "This action cannot be undone.",
+      "deleting": "Deleting..."
+    },
+    "footer": {
+      "showing": "Showing {shown} of {total} services"
+    },
+    "errors": {
+      "invalidSession": "Invalid session.",
+      "sessionExpired": "Your session has expired.",
+      "loadServices": "Could not load services.",
+      "nameRequired": "Service name is required.",
+      "durationInvalid": "Duration must be greater than 0 minutes.",
+      "priceNegative": "Price cannot be negative.",
+      "colorInvalid": "The color is not valid.",
+      "saveService": "Could not save the service.",
+      "deleteService": "Could not delete the service.",
+      "toggleStatus": "Could not change the status."
+    }
+  },
+  "whatsappStatus": {
+    "eyebrow": "CONNECTION",
+    "description": "Current connection status.",
+    "logoAlt": "WhatsApp",
+    "status": {
+      "connected": "CONNECTED",
+      "notConnected": "NOT CONNECTED"
+    },
+    "main": {
+      "connectedHighlight": "connected",
+      "notConnectedTitle": "WhatsApp not connected",
+      "connectedDescription": "Your WhatsApp account is active and ready to send reminders, confirmations, and automated messages to your clients.",
+      "notConnectedDescription": "Connect a WhatsApp account to start using AgendaReminder automations."
+    },
+    "phone": {
+      "connectedNumber": "Connected number"
+    },
+    "disconnect": {
+      "button": "Disconnect WhatsApp",
+      "description": "End the current connection"
+    },
+    "pending": {
+      "title": "Connection pending",
+      "description": "No account is connected."
+    },
+    "system": {
+      "automaticMessages": "Automatic messages",
+      "active": "Active",
+      "customerCommunication": "Customer communication",
+      "enabled": "Enabled",
+      "systemWorking": "System working",
+      "noErrors": "No errors"
+    },
+    "information": {
+      "title": "What happens if you disconnect?",
+      "description": "Automatic messages and reminders will stop. You can reconnect WhatsApp at any time."
+    },
+    "disconnectDialog": {
+      "title": "Disconnect WhatsApp?",
+      "description": "The current WhatsApp connection will be ended. Automatic messages will stop until you reconnect the account.",
+      "confirm": "Disconnect"
+    }
+  },
+  "hours": {
+    "eyebrow": "Management",
+    "title": "Business hours",
+    "description": "Configure the days and hours when your business is open.",
+    "saveButton": "Save hours",
+    "loading": "Loading business hours...",
+    "thisDay": "this day",
+    "closedBusiness": "Business closed",
+    "fields": {
+      "from": "From",
+      "until": "Until"
+    },
+    "applyAll": {
+      "title": "Apply to all days",
+      "description": "Set the same hours for the entire week.",
+      "button": "Apply to all",
+      "applying": "Applying..."
+    },
+    "weekly": {
+      "title": "Weekly schedule",
+      "description": "You can customize each day individually."
+    },
+    "status": {
+      "open": "Open",
+      "closed": "Closed"
+    },
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "aria": {
+      "closeDay": "Close {day}",
+      "openDay": "Open {day}"
+    },
+    "success": {
+      "saved": "Business hours saved successfully.",
+      "appliedToAll": "Hours applied to all days."
+    },
+    "errors": {
+      "sessionExpired": "Your session has expired.",
+      "sessionExpiredSave": "Your session has expired. Please log in again.",
+      "loadHours": "Could not load business hours.",
+      "saveHours": "Could not save business hours.",
+      "completeDay": "Complete the hours for {day}.",
+      "openBeforeClose": "Opening time must be earlier than closing time on {day}.",
+      "selectTimes": "You must specify the opening and closing times.",
+      "openBeforeCloseGlobal": "Opening time must be earlier than closing time."
+    }
+  },
+  "settings": {
+    "eyebrow": "SYSTEM",
+    "title": "Settings",
+    "description": "General settings for your business.",
+    "loading": "Loading settings...",
+    "business": {
+      "title": "Business information",
+      "description": "Basic information used by AgendaReminder."
+    },
+    "regional": {
+      "title": "Regional settings",
+      "description": "Determines phone numbers, time zones, and currency."
+    },
+    "fields": {
+      "businessName": "Business name",
+      "businessNamePlaceholder": "e.g. Glow Skin Studio",
+      "address": "Address",
+      "addressPlaceholder": "Business address",
+      "reviewUrl": "Google Reviews URL",
+      "reviewUrlPlaceholder": "https://g.page/...",
+      "country": "Country",
+      "selectCountry": "Select country",
+      "timezone": "Time zone",
+      "timezoneHelp": "Used for appointments and automations.",
+      "currency": "Currency",
+      "currencyHelp": "Automatically determined based on the country."
+    },
+    "values": {
+      "notConfigured": "Not configured"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Primary language for AgendaReminder.",
+      "label": "Application language"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "description": "Choose how you want to view AgendaReminder.",
+      "themeLabel": "Theme",
+      "themeAria": "Application theme",
+      "light": {
+        "title": "Light",
+        "description": "A bright and clean interface."
+      },
+      "dark": {
+        "title": "Dark",
+        "description": "A dark interface for low-light environments."
+      }
+    },
+    "saveButton": "Save settings",
+    "success": {
+      "saved": "Settings saved successfully."
+    },
+    "errors": {
+      "loadCountries": "Could not load countries.",
+      "loadSettings": "Could not load settings.",
+      "nameRequired": "Business name is required.",
+      "addressRequired": "Address is required.",
+      "reviewUrlRequired": "Google Reviews URL is required.",
+      "reviewUrlInvalid": "The Google Reviews URL is not valid.",
+      "countryRequired": "Please select a country.",
+      "dialCodeMissing": "The selected country does not have a phone calling code.",
+      "timezoneMissing": "The selected country does not have a time zone configured.",
+      "currencyMissing": "The selected country does not have a currency configured.",
+      "currencySymbolMissing": "The selected country does not have a currency symbol configured.",
+      "languageRequired": "Please select a language.",
+      "saveSettings": "Could not save settings."
+    }
+  },
+  "onboarding": {
+    "initialSetup": "Initial setup",
+    "stepProgress": "Step 2 of 5",
+    "continue": "Continue",
+    "step1": {
+      "initialSetup": "Initial setup",
+      "language": "Language",
+      "detectedLanguage": "Language detected automatically",
+      "progress": "Step 1 of 5",
+      "title": "Let's set up your business",
+      "description": "First, we need some basic information about your business. This information will be used to configure your calendar, messages, and automations.",
+      "businessName": "Business name",
+      "businessNamePlaceholder": "e.g. Matias Hair Salon",
+      "country": "Country",
+      "loadingCountries": "Loading countries...",
+      "selectCountry": "Select your country",
+      "searchCountry": "Search country...",
+      "noCountryResults": "No country found.",
+      "detectedCountry": "We detected that you may be in",
+      "saving": "Saving...",
+      "continue": "Continue",
+      "success": "Configuration saved successfully.",
+      "errors": {
+        "loadCountries": "We couldn't load the countries.",
+        "loadBusiness": "We couldn't load the business information.",
+        "saveSettings": "We couldn't save the configuration.",
+        "advance": "The configuration was saved, but we couldn't continue to Step 2."
+      }
+    },
+    "step2": {
+      "progress": "Step 2 of 5",
+      "title": "What are your business hours?",
+      "description": "Enter your usual opening hours. We will initially apply them to every day of the week.",
+      "quickSetup": {
+        "title": "Quick setup",
+        "description": "You can customize the hours for each day later from Settings."
+      },
+      "openingTime": "Opening time",
+      "closingTime": "Closing time",
+      "until": "until",
+      "preview": {
+        "title": "Regular hours",
+        "appliesToSevenDays": "will be applied to all 7 days"
+      },
+      "saving": "Saving...",
+      "success": "Business hours saved successfully.",
+      "errors": {
+        "selectTimes": "Select the opening and closing times.",
+        "closeAfterOpen": "The closing time must be later than the opening time.",
+        "saveHours": "The business hours could not be saved.",
+        "advance": "The business hours were saved, but we could not continue to Step 3."
+      }
+    },
+    "step3": {
+      "progress": "Step 3 of 5",
+      "title": "Create your first service",
+      "description": "Define the service you will offer to your clients. You can add and modify more services later.",
+      "serviceName": "Service name",
+      "serviceNamePlaceholder": "e.g. Haircut",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Briefly describe this service...",
+      "duration": "Duration",
+      "minutes": "min",
+      "price": "Price",
+      "color": "Service color",
+      "colorDescription": "This color will help identify the service in the calendar.",
+      "creating": "Creating...",
+      "createButton": "Create service",
+      "success": "Service created successfully.",
+      "errors": {
+        "loadBusiness": "Could not load the business settings.",
+        "invalidForm": "Enter a name and a valid duration. The duration must be a multiple of 5 minutes.",
+        "missingCurrency": "Could not determine the business currency. Go back to Step 1 and check the country.",
+        "createService": "Could not create the service.",
+        "advance": "The service was created, but we could not continue to Step 4."
+      }
+    },
+    "step4": {
+      "progress": "Step 4 of 5",
+      "title": "Create your first employee",
+      "description": "Add the first person to your team. Their schedule and color will be used to organize appointments in the calendar.",
+      "firstName": "First name",
+      "firstNamePlaceholder": "e.g. Matias",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "e.g. Diaz",
+      "employeeColor": "Employee color",
+      "selectColor": "Select color",
+      "custom": "Custom",
+      "customColor": "Custom color",
+      "colorHelp": "This color will identify the employee in the calendar appointment cards.",
+      "startTime": "Start time",
+      "endTime": "End time",
+      "scheduleNote": "Set this employee's usual working hours. You can modify them later from Employees.",
+      "creating": "Creating...",
+      "createButton": "Create employee",
+      "success": "Employee created successfully.",
+      "errors": {
+        "invalidForm": "Enter a first name, last name, and a valid schedule.",
+        "createEmployee": "Could not create the employee.",
+        "advance": "The employee was created, but we could not continue to Step 5."
+      }
+    },
+    "step5": {
+      "progress": "Step 5 of 5",
+      "initialLoading": {
+        "title": "Preparing WhatsApp",
+        "text": "We're checking the connection..."
+      },
+      "title": "Connect your WhatsApp",
+      "description": "Link the WhatsApp number you will use to send reminders and messages to your clients.",
+      "checking": {
+        "title": "Checking connection",
+        "text": "Checking the service status..."
+      },
+      "preparing": {
+        "title": "Preparing WhatsApp",
+        "text": "We're preparing the secure connection..."
+      },
+      "connecting": {
+        "title": "Connecting to WhatsApp",
+        "text": "Waiting for a response from WhatsApp..."
+      },
+      "connected": {
+        "title": "WhatsApp connected",
+        "note": "You will be redirected to your calendar automatically."
+      },
+      "finalizing": "Finalizing...",
+      "finalizeIn": "Finish in",
+      "finalizeNow": "Finish now",
+      "serverError": {
+        "title": "We couldn't connect to the server",
+        "text": "The WhatsApp service did not respond. You can try again."
+      },
+      "generalError": {
+        "title": "WhatsApp could not be prepared"
+      },
+      "retry": {
+        "checking": "Checking...",
+        "connection": "Retry connection",
+        "generic": "Retry"
+      },
+      "expired": {
+        "title": "The QR code has expired",
+        "text": "Generate a new code and scan it from WhatsApp on your phone.",
+        "button": "Generate new QR"
+      },
+      "qr": {
+        "active": "QR code active",
+        "title": "Connect your WhatsApp",
+        "help": "Scan this code with WhatsApp on your phone to link your account.",
+        "step1": "Open WhatsApp on your phone",
+        "step2": "Go to Linked devices",
+        "step3": "Tap Link a device and scan the code",
+        "helpLink": "Need help?",
+        "validFor": "Code valid for",
+        "seconds": "seconds"
+      },
+      "connectButton": "Connect WhatsApp",
+      "errors": {
+        "invalidBusinessId": "We couldn't find a valid Business ID.",
+        "serverResponse": "The server returned an error.",
+        "serverTimeout": "The WhatsApp server took too long to respond.",
+        "serverConnection": "Could not connect to the WhatsApp server.",
+        "connectFailed": "Could not start WhatsApp.",
+        "finalize": "Could not finish the setup.",
+        "notCompleted": "WhatsApp is connected, but the setup has not been marked as completed yet.",
+        "finalizeTimeout": "The server took too long to confirm completion."
+      }
+    }
+  },
+  "templates": {
+    "title": "Message templates",
+    "subtitle": "Select the templates that AgendaReminder will use to send your automatic messages.",
+    "appointment24": "24-hour reminder",
+    "appointment1": "1-hour reminder",
+    "review": "Review request",
+    "before24": "Message sent 24 hours before the appointment.",
+    "before1": "Message sent 1 hour before the appointment.",
+    "after2": "Message sent 2 hours after the appointment.",
+    "formal": "Formal",
+    "friendly": "Friendly",
+    "formalDescription": "A clear and professional message for your customers.",
+    "friendlyDescription": "A warm and friendly message for your customers.",
+    "formalReviewDescription": "A clear and professional message to request a review.",
+    "friendlyReviewDescription": "A friendly message inviting your customers to leave a review.",
+    "selected": "Selected",
+    "select": "Select",
+    "loading": "Loading templates...",
+    "error": "Could not load templates.",
+    "retry": "Retry",
+    "noTemplates": "No templates available.",
+    "preview": "Preview",
+    "whatsapp": "WhatsApp",
+    "customer": "Customer",
+    "service": "Service",
+    "employee": "Employee",
+    "business": "Business",
+    "date": "Date",
+    "time": "Time",
+    "reviewUrl": "Review link",
+    "address": "Address",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "saveError": "Could not save the template."
+  }
+}

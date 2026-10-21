@@ -1,0 +1,2188 @@
+/* =========================================================
+   📅 CALENDAR
+========================================================= */
+
+.calendar {
+  width: 100%;
+  min-width: 0;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  color: var(--color-text);
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.calendar-header {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 16px;
+
+  min-height: 78px;
+
+  padding: 14px 16px;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+
+  box-sizing: border-box;
+}
+
+
+.calendar-navigation {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.calendar-nav-button,
+.calendar-today-button,
+.calendar-view-switcher button {
+  border:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface-secondary);
+
+  color:
+    var(--color-text-secondary);
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.calendar-nav-button:hover,
+.calendar-today-button:hover,
+.calendar-view-switcher button:hover {
+  background:
+    var(--color-primary-soft);
+
+  border-color:
+    var(--color-primary);
+
+  color:
+    var(--color-text);
+}
+
+
+.calendar-nav-button {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border-radius: 8px;
+
+  font-size: 22px;
+
+  line-height: 1;
+}
+
+
+.calendar-today-button {
+  height: 36px;
+
+  padding: 0 13px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.calendar-current-title {
+  color:
+    var(--color-text);
+
+  font-size: 15px;
+
+  font-weight: 750;
+
+  text-align: center;
+
+  text-transform: capitalize;
+
+  white-space: nowrap;
+}
+
+
+.calendar-view-switcher {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 4px;
+}
+
+
+.calendar-view-switcher button {
+  min-width: 54px;
+
+  height: 36px;
+
+  padding: 0 11px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.calendar-view-switcher button.active {
+  border-color:
+    rgba(34, 197, 94, 0.45);
+
+  background:
+    var(--color-primary-soft);
+
+  color:
+    var(--color-primary);
+}
+
+
+/* =========================================================
+   👤 EMPLOYEE FILTER
+========================================================= */
+
+.calendar-employee-filter {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 11px 18px;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.calendar-employee-filter-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex: 0 0 auto;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+
+.calendar-employee-filter-label-icon {
+  font-size: 14px;
+
+  line-height: 1;
+}
+
+
+.calendar-employee-picker {
+  position: relative;
+
+  width: 270px;
+
+  max-width: 100%;
+}
+
+
+.calendar-employee-picker-trigger {
+  width: 100%;
+
+  min-height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 6px 10px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 10px;
+
+  background: var(--color-surface-secondary);
+
+  color: var(--color-text);
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.calendar-employee-picker-trigger:hover,
+.calendar-employee-picker-trigger.open {
+  border-color:
+    rgba(34, 197, 94, 0.55);
+
+  background:
+    var(--color-surface);
+
+  box-shadow:
+    0 0 0 3px var(--color-primary-soft);
+}
+
+
+.calendar-employee-picker-current {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.calendar-employee-picker-avatar,
+.calendar-employee-option-avatar {
+  width: 30px;
+  height: 30px;
+
+  min-width: 30px;
+  min-height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+.calendar-employee-picker-avatar.all,
+.calendar-employee-option-avatar.all {
+  background:
+    var(--color-primary-soft);
+
+  color:
+    var(--color-primary);
+
+  box-shadow:
+    none;
+}
+
+
+.calendar-employee-picker-text {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.calendar-employee-picker-text strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color:
+    var(--color-text);
+
+  font-size: 11px;
+
+  font-weight: 750;
+}
+
+
+.calendar-employee-picker-text small {
+  color:
+    var(--color-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+.calendar-employee-picker-chevron {
+  flex: 0 0 auto;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  transform:
+    translateY(-2px);
+
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.calendar-employee-picker-trigger.open
+.calendar-employee-picker-chevron {
+  color:
+    var(--color-primary);
+
+  transform:
+    rotate(180deg)
+    translateY(2px);
+}
+
+
+.calendar-employee-picker-menu {
+  position: absolute;
+
+  top: calc(100% + 7px);
+
+  left: 0;
+
+  z-index: 50;
+
+  width: 100%;
+
+  max-height: 330px;
+
+  padding: 7px;
+
+  overflow-y: auto;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 12px;
+
+  background: var(--color-surface);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.14);
+
+  box-sizing: border-box;
+
+  animation:
+    employeePickerIn
+    0.14s ease-out;
+}
+
+
+.calendar-employee-picker-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 8px 9px 7px;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+}
+
+
+.calendar-employee-picker-heading span:last-child {
+  min-width: 20px;
+
+  height: 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 99px;
+
+  background:
+    var(--color-surface-secondary);
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 9px;
+
+  letter-spacing: 0;
+}
+
+
+.calendar-employee-option {
+  width: 100%;
+
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 7px 8px;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.12s ease;
+}
+
+
+.calendar-employee-option:hover {
+  background:
+    var(--color-surface-secondary);
+}
+
+
+.calendar-employee-option.selected {
+  background:
+    var(--color-primary-soft);
+}
+
+
+.calendar-employee-option.selected:hover {
+  background:
+    var(--color-primary-soft);
+}
+
+
+.calendar-employee-option-info {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.calendar-employee-option-info strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color:
+    var(--color-text);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.calendar-employee-option-info small {
+  color:
+    var(--color-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+.calendar-employee-option-check {
+  width: 22px;
+  min-width: 22px;
+
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color:
+    var(--color-primary);
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+
+.calendar-employee-options-divider {
+  height: 1px;
+
+  margin: 5px 8px;
+
+  background:
+    var(--color-border);
+}
+
+
+@keyframes employeePickerIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-4px)
+      scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+[data-theme="dark"] .calendar-employee-picker-menu {
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.42);
+}
+
+
+/* =========================================================
+   👥 EMPLOYEE DAY GRID
+========================================================= */
+
+.employee-day-grid {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  background:
+    var(--color-surface);
+}
+
+
+.employee-day-grid.empty {
+  min-height: 420px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.employee-day-empty {
+  padding: 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    var(--color-text-secondary);
+
+  text-align: center;
+}
+
+
+.employee-day-empty strong {
+  color:
+    var(--color-text);
+
+  font-size: 14px;
+}
+
+
+.employee-day-empty span {
+  color:
+    var(--color-text-muted);
+
+  font-size: 12px;
+}
+
+
+.business-closed-lock {
+  font-size: 24px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   👥 EMPLOYEE HEADER
+========================================================= */
+
+.employee-day-header {
+  display: grid;
+
+  grid-template-columns:
+    72px repeat(
+      var(--employee-count),
+      minmax(260px, 1fr)
+    );
+
+  min-width: max-content;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+}
+
+
+.employee-time-header {
+  min-height: 88px;
+
+  border-right:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+}
+
+
+.employee-column-header {
+  min-height: 88px;
+
+  padding: 12px 14px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-right:
+    1px solid var(--color-border);
+
+  box-sizing: border-box;
+
+  background:
+    var(--color-surface);
+}
+
+
+.employee-column-header:last-child {
+  border-right: 0;
+}
+
+
+/* =========================================================
+   👤 AVATAR
+========================================================= */
+
+.employee-column-avatar {
+  width: 46px;
+  height: 46px;
+
+  min-width: 46px;
+  min-height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   👤 INFO
+========================================================= */
+
+.employee-column-info {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.employee-column-info strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color:
+    var(--color-text);
+
+  font-size: 14px;
+
+  font-weight: 750;
+}
+
+
+.employee-column-info span {
+  color:
+    var(--color-text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   🟢 EMPLOYEE STATUS
+========================================================= */
+
+.employee-column-status {
+  margin-left: auto;
+
+  padding: 4px 7px;
+
+  border:
+    1px solid rgba(34, 197, 94, 0.35);
+
+  border-radius: 5px;
+
+  background:
+    rgba(34, 197, 94, 0.08);
+
+  color:
+    var(--color-success);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   🕐 EMPLOYEE DAY BODY
+========================================================= */
+
+.employee-day-body {
+  display: grid;
+
+  grid-template-columns:
+    72px repeat(
+      var(--employee-count),
+      minmax(260px, 1fr)
+    );
+
+  min-width: max-content;
+}
+
+
+.employee-time-axis {
+  border-right:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface-secondary);
+}
+
+
+.employee-time-label {
+  height: 56px;
+
+  padding-right: 10px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: flex-end;
+
+  padding-top: 5px;
+
+  box-sizing: border-box;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   👤 EMPLOYEE COLUMN
+========================================================= */
+
+.employee-day-column {
+  position: relative;
+
+  min-width: 260px;
+
+  border-right:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+}
+
+
+.employee-day-column:last-child {
+  border-right: 0;
+}
+
+
+/* =========================================================
+   🕐 EMPLOYEE CELLS
+========================================================= */
+
+.employee-time-cell {
+  display: block;
+
+  width: 100%;
+
+  height: 56px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.12s ease;
+
+  box-sizing: border-box;
+}
+
+
+.employee-time-cell:hover {
+  background:
+    var(--color-primary-soft);
+}
+
+
+/* =========================================================
+   📅 APPOINTMENT CARD
+========================================================= */
+
+.appointment-card {
+  position: absolute;
+
+  left: 6px;
+  right: 6px;
+
+  z-index: 5;
+
+  padding:
+    7px 8px 7px 38px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(34, 197, 94, 0.42);
+
+  border-radius: 8px;
+
+  background:
+    rgba(34, 197, 94, 0.13);
+
+  color:
+    var(--color-text);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+
+.appointment-card:hover {
+  background:
+    rgba(34, 197, 94, 0.20);
+
+  border-color:
+    rgba(34, 197, 94, 0.60);
+}
+
+
+.appointment-card > span {
+  display: block;
+
+  margin-top: 4px;
+
+  color:
+    var(--color-success);
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+.appointment-employee {
+  display: flex;
+
+  align-items: center;
+
+  min-width: 0;
+}
+
+
+.appointment-employee strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color:
+    var(--color-text);
+
+  font-size: 10px;
+
+  font-weight: 750;
+}
+
+
+.appointment-employee-avatar {
+  position: absolute;
+
+  left: -29px;
+
+  top: 8px;
+
+  width: 24px;
+  height: 24px;
+
+  min-width: 24px;
+  min-height: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   🔒 CERRADO — SEMANA
+========================================================= */
+
+.business-closed-header {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--color-surface),
+      var(--color-surface) 8px,
+      var(--color-surface-secondary) 8px,
+      var(--color-surface-secondary) 16px
+    );
+}
+
+
+.business-closed-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 4px;
+
+  padding: 3px 7px;
+
+  border-radius: 5px;
+
+  background:
+    rgba(127, 127, 127, 0.08);
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.4px;
+}
+
+
+.business-closed-column {
+  position: relative;
+
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--color-surface-secondary),
+      var(--color-surface-secondary) 8px,
+      var(--color-bg) 8px,
+      var(--color-bg) 16px
+    );
+}
+
+
+.business-closed-cell {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--color-surface-secondary),
+      var(--color-surface-secondary) 8px,
+      var(--color-bg) 8px,
+      var(--color-bg) 16px
+    ) !important;
+
+  cursor: not-allowed !important;
+
+  opacity: 0.45;
+}
+
+
+.business-closed-cell:hover {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--color-surface-secondary),
+      var(--color-surface-secondary) 8px,
+      var(--color-bg) 8px,
+      var(--color-bg) 16px
+    ) !important;
+}
+
+
+.time-cell:disabled {
+  cursor: not-allowed;
+}
+
+
+.business-closed-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  pointer-events: none;
+
+  color:
+    var(--color-text-muted);
+}
+
+
+.business-closed-overlay .business-closed-lock {
+  font-size: 24px;
+}
+
+
+.business-closed-overlay strong {
+  font-size: 12px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   📅 WEEK GRID
+========================================================= */
+
+.time-grid {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  background:
+    var(--color-surface);
+}
+
+
+.time-grid-header {
+  display: grid;
+
+  grid-template-columns:
+    72px repeat(
+      var(--day-count),
+      minmax(150px, 1fr)
+    );
+
+  min-width: max-content;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+}
+
+
+.time-axis-header {
+  min-height: 68px;
+
+  border-right:
+    1px solid var(--color-border);
+}
+
+
+.day-header {
+  min-height: 68px;
+
+  padding: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  border-right:
+    1px solid var(--color-border);
+
+  box-sizing: border-box;
+}
+
+
+.day-header:last-child {
+  border-right: 0;
+}
+
+
+.day-header-name {
+  color:
+    var(--color-text-secondary);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+.day-header-number {
+  color:
+    var(--color-text);
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+.day-header.today {
+  background:
+    var(--color-primary-soft);
+}
+
+
+.day-header.today .day-header-number {
+  color:
+    var(--color-primary);
+}
+
+
+/* =========================================================
+   WEEK BODY
+========================================================= */
+
+.time-grid-body {
+  display: grid;
+
+  grid-template-columns:
+    72px repeat(
+      var(--day-count),
+      minmax(150px, 1fr)
+    );
+
+  min-width: max-content;
+}
+
+
+.time-axis {
+  border-right:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface-secondary);
+}
+
+
+.time-label {
+  height: 56px;
+
+  padding-right: 10px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: flex-end;
+
+  padding-top: 5px;
+
+  box-sizing: border-box;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+.day-column {
+  position: relative;
+
+  min-width: 150px;
+
+  border-right:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+}
+
+
+.day-column:last-child {
+  border-right: 0;
+}
+
+
+.time-cell {
+  display: block;
+
+  width: 100%;
+
+  height: 56px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.12s ease;
+}
+
+
+.time-cell:hover {
+  background:
+    var(--color-primary-soft);
+}
+
+
+/* =========================================================
+   📅 MES
+========================================================= */
+
+.month-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+
+  background:
+    var(--color-surface);
+}
+
+
+.month-weekday {
+  min-height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-right:
+    1px solid var(--color-border);
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface-secondary);
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.month-cell {
+  min-height: 120px;
+
+  padding: 8px;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 4px;
+
+  border: 0;
+
+  border-right:
+    1px solid var(--color-border);
+
+  border-bottom:
+    1px solid var(--color-border);
+
+  background:
+    var(--color-surface);
+
+  color:
+    var(--color-text);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+
+.month-cell:hover {
+  background:
+    var(--color-primary-soft);
+}
+
+
+.month-cell.today {
+  background:
+    var(--color-primary-soft);
+}
+
+
+.month-day-number {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.month-cell.today .month-day-number {
+  background:
+    var(--color-primary);
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================================
+   🔒 MES — CERRADO
+========================================================= */
+
+.business-closed-month {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--color-surface-secondary),
+      var(--color-surface-secondary) 8px,
+      var(--color-bg) 8px,
+      var(--color-bg) 16px
+    ) !important;
+
+  color:
+    var(--color-text-muted);
+
+  cursor: not-allowed;
+}
+
+
+.business-closed-month:hover {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--color-surface-secondary),
+      var(--color-surface-secondary) 8px,
+      var(--color-bg) 8px,
+      var(--color-bg) 16px
+    ) !important;
+}
+
+
+.business-closed-month .month-day-number {
+  color:
+    var(--color-text-muted);
+}
+
+
+.month-closed-label {
+  margin-top: 2px;
+
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  background:
+    rgba(127, 127, 127, 0.08);
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   📅 CITAS MES
+========================================================= */
+
+.month-appointment {
+  width: 100%;
+
+  padding: 5px 7px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  border:
+    1px solid rgba(34, 197, 94, 0.42);
+
+  border-radius: 6px;
+
+  background:
+    rgba(34, 197, 94, 0.13);
+
+  color:
+    var(--color-success);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+}
+
+
+.month-appointment:hover {
+  background:
+    rgba(34, 197, 94, 0.20);
+}
+
+
+/* =========================================================
+   🔄 REFRESH
+========================================================= */
+
+.calendar-refresh-indicator {
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  z-index: 100;
+
+  padding: 9px 13px;
+
+  border:
+    1px solid var(--color-border);
+
+  border-radius: 8px;
+
+  background:
+    var(--color-surface);
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   ⏳ LOADING
+========================================================= */
+
+.calendar-loading {
+  width: 100%;
+
+  min-height: 420px;
+
+  padding: 40px 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid var(--color-border);
+
+  border-radius: 16px;
+
+  background:
+    var(--color-surface);
+
+  color:
+    var(--color-text);
+
+  text-align: center;
+}
+
+
+.calendar-loading-icon {
+  width: 72px;
+  height: 72px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid var(--color-border);
+
+  border-radius: 18px;
+
+  background:
+    var(--color-surface-secondary);
+
+  font-size: 30px;
+}
+
+
+.calendar-loading h2 {
+  margin: 0;
+
+  color:
+    var(--color-text);
+
+  font-size: 18px;
+}
+
+
+.calendar-loading p {
+  margin: 7px 0 15px;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 12px;
+}
+
+
+.calendar-loading > span {
+  margin-top: 9px;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 10px;
+}
+
+
+.calendar-loading-bar {
+  width: 180px;
+
+  height: 4px;
+
+  overflow: hidden;
+
+  border-radius: 99px;
+
+  background:
+    var(--color-border);
+}
+
+
+.calendar-loading-progress {
+  width: 45%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    var(--color-primary);
+
+  animation:
+    calendar-loading-animation
+    1.2s ease-in-out infinite;
+}
+
+
+@keyframes calendar-loading-animation {
+
+  0% {
+    transform:
+      translateX(-100%);
+  }
+
+  100% {
+    transform:
+      translateX(350%);
+  }
+
+}
+
+
+/* =========================================================
+   📱 TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .calendar-header {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+
+  .calendar-current-title {
+    order: -1;
+  }
+
+
+  .calendar-navigation {
+    justify-content: center;
+  }
+
+
+  .calendar-view-switcher {
+    justify-content: center;
+  }
+
+
+  .calendar-employee-filter {
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================================
+   📱 MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .calendar {
+    border-radius: 12px;
+  }
+
+
+  .calendar-header {
+    padding: 12px;
+  }
+
+
+  .calendar-current-title {
+    font-size: 13px;
+  }
+
+
+  .calendar-employee-filter {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 11px 12px;
+  }
+
+
+  .calendar-employee-filter-label {
+    font-size: 10px;
+  }
+
+
+  .calendar-employee-picker {
+    width: 100%;
+  }
+
+
+  .calendar-employee-picker-trigger {
+    min-height: 46px;
+
+    border-radius: 10px;
+  }
+
+
+  .calendar-employee-picker-menu {
+    max-height:
+      min(330px, 55vh);
+
+    border-radius: 12px;
+
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.16);
+  }
+
+
+  /* =======================================================
+     EMPLOYEE DAY
+  ======================================================= */
+
+  .employee-day-header,
+  .employee-day-body {
+    grid-template-columns:
+      58px repeat(
+        var(--employee-count),
+        minmax(240px, 1fr)
+      );
+  }
+
+
+  .employee-time-header {
+    min-height: 82px;
+  }
+
+
+  .employee-column-header {
+    min-height: 82px;
+
+    padding: 10px;
+  }
+
+
+  .employee-column-avatar {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+
+    font-size: 12px;
+  }
+
+
+  .employee-column-info strong {
+    font-size: 12px;
+  }
+
+
+  .employee-column-info span {
+    font-size: 10px;
+  }
+
+
+  .employee-column-status {
+    display: none;
+  }
+
+
+  .employee-day-column {
+    min-width: 240px;
+  }
+
+
+  .employee-time-label {
+    padding-right: 7px;
+
+    font-size: 9px;
+  }
+
+
+  .employee-time-cell {
+    height: 56px;
+  }
+
+
+  .appointment-card {
+    left: 4px;
+
+    right: 4px;
+
+    padding-left: 35px;
+  }
+
+
+  .appointment-employee-avatar {
+    left: -27px;
+
+    width: 22px;
+    height: 22px;
+
+    min-width: 22px;
+    min-height: 22px;
+
+    font-size: 7px;
+  }
+
+
+  /* =====================================================
+     WEEK
+  ===================================================== */
+
+  .time-grid-header,
+  .time-grid-body {
+    grid-template-columns:
+      58px repeat(
+        var(--day-count),
+        minmax(150px, 1fr)
+      );
+  }
+
+
+  .time-axis-header {
+    min-height: 64px;
+  }
+
+
+  .day-header {
+    min-height: 64px;
+
+    padding: 7px;
+  }
+
+
+  .day-header-number {
+    font-size: 15px;
+  }
+
+
+  .time-label {
+    padding-right: 7px;
+
+    font-size: 9px;
+  }
+
+
+  /* =====================================================
+     MONTH
+  ===================================================== */
+
+  .month-cell {
+    min-height: 90px;
+
+    padding: 5px;
+  }
+
+
+  .month-day-number {
+    width: 23px;
+    height: 23px;
+
+    font-size: 10px;
+  }
+
+
+  .month-closed-label {
+    font-size: 8px;
+
+    padding: 2px 4px;
+  }
+
+
+  .month-appointment {
+    padding: 4px 5px;
+
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   📱 SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .calendar-header {
+    gap: 8px;
+  }
+
+
+  .calendar-nav-button {
+    width: 34px;
+
+    height: 34px;
+  }
+
+
+  .calendar-today-button {
+    height: 34px;
+
+    padding: 0 10px;
+  }
+
+
+  .calendar-view-switcher button {
+    min-width: 48px;
+
+    padding: 0 8px;
+  }
+
+
+  .calendar-current-title {
+    font-size: 12px;
+  }
+
+
+  .calendar-employee-picker-text strong {
+    font-size: 10px;
+  }
+
+
+  .calendar-employee-picker-text small {
+    font-size: 8px;
+  }
+
+
+  .calendar-employee-option-info strong {
+    font-size: 10px;
+  }
+
+
+  .calendar-employee-option-info small {
+    font-size: 8px;
+  }
+
+
+  .employee-column-header {
+    padding: 9px;
+  }
+
+
+  .employee-column-avatar {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+
+  .month-cell {
+    min-height: 78px;
+
+    padding: 4px;
+  }
+
+
+  .month-appointment {
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   ♿ ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .calendar *,
+  .calendar *::before,
+  .calendar *::after {
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}

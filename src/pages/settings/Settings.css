@@ -1,0 +1,1312 @@
+/* =========================================================
+   SETTINGS
+   Light / Dark / Responsive
+========================================================= */
+
+.settings-page {
+  --settings-bg: var(--color-bg);
+  --settings-surface: var(--color-surface);
+  --settings-surface-secondary: var(--color-surface-secondary);
+
+  --settings-text: var(--color-text);
+  --settings-text-secondary: var(--color-text-secondary);
+  --settings-text-muted: var(--color-text-muted);
+
+  --settings-border: var(--color-border);
+
+  --settings-primary: var(--color-primary);
+  --settings-primary-hover: var(--color-primary-hover);
+  --settings-primary-soft: var(--color-primary-soft);
+
+  --settings-success: var(--color-success);
+  --settings-danger: var(--color-danger);
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 8px 0 50px;
+
+  box-sizing: border-box;
+
+  color: var(--settings-text);
+
+  transition:
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.settings-header {
+  margin-bottom: 28px;
+}
+
+.settings-heading {
+  min-width: 0;
+}
+
+
+.settings-eyebrow {
+  margin-bottom: 8px;
+
+  color: var(--settings-text-muted);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.settings-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0;
+
+  color: var(--settings-text);
+
+  font-size: 32px;
+  font-weight: 750;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
+}
+
+
+.settings-title-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.30);
+
+  border-radius: 11px;
+
+  background:
+    var(--settings-primary-soft);
+
+  font-size: 21px;
+}
+
+
+.settings-description {
+  margin: 8px 0 0;
+
+  color: var(--settings-text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.settings-card {
+  width: 100%;
+
+  margin-bottom: 16px;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    var(--settings-border);
+
+  border-radius: 15px;
+
+  background:
+    var(--settings-surface);
+
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.045);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+[data-theme="dark"] .settings-card {
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.settings-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 23px;
+}
+
+
+.settings-card-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.20);
+
+  border-radius: 11px;
+
+  background:
+    var(--settings-primary-soft);
+
+  font-size: 19px;
+}
+
+
+.settings-card-title {
+  color: var(--settings-text);
+
+  font-size: 14px;
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+
+.settings-card-description {
+  margin-top: 3px;
+
+  color: var(--settings-text-secondary);
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.settings-section {
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+
+.settings-section:last-child {
+  margin-bottom: 0;
+}
+
+
+.settings-section label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--settings-text);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.settings-section input,
+.settings-section select {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding:
+    0
+    13px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    var(--settings-border);
+
+  border-radius: 10px;
+
+  background:
+    var(--settings-surface-secondary);
+
+  color:
+    var(--settings-text);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  outline: none;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.settings-section input::placeholder {
+  color:
+    var(--settings-text-muted);
+}
+
+
+.settings-section input:hover,
+.settings-section select:hover {
+  border-color:
+    var(--settings-text-muted);
+}
+
+
+.settings-section input:focus,
+.settings-section select:focus {
+  border-color:
+    var(--settings-primary);
+
+  background:
+    var(--settings-surface);
+
+  box-shadow:
+    0 0 0 3px
+    var(--settings-primary-soft);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.settings-section select {
+  padding-right: 38px;
+
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--settings-text-muted) 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--settings-text-muted) 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 17px) 20px,
+    calc(100% - 12px) 20px;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   SELECT OPTIONS
+========================================================= */
+
+.settings-section select option {
+  background:
+    var(--settings-surface);
+
+  color:
+    var(--settings-text);
+}
+
+
+/* =========================================================
+   VALUE BOX
+========================================================= */
+
+.settings-value-box {
+  width: 100%;
+
+  min-height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    10px
+    13px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    var(--settings-border);
+
+  border-radius: 10px;
+
+  background:
+    var(--settings-surface-secondary);
+}
+
+
+.settings-value-box > span {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background:
+    var(--settings-primary-soft);
+
+  font-size: 15px;
+}
+
+
+.settings-value-box > div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.settings-value-box strong {
+  color:
+    var(--settings-text);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  overflow-wrap: anywhere;
+}
+
+
+.settings-value-box small {
+  color:
+    var(--settings-text-muted);
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   APPEARANCE / THEME
+========================================================= */
+
+.settings-theme-options {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   THEME OPTION
+========================================================= */
+
+.settings-theme-option {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    12px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    var(--settings-border);
+
+  border-radius: 12px;
+
+  background:
+    var(--settings-surface-secondary);
+
+  color:
+    var(--settings-text);
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+.settings-theme-option:hover {
+  border-color:
+    rgba(34, 197, 94, 0.45);
+
+  background:
+    var(--settings-surface);
+
+  transform:
+    translateY(-1px);
+}
+
+
+.settings-theme-option.active {
+  border-color:
+    var(--settings-primary);
+
+  background:
+    var(--settings-primary-soft);
+
+  box-shadow:
+    0 0 0 2px
+    rgba(34, 197, 94, 0.06);
+}
+
+
+.settings-theme-option.active:hover {
+  border-color:
+    var(--settings-primary);
+}
+
+
+/* =========================================================
+   THEME ICON
+========================================================= */
+
+.settings-theme-option-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    var(--settings-border);
+
+  border-radius: 10px;
+
+  background:
+    var(--settings-surface);
+
+  font-size: 18px;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+
+[data-theme="dark"]
+.settings-theme-option-icon {
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   THEME CONTENT
+========================================================= */
+
+.settings-theme-option-content {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.settings-theme-option-content strong {
+  color:
+    var(--settings-text);
+
+  font-size: 12px;
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+
+.settings-theme-option-content small {
+  color:
+    var(--settings-text-secondary);
+
+  font-size: 9px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   THEME CHECK
+========================================================= */
+
+.settings-theme-check {
+  width: 24px;
+  height: 24px;
+
+  min-width: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    var(--settings-border);
+
+  border-radius: 50%;
+
+  color:
+    transparent;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.settings-theme-option.active
+.settings-theme-check {
+  border-color:
+    var(--settings-primary);
+
+  background:
+    var(--settings-primary);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.settings-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+
+.settings-save-button {
+  min-height: 46px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding:
+    0
+    18px;
+
+  border:
+    1px solid
+    var(--settings-primary);
+
+  border-radius: 10px;
+
+  background:
+    var(--settings-primary);
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px
+    rgba(34, 197, 94, 0.16);
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.settings-save-button:hover:not(:disabled) {
+  background:
+    var(--settings-primary-hover);
+
+  border-color:
+    var(--settings-primary-hover);
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 9px 22px
+    rgba(34, 197, 94, 0.22);
+}
+
+
+.settings-save-button:active:not(:disabled) {
+  transform:
+    translateY(0);
+}
+
+
+.settings-save-button:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.settings-success {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 14px;
+
+  padding:
+    11px
+    13px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.25);
+
+  border-radius: 10px;
+
+  background:
+    rgba(34, 197, 94, 0.07);
+
+  color:
+    var(--settings-success);
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.settings-error {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 14px;
+
+  padding:
+    11px
+    13px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(239, 68, 68, 0.22);
+
+  border-radius: 10px;
+
+  background:
+    rgba(239, 68, 68, 0.07);
+
+  color:
+    var(--settings-danger);
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.settings-loading {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.settings-loading-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 14px;
+
+  background:
+    var(--settings-primary-soft);
+
+  font-size: 24px;
+}
+
+
+.settings-loading-title {
+  color:
+    var(--settings-text);
+
+  font-size: 15px;
+  font-weight: 750;
+}
+
+
+.settings-loading-text {
+  margin-top: 5px;
+
+  color:
+    var(--settings-text-secondary);
+
+  font-size: 11px;
+}
+
+
+.settings-loading-bar {
+  width: 180px;
+  height: 4px;
+
+  overflow: hidden;
+
+  margin-top: 18px;
+
+  border-radius: 999px;
+
+  background:
+    var(--settings-border);
+}
+
+
+.settings-loading-progress {
+  width: 45%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--settings-primary),
+      var(--settings-primary-hover)
+    );
+
+  animation:
+    settingsLoading
+    1.2s ease-in-out infinite;
+}
+
+
+@keyframes settingsLoading {
+
+  0% {
+    transform:
+      translateX(-110%);
+  }
+
+  50% {
+    transform:
+      translateX(100%);
+  }
+
+  100% {
+    transform:
+      translateX(250%);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .settings-page {
+    max-width: 100%;
+
+    padding:
+      4px
+      0
+      40px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .settings-page {
+    width: 100%;
+
+    padding:
+      0
+      0
+      35px;
+  }
+
+
+  .settings-header {
+    margin-bottom: 20px;
+  }
+
+
+  .settings-title {
+    font-size: 26px;
+
+    gap: 8px;
+  }
+
+
+  .settings-title-icon {
+    width: 31px;
+    height: 31px;
+
+    border-radius: 9px;
+
+    font-size: 18px;
+  }
+
+
+  .settings-description {
+    font-size: 11px;
+  }
+
+
+  /* =====================================================
+     CARDS
+  ===================================================== */
+
+  .settings-card {
+    margin-bottom: 12px;
+
+    padding: 18px;
+
+    border-radius: 13px;
+  }
+
+
+  .settings-card-header {
+    gap: 10px;
+
+    margin-bottom: 19px;
+  }
+
+
+  .settings-card-icon {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+  }
+
+
+  .settings-card-title {
+    font-size: 13px;
+  }
+
+
+  .settings-card-description {
+    font-size: 10px;
+  }
+
+
+  /* =====================================================
+     FIELDS
+  ===================================================== */
+
+  .settings-section {
+    margin-bottom: 15px;
+  }
+
+
+  .settings-section label {
+    margin-bottom: 6px;
+
+    font-size: 10px;
+  }
+
+
+  .settings-section input,
+  .settings-section select {
+    min-height: 46px;
+
+    font-size: 12px;
+  }
+
+
+  /* =====================================================
+     VALUE BOX
+  ===================================================== */
+
+  .settings-value-box {
+    min-height: 57px;
+
+    gap: 10px;
+
+    padding:
+      9px
+      11px;
+  }
+
+
+  .settings-value-box > span {
+    width: 31px;
+    height: 31px;
+
+    font-size: 14px;
+  }
+
+
+  .settings-value-box strong {
+    font-size: 11px;
+  }
+
+
+  .settings-value-box small {
+    font-size: 8px;
+  }
+
+
+  /* =====================================================
+     THEME
+  ===================================================== */
+
+  .settings-theme-options {
+    grid-template-columns:
+      1fr;
+
+    gap: 8px;
+  }
+
+
+  .settings-theme-option {
+    min-height: 70px;
+
+    padding:
+      10px;
+  }
+
+
+  .settings-theme-option-icon {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 9px;
+
+    font-size: 17px;
+  }
+
+
+  .settings-theme-option-content strong {
+    font-size: 11px;
+  }
+
+
+  .settings-theme-option-content small {
+    font-size: 8px;
+  }
+
+
+  .settings-theme-check {
+    width: 23px;
+    height: 23px;
+
+    min-width: 23px;
+  }
+
+
+  /* =====================================================
+     ACTION
+  ===================================================== */
+
+  .settings-actions {
+    margin-top: 15px;
+  }
+
+
+  .settings-save-button {
+    width: 100%;
+
+    min-height: 48px;
+
+    font-size: 12px;
+  }
+
+
+  /* =====================================================
+     MESSAGES
+  ===================================================== */
+
+  .settings-success,
+  .settings-error {
+    margin-top: 11px;
+
+    padding:
+      10px
+      11px;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .settings-page {
+    padding-bottom: 25px;
+  }
+
+
+  .settings-title {
+    font-size: 23px;
+  }
+
+
+  .settings-title-icon {
+    width: 29px;
+    height: 29px;
+
+    font-size: 17px;
+  }
+
+
+  .settings-description {
+    font-size: 10px;
+  }
+
+
+  .settings-card {
+    padding: 15px;
+
+    border-radius: 12px;
+  }
+
+
+  .settings-card-header {
+    margin-bottom: 16px;
+  }
+
+
+  .settings-card-icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+
+  .settings-card-title {
+    font-size: 12px;
+  }
+
+
+  .settings-card-description {
+    font-size: 9px;
+  }
+
+
+  .settings-section input,
+  .settings-section select {
+    min-height: 44px;
+
+    padding-left: 11px;
+    padding-right: 11px;
+
+    font-size: 11px;
+  }
+
+
+  .settings-value-box {
+    min-height: 54px;
+  }
+
+
+  .settings-theme-option {
+    min-height: 66px;
+  }
+
+
+  .settings-theme-option-icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+
+  .settings-theme-option-content strong {
+    font-size: 10px;
+  }
+
+
+  .settings-theme-option-content small {
+    font-size: 8px;
+  }
+
+
+  .settings-save-button {
+    min-height: 46px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .settings-card,
+  .settings-section input,
+  .settings-section select,
+  .settings-theme-option,
+  .settings-theme-check,
+  .settings-save-button {
+    transition: none;
+  }
+
+
+  .settings-loading-progress {
+    animation: none;
+  }
+
+}

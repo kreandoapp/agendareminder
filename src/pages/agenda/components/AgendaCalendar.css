@@ -1,0 +1,368 @@
+.agenda-calendar {
+  width: 100%;
+}
+
+/* =========================================
+   FULLCALENDAR ROOT
+========================================= */
+
+.agenda-calendar .fc {
+  width: 100%;
+
+  --fc-border-color: #252b33;
+  --fc-page-bg-color: #11151b;
+  --fc-neutral-bg-color: #11151b;
+  --fc-today-bg-color: rgba(37, 211, 102, 0.025);
+
+  color: #e8ecf1;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================
+   CALENDAR BORDER
+========================================= */
+
+.agenda-calendar .fc-scrollgrid {
+  border: none !important;
+}
+
+.agenda-calendar .fc-theme-standard td,
+.agenda-calendar .fc-theme-standard th {
+  border-color: #252b33;
+}
+
+/* =========================================
+   TOP TOOLBAR
+========================================= */
+
+.agenda-calendar .fc-header-toolbar {
+  margin: 0 !important;
+
+  padding: 15px 18px;
+
+  border-bottom: 1px solid #252b33;
+
+  background: #11151b;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.agenda-calendar .fc-toolbar-title {
+  margin: 0;
+
+  color: #f1f4f7;
+
+  font-size: 15px;
+  font-weight: 650;
+
+  letter-spacing: -0.015em;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.agenda-calendar .fc-button {
+  min-height: 32px;
+
+  padding: 0 11px;
+
+  border: 1px solid #2b323b !important;
+  border-radius: 7px !important;
+
+  background: #161b21 !important;
+
+  color: #9ba4b0 !important;
+
+  box-shadow: none !important;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-transform: none;
+
+  transition: all 0.15s ease;
+}
+
+.agenda-calendar .fc-button:hover {
+  background: #1e242c !important;
+
+  border-color: #363e48 !important;
+
+  color: #ffffff !important;
+}
+
+.agenda-calendar .fc-button:focus {
+  box-shadow: none !important;
+}
+
+.agenda-calendar .fc-button-active {
+  background: #252c35 !important;
+
+  border-color: #3a434e !important;
+
+  color: #ffffff !important;
+}
+
+/* =========================================
+   DAY HEADER
+========================================= */
+
+.agenda-calendar .fc-col-header {
+  background: #11151b;
+}
+
+.agenda-calendar .fc-col-header-cell {
+  height: 42px;
+
+  padding: 0;
+
+  border-color: #252b33 !important;
+}
+
+.agenda-calendar .fc-col-header-cell-cushion {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 42px;
+
+  color: #737d89;
+
+  font-size: 10px;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.07em;
+}
+
+/* =========================================
+   TIME AXIS
+========================================= */
+
+.agenda-calendar .fc-timegrid-axis {
+  width: 72px;
+
+  background: #11151b;
+
+  border-color: #252b33 !important;
+}
+
+.agenda-calendar .fc-timegrid-slot-label {
+  border-color: #252b33 !important;
+
+  vertical-align: top;
+}
+
+.agenda-calendar .fc-timegrid-slot-label-cushion {
+  display: block;
+
+  padding: 5px 10px 0 0;
+
+  color: #697481;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   30 MINUTE ROWS
+========================================= */
+
+.agenda-calendar .fc-timegrid-slot {
+  height: 42px;
+
+  border-color: #252b33 !important;
+}
+
+/*
+ * Every 30-minute line is visible.
+ */
+
+.agenda-calendar .fc-timegrid-slot-minor {
+  border-top: 1px solid #1d232a !important;
+}
+
+/*
+ * Stronger line between hours.
+ */
+
+.agenda-calendar .fc-timegrid-slot:nth-child(2n) {
+  border-top-color: #252b33 !important;
+}
+
+/* =========================================
+   TIMEGRID COLUMNS
+========================================= */
+
+.agenda-calendar .fc-timegrid-col {
+  border-color: #252b33 !important;
+
+  background: #11151b;
+}
+
+/* =========================================
+   TODAY
+========================================= */
+
+.agenda-calendar .fc-day-today {
+  background: rgba(37, 211, 102, 0.018) !important;
+}
+
+/* =========================================
+   CURRENT TIME
+========================================= */
+
+.agenda-calendar .fc-timegrid-now-indicator-line {
+  border-color: #25d366;
+
+  border-width: 1px;
+
+  opacity: 0.9;
+}
+
+.agenda-calendar .fc-timegrid-now-indicator-arrow {
+  border-top-color: #25d366;
+  border-bottom-color: #25d366;
+}
+
+/* =========================================
+   APPOINTMENTS
+========================================= */
+
+.agenda-calendar .fc-timegrid-event {
+  margin: 3px 5px;
+
+  border: 1px solid rgba(37, 211, 102, 0.25) !important;
+
+  border-radius: 7px;
+
+  background: #183024 !important;
+
+  box-shadow: none !important;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.agenda-calendar .fc-timegrid-event:hover {
+  background: #1d3929 !important;
+
+  border-color: rgba(37, 211, 102, 0.4) !important;
+}
+
+.agenda-calendar .fc-event-main {
+  padding: 7px 9px;
+}
+
+.agenda-calendar .fc-event-title {
+  color: #e1f8e9;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.agenda-calendar .fc-event-time {
+  color: #8fcea5;
+
+  font-size: 10px;
+}
+
+/* =========================================
+   MONTH VIEW
+========================================= */
+
+.agenda-calendar .fc-daygrid-day {
+  border-color: #252b33 !important;
+}
+
+.agenda-calendar .fc-daygrid-day-number {
+  padding: 9px;
+
+  color: #737d89;
+
+  font-size: 11px;
+
+  text-decoration: none;
+}
+
+.agenda-calendar
+.fc-daygrid-day.fc-day-today
+.fc-daygrid-day-number {
+  color: #25d366;
+
+  font-weight: 700;
+}
+
+.agenda-calendar .fc-daygrid-event {
+  margin: 2px 4px;
+
+  border: none !important;
+  border-radius: 5px;
+
+  background: #183024 !important;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.agenda-calendar .fc-scroller::-webkit-scrollbar {
+  width: 7px;
+}
+
+.agenda-calendar .fc-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.agenda-calendar .fc-scroller::-webkit-scrollbar-thumb {
+  background: #292f37;
+
+  border-radius: 10px;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .agenda-calendar .fc-header-toolbar {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .agenda-calendar .fc-toolbar-title {
+    font-size: 14px;
+  }
+
+  .agenda-calendar .fc-timegrid-axis {
+    width: 55px;
+  }
+
+  .agenda-calendar .fc-timegrid-slot-label-cushion {
+    padding-right: 7px;
+
+    font-size: 10px;
+  }
+}

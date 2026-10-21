@@ -1,0 +1,911 @@
+{
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "close": "إغلاق",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "loading": "جارٍ التحميل...",
+    "search": "بحث",
+    "confirm": "تأكيد",
+    "back": "رجوع",
+    "next": "التالي",
+    "continue": "متابعة",
+    "saving": "جارٍ الحفظ...",
+    "saveChanges": "حفظ التغييرات"
+  },
+  "auth": {
+    "languageSelector": "اللغة",
+    "changeToLightTheme": "التبديل إلى الوضع الفاتح",
+    "changeToDarkTheme": "التبديل إلى الوضع الداكن",
+    "lightTheme": "الوضع الفاتح",
+    "darkTheme": "الوضع الداكن",
+    "login": {
+      "title": "Wilbuk",
+      "subtitle": "إدارة ذكية للتذكيرات",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "your@email.com",
+      "password": "كلمة المرور",
+      "showPassword": "إظهار كلمة المرور",
+      "hidePassword": "إخفاء كلمة المرور",
+      "forgotPassword": "هل نسيت كلمة المرور؟",
+      "loading": "جارٍ تسجيل الدخول...",
+      "submit": "تسجيل الدخول"
+    },
+    "forgotPassword": {
+      "back": "رجوع",
+      "title": "استعادة كلمة المرور",
+      "description": "أدخل بريدك الإلكتروني وسنرسل إليك رمزًا لإعادة تعيين كلمة المرور.",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "your@email.com",
+      "loading": "جارٍ الإرسال...",
+      "submit": "إرسال الرمز"
+    },
+    "verifyResetCode": {
+      "back": "رجوع",
+      "title": "أدخل الرمز",
+      "description": "لقد أرسلنا رمزًا مكوّنًا من 4 أرقام إلى بريدك الإلكتروني.",
+      "codeValidity": "الرمز صالح لمدة 10 دقائق.",
+      "submit": "التحقق من الرمز"
+    },
+    "resetPassword": {
+      "back": "رجوع",
+      "title": "كلمة مرور جديدة",
+      "description": "أدخل كلمة مرور جديدة لحسابك.",
+      "newPassword": "كلمة المرور الجديدة",
+      "passwordPlaceholder": "8 أحرف على الأقل",
+      "showPassword": "إظهار كلمة المرور",
+      "hidePassword": "إخفاء كلمة المرور",
+      "passwordValidation": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين.",
+      "loading": "جارٍ التغيير...",
+      "submit": "تغيير كلمة المرور"
+    },
+    "passwordResetSuccess": {
+      "brandName": "Wil",
+      "brandNameSuffix": "buk",
+      "brandSubtitle": "نشاطك التجاري متصل دائمًا",
+      "headerText": "إدارة المواعيد بطريقة أبسط",
+      "titleFirstLine": "كلمة المرور",
+      "titleSecondLine": "محدّثة!",
+      "descriptionFirstLine": "تم تغيير كلمة مرورك بنجاح.",
+      "descriptionSecondLine": "يمكنك الآن تسجيل الدخول باستخدام كلمة المرور الجديدة.",
+      "securityTitle": "حسابك آمن",
+      "securityText": "ننصحك بالاحتفاظ بكلمة المرور في مكان آمن.",
+      "login": "تسجيل الدخول",
+      "footer": "شكرًا لثقتك في Wilbuk"
+    }
+  },
+  "appointmentDialog": {
+    "createTitle": "موعد جديد",
+    "editTitle": "تعديل الموعد",
+    "selectDate": "اختر تاريخًا",
+    "createAppointment": "إنشاء الموعد",
+    "saveChanges": "حفظ التغييرات",
+    "reviewWarning": {
+      "title": "لم تقم بإعداد رابط التقييمات بعد",
+      "description": "قم بإعداده حتى يتمكن عملاؤك من ترك تقييم بعد موعدهم.",
+      "configure": "إعداد"
+    },
+    "customer": {
+      "title": "العميل",
+      "subtitle": "لمن هذا الموعد؟",
+      "searchPlaceholder": "البحث عن عميل بالاسم أو الهاتف...",
+      "noPhone": "بدون هاتف",
+      "change": "تغيير",
+      "new": "عميل جديد",
+      "noResults": "لم يتم العثور على عملاء."
+    },
+    "service": {
+      "title": "الخدمة",
+      "subtitle": "الخدمة والمدة",
+      "select": "اختيار الخدمة"
+    },
+    "employee": {
+      "title": "الموظف",
+      "availability": "التوفر",
+      "available": "متاح",
+      "availablePlural": "متاحون",
+      "checking": "جارٍ التحقق...",
+      "checkingAvailability": "جارٍ التحقق من التوفر...",
+      "selectService": "اختر خدمة.",
+      "noAvailable": "لا يوجد موظفون متاحون.",
+      "outsideHours": "خارج ساعات العمل",
+      "busy": "مشغول"
+    },
+    "dateTime": {
+      "title": "التاريخ والوقت",
+      "subtitle": "اختر موعد إجراء الموعد",
+      "durationUntil": "المدة حتى",
+      "ends": "ينتهي"
+    },
+    "notes": {
+      "title": "ملاحظات",
+      "optional": "اختياري",
+      "placeholder": "أضف ملاحظة حول هذا الموعد..."
+    },
+    "status": {
+      "title": "الحالة",
+      "scheduled": "مجدول",
+      "confirmed": "مؤكد",
+      "completed": "مكتمل",
+      "cancelled": "ملغى"
+    },
+    "automations": {
+      "title": "إشعارات واتساب"
+    },
+    "reviewConfig": {
+      "title": "إعداد رابط التقييمات",
+      "description": "اتبع هذه الخطوات الثلاث البسيطة للحصول على رابط تقييمات نشاطك التجاري على Google.",
+      "step1": {
+        "title": "ادخل إلى Google باستخدام حساب المالك",
+        "description": "سجّل الدخول بالحساب الذي يدير ملف النشاط التجاري على Google."
+      },
+      "step2": {
+        "title": "اضغط «طلب التقييمات»",
+        "description": "ابحث عن لوحة نشاطك التجاري واضغط «طلب التقييمات». قد يظهر أيضًا باسم «الحصول على مزيد من التقييمات»."
+      },
+      "step3": {
+        "title": "انسخ الرابط",
+        "description": "ستفتح Google نافذة تحتوي على رابط طلب التقييمات. اضغط «نسخ الرابط»."
+      },
+      "ownerAccount": "حساب المالك",
+      "ownerAccountDescription": "إدارة ملف نشاطك التجاري",
+      "openGoogle": "فتح Google",
+      "loadingBusiness": "جارٍ تحميل النشاط التجاري...",
+      "yourBusiness": "نشاطك التجاري",
+      "googleBusinessProfile": "ملف النشاط التجاري على Google",
+      "editProfile": "تعديل الملف",
+      "readReviews": "قراءة التقييمات",
+      "requestReviews": "طلب التقييمات",
+      "shareLinkDescription": "شارك هذا الرابط مع عملائك ليتمكنوا من ترك تقييم.",
+      "copyLink": "نسخ الرابط",
+      "notFoundTitle": "ألا تجد «طلب التقييمات»؟",
+      "notFoundDescription": "تأكد من تسجيل الدخول بالحساب الذي يدير النشاط التجاري.",
+      "linkLabel": "ألصق رابط التقييمات هنا",
+      "linkHint": "سيُستخدم هذا الرابط لإرسال عملائك تلقائيًا لترك تقييم بعد موعدهم.",
+      "saveLink": "حفظ الرابط",
+      "errors": {
+        "loadBusiness": "تعذر تحميل معلومات النشاط التجاري.",
+        "missingLink": "ألصق رابط التقييمات أولًا.",
+        "saveLink": "تعذر حفظ الرابط."
+      }
+    },
+    "errors": {
+      "invalidSession": "جلسة غير صالحة.",
+      "sessionExpired": "انتهت جلستك.",
+      "loadCustomers": "تعذر تحميل العملاء.",
+      "loadServices": "تعذر تحميل الخدمات.",
+      "loadAutomations": "تعذر تحميل الإشعارات.",
+      "checkAvailability": "تعذر التحقق من التوفر.",
+      "selectCustomer": "اختر عميلًا.",
+      "selectService": "اختر خدمة.",
+      "selectDate": "اختر تاريخًا.",
+      "selectTime": "اختر وقتًا.",
+      "noEmployee": "لا يوجد موظف متاح لهذا الوقت.",
+      "saveAppointment": "تعذر حفظ الموعد.",
+      "updateAutomation": "تعذر تحديث الإشعار."
+    }
+  },
+  "sidebar": {
+    "brandSubtitle": "إدارة وأتمتة",
+    "closeMenu": "إغلاق القائمة",
+    "user": "المستخدم",
+    "mainMenu": "القائمة الرئيسية",
+    "home": "الرئيسية",
+    "agenda": "المواعيد",
+    "clients": "العملاء",
+    "employees": "الموظفون",
+    "services": "الخدمات",
+    "layout": "القوالب",
+    "whatsapp": "واتساب",
+    "hours": "ساعات العمل",
+    "settings": "الإعدادات",
+    "connected": "متصل",
+    "notConnected": "غير متصل",
+    "logout": "تسجيل الخروج",
+    "templates": "القوالب"
+  },
+  "home": {
+    "eyebrow": "لوحة التحكم الرئيسية",
+    "welcome": "مرحبًا،",
+    "welcomeFallback": "مرحبًا بك",
+    "description": "أدر نشاطك التجاري وأتمتة اتصالاتك.",
+    "whatsapp": "واتساب",
+    "connected": "متصل",
+    "notConnected": "غير متصل",
+    "account": "الحساب",
+    "active": "نشط",
+    "automation": "الأتمتة",
+    "ready": "جاهزة للاستخدام",
+    "remindersAndMessages": "التذكيرات والرسائل",
+    "whatsappConnectedTitle": "واتساب متصل",
+    "whatsappDisconnectedTitle": "واتساب غير متصل",
+    "whatsappConnectedDescription": "حسابك متصل وجاهز للعمل.",
+    "whatsappDisconnectedDescription": "قم بتوصيل واتساب لبدء إرسال الرسائل.",
+    "manageWhatsapp": "إدارة واتساب"
+  },
+  "agenda": {
+    "eyebrow": "الإدارة",
+    "title": "المواعيد",
+    "description": "نظّم مواعيد نشاطك التجاري وساعات العمل والتوفر.",
+    "calendarLabel": "جدول المواعيد",
+    "loading": "جارٍ تحميل المواعيد...",
+    "errorTitle": "تعذر تحميل المواعيد",
+    "retry": "إعادة المحاولة",
+    "refreshing": "جارٍ تحديث المواعيد...",
+    "errors": {
+      "invalidSession": "جلسة غير صالحة.",
+      "invalidBusinessId": "معرّف النشاط التجاري غير صالح.",
+      "sessionExpired": "انتهت جلستك.",
+      "loadAppointments": "تعذر تحميل المواعيد.",
+      "loadBusinessHours": "تعذر تحميل ساعات العمل."
+    }
+  },
+  "calendar": {
+    "today": "اليوم",
+    "day": "اليوم",
+    "week": "الأسبوع",
+    "month": "الشهر",
+    "previous": "السابق",
+    "next": "التالي",
+    "employees": "الموظفون",
+    "employee": "الموظف",
+    "selectEmployee": "اختيار الموظف",
+    "allEmployees": "جميع الموظفين",
+    "employeesCount": "{count} موظفين",
+    "selectedEmployee": "الموظف المحدد",
+    "employeesHeading": "الموظفون",
+    "active": "نشط",
+    "loading": {
+      "title": "جارٍ تحميل المواعيد",
+      "text": "جارٍ تحميل جدولك...",
+      "preparing": "جارٍ تجهيز الموظفين والتقويم"
+    },
+    "empty": {
+      "noEmployees": "لا يوجد موظفون نشطون",
+      "addEmployee": "أضف موظفًا للبدء."
+    },
+    "closed": {
+      "title": "النشاط التجاري مغلق",
+      "description": "لا توجد ساعات عمل للنشاط التجاري في هذا اليوم.",
+      "short": "مغلق"
+    },
+    "refreshing": "جارٍ تحديث المواعيد...",
+    "customer": "العميل",
+    "weekdays": {
+      "monday": "الاثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت",
+      "sunday": "الأحد"
+    },
+    "errors": {
+      "invalidSession": "جلسة غير صالحة.",
+      "sessionExpired": "انتهت جلستك.",
+      "loadAppointments": "تعذر تحميل المواعيد.",
+      "loadEmployees": "تعذر تحميل الموظفين.",
+      "loadBusinessHours": "تعذر تحميل ساعات عمل النشاط التجاري."
+    }
+  },
+  "clients": {
+    "eyebrow": "الإدارة",
+    "title": "العملاء",
+    "description": "أدر جميع معلومات عملائك.",
+    "actions": {
+      "new": "عميل جديد",
+      "create": "إنشاء عميل",
+      "edit": "تعديل",
+      "delete": "حذف"
+    },
+    "search": {
+      "placeholder": "البحث بالاسم أو الهاتف أو البريد الإلكتروني...",
+      "aria": "البحث عن العملاء",
+      "clear": "مسح البحث"
+    },
+    "results": {
+      "singular": "عميل",
+      "plural": "عملاء"
+    },
+    "summary": {
+      "total": "إجمالي العملاء",
+      "matches": "التطابقات"
+    },
+    "loading": {
+      "title": "جارٍ تحميل العملاء",
+      "description": "نحن نجهز قائمتك."
+    },
+    "empty": {
+      "title": "ليس لديك عملاء بعد",
+      "description": "أنشئ أول عميل للبدء.",
+      "searchTitle": "لم نعثر على عملاء",
+      "searchDescription": "جرّب اسمًا أو هاتفًا أو بريدًا إلكترونيًا آخر.",
+      "addCustomersTitle": "أضف عملاءك",
+      "addCustomersDescription": "احفظ الاسم ورقم الهاتف والبيانات الأخرى لتبقى جميع معلومات عملائك منظمة.",
+      "createAppointmentsTitle": "أنشئ المواعيد بسهولة أكبر",
+      "createAppointmentsDescription": "بعد تسجيل العملاء، يمكنك اختيارهم مباشرةً من جدول المواعيد."
+    },
+    "table": {
+      "client": "العميل",
+      "contact": "جهة الاتصال",
+      "notes": "ملاحظات",
+      "actions": "الإجراءات"
+    },
+    "footer": {
+      "showing": "عرض",
+      "of": "من"
+    },
+    "fallbacks": {
+      "noName": "بدون اسم",
+      "noPhone": "بدون هاتف",
+      "noNotes": "بدون ملاحظات"
+    },
+    "phone": {
+      "manualCode": "رمز يدوي",
+      "manualOption": "🌎 آخر / يدوي",
+      "selectCountry": "اختر دولة",
+      "selectCountryHint": "اختر دولة.",
+      "manualHint": "يمكنك إدخال رمز المنطقة يدويًا.",
+      "invalid": "أدخل رقم هاتف صالحًا.",
+      "validFor": "رقم هاتف صالح لـ",
+      "rangePrefix": "يجب أن يحتوي على",
+      "rangeMiddle": "و",
+      "rangeSuffix": "أرقام.",
+      "countrySuffix": "أرقام."
+    },
+    "form": {
+      "fullName": "الاسم الكامل",
+      "fullNamePlaceholder": "مثال: ماريا غارسيا",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "client@email.com",
+      "notes": "ملاحظات",
+      "notesPlaceholder": "ملاحظات حول العميل...",
+      "language": "اللغة"
+    },
+    "modal": {
+      "eyebrowEdit": "العميل",
+      "eyebrowNew": "عميل جديد",
+      "editTitle": "تعديل العميل",
+      "newTitle": "عميل جديد",
+      "description": "أكمل معلومات العميل."
+    },
+    "delete": {
+      "eyebrow": "حذف العميل",
+      "title": "هل تريد حذف العميل؟",
+      "confirmPrefix": "هل أنت متأكد أنك تريد حذف",
+      "irreversible": "لا يمكن التراجع عن هذا الإجراء.",
+      "deleting": "جارٍ الحذف..."
+    },
+    "errors": {
+      "invalidSession": "جلسة غير صالحة.",
+      "sessionExpired": "انتهت جلستك.",
+      "loadClients": "تعذر تحميل العملاء.",
+      "saveClient": "تعذر حفظ العميل.",
+      "deleteClient": "تعذر حذف العميل."
+    }
+  },
+  "employees": {
+    "eyebrow": "الإدارة",
+    "title": "الموظفون",
+    "description": "أدر الأشخاص الذين يشكلون جزءًا من نشاطك التجاري.",
+    "newEmployee": "موظف جديد",
+    "searchPlaceholder": "🔎 البحث عن موظف...",
+    "loading": "جارٍ تحميل الموظفين...",
+    "empty": {
+      "searchTitle": "لم نعثر على موظفين",
+      "searchText": "جرّب اسمًا آخر.",
+      "title": "ليس لديك موظفون بعد",
+      "text": "أنشئ أول موظف للبدء."
+    },
+    "createEmployee": "إنشاء موظف",
+    "noName": "بدون اسم",
+    "noPhone": "بدون هاتف",
+    "table": {
+      "employee": "الموظف",
+      "schedule": "الجدول",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "dialog": {
+      "createTitle": "موظف جديد",
+      "editTitle": "تعديل الموظف",
+      "createDescription": "أضف شخصًا إلى فريقك.",
+      "editDescription": "حدّث معلومات الموظف.",
+      "saveChanges": "حفظ التغييرات",
+      "createEmployee": "إنشاء موظف"
+    },
+    "fields": {
+      "firstName": "الاسم",
+      "firstNamePlaceholder": "مثال: Matias",
+      "lastName": "اللقب",
+      "lastNamePlaceholder": "مثال: Diaz",
+      "phone": "الهاتف",
+      "phonePlaceholder": "مثال: 612345678",
+      "phoneHelp": "اختياري. يمكنك إضافته الآن أو لاحقًا.",
+      "startTime": "وقت البدء",
+      "endTime": "وقت الانتهاء",
+      "color": "لون الموظف",
+      "colorHelp": "سيُستخدم هذا اللون لتمييز بطاقات الموظف في جدول المواعيد.",
+      "status": "الحالة"
+    },
+    "form": {
+      "active": "موظف نشط",
+      "inactive": "موظف غير نشط"
+    },
+    "deleteDialog": {
+      "title": "حذف الموظف",
+      "question": "هل أنت متأكد أنك تريد حذف",
+      "warning": "لا يمكن التراجع عن هذا الإجراء.",
+      "deleting": "جارٍ الحذف..."
+    },
+    "footer": {
+      "showing": "عرض {shown} من أصل {total} موظفين"
+    },
+    "errors": {
+      "invalidSession": "جلسة غير صالحة.",
+      "sessionExpired": "انتهت جلستك.",
+      "loadEmployees": "تعذر تحميل الموظفين.",
+      "firstNameRequired": "الاسم مطلوب.",
+      "lastNameRequired": "اللقب مطلوب.",
+      "startTimeRequired": "وقت البدء مطلوب.",
+      "endTimeRequired": "وقت الانتهاء مطلوب.",
+      "endTimeAfterStart": "يجب أن يكون وقت الانتهاء بعد وقت البدء.",
+      "saveEmployee": "تعذر حفظ الموظف.",
+      "deleteEmployee": "تعذر حذف الموظف.",
+      "toggleStatus": "تعذر تغيير الحالة."
+    }
+  },
+  "services": {
+    "eyebrow": "الإدارة",
+    "title": "الخدمات",
+    "description": "أدر الخدمات التي يقدمها نشاطك التجاري.",
+    "newService": "خدمة جديدة",
+    "createService": "إنشاء خدمة",
+    "searchPlaceholder": "🔎 البحث عن خدمة...",
+    "loading": "جارٍ تحميل الخدمات...",
+    "noDescription": "بدون وصف",
+    "noPrice": "بدون سعر",
+    "minutes": "دقيقة",
+    "empty": {
+      "searchTitle": "لم نعثر على خدمات",
+      "searchText": "جرّب بحثًا آخر.",
+      "title": "ليس لديك خدمات بعد",
+      "text": "أنشئ أول خدمة للبدء."
+    },
+    "table": {
+      "service": "الخدمة",
+      "duration": "المدة",
+      "price": "السعر",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "dialog": {
+      "createTitle": "خدمة جديدة",
+      "editTitle": "تعديل الخدمة",
+      "createDescription": "أضف خدمة إلى نشاطك التجاري.",
+      "editDescription": "حدّث بيانات الخدمة.",
+      "saveChanges": "حفظ التغييرات",
+      "createService": "إنشاء خدمة"
+    },
+    "fields": {
+      "name": "اسم الخدمة",
+      "namePlaceholder": "مثال: قص الشعر",
+      "description": "الوصف",
+      "descriptionPlaceholder": "وصف اختياري...",
+      "duration": "المدة",
+      "price": "السعر",
+      "color": "لون الخدمة",
+      "colorHelp": "يمكن استخدام هذا اللون لتمييز الخدمة في جدول المواعيد.",
+      "status": "الحالة"
+    },
+    "form": {
+      "active": "خدمة نشطة",
+      "inactive": "خدمة غير نشطة"
+    },
+    "deleteDialog": {
+      "title": "حذف الخدمة",
+      "question": "هل أنت متأكد أنك تريد حذف",
+      "warning": "لا يمكن التراجع عن هذا الإجراء.",
+      "deleting": "جارٍ الحذف..."
+    },
+    "footer": {
+      "showing": "عرض {shown} من أصل {total} خدمات"
+    },
+    "errors": {
+      "invalidSession": "جلسة غير صالحة.",
+      "sessionExpired": "انتهت جلستك.",
+      "loadServices": "تعذر تحميل الخدمات.",
+      "nameRequired": "اسم الخدمة مطلوب.",
+      "durationInvalid": "يجب أن تكون المدة أكبر من 0 دقيقة.",
+      "priceNegative": "لا يمكن أن يكون السعر سالبًا.",
+      "colorInvalid": "لون غير صالح.",
+      "saveService": "تعذر حفظ الخدمة.",
+      "deleteService": "تعذر حذف الخدمة.",
+      "toggleStatus": "تعذر تغيير الحالة."
+    }
+  },
+  "whatsappStatus": {
+    "eyebrow": "الاتصال",
+    "description": "الحالة الحالية لاتصالك.",
+    "logoAlt": "شعار واتساب",
+    "status": {
+      "connected": "متصل",
+      "notConnected": "غير متصل"
+    },
+    "main": {
+      "connectedHighlight": "متصل",
+      "notConnectedTitle": "واتساب غير متصل",
+      "connectedDescription": "حساب واتساب الخاص بك نشط وجاهز لإرسال التذكيرات والتأكيدات والرسائل التلقائية إلى عملائك.",
+      "notConnectedDescription": "قم بتوصيل حساب واتساب لبدء استخدام الأتمتة في Wilbuk."
+    },
+    "phone": {
+      "connectedNumber": "الرقم المتصل"
+    },
+    "disconnect": {
+      "button": "فصل واتساب",
+      "description": "إنهاء الاتصال الحالي"
+    },
+    "pending": {
+      "title": "اتصال قيد الانتظار",
+      "description": "لا يوجد حساب متصل."
+    },
+    "system": {
+      "automaticMessages": "الرسائل التلقائية",
+      "active": "نشطة",
+      "customerCommunication": "التواصل مع العملاء",
+      "enabled": "مفعّل",
+      "systemWorking": "النظام يعمل",
+      "noErrors": "بدون أخطاء"
+    },
+    "information": {
+      "title": "ماذا يحدث عند فصل الاتصال؟",
+      "description": "ستتوقف الرسائل التلقائية والتذكيرات. يمكنك إعادة توصيل واتساب في أي وقت."
+    },
+    "disconnectDialog": {
+      "title": "فصل واتساب؟",
+      "description": "سيتم إنهاء اتصال واتساب الحالي. ستتوقف الرسائل التلقائية حتى تعيد توصيل الحساب.",
+      "confirm": "فصل الاتصال"
+    }
+  },
+  "hours": {
+    "eyebrow": "الإدارة",
+    "title": "ساعات العمل",
+    "description": "اضبط الأيام والساعات التي يكون فيها نشاطك التجاري مفتوحًا.",
+    "saveButton": "حفظ ساعات العمل",
+    "loading": "جارٍ تحميل ساعات العمل...",
+    "thisDay": "هذا اليوم",
+    "closedBusiness": "النشاط التجاري مغلق",
+    "fields": {
+      "from": "من",
+      "until": "حتى"
+    },
+    "applyAll": {
+      "title": "تطبيق على جميع الأيام",
+      "description": "استخدم نفس الساعات لجميع أيام الأسبوع.",
+      "button": "تطبيق على الجميع",
+      "applying": "جارٍ التطبيق..."
+    },
+    "weekly": {
+      "title": "جدول العمل الأسبوعي",
+      "description": "يمكنك تخصيص كل يوم بشكل منفصل."
+    },
+    "status": {
+      "open": "مفتوح",
+      "closed": "مغلق"
+    },
+    "days": {
+      "monday": "الاثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت",
+      "sunday": "الأحد"
+    },
+    "aria": {
+      "closeDay": "إغلاق {day}",
+      "openDay": "فتح {day}"
+    },
+    "success": {
+      "saved": "تم حفظ ساعات العمل بنجاح.",
+      "appliedToAll": "تم تطبيق ساعات العمل على جميع الأيام."
+    },
+    "errors": {
+      "sessionExpired": "انتهت جلستك.",
+      "sessionExpiredSave": "انتهت جلستك. سجّل الدخول مرة أخرى.",
+      "loadHours": "تعذر تحميل ساعات العمل.",
+      "saveHours": "تعذر حفظ ساعات العمل.",
+      "completeDay": "أكمل ساعات العمل الخاصة بـ {day}.",
+      "openBeforeClose": "يجب أن يكون وقت الفتح قبل وقت الإغلاق في {day}.",
+      "selectTimes": "يجب تحديد وقت الفتح والإغلاق.",
+      "openBeforeCloseGlobal": "يجب أن يكون وقت الفتح قبل وقت الإغلاق."
+    }
+  },
+  "settings": {
+    "eyebrow": "النظام",
+    "title": "الإعدادات",
+    "description": "الإعدادات العامة لنشاطك التجاري.",
+    "loading": "جارٍ تحميل الإعدادات...",
+    "business": {
+      "title": "معلومات النشاط التجاري",
+      "description": "المعلومات الأساسية التي يستخدمها Wilbuk."
+    },
+    "regional": {
+      "title": "الإعدادات الإقليمية",
+      "description": "تحدد أرقام الهواتف والمواعيد والعملة."
+    },
+    "fields": {
+      "businessName": "اسم النشاط التجاري",
+      "businessNamePlaceholder": "مثال: Glow Skin Studio",
+      "address": "العنوان",
+      "addressPlaceholder": "عنوان النشاط التجاري",
+      "reviewUrl": "رابط Google Reviews",
+      "reviewUrlPlaceholder": "https://g.page/...",
+      "country": "الدولة",
+      "selectCountry": "اختيار الدولة",
+      "timezone": "المنطقة الزمنية",
+      "timezoneHelp": "تُستخدم للمواعيد والأتمتة.",
+      "currency": "العملة",
+      "currencyHelp": "يتم الحصول عليها تلقائيًا حسب الدولة."
+    },
+    "values": {
+      "notConfigured": "غير مُهيأ"
+    },
+    "language": {
+      "title": "اللغة",
+      "description": "اللغة الرئيسية لتطبيق Wilbuk.",
+      "label": "لغة التطبيق"
+    },
+    "appearance": {
+      "title": "المظهر",
+      "description": "اختر الطريقة التي تريد أن ترى بها Wilbuk.",
+      "themeLabel": "السمة",
+      "themeAria": "سمة التطبيق",
+      "light": {
+        "title": "فاتح",
+        "description": "واجهة فاتحة ومضيئة."
+      },
+      "dark": {
+        "title": "داكن",
+        "description": "واجهة داكنة للبيئات قليلة الإضاءة."
+      }
+    },
+    "saveButton": "حفظ الإعدادات",
+    "success": {
+      "saved": "تم حفظ الإعدادات بنجاح."
+    },
+    "errors": {
+      "loadCountries": "تعذر تحميل الدول.",
+      "loadSettings": "تعذر تحميل الإعدادات.",
+      "nameRequired": "اسم النشاط التجاري مطلوب.",
+      "addressRequired": "العنوان مطلوب.",
+      "reviewUrlRequired": "رابط Google Reviews مطلوب.",
+      "reviewUrlInvalid": "رابط Google Reviews غير صالح.",
+      "countryRequired": "اختر دولة.",
+      "dialCodeMissing": "الدولة المحددة لا تحتوي على رمز اتصال.",
+      "timezoneMissing": "الدولة المحددة لا تحتوي على منطقة زمنية.",
+      "currencyMissing": "الدولة المحددة لا تحتوي على عملة.",
+      "currencySymbolMissing": "الدولة المحددة لا تحتوي على رمز عملة.",
+      "languageRequired": "اختر لغة.",
+      "saveSettings": "تعذر حفظ الإعدادات."
+    }
+  },
+  "onboarding": {
+    "initialSetup": "الإعداد الأولي",
+    "stepProgress": "الخطوة 2 من 5",
+    "continue": "متابعة",
+    "step1": {
+      "initialSetup": "الإعداد الأولي",
+      "detectedLanguage": "تم اكتشاف اللغة تلقائيًا",
+      "language": "اللغة",
+      "progress": "الخطوة 1 من 5",
+      "title": "لنُعد نشاطك التجاري",
+      "description": "نحتاج أولًا إلى بعض المعلومات الأساسية عن نشاطك التجاري. ستُستخدم هذه المعلومات لإعداد جدول المواعيد والرسائل والأتمتة.",
+      "businessName": "اسم النشاط التجاري",
+      "businessNamePlaceholder": "مثال: صالون ماتيس",
+      "country": "الدولة",
+      "loadingCountries": "جارٍ تحميل الدول...",
+      "selectCountry": "اختر دولتك",
+      "searchCountry": "البحث عن دولة...",
+      "noCountryResults": "لم نعثر على هذه الدولة.",
+      "detectedCountry": "اكتشفنا أنك قد تكون في",
+      "saving": "جارٍ الحفظ...",
+      "continue": "متابعة",
+      "success": "تم حفظ الإعدادات بنجاح.",
+      "errors": {
+        "loadCountries": "تعذر تحميل الدول.",
+        "loadBusiness": "تعذر تحميل بيانات النشاط التجاري.",
+        "saveSettings": "تعذر حفظ الإعدادات.",
+        "advance": "تم حفظ الإعدادات، ولكن تعذر الانتقال إلى الخطوة 2."
+      }
+    },
+    "step2": {
+      "progress": "الخطوة 2 من 5",
+      "title": "ما ساعات عمل نشاطك التجاري؟",
+      "description": "حدد ساعات العمل المعتادة. سنطبقها مبدئيًا على جميع أيام الأسبوع.",
+      "quickSetup": {
+        "title": "إعداد سريع",
+        "description": "يمكنك تخصيص ساعات كل يوم لاحقًا من الإعدادات."
+      },
+      "openingTime": "وقت الفتح",
+      "closingTime": "وقت الإغلاق",
+      "until": "حتى",
+      "preview": {
+        "title": "ساعات العمل المعتادة",
+        "appliesToSevenDays": "سيتم تطبيقها على الأيام السبعة"
+      },
+      "saving": "جارٍ الحفظ...",
+      "success": "تم حفظ ساعات العمل بنجاح.",
+      "errors": {
+        "selectTimes": "اختر وقت الفتح والإغلاق.",
+        "closeAfterOpen": "يجب أن يكون وقت الإغلاق بعد وقت الفتح.",
+        "saveHours": "تعذر حفظ ساعات العمل.",
+        "advance": "تم حفظ ساعات العمل، ولكن تعذر الانتقال إلى الخطوة 3."
+      }
+    },
+    "step3": {
+      "progress": "الخطوة 3 من 5",
+      "title": "أنشئ خدمتك الأولى",
+      "description": "حدد الخدمة التي ستقدمها لعملائك. يمكنك إضافة وتعديل المزيد من الخدمات لاحقًا.",
+      "serviceName": "اسم الخدمة",
+      "serviceNamePlaceholder": "مثال: قص الشعر",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "صف هذه الخدمة باختصار...",
+      "duration": "المدة",
+      "minutes": "دقيقة",
+      "price": "السعر",
+      "color": "لون الخدمة",
+      "colorDescription": "يساعد هذا اللون على تمييز الخدمة في جدول المواعيد.",
+      "creating": "جارٍ الإنشاء...",
+      "createButton": "إنشاء خدمة",
+      "success": "تم إنشاء الخدمة بنجاح.",
+      "errors": {
+        "loadBusiness": "تعذر تحميل إعدادات النشاط التجاري.",
+        "invalidForm": "أكمل الاسم والمدة الصحيحة. يجب أن تكون المدة من مضاعفات 5 دقائق.",
+        "missingCurrency": "تعذر تحديد عملة النشاط التجاري. ارجع إلى الخطوة 1 وتحقق من الدولة.",
+        "createService": "تعذر إنشاء الخدمة.",
+        "advance": "تم إنشاء الخدمة، ولكن تعذر الانتقال إلى الخطوة 4."
+      }
+    },
+    "step4": {
+      "progress": "الخطوة 4 من 5",
+      "title": "أنشئ موظفك الأول",
+      "description": "أضف أول شخص إلى فريقك. سيتم استخدام جدوله ولونه لتنظيم المواعيد في جدول المواعيد.",
+      "firstName": "الاسم",
+      "firstNamePlaceholder": "مثال: Matias",
+      "lastName": "اللقب",
+      "lastNamePlaceholder": "مثال: Diaz",
+      "employeeColor": "لون الموظف",
+      "selectColor": "اختيار اللون",
+      "custom": "مخصص",
+      "customColor": "لون مخصص",
+      "colorHelp": "سيحدد هذا اللون الموظف في بطاقات جدول المواعيد.",
+      "startTime": "وقت الدخول",
+      "endTime": "وقت الخروج",
+      "scheduleNote": "حدد ساعات العمل المعتادة لهذا الموظف. يمكنك تعديلها لاحقًا من قسم الموظفين.",
+      "creating": "جارٍ الإنشاء...",
+      "createButton": "إنشاء موظف",
+      "success": "تم إنشاء الموظف بنجاح.",
+      "errors": {
+        "invalidForm": "أكمل الاسم واللقب وجدولًا صحيحًا.",
+        "createEmployee": "تعذر إنشاء الموظف.",
+        "advance": "تم إنشاء الموظف، ولكن تعذر الانتقال إلى الخطوة 5."
+      }
+    },
+    "step5": {
+      "progress": "الخطوة 5 من 5",
+      "initialLoading": {
+        "title": "جارٍ تجهيز واتساب",
+        "text": "نحن نتحقق من الاتصال..."
+      },
+      "title": "توصيل واتساب",
+      "description": "اربط رقم واتساب الذي ستستخدمه لإرسال التذكيرات والرسائل إلى عملائك.",
+      "checking": {
+        "title": "جارٍ التحقق من الاتصال",
+        "text": "جارٍ التحقق من حالة الخدمة..."
+      },
+      "preparing": {
+        "title": "جارٍ تجهيز واتساب",
+        "text": "نحن نجهز الاتصال الآمن..."
+      },
+      "connecting": {
+        "title": "جارٍ الاتصال بواتساب",
+        "text": "بانتظار استجابة واتساب..."
+      },
+      "connected": {
+        "title": "واتساب متصل",
+        "note": "سيتم تحويلك تلقائيًا إلى جدول المواعيد."
+      },
+      "finalizing": "جارٍ الإنهاء...",
+      "finalizeIn": "الإنهاء خلال",
+      "finalizeNow": "الإنهاء الآن",
+      "serverError": {
+        "title": "تعذر الاتصال بالخادم",
+        "text": "لم تستجب خدمة واتساب. يمكنك المحاولة مرة أخرى."
+      },
+      "generalError": {
+        "title": "تعذر تجهيز واتساب"
+      },
+      "retry": {
+        "checking": "جارٍ التحقق...",
+        "connection": "إعادة محاولة الاتصال",
+        "generic": "إعادة المحاولة"
+      },
+      "expired": {
+        "title": "انتهت صلاحية رمز QR",
+        "text": "أنشئ رمزًا جديدًا وامسحه من واتساب على هاتفك.",
+        "button": "إنشاء رمز QR جديد"
+      },
+      "qr": {
+        "active": "رمز QR نشط",
+        "title": "توصيل واتساب",
+        "help": "امسح هذا الرمز باستخدام واتساب من هاتفك لربط حسابك.",
+        "step1": "افتح واتساب على هاتفك",
+        "step2": "انتقل إلى الأجهزة المرتبطة",
+        "step3": "اضغط على ربط جهاز وامسح الرمز",
+        "helpLink": "هل تحتاج إلى مساعدة؟",
+        "validFor": "الرمز صالح لمدة",
+        "seconds": "ثانية"
+      },
+      "connectButton": "توصيل واتساب",
+      "errors": {
+        "invalidBusinessId": "معرّف النشاط التجاري غير صالح.",
+        "serverResponse": "أعاد الخادم خطأ.",
+        "serverTimeout": "استغرق خادم واتساب وقتًا طويلًا جدًا للرد.",
+        "serverConnection": "تعذر الاتصال بخادم واتساب.",
+        "connectFailed": "تعذر بدء واتساب.",
+        "finalize": "تعذر إنهاء الإعداد.",
+        "notCompleted": "واتساب متصل، لكن الإعداد لم يظهر بعد كمكتمل.",
+        "finalizeTimeout": "استغرق الخادم وقتًا طويلًا جدًا لتأكيد الإكمال."
+      }
+    }
+  },
+  "templates": {
+    "title": "قوالب الرسائل",
+    "subtitle": "اختر القوالب التي سيستخدمها Wilbuk لإرسال رسائلك التلقائية.",
+    "appointment24": "تذكير قبل 24 ساعة",
+    "appointment1": "تذكير قبل ساعة واحدة",
+    "review": "طلب تقييم",
+    "before24": "رسالة تُرسل قبل 24 ساعة من الموعد.",
+    "before1": "رسالة تُرسل قبل ساعة واحدة من الموعد.",
+    "after2": "رسالة تُرسل بعد ساعتين من الموعد.",
+    "formal": "رسمي",
+    "friendly": "ودّي",
+    "formalDescription": "رسالة واضحة واحترافية لعملائك.",
+    "friendlyDescription": "رسالة ودية وقريبة من عملائك.",
+    "formalReviewDescription": "رسالة واضحة واحترافية لطلب تقييم.",
+    "friendlyReviewDescription": "رسالة ودية لدعوة عملائك إلى ترك تقييم.",
+    "selected": "محدد",
+    "select": "تحديد",
+    "loading": "جارٍ تحميل القوالب...",
+    "error": "تعذر تحميل القوالب.",
+    "retry": "إعادة المحاولة",
+    "noTemplates": "لا توجد قوالب متاحة.",
+    "preview": "معاينة",
+    "whatsapp": "واتساب",
+    "customer": "العميل",
+    "service": "الخدمة",
+    "employee": "الموظف",
+    "business": "النشاط التجاري",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "reviewUrl": "رابط التقييم",
+    "address": "العنوان",
+    "saving": "جارٍ الحفظ...",
+    "saved": "تم الحفظ",
+    "saveError": "تعذر حفظ القالب."
+  }
+}
