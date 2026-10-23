@@ -7,6 +7,7 @@ import { useLanguage } from '../../context/LanguageContext'
 import wilbukLogo from '../../assets/logo.png'
 
 export default function Sidebar({
+   hasSubscriptionAccess = false,
   user,
   currentPage,
   navigate,
@@ -25,6 +26,16 @@ export default function Sidebar({
   )
 
   const handleNavigate = (page) => {
+    if (
+      !hasSubscriptionAccess &&
+      !isAdmin &&
+      page !== 'home'
+    ) {
+      navigate('home')
+      onCloseMobile?.()
+      return
+    }
+
     navigate(page)
     onCloseMobile?.()
   }

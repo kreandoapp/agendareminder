@@ -534,3 +534,80 @@
   }
 
 }
+
+
+.subscription-required {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #0b1114;
+  color: #f5f7f8;
+  font-family: inherit;
+}
+
+.subscription-required__card {
+  width: 100%;
+  max-width: 560px;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  border: 1px solid #26343a;
+  border-radius: 20px;
+  background: #111a1f;
+  text-align: center;
+}
+
+.subscription-required__logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.subscription-required__brand {
+  color: #22c55e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.subscription-required__title {
+  margin-bottom: 14px;
+  font-size: 30px;
+}
+
+.subscription-required__description {
+  margin: 0 auto 28px;
+  max-width: 420px;
+  color: #a5b3ba;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.subscription-required__plans-button {
+  width: 100%;
+  max-width: 320px;
+  border: 0;
+  border-radius: 10px;
+  padding: 14px 20px;
+  background: #22c55e;
+  color: #06130a;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.subscription-required__logout-wrapper {
+  margin-top: 24px;
+}
+
+.subscription-required__logout-button {
+  border: 0;
+  padding: 8px 12px;
+  background: transparent;
+  color: #a5b3ba;
+  cursor: pointer;
+  text-decoration: underline;
+}

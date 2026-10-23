@@ -1,0 +1,271 @@
+.plan-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: rgba(5, 8, 13, 0.88);
+  backdrop-filter: blur(6px);
+  overflow-y: auto;
+}
+
+.plan-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 36px;
+  color: #f8fafc;
+  background: #11151c;
+  border: 1px solid #303744;
+  border-radius: 18px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.plan-dialog__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  color: #cbd5e1;
+  background: #202630;
+  border: 1px solid #343c49;
+  border-radius: 9px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.plan-dialog__close:hover {
+  color: white;
+  background: #343c49;
+}
+
+.plan-dialog__header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.plan-dialog__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #fb7185;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.plan-dialog__title {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.plan-dialog__description {
+  margin: 0;
+  color: #a6afbd;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.plan-dialog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  background: #191f28;
+  border: 1px solid #343c49;
+  border-radius: 14px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.plan-card:hover {
+  transform: translateY(-3px);
+  border-color: #64748b;
+}
+
+.plan-card--featured {
+  background: linear-gradient(180deg, #38202b 0%, #191f28 45%);
+  border: 2px solid #f43f5e;
+}
+
+.plan-card__badge {
+  align-self: flex-start;
+  margin-bottom: 16px;
+  padding: 7px 9px;
+  color: #ffffff;
+  background: #e11d48;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.plan-card__name {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.plan-card__description {
+  min-height: 44px;
+  margin: 0 0 20px;
+  color: #a6afbd;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.plan-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.plan-card__price strong {
+  color: #ffffff;
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+.plan-card__price span {
+  color: #a6afbd;
+  font-size: 13px;
+}
+
+.plan-card__divider {
+  height: 1px;
+  margin-bottom: 20px;
+  background: #343c49;
+}
+
+.plan-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0 0 26px;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #dce2eb;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.plan-card__features li span {
+  flex-shrink: 0;
+  color: #fb7185;
+  font-weight: 800;
+}
+
+.plan-card__button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: auto;
+  padding: 11px 14px;
+  color: #f8fafc;
+  background: #252d38;
+  border: 1px solid #414b59;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.plan-card__button:hover {
+  background: #343e4c;
+}
+
+.plan-card__button--featured {
+  color: #ffffff;
+  background: #e11d48;
+  border-color: #e11d48;
+}
+
+.plan-card__button--featured:hover {
+  background: #be123c;
+}
+
+.plan-dialog__footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.plan-dialog__logout,
+.plan-dialog__back {
+  min-height: 42px;
+  padding: 10px 20px;
+  color: #cbd5e1;
+  background: transparent;
+  border: 1px solid #343c49;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.plan-dialog__logout:hover,
+.plan-dialog__back:hover {
+  color: #ffffff;
+  background: #252d38;
+}
+
+@media (max-width: 760px) {
+  .plan-dialog-overlay {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .plan-dialog {
+    max-height: calc(100vh - 24px);
+    padding: 30px 18px 22px;
+  }
+
+  .plan-dialog__title {
+    font-size: 25px;
+  }
+
+  .plan-dialog__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-card {
+    padding: 22px;
+  }
+
+  .plan-card__description {
+    min-height: 0;
+  }
+
+  .plan-dialog__footer {
+    flex-direction: column;
+  }
+
+  .plan-dialog__logout,
+  .plan-dialog__back {
+    width: 100%;
+  }
+}
