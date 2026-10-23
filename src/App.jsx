@@ -3,6 +3,7 @@ import useAuth from './hooks/useAuth'
 import useSubscription from './hooks/useSubscription'
 import AuthFlow from './components/auth/AuthFlow'
 import SubscriptionRequired from './components/subscription/SubscriptionRequired'
+import PaymentSuccess from './pages/payment/PaymentSuccess'
 
 function App() {
   const {
@@ -32,6 +33,9 @@ function App() {
   const [resetToken, setResetToken] = useState('')
   const [checkingSubscription, setCheckingSubscription] = useState(false)
   const [subscriptionError, setSubscriptionError] = useState('')
+
+  const isPaymentSuccess =
+    window.location.pathname.replace(/\/+$/, '').endsWith('/payment-success')
 
   const handleLogin = async () => {
     setSubscriptionError('')
@@ -70,6 +74,10 @@ function App() {
     setEmail('')
     setPassword('')
     setSubscriptionError('')
+  }
+
+  if (isPaymentSuccess) {
+    return <PaymentSuccess />
   }
 
   if (!user) {
@@ -113,7 +121,9 @@ function App() {
       <h1>Prueba de suscripción</h1>
       <p>Usuario: {user.name || user.email}</p>
       <p>Rol: {user.role || 'Sin rol'}</p>
-      <p>Acceso: {hasSubscriptionAccess ? 'Autorizado' : 'Sin suscripción'}</p>
+      <p>
+        Acceso: {hasSubscriptionAccess ? 'Autorizado' : 'Sin suscripción'}
+      </p>
       {subscriptionError && <p>{subscriptionError}</p>}
       <button onClick={handleLogout}>Cerrar sesión</button>
     </main>
