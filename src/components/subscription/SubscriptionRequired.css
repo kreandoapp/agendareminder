@@ -1,89 +1,428 @@
+/* ========================================
+   WILBUK — Suscripción pendiente
+   Diseño oscuro + verde esmeralda
+======================================== */
+
 .subscription-required {
+  --wilbuk-bg: #020b09;
+  --wilbuk-card: #071713;
+  --wilbuk-green: #00e6a0;
+  --wilbuk-green-light: #45f5b5;
+  --wilbuk-text: #f4faf7;
+  --wilbuk-muted: #a5bbb4;
+  --wilbuk-border: #29453f;
+
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 40px 24px;
   box-sizing: border-box;
-  background: #0b0f12;
-  color: #f1f5f9;
-  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      ellipse at 10% 5%,
+      rgba(0, 230, 160, 0.13),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 90% 90%,
+      rgba(0, 180, 120, 0.1),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #020b09, #061713 50%, #020b09);
+  color: var(--wilbuk-text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.subscription-required__card {
-  width: 100%;
-  max-width: 400px;
-  padding: 28px;
+.subscription-required *,
+.subscription-required *::before,
+.subscription-required *::after {
   box-sizing: border-box;
-  text-align: center;
-  background: #151b21;
-  border: 1px solid #28313a;
-  border-radius: 12px;
 }
+
+.subscription-required::before,
+.subscription-required::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(0, 230, 160, 0.14);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.subscription-required::before {
+  top: -250px;
+  left: -180px;
+  box-shadow: 0 0 100px rgba(0, 230, 160, 0.07);
+}
+
+.subscription-required::after {
+  right: -260px;
+  bottom: -260px;
+  width: 520px;
+  height: 520px;
+}
+
+/* Tarjeta principal */
+
+.subscription-required__card {
+  position: relative;
+  width: 100%;
+  max-width: 726px;
+  padding: 36px;
+  text-align: center;
+  background: linear-gradient(
+    145deg,
+    rgba(10, 28, 32, 0.97),
+    rgba(5, 17, 20, 0.98)
+  );
+  border: 1px solid rgba(70, 111, 117, 0.48);
+  border-radius: 23px;
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(0, 230, 160, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: wilbuk-card-appear 0.45s ease both;
+}
+
+/* Logo */
 
 .subscription-required__logo {
   display: block;
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
-  margin: 0 auto 10px;
+  margin: 0 auto 12px;
+  filter: drop-shadow(0 0 18px rgba(0, 230, 160, 0.18));
 }
 
 .subscription-required__brand {
   margin: 0 0 24px;
-  color: #94a3b8;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
+  color: #b4c9c8;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 5px;
 }
 
+/* Título y descripción */
+
 .subscription-required__title {
-  margin: 0 0 14px;
-  font-size: 23px;
-  font-weight: 600;
-  line-height: 1.35;
+  max-width: 580px;
+  margin: 0 auto 16px;
+  color: var(--wilbuk-text);
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 780;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+  text-wrap: balance;
 }
 
 .subscription-required__description {
-  margin: 0 0 24px;
-  color: #a3adb8;
-  font-size: 14px;
+  max-width: 550px;
+  margin: 0 auto 25px;
+  color: #b0c2cd;
+  font-size: 16px;
   line-height: 1.7;
 }
 
-.subscription-required__plans-button {
-  width: 100%;
-  padding: 13px 16px;
-  border: none;
-  border-radius: 7px;
-  background: #2563eb;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
+/* Tarjeta del plan */
+
+.subscription-required__plan {
+  margin: 0 0 20px;
+  padding: 24px;
+  text-align: left;
+  background: linear-gradient(
+    115deg,
+    rgba(0, 230, 160, 0.085),
+    rgba(0, 230, 160, 0.025)
+  );
+  border: 1px solid rgba(0, 230, 160, 0.9);
+  border-radius: 17px;
+  box-shadow: inset 0 0 25px rgba(0, 230, 160, 0.015);
 }
 
-.subscription-required__plans-button:hover {
-  background: #1d4ed8;
+.subscription-required__plan-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
+
+.subscription-required__plan-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  color: var(--wilbuk-green);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.subscription-required__plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.subscription-required__plan-label {
+  color: var(--wilbuk-green-light);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.subscription-required__plan-info strong {
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.subscription-required__plan-description {
+  margin: 14px 0 18px;
+  color: #b0c2cd;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Precio */
+
+.subscription-required__price {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0 0 18px;
+  padding: 17px 0;
+  border-top: 1px solid rgba(83, 122, 126, 0.32);
+  border-bottom: 1px solid rgba(83, 122, 126, 0.32);
+}
+
+.subscription-required__price strong {
+  color: #f4faf7;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.subscription-required__price span {
+  color: #a5bbb4;
+  font-size: 15px;
+}
+
+/* Características */
+
+.subscription-required__features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subscription-required__features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c3d0d6;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.subscription-required__features li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--wilbuk-green);
+  color: #003629;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* Estado de pago */
+
+.subscription-required__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 8px 12px;
+  color: #ffd36b;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.subscription-required__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f5b942;
+  box-shadow: 0 0 8px rgba(245, 185, 66, 0.5);
+}
+
+/* Mensaje de error */
+
+.subscription-required__error {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  color: #fecaca;
+  background: rgba(239, 68, 68, 0.09);
+  border: 1px solid rgba(239, 68, 68, 0.24);
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Acciones */
+
+.subscription-required__actions {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.subscription-required__cancel-button {
+  flex: 0 0 34%;
+  min-height: 60px;
+  padding: 15px 18px;
+  border: 1px solid #45656d;
+  border-radius: 14px;
+  background: transparent;
+  color: #d7e3e8;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.subscription-required__cancel-button:hover {
+  border-color: #6e9196;
+  background: rgba(255, 255, 255, 0.035);
+  color: #ffffff;
+}
+
+/* Botón principal */
+
+.subscription-required__plans-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  min-height: 60px;
+  padding: 15px 50px 15px 20px;
+  overflow: hidden;
+  border: 1px solid rgba(87, 255, 194, 0.7);
+  border-radius: 14px;
+  background: linear-gradient(
+    105deg,
+    #00c982 0%,
+    #00e6a0 52%,
+    #00c982 100%
+  );
+  color: #03251a;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  box-shadow:
+    0 10px 30px rgba(0, 230, 160, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.subscription-required__plans-button::after {
+  content: "→";
+  position: absolute;
+  right: 20px;
+  font-size: 23px;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+}
+
+.subscription-required__plans-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow:
+    0 15px 38px rgba(0, 230, 160, 0.23),
+    0 0 30px rgba(0, 230, 160, 0.08);
+}
+
+.subscription-required__plans-button:hover:not(:disabled)::after {
+  transform: translateX(5px);
+}
+
+.subscription-required__plans-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.subscription-required__plans-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  box-shadow: none;
+}
+
+.subscription-required__plans-button:focus-visible,
+.subscription-required__cancel-button:focus-visible,
+.subscription-required__logout-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Cerrar sesión */
 
 .subscription-required__logout-button {
   display: block;
-  margin: 14px auto 0;
-  padding: 8px 12px;
+  margin: 20px auto 0;
+  padding: 10px 14px;
   border: none;
   background: transparent;
-  color: #94a3b8;
-  font-size: 13px;
+  color: #b4c9c1;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 5px;
   cursor: pointer;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
 .subscription-required__logout-button:hover {
   color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Fondo del diálogo */
+/* Diálogo de selección de planes */
 
 .subscription-required__overlay {
   position: fixed;
@@ -93,12 +432,11 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.7);
-  animation: subscription-overlay-appear 0.18s ease;
+  background: rgba(0, 8, 6, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: wilbuk-overlay-appear 0.2s ease;
 }
-
-/* Ventana del diálogo */
 
 .subscription-required__dialog {
   position: relative;
@@ -106,93 +444,116 @@
   max-width: 460px;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
-  box-sizing: border-box;
-  background: #151b21;
-  border: 1px solid #28313a;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  animation: subscription-dialog-appear 0.18s ease;
+  background: linear-gradient(145deg, #0b2a20, #061711);
+  border: 1px solid rgba(0, 230, 160, 0.24);
+  border-radius: 22px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+  animation: wilbuk-card-appear 0.25s ease;
 }
 
 .subscription-required__dialog-content {
-  padding: 28px;
+  padding: 32px;
   text-align: center;
 }
 
 .subscription-required__dialog-close {
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 12px;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  border-radius: 6px;
+  border: 1px solid transparent;
+  border-radius: 10px;
   background: transparent;
-  color: #94a3b8;
+  color: #a5bbb4;
   font-size: 25px;
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .subscription-required__dialog-close:hover {
-  background: #28313a;
+  background: rgba(0, 230, 160, 0.1);
   color: #ffffff;
 }
 
 .subscription-required__dialog-logo {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .subscription-required__dialog-title {
-  margin: 0 0 10px;
-  color: #f1f5f9;
-  font-size: 22px;
-  font-weight: 600;
+  margin: 0 0 12px;
+  color: #f4faf7;
+  font-size: 25px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
 }
 
 .subscription-required__dialog-description {
-  margin: 0 0 22px;
-  color: #a3adb8;
+  margin: 0 0 24px;
+  color: #a5bbb4;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .subscription-required__plans-placeholder {
-  padding: 22px 16px;
-  border: 1px solid #28313a;
-  border-radius: 8px;
-  background: #0b0f12;
+  padding: 24px 18px;
+  border: 1px solid rgba(0, 230, 160, 0.24);
+  border-radius: 14px;
+  background: rgba(0, 230, 160, 0.045);
 }
 
 .subscription-required__plans-placeholder p {
   margin: 0;
-  color: #a3adb8;
+  color: #b4c9c1;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .subscription-required__dialog-back {
   width: 100%;
   margin-top: 20px;
-  padding: 11px 16px;
-  border: 1px solid #28313a;
-  border-radius: 7px;
-  background: transparent;
-  color: #f1f5f9;
+  padding: 13px 16px;
+  border: 1px solid rgba(0, 230, 160, 0.25);
+  border-radius: 10px;
+  background: rgba(0, 230, 160, 0.06);
+  color: #e7f8f0;
+  font-family: inherit;
   font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .subscription-required__dialog-back:hover {
-  background: #28313a;
+  background: rgba(0, 230, 160, 0.12);
+  border-color: rgba(0, 230, 160, 0.45);
 }
 
-@keyframes subscription-overlay-appear {
+/* Animaciones */
+
+@keyframes wilbuk-card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes wilbuk-overlay-appear {
   from {
     opacity: 0;
   }
@@ -202,43 +563,330 @@
   }
 }
 
-@keyframes subscription-dialog-appear {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
+/* Responsive */
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .subscription-required {
-    padding: 16px;
+    padding: 24px 16px;
   }
 
   .subscription-required__card {
-    padding: 24px;
+    max-width: 440px;
+    padding: 30px 22px 24px;
+    border-radius: 21px;
+  }
+
+  .subscription-required__logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .subscription-required__brand {
+    margin-bottom: 22px;
   }
 
   .subscription-required__title {
-    font-size: 21px;
+    font-size: 28px;
+    letter-spacing: -0.7px;
+  }
+
+  .subscription-required__description {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .subscription-required__plan {
+    padding: 19px;
+  }
+
+  .subscription-required__plan-description {
+    font-size: 14px;
+  }
+
+  .subscription-required__price strong {
+    font-size: 32px;
+  }
+
+  .subscription-required__actions {
+    gap: 10px;
+  }
+
+  .subscription-required__cancel-button {
+    flex-basis: 32%;
+    min-height: 56px;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .subscription-required__plans-button {
+    min-height: 56px;
+    padding: 12px 34px 12px 12px;
+    font-size: 12px;
+  }
+
+  .subscription-required__plans-button::after {
+    right: 12px;
+    font-size: 20px;
   }
 
   .subscription-required__dialog-content {
-    padding: 24px 20px;
+    padding: 30px 22px 24px;
+  }
+
+  .subscription-required__dialog-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 360px) {
+  .subscription-required__card {
+    padding: 27px 16px 22px;
+  }
+
+  .subscription-required__title {
+    font-size: 25px;
+  }
+
+  .subscription-required__plan-info strong {
+    font-size: 21px;
+  }
+
+  .subscription-required__actions {
+    gap: 8px;
+  }
+
+  .subscription-required__cancel-button {
+    flex-basis: 30%;
+    padding: 10px 7px;
+    font-size: 12px;
+  }
+
+  .subscription-required__plans-button {
+    padding-right: 29px;
+    font-size: 11px;
+  }
+
+  .subscription-required__plans-button::after {
+    right: 9px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .subscription-required__card,
   .subscription-required__overlay,
   .subscription-required__dialog {
     animation: none;
   }
 
-  .subscription-required__plans-button {
+  .subscription-required__plans-button,
+  .subscription-required__logout-button,
+  .subscription-required__cancel-button,
+  .subscription-required__dialog-back {
     transition: none;
   }
+}
+
+/* Ajustar tarjeta al alto de la pantalla */
+.subscription-required {
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.subscription-required__card {
+  max-width: 726px;
+  padding: 22px 30px;
+}
+
+/* Reducir espacio del encabezado */
+.subscription-required__logo {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 4px;
+}
+
+.subscription-required__brand {
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+
+/* Título y descripción */
+.subscription-required__title {
+  margin-bottom: 8px;
+  font-size: clamp(25px, 2.5vw, 32px);
+}
+
+.subscription-required__description {
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Reducir tarjeta del plan */
+.subscription-required__plan {
+  margin-bottom: 12px;
+  padding: 14px 18px;
+}
+
+.subscription-required__plan-heading {
+  gap: 12px;
+}
+
+.subscription-required__plan-icon {
+  font-size: 26px;
+}
+
+.subscription-required__plan-info strong {
+  font-size: 20px;
+}
+
+.subscription-required__plan-description {
+  margin: 7px 0 10px;
+  font-size: 13px;
+}
+
+/* Precio más compacto */
+.subscription-required__price {
+  margin-bottom: 10px;
+  padding: 9px 0;
+}
+
+.subscription-required__price strong {
+  font-size: 27px;
+}
+
+.subscription-required__price span {
+  font-size: 13px;
+}
+
+/* Características más juntas */
+.subscription-required__features {
+  gap: 7px;
+}
+
+.subscription-required__features li {
+  font-size: 13px;
+}
+
+.subscription-required__features li span {
+  width: 17px;
+  height: 17px;
+  flex-basis: 17px;
+  font-size: 11px;
+}
+
+/* Estado del pago */
+.subscription-required__status {
+  margin-top: 10px;
+  padding: 5px 9px;
+}
+
+/* Botones */
+.subscription-required__actions {
+  gap: 12px;
+}
+
+.subscription-required__cancel-button,
+.subscription-required__plans-button {
+  min-height: 48px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+}
+
+/* Pantallas con poca altura */
+@media (min-width: 601px) and (max-height: 850px) {
+  .subscription-required {
+    padding: 12px 20px;
+  }
+
+  .subscription-required__card {
+    padding: 16px 28px;
+  }
+
+  .subscription-required__logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .subscription-required__brand {
+    margin-bottom: 8px;
+  }
+
+  .subscription-required__title {
+    font-size: 27px;
+  }
+
+  .subscription-required__description {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .subscription-required__plan {
+    padding: 11px 16px;
+  }
+
+  .subscription-required__plan-description {
+    margin: 5px 0 8px;
+  }
+
+  .subscription-required__price {
+    padding: 7px 0;
+    margin-bottom: 8px;
+  }
+
+  .subscription-required__price strong {
+    font-size: 24px;
+  }
+
+  .subscription-required__features {
+    gap: 5px;
+  }
+
+  .subscription-required__status {
+    margin-top: 8px;
+  }
+
+  .subscription-required__actions {
+    gap: 10px;
+  }
+
+  .subscription-required__cancel-button,
+  .subscription-required__plans-button {
+    min-height: 44px;
+  }
+}
+
+/* Centrar el botón Ver planes */
+.subscription-required__card > .subscription-required__plans-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 150px;
+  margin: 0 auto 18px;
+}
+
+/* Mantener los botones de factura uno a cada lado */
+.subscription-required__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.subscription-required__actions .subscription-required__cancel-button {
+  margin-right: auto;
+}
+
+.subscription-required__actions .subscription-required__plans-button {
+  width: auto;
+  margin: 0;
+}
+
+/* Centrar Cerrar sesión */
+.subscription-required__logout-button {
+  display: block;
+  margin: 12px auto 0;
 }

@@ -1,0 +1,315 @@
+.cancel-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(3, 8, 12, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: cancelOverlayFadeIn 0.2s ease;
+}
+
+.cancel-modal {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    padding: 36px;
+    overflow: hidden;
+    background: #111820;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 22px;
+    box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+    color: #f1f5f9;
+    text-align: center;
+    animation: cancelModalSlideIn 0.3s ease;
+}
+
+.cancel-modal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ef4444,
+        #f87171,
+        transparent
+    );
+}
+
+/* Botón cerrar */
+
+.cancel-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.cancel-modal-close:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.cancel-modal-close:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Icono de advertencia */
+
+.cancel-modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 24px;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 20px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    font-size: 34px;
+    font-weight: 700;
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.07);
+}
+
+/* Título y descripción */
+
+.cancel-modal h2 {
+    margin: 0 28px 14px;
+    color: #f8fafc;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+}
+
+.cancel-modal-description {
+    max-width: 360px;
+    margin: 0 auto 26px;
+    color: #9caaba;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Fecha de finalización */
+
+.cancel-modal-access {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(34, 197, 94, 0.18);
+    border-radius: 15px;
+    background: rgba(34, 197, 94, 0.055);
+}
+
+.cancel-modal-access span {
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.cancel-modal-access strong {
+    color: #4ade80;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: capitalize;
+}
+
+.cancel-modal-note {
+    margin: 0 0 28px;
+    color: #8492a3;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Botones */
+
+.cancel-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cancel-modal-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.cancel-modal-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Mantener la suscripción */
+
+.cancel-modal-keep {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.045);
+    color: #e2e8f0;
+}
+
+.cancel-modal-keep:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.09);
+    transform: translateY(-1px);
+}
+
+/* Confirmar cancelación */
+
+.cancel-modal-confirm {
+    border: 1px solid #dc2626;
+    background: #dc2626;
+    color: #ffffff;
+    box-shadow: 0 5px 18px rgba(220, 38, 38, 0.15);
+}
+
+.cancel-modal-confirm:hover:not(:disabled) {
+    border-color: #ef4444;
+    background: #b91c1c;
+    box-shadow: 0 7px 22px rgba(220, 38, 38, 0.22);
+    transform: translateY(-1px);
+}
+
+.cancel-modal-actions button:focus-visible,
+.cancel-modal-close:focus-visible {
+    outline: 2px solid #4ade80;
+    outline-offset: 3px;
+}
+
+/* Texto inferior */
+
+.cancel-modal-footer {
+    display: block;
+    margin-top: 22px;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Animaciones */
+
+@keyframes cancelOverlayFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cancelModalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 520px) {
+    .cancel-modal-overlay {
+        padding: 16px;
+    }
+
+    .cancel-modal {
+        padding: 30px 22px 24px;
+        border-radius: 18px;
+    }
+
+    .cancel-modal-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 20px;
+        border-radius: 17px;
+        font-size: 29px;
+    }
+
+    .cancel-modal h2 {
+        margin: 0 18px 12px;
+        font-size: 22px;
+    }
+
+    .cancel-modal-description {
+        font-size: 13px;
+    }
+
+    .cancel-modal-access {
+        padding: 17px 12px;
+    }
+
+    .cancel-modal-access strong {
+        font-size: 16px;
+    }
+
+    .cancel-modal-actions button {
+        min-height: 46px;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Respetar preferencias de movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+    .cancel-modal-overlay,
+    .cancel-modal {
+        animation: none;
+    }
+
+    .cancel-modal-actions button,
+    .cancel-modal-close {
+        transition: none;
+    }
+}

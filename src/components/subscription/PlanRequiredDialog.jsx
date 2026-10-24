@@ -1,14 +1,30 @@
 import { useEffect, useState } from 'react'
 import './PlanRequiredDialog.css'
 
-const API_URL = 'https://kreandoapp.com/api/?action=stripe-checkout'
+const API_URL = 'https://kreandoapp.com/api/index.php'
 
 const PLANS = [
+  {
+    id: 'trial',
+    apiPlan: 'trial',
+    name: 'Prueba gratuita',
+    price: '0 €',
+    period: '20 días',
+    description: 'Probá Wilbuk gratis durante 20 días.',
+    features: [
+      'Acceso de prueba a Wilbuk',
+      'Gestión de citas y clientes',
+      'Probá las automatizaciones',
+    ],
+    featured: true,
+    badge: '20 DÍAS GRATIS',
+  },
   {
     id: 'basic',
     apiPlan: 'basic',
     name: 'Básico',
     price: '15 €',
+    period: '/mes',
     description: 'Para empezar a organizar tu negocio.',
     features: [
       'Agenda de citas',
@@ -21,34 +37,34 @@ const PLANS = [
     apiPlan: 'pro',
     name: 'Profesional',
     price: '25 €',
+    period: '/mes',
     description: 'Para negocios que quieren crecer.',
     features: [
       'Todo lo del plan Básico',
       'Automatizaciones',
       'Gestión de citas avanzada',
     ],
-    featured: true,
   },
   {
-    id: 'premium',
+    id: 'business',
     apiPlan: 'business',
-    name: 'Premium',
+    name: 'Business',
     price: '40 €',
+    period: '/mes',
     description: 'Para negocios que necesitan más.',
     features: [
       'Todo lo del plan Profesional',
       'Funciones avanzadas',
       'Mayor capacidad de gestión',
+      'Prioridad en soporte',
     ],
   },
 ]
 
-const getToken = () => {
-return localStorage.getItem('access_token')
-}
+const getToken = () => localStorage.getItem('access_token')
 
 export default function PlanRequiredDialog({
-  title = 'Elegí tu plan',
+  title = 'Planes de Wilbuk',
   description = 'Elegí el plan que mejor se adapte a tu negocio.',
   onClose,
   onViewPlans,
@@ -83,77 +99,83 @@ export default function PlanRequiredDialog({
     setLoadingPlan(plan.id)
 
     try {
-      const authToken = getToken()
+      const token = getToken()
 
-      if (!authToken) {
+      if (!token) {
         throw new Error(
-          'No encontramos tu sesión. Iniciá sesión nuevamente.'
+          'Tu sesión ha caducado. Iniciá sesión nuevamente.'
         )
       }
 
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          plan: plan.apiPlan,
-        }),
-      })
-
-      const responseText = await response.text()
-
-      let data
-
-      try {
-        data = JSON.parse(responseText)
-      } catch {
-        console.error(
-          'La API devolvió una respuesta que no es JSON.'
+      // ==========================================
+      // PRUEBA GRATUITA: NO UTILIZA STRIPE
+      // ==========================================
+      if (plan.id === 'trial') {
+        const response = await fetch(
+          `${API_URL}?action=activate-trial`,
+          {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+          }
         )
 
-        throw new Error(
-          'La API devolvió una respuesta inesperada. Revisá el servidor.'
-        )
-      }
+        const data = await response.json()
 
-      if (!response.ok || data.success === false) {
-        console.error('Error de stripe-checkout:', {
-          status: response.status,
-          message: data.message,
-        })
-
-        if (response.status === 401) {
-          throw new Error(
-            'La API rechazó tu sesión. Necesitamos revisar el token de autenticación.'
-          )
-        }
-
-        if (response.status === 403) {
+        if (!response.ok || data.success !== true) {
           throw new Error(
             data.message ||
-            'Tu usuario no tiene permiso para contratar este plan.'
+              'No se pudo activar la prueba gratuita.'
           )
         }
 
+        // La prueba ya está activada en el servidor.
+        // Recargamos para actualizar el estado de Wilbuk.
+        window.location.reload()
+
+        return
+      }
+
+      // ==========================================
+      // PLANES DE PAGO: STRIPE CHECKOUT
+      // ==========================================
+      const response = await fetch(
+        `${API_URL}?action=stripe-checkout`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            plan: plan.apiPlan,
+          }),
+        }
+      )
+
+      const data = await response.json()
+
+      if (!response.ok || data.success === false) {
         throw new Error(
           data.message ||
-          data.error ||
-          'No se pudo crear la sesión de pago.'
+            data.error ||
+            'No se pudo crear la sesión de pago.'
         )
       }
 
-      const checkoutUrl = data.checkout_url
+      const checkoutUrl = data.checkout_url || data.url
 
       if (!checkoutUrl) {
-        console.error('Respuesta de stripe-checkout:', data)
-
         throw new Error(
           'La API no devolvió el enlace de pago de Stripe.'
         )
       }
 
+      // Validar que la dirección sea de Stripe Checkout.
       const stripeUrl = new URL(checkoutUrl)
 
       if (
@@ -165,22 +187,14 @@ export default function PlanRequiredDialog({
         )
       }
 
-      console.log(
-        'Sesión de Stripe creada correctamente para el plan:',
-        plan.apiPlan
-      )
-
-      // Redirigir directamente al checkout real de Stripe.
+      // Redirigir a Stripe para completar el pago.
       window.location.assign(stripeUrl.href)
     } catch (err) {
-      console.error(
-        'Error al generar el enlace de Stripe:',
-        err
-      )
+      console.error('Error al elegir el plan:', err)
 
       setError(
         err.message ||
-        'Ocurrió un error al generar el pago.'
+          'Ocurrió un error al procesar la solicitud.'
       )
 
       setLoadingPlan(null)
@@ -231,6 +245,10 @@ export default function PlanRequiredDialog({
           <p className="plan-dialog__description">
             {description}
           </p>
+
+          <div className="plan-dialog__trial-notice">
+            ✨ Empezá gratis: 20 días de prueba
+          </div>
         </header>
 
         <div className="plan-dialog__grid">
@@ -241,9 +259,9 @@ export default function PlanRequiredDialog({
                 plan.featured ? 'plan-card--featured' : ''
               }`}
             >
-              {plan.featured && (
+              {plan.badge && (
                 <span className="plan-card__badge">
-                  MÁS ELEGIDO
+                  {plan.badge}
                 </span>
               )}
 
@@ -257,7 +275,7 @@ export default function PlanRequiredDialog({
 
               <div className="plan-card__price">
                 <strong>{plan.price}</strong>
-                <span>/mes</span>
+                <span>{plan.period}</span>
               </div>
 
               <div className="plan-card__divider" />
@@ -282,10 +300,12 @@ export default function PlanRequiredDialog({
                 disabled={Boolean(loadingPlan)}
               >
                 {loadingPlan === plan.id
-                  ? 'Generando enlace...'
+                  ? 'Procesando...'
                   : loadingPlan
                     ? 'Esperá un momento...'
-                    : 'Elegir plan'}
+                    : plan.id === 'trial'
+                      ? 'Empezar prueba gratis'
+                      : 'Elegir plan'}
               </button>
             </article>
           ))}
@@ -294,11 +314,7 @@ export default function PlanRequiredDialog({
         {error && (
           <p
             role="alert"
-            style={{
-              color: '#dc3545',
-              textAlign: 'center',
-              marginTop: '16px',
-            }}
+            className="plan-dialog__error"
           >
             {error}
           </p>

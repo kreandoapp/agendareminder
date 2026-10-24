@@ -9,25 +9,20 @@ export default function useNavigation({
 }) {
   const navigate = useCallback(
     (page) => {
-      // =====================================================
-      // 🔒 BLOQUEO GLOBAL SI WHATSAPP ESTÁ DESCONECTADO
-      // =====================================================
+      // Solo mostramos el onboarding cuando el usuario lo solicita
+      // explícitamente. La navegación normal no debe bloquearse
+      // porque WhatsApp esté desconectado.
 
-      if (!whatsappConnected) {
+      if (page === 'onboarding') {
         resetOnboarding(5)
         setCurrentPage('onboarding')
         setError('')
         return
       }
 
-      // =====================================================
-      // ONBOARDING NORMAL
-      // =====================================================
-
-      if (
-        !onboardingCompleted &&
-        page !== 'onboarding'
-      ) {
+      // Si el onboarding no está completo, no permitimos acceder
+      // a las páginas normales.
+      if (!onboardingCompleted) {
         setCurrentPage('onboarding')
         setError('')
         return
@@ -37,7 +32,6 @@ export default function useNavigation({
       setError('')
     },
     [
-      whatsappConnected,
       onboardingCompleted,
       resetOnboarding,
       setCurrentPage,

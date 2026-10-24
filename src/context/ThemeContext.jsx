@@ -51,28 +51,24 @@ function isValidTheme(value) {
  * 3. Claro por defecto
  */
 function getUserTheme() {
-  const user = getCurrentUser()
+    const user = getCurrentUser()
 
-  if (user?.id) {
-    const userStorageKey =
-      getThemeStorageKey(user)
+    if (user?.id) {
+        const userStorageKey = getThemeStorageKey(user)
+        const savedUserTheme = localStorage.getItem(userStorageKey)
 
-    const savedUserTheme =
-      localStorage.getItem(userStorageKey)
-
-    if (isValidTheme(savedUserTheme)) {
-      return savedUserTheme
+        if (isValidTheme(savedUserTheme)) {
+            return savedUserTheme
+        }
     }
-  }
 
-  const preLoginTheme =
-    localStorage.getItem(PRE_LOGIN_THEME_KEY)
+    const preLoginTheme = localStorage.getItem(PRE_LOGIN_THEME_KEY)
 
-  if (isValidTheme(preLoginTheme)) {
-    return preLoginTheme
-  }
+    if (isValidTheme(preLoginTheme)) {
+        return preLoginTheme
+    }
 
-  return 'light'
+    return 'dark'
 }
 
 export function ThemeProvider({ children }) {

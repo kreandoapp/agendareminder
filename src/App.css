@@ -1,20 +1,50 @@
 /* =========================================================
-   WILBUK
-   APP LAYOUT
-========================================================= */
+   WILBUK — APP LAYOUT
+   Responsive + Light/Dark Theme
+   ========================================================= */
 
+/* ---------------------------------------------------------
+   RESET
+   --------------------------------------------------------- */
 
-/* =========================================================
-   APP SHELL
-========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-.app-shell {
+html,
+body,
+#root {
   width: 100%;
-  min-height: 100vh;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------
+   APP CONTAINER
+   --------------------------------------------------------- */
+
+.app-container {
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
 
-  background: var(--color-bg);
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--color-bg);
   color: var(--color-text);
 
   font-family:
@@ -31,45 +61,39 @@
     color 0.2s ease;
 }
 
+/* ---------------------------------------------------------
+   SIDEBAR — DESKTOP
+   Sidebar.css controls its appearance and mobile drawer.
+   --------------------------------------------------------- */
 
-/* =========================================================
-   CONTENT WRAPPER
-========================================================= */
+.app-container > .sidebar {
+  flex: 0 0 260px;
 
-.app-content-wrapper {
-  flex: 1;
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
 
-  min-width: 0;
   min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  background: var(--color-bg);
-
-  transition:
-    background-color 0.2s ease;
+  min-height: 100dvh;
 }
 
-
-/* =========================================================
+/* ---------------------------------------------------------
    MAIN CONTENT
-========================================================= */
+   --------------------------------------------------------- */
 
-.app-main {
-  flex: 1;
+.app-container > .app-main {
+  flex: 1 1 0;
 
+  width: auto;
   min-width: 0;
-  min-height: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
 
   padding: 42px 48px;
 
-  box-sizing: border-box;
-
   overflow-x: hidden;
-  overflow-y: auto;
 
-  background: var(--color-bg);
+  background-color: var(--color-bg);
   color: var(--color-text);
 
   transition:
@@ -77,537 +101,84 @@
     color 0.2s ease;
 }
 
+/* ---------------------------------------------------------
+   CONTENT WIDTH PROTECTION
+   --------------------------------------------------------- */
 
-/* =========================================================
-   MOBILE HEADER
-========================================================= */
-
-.mobile-app-header {
-  display: none;
+.app-main > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
+/* ---------------------------------------------------------
+   THEME
+   All colors come from the variables defined in index.css.
+   Do not define another palette in this file.
+   --------------------------------------------------------- */
 
-/* =========================================================
+.app-container,
+.app-container > .app-main {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ---------------------------------------------------------
    MOBILE
-========================================================= */
+   Keep the sidebar as a fixed drawer.
+   Do not turn it into a full-width row in the layout.
+   Sidebar.css controls mobile-open and the overlay.
+   --------------------------------------------------------- */
 
 @media (max-width: 800px) {
+  .app-container {
+    flex-direction: row;
 
-  .mobile-app-header {
     width: 100%;
-
-    height: 58px;
-    min-height: 58px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 14px;
-
-    box-sizing: border-box;
-
-    background: var(--color-surface);
-
-    border-bottom:
-      1px solid var(--color-border);
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 900;
-
-    transition:
-      background-color 0.2s ease,
-      border-color 0.2s ease;
-  }
-
-
-  /* =====================================================
-     MOBILE BRAND
-  ===================================================== */
-
-  .mobile-app-brand {
-    height: 58px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
     min-width: 0;
-
-    padding: 0;
-    margin: 0;
-
-    border: 0;
-
-    background: transparent;
-
-    color: var(--color-text);
-
-    font: inherit;
-
-    cursor: pointer;
-
-    text-align: left;
-
-    flex-shrink: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
+  .app-container > .sidebar {
+    flex: 0 0 260px;
 
-  .mobile-app-brand:hover {
-    color: var(--color-text);
+    width: 260px;
+    min-width: 260px;
+    max-width: 260px;
 
-    background: transparent;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
+  .app-container > .app-main {
+    flex: 1 1 0;
 
-  .mobile-app-brand:focus-visible {
-    outline:
-      2px solid var(--color-primary);
-
-    outline-offset: 3px;
-
-    border-radius: 8px;
-  }
-
-
-  /* =====================================================
-     MOBILE LOGO
-  ===================================================== */
-
-  .mobile-app-logo {
-    width: 46px;
-    height: 46px;
-
-    min-width: 46px;
-    min-height: 46px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-    margin: 0;
-
-    background: transparent;
-
-    border: 0;
-
-    border-radius: 0;
-
-    box-shadow: none;
-
-    overflow: visible;
-
-    flex-shrink: 0;
-  }
-
-
-  .mobile-app-logo img,
-  .mobile-app-logo-image {
-    width: 52px;
-    height: 52px;
-
-    max-width: none;
-    max-height: none;
-
-    display: block;
-
-    object-fit: contain;
-
-    background: transparent;
-
-    border: 0;
-
-    padding: 0;
-    margin: 0;
-
-    transform: scale(1.08);
-
-    transform-origin: center center;
-  }
-
-
-  /* =====================================================
-     MOBILE BRAND TEXT
-  ===================================================== */
-
-  .mobile-app-brand-text {
     width: auto;
-
-    height: 46px;
-
     min-width: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: flex-start;
-
-    padding: 0;
-
-    /*
-      Bajamos el bloque completo del texto.
-    */
-    margin: 5px 0 0 0;
-  }
-
-
-  /* =====================================================
-     WILBUK
-  ===================================================== */
-
-  .mobile-app-brand-name {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-start;
-
-    height: 23px;
-
-    margin: 0;
-    padding: 0;
-
-    font-size: 21px;
-
-    line-height: 23px;
-
-    font-weight: 800;
-
-    letter-spacing: -0.8px;
-
-    white-space: nowrap;
-  }
-
-
-  .mobile-app-brand-wil {
-    color: var(--color-text);
-  }
-
-
-  .mobile-app-brand-buk {
-    background:
-      linear-gradient(
-        135deg,
-        #08bdf5 0%,
-        #168cff 42%,
-        #6638ff 100%
-      );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    background-clip: text;
-  }
-
-
-  /* =====================================================
-     SUBTITLE
-  ===================================================== */
-
-  .mobile-app-brand-subtitle {
-    height: 13px;
-
-    margin: 1px 0 0 0;
-    padding: 0;
-
-    font-size: 10px;
-
-    line-height: 13px;
-
-    font-weight: 500;
-
-    color: var(--color-text-secondary);
-
-    white-space: nowrap;
-  }
-
-
-  /* =====================================================
-     HAMBURGER
-  ===================================================== */
-
-  .mobile-menu-button {
-    width: 40px;
-    height: 40px;
-
-    min-width: 40px;
-    min-height: 40px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-
-    border:
-      1px solid var(--color-border);
-
-    border-radius: 9px;
-
-    background:
-      var(--color-surface-secondary);
-
-    color:
-      var(--color-text);
-
-    font-size: 22px;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    transition:
-      background-color 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease,
-      transform 0.15s ease;
-
-    flex-shrink: 0;
-  }
-
-
-  .mobile-menu-button:hover {
-    background:
-      var(--color-primary-soft);
-
-    border-color:
-      var(--color-primary);
-
-    color:
-      var(--color-primary);
-  }
-
-
-  .mobile-menu-button:active {
-    transform:
-      scale(0.96);
-  }
-
-
-  .mobile-menu-button:focus-visible {
-    outline:
-      2px solid var(--color-primary);
-
-    outline-offset: 2px;
-  }
-
-
-  /* =====================================================
-     MAIN MOBILE
-  ===================================================== */
-
-  .app-main {
-    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
 
     padding: 20px 14px;
-
-    overflow-x: hidden;
-
-    background:
-      var(--color-bg);
   }
-
 }
 
-
-/* =========================================================
+/* ---------------------------------------------------------
    SMALL PHONES
-========================================================= */
+   --------------------------------------------------------- */
 
 @media (max-width: 380px) {
-
-  .mobile-app-header {
-    padding: 0 12px;
-  }
-
-
-  .mobile-app-brand {
-    height: 58px;
-
-    gap: 7px;
-  }
-
-
-  .mobile-app-logo {
-    width: 44px;
-    height: 44px;
-
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-
-  .mobile-app-logo img,
-  .mobile-app-logo-image {
-    width: 48px;
-    height: 48px;
-
-    min-width: 48px;
-    min-height: 48px;
-
-    transform: scale(1.06);
-  }
-
-
-  .mobile-app-brand-text {
-    height: 44px;
-
-    margin-top: 5px;
-  }
-
-
-  .mobile-app-brand-name {
-    height: 21px;
-
-    font-size: 19px;
-
-    line-height: 21px;
-  }
-
-
-  .mobile-app-brand-subtitle {
-    height: 12px;
-
-    font-size: 9px;
-
-    line-height: 12px;
-  }
-
-
-  .mobile-menu-button {
-    width: 38px;
-    height: 38px;
-
-    min-width: 38px;
-    min-height: 38px;
-
-    font-size: 20px;
-  }
-
-
-  .app-main {
+  .app-container > .app-main {
     padding: 16px 10px;
   }
-
 }
 
-
-/* =========================================================
-   DARK THEME
-========================================================= */
-
-[data-theme="dark"] .app-shell,
-[data-theme="dark"] .app-content-wrapper,
-[data-theme="dark"] .app-main {
-  background:
-    var(--color-bg);
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* ---------------------------------------------------------
+   ACCESSIBILITY
+   --------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-
-  .app-shell,
-  .app-content-wrapper,
-  .app-main,
-  .mobile-app-header,
-  .mobile-app-brand,
-  .mobile-menu-button,
-  .mobile-app-logo img,
-  .mobile-app-logo-image {
+  .app-container,
+  .app-container > .app-main {
     transition: none;
   }
-
-}
-
-
-.subscription-required {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  box-sizing: border-box;
-  background: #0b1114;
-  color: #f5f7f8;
-  font-family: inherit;
-}
-
-.subscription-required__card {
-  width: 100%;
-  max-width: 560px;
-  padding: 40px 32px;
-  box-sizing: border-box;
-  border: 1px solid #26343a;
-  border-radius: 20px;
-  background: #111a1f;
-  text-align: center;
-}
-
-.subscription-required__logo {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
-
-.subscription-required__brand {
-  color: #22c55e;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.subscription-required__title {
-  margin-bottom: 14px;
-  font-size: 30px;
-}
-
-.subscription-required__description {
-  margin: 0 auto 28px;
-  max-width: 420px;
-  color: #a5b3ba;
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-.subscription-required__plans-button {
-  width: 100%;
-  max-width: 320px;
-  border: 0;
-  border-radius: 10px;
-  padding: 14px 20px;
-  background: #22c55e;
-  color: #06130a;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.subscription-required__logout-wrapper {
-  margin-top: 24px;
-}
-
-.subscription-required__logout-button {
-  border: 0;
-  padding: 8px 12px;
-  background: transparent;
-  color: #a5b3ba;
-  cursor: pointer;
-  text-decoration: underline;
 }

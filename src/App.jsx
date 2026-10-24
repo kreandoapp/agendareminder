@@ -1,9 +1,26 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
+import './App.css'
+
 import useAuth from './hooks/useAuth'
 import useSubscription from './hooks/useSubscription'
+import useWhatsApp from './hooks/useWhatsApp'
+import useOnboarding from './hooks/useOnboarding'
+import useNavigation from './hooks/useNavigation'
+import useSession from './hooks/useSession'
+
+import { useLanguage } from './context/LanguageContext'
+
 import AuthFlow from './components/auth/AuthFlow'
 import SubscriptionRequired from './components/subscription/SubscriptionRequired'
 import PaymentSuccess from './pages/payment/PaymentSuccess'
+import Sidebar from './components/layout/Sidebar'
+import AppPages from './components/layout/AppPages'
+
+import Step1Location from './pages/onboarding/steps/Step1Location'
+import Step2Hours from './pages/onboarding/steps/Step2Hours'
+import Step3Service from './pages/onboarding/steps/Step3Service'
+import Step4Employee from './pages/onboarding/steps/Step4Employee'
+import Step5WhatsApp from './pages/onboarding/steps/Step5WhatsApp'
 
 function App() {
   const {
@@ -15,6 +32,7 @@ function App() {
     setPassword,
     loading,
     error,
+    setError,
     login,
     forgotPassword,
     verifyResetCode,
@@ -27,79 +45,185 @@ function App() {
   const {
     subscriptionChecked,
     hasSubscriptionAccess,
+    hasSubscription,
+    subscription,
     checkSubscription,
   } = useSubscription()
 
+  const [currentPage, setCurrentPage] = useState('home')
   const [authPage, setAuthPage] = useState('login')
   const [resetEmail, setResetEmail] = useState('')
   const [resetToken, setResetToken] = useState('')
   const [checkingSubscription, setCheckingSubscription] = useState(false)
   const [subscriptionError, setSubscriptionError] = useState('')
   const [sessionChecked, setSessionChecked] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [onboardingCompleted, setOnboardingCompleted] = useState(false)
+  const [onboardingStep, setOnboardingStep] = useState(1)
+  const [onboardingChecked, setOnboardingChecked] = useState(false)
 
   const sessionRecoveryStarted = useRef(false)
+  const stopDetectorRef = useRef(null)
 
-  const isPaymentSuccess =
-    window.location.pathname.replace(/\/+$/, '').endsWith('/payment-success')
+  const isPaymentSuccess = window.location.pathname
+    .replace(/\/+$/, '')
+    .endsWith('/payment-success')
 
-  // Recuperar la sesión al entrar en la aplicación.
-  // No vuelve a ejecutar la recuperación en cada renderizado.
+  const { setLanguageFromBusiness, syncLanguage } = useLanguage()
+
+  const { clearSession, logout } = useSession({
+    setUser,
+    clearAuthSession,
+    setEmail,
+    setPassword,
+    setError,
+    setCurrentPage,
+    setOnboardingCompleted,
+    setOnboardingStep,
+    stopDetectorRef,
+  })
+
+  // The hook only reads onboarding status. App controls navigation after
+  // subscription access has been confirmed.
+  const onboarding = useOnboarding({
+    onSessionExpired: () => clearSession(),
+  })
+
+  const {
+    checkStatus: checkOnboardingStatus,
+    refreshStatus: refreshOnboardingStatus,
+  } = onboarding
+
+  const whatsapp = useWhatsApp({
+    onSessionExpired: clearSession,
+  })
+
+  const {
+    connected: whatsappConnected,
+    phone: whatsappPhone,
+  } = whatsapp
+
+  const navigate = useNavigation({
+    whatsappConnected,
+    onboardingCompleted,
+    resetOnboarding: onboarding.reset,
+    setCurrentPage,
+    setError,
+  })
+
   useEffect(() => {
-    if (sessionRecoveryStarted.current) {
-      return
+    stopDetectorRef.current = whatsapp.stopDetector
+    return () => {
+      stopDetectorRef.current = null
+    }
+  }, [whatsapp.stopDetector])
+
+  useEffect(() => {
+    if (user?.business?.language) {
+      setLanguageFromBusiness(user.business.language)
+    } else {
+      syncLanguage()
+    }
+  }, [user, setLanguageFromBusiness, syncLanguage])
+
+  // Called only after subscription access is confirmed.
+  const applyOnboardingStatus = useCallback(async (status) => {
+    if (!status || typeof status !== 'object') {
+      throw new Error('La API no devolvió un estado válido del onboarding.')
     }
 
+    const completed =
+      status.completed === true ||
+      status.onboarding_completed === true
+
+    const step = Math.min(5, Math.max(1, Number(status.current_step) || 1))
+
+    setOnboardingCompleted(completed)
+
+    if (completed) {
+      setOnboardingStep(5)
+      setCurrentPage('home')
+
+      try {
+        await whatsapp.checkStatus()
+        whatsapp.startDetector()
+      } catch (whatsappError) {
+        console.error('Error comprobando el estado de WhatsApp:', whatsappError)
+      }
+    } else {
+      setOnboardingStep(step)
+      setCurrentPage('onboarding')
+    }
+
+    setOnboardingChecked(true)
+  }, [
+    setCurrentPage,
+    whatsapp.checkStatus,
+    whatsapp.startDetector,
+  ])
+
+  // Session restore -> subscription check -> onboarding status check.
+  useEffect(() => {
+    if (sessionRecoveryStarted.current) return
     sessionRecoveryStarted.current = true
 
     const initializeSession = async () => {
       try {
         const result = await restoreSession()
 
-        if (result?.status === 'authenticated' && result.user) {
-          const restoredUser = result.user
-
-          setCheckingSubscription(true)
-          setSubscriptionError('')
-
-          try {
-            const hasAccess = await checkSubscription(restoredUser)
-
-            if (!hasAccess && restoredUser.role !== 'admin') {
-              setSubscriptionError('')
-            }
-          } catch (error) {
-            console.error(
-              'Error comprobando la suscripción:',
-              error
-            )
-
-            setSubscriptionError(
-              'No se pudo comprobar la suscripción.'
-            )
-          } finally {
-            setCheckingSubscription(false)
-          }
+        if (result?.status !== 'authenticated' || !result.user) {
+          return
         }
-      } catch (error) {
-        console.error('Error inicializando la sesión:', error)
+
+        const restoredUser = result.user
+        setCheckingSubscription(true)
+        setSubscriptionError('')
+        setOnboardingChecked(false)
+
+        const hasAccess = await checkSubscription(restoredUser)
+        const isAdmin = restoredUser.role === 'admin'
+
+        // No subscription access means no onboarding request.
+        if (!hasAccess && !isAdmin) return
+
+        const onboardingStatus = await checkOnboardingStatus()
+
+        if (!onboardingStatus) {
+          setSubscriptionError(
+            'No se pudo consultar la configuración inicial. Volvé a intentarlo.'
+          )
+          return
+        }
+
+        await applyOnboardingStatus(onboardingStatus)
+      } catch (initializationError) {
+        console.error('Error inicializando el acceso:', initializationError)
+        setSubscriptionError(
+          'No se pudo comprobar el acceso a tu cuenta. Volvé a intentarlo.'
+        )
       } finally {
+        setCheckingSubscription(false)
         setSessionChecked(true)
       }
     }
 
     initializeSession()
-  }, [restoreSession, setUser, checkSubscription])
+  }, [
+    restoreSession,
+    checkSubscription,
+    checkOnboardingStatus,
+    applyOnboardingStatus,
+  ])
 
+  // Login -> subscription check -> onboarding status check.
   const handleLogin = async () => {
     setSubscriptionError('')
     setCheckingSubscription(true)
+    setOnboardingChecked(false)
 
     try {
       const result = await login()
-
-      if (!result?.user) {
-        return
-      }
+      if (!result?.user) return
 
       const loggedInUser = {
         ...result.user,
@@ -109,15 +233,25 @@ function App() {
       setUser(loggedInUser)
 
       const hasAccess = await checkSubscription(loggedInUser)
+      const isAdmin = loggedInUser.role === 'admin'
 
-      if (!hasAccess && loggedInUser.role !== 'admin') {
+      // Do not query onboarding if subscription access is denied.
+      if (!hasAccess && !isAdmin) return
+
+      const onboardingStatus = await checkOnboardingStatus()
+
+      if (!onboardingStatus) {
+        setSubscriptionError(
+          'No se pudo consultar la configuración inicial. Volvé a intentarlo.'
+        )
         return
       }
-    } catch (error) {
-      console.error('Error comprobando la suscripción:', error)
 
+      await applyOnboardingStatus(onboardingStatus)
+    } catch (loginError) {
+      console.error('Error durante el inicio de sesión:', loginError)
       setSubscriptionError(
-        'No se pudo comprobar la suscripción.'
+        'No se pudo comprobar el acceso a tu cuenta. Intentá nuevamente.'
       )
     } finally {
       setCheckingSubscription(false)
@@ -125,29 +259,60 @@ function App() {
   }
 
   const handleLogout = () => {
-    clearAuthSession()
-    setUser(null)
-    setEmail('')
-    setPassword('')
+    logout()
     setSubscriptionError('')
+    setOnboardingChecked(false)
     setSessionChecked(true)
+  }
+
+  const handleDisconnectWhatsApp = async () => {
+    try {
+      if (typeof whatsapp.disconnect === 'function') {
+        await whatsapp.disconnect()
+      }
+    } catch (disconnectError) {
+      console.error('Error desconectando WhatsApp:', disconnectError)
+    }
+  }
+
+  const handleRetryOnboarding = async () => {
+    setCheckingSubscription(true)
+    setSubscriptionError('')
+
+    try {
+      const hasAccess = await checkSubscription(user)
+      if (!hasAccess && user?.role !== 'admin') return
+
+      const status = await checkOnboardingStatus()
+      if (!status) {
+        setSubscriptionError(
+          'No se pudo consultar la configuración inicial. Volvé a intentarlo.'
+        )
+        return
+      }
+
+      await applyOnboardingStatus(status)
+    } catch (retryError) {
+      console.error('Error reintentando la comprobación:', retryError)
+      setSubscriptionError('No se pudo comprobar el acceso. Volvé a intentarlo.')
+    } finally {
+      setCheckingSubscription(false)
+    }
   }
 
   if (isPaymentSuccess) {
     return <PaymentSuccess />
   }
 
-  // Esperar a que termine la recuperación inicial de sesión.
   if (!sessionChecked || authInitializing) {
     return (
-      <main style={{ padding: 40, fontFamily: 'sans-serif' }}>
+      <main className="app-loading">
         <h2>Comprobando sesión...</h2>
         <p>Estamos verificando tu acceso a Wilbuk.</p>
       </main>
     )
   }
 
-  // Usuario sin sesión: mostrar login.
   if (!user) {
     return (
       <AuthFlow
@@ -161,8 +326,8 @@ function App() {
         setEmail={setEmail}
         password={password}
         setPassword={setPassword}
-        loading={loading}
-        error={error}
+        loading={loading || checkingSubscription}
+        error={error || subscriptionError}
         onLogin={handleLogin}
         forgotPassword={forgotPassword}
         verifyResetCode={verifyResetCode}
@@ -171,50 +336,107 @@ function App() {
     )
   }
 
-  // Esperar la comprobación de la suscripción.
   if (checkingSubscription || !subscriptionChecked) {
     return (
-      <main style={{ padding: 40, fontFamily: 'sans-serif' }}>
+      <main className="app-loading">
         <h2>Comprobando suscripción...</h2>
         <p>Estamos verificando el acceso a tu cuenta.</p>
       </main>
     )
   }
 
-  // Usuario autenticado sin acceso a la suscripción.
-  if (!hasSubscriptionAccess && user.role !== 'admin') {
+if (!hasSubscriptionAccess && user.role !== 'admin') {
+  return (
+    <SubscriptionRequired
+      onLogout={handleLogout}
+      subscription={subscription}
+      hasSubscription={hasSubscription}
+    />
+  )
+}
+
+  // Don't render the app pages until the database onboarding status is known.
+  if (!onboardingChecked) {
     return (
-      <SubscriptionRequired
-        onLogout={handleLogout}
-      />
+      <main className="app-loading">
+        <h2>Comprobando configuración...</h2>
+        <p>Estamos consultando el estado de configuración de tu negocio.</p>
+        {subscriptionError && (
+          <div className="app-error" role="alert">
+            <p>{subscriptionError}</p>
+            <button type="button" onClick={handleRetryOnboarding}>
+              Volver a intentar
+            </button>
+            <button type="button" onClick={handleLogout}>
+              Cerrar sesión
+            </button>
+          </div>
+        )}
+      </main>
     )
   }
 
-  // Dashboard provisional.
+  if (currentPage === 'onboarding') {
+    const onboardingProps = {
+      user,
+      onboardingStep,
+      setOnboardingStep,
+      setCurrentPage,
+      setOnboardingCompleted,
+      refreshOnboardingStatus,
+    }
+
+    switch (onboardingStep) {
+      case 1:
+        return <Step1Location {...onboardingProps} />
+      case 2:
+        return <Step2Hours {...onboardingProps} />
+      case 3:
+        return <Step3Service {...onboardingProps} />
+      case 4:
+        return <Step4Employee {...onboardingProps} />
+      case 5:
+        return <Step5WhatsApp {...onboardingProps} />
+      default:
+        return <Step1Location {...onboardingProps} />
+    }
+  }
+
   return (
-    <main style={{ padding: 40, fontFamily: 'sans-serif' }}>
-      <h1>Wilbuk</h1>
+    <div className="app-container">
+          <Sidebar
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        navigate={navigate}
+        user={user}
+        whatsappConnected={whatsappConnected}
+        whatsappPhone={whatsappPhone}
+        hasSubscriptionAccess={hasSubscriptionAccess}
+        mobileOpen={mobileMenuOpen}
+        onCloseMobile={() => setMobileMenuOpen(false)}
+        onLogout={handleLogout}
+      />
 
-      <p>
-        Usuario: {user.name || user.email}
-      </p>
+      <main className="app-main">
+        {subscriptionError && (
+          <div className="app-error" role="alert">
+            {subscriptionError}
+            <button type="button" onClick={() => setSubscriptionError('')}>
+              Cerrar
+            </button>
+          </div>
+        )}
 
-      <p>
-        Rol: {user.role || 'Sin rol'}
-      </p>
-
-      <p>
-        Acceso: {hasSubscriptionAccess ? 'Autorizado' : 'Sin suscripción'}
-      </p>
-
-      {subscriptionError && (
-        <p role="alert">{subscriptionError}</p>
-      )}
-
-      <button onClick={handleLogout}>
-        Cerrar sesión
-      </button>
-    </main>
+        <AppPages
+          currentPage={currentPage}
+          user={user}
+          whatsappConnected={whatsappConnected}
+          whatsappPhone={whatsappPhone}
+          navigate={navigate}
+          onDisconnectWhatsApp={handleDisconnectWhatsApp}
+        />
+      </main>
+    </div>
   )
 }
 

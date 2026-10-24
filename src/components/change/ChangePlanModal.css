@@ -1,0 +1,402 @@
+.change-plan-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(2, 8, 12, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow-y: auto;
+}
+
+.change-plan-modal {
+    position: relative;
+    width: min(100%, 1000px);
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    padding: 34px;
+    color: #f3f7fa;
+    background: linear-gradient(145deg, #111d25, #0b131a);
+    border: 1px solid #293c49;
+    border-radius: 24px;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+    animation: changePlanAppear 0.22s ease-out;
+}
+
+.change-plan-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: #dce5ec;
+    font-size: 29px;
+    line-height: 1;
+    background: #19252e;
+    border: 1px solid #2b3b46;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.change-plan-close:hover:not(:disabled) {
+    background: #263641;
+    transform: rotate(90deg);
+}
+
+.change-plan-close:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.change-plan-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 45px;
+    margin-bottom: 30px;
+}
+
+.change-plan-header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 66px;
+    height: 66px;
+    color: #00e6ae;
+    font-size: 39px;
+    font-weight: 700;
+    background: rgba(0, 230, 174, 0.1);
+    border: 1px solid rgba(0, 230, 174, 0.2);
+    border-radius: 18px;
+}
+
+.change-plan-header h2 {
+    margin: 0 0 8px;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.change-plan-header p {
+    margin: 0;
+    color: #9eafbd;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.change-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.change-plan-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px 19px 19px;
+    background: linear-gradient(160deg, #14212b, #101820);
+    border: 1px solid #30424f;
+    border-radius: 19px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.change-plan-card:hover {
+    transform: translateY(-3px);
+    border-color: #4b6b7b;
+}
+
+.change-plan-card.current {
+    background: linear-gradient(
+        160deg,
+        rgba(0, 230, 174, 0.09),
+        #101b20
+    );
+    border: 1px solid #00dba6;
+    box-shadow: inset 0 0 0 1px rgba(0, 219, 166, 0.08);
+}
+
+.change-plan-card.popular {
+    border-color: #476574;
+}
+
+.change-plan-badge {
+    align-self: flex-end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 5px 11px;
+    margin-bottom: 13px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border-radius: 999px;
+}
+
+.current-badge {
+    color: #00e6ae;
+    background: rgba(0, 230, 174, 0.1);
+    border: 1px solid rgba(0, 230, 174, 0.28);
+}
+
+.popular-badge {
+    color: #05251d;
+    background: #00e6ae;
+}
+
+.change-plan-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.change-plan-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: #00e6ae;
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.change-plan-card-title h3 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.change-plan-description {
+    min-height: 48px;
+    margin: 0 0 18px;
+    color: #9eafbd;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.change-plan-price {
+    padding: 17px 0;
+    margin-bottom: 17px;
+    color: #f5f8fb;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    border-top: 1px solid #253640;
+    border-bottom: 1px solid #253640;
+}
+
+.change-plan-price span {
+    margin-left: 4px;
+    color: #9eafbd;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.change-plan-features {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 0;
+    margin: 0 0 24px;
+    list-style: none;
+}
+
+.change-plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #c8d3dc;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.change-plan-features li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    color: #06251d;
+    font-size: 11px;
+    font-weight: 900;
+    background: #00dba6;
+    border-radius: 50%;
+}
+
+.change-plan-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    margin-top: auto;
+    color: #03271e;
+    font-size: 13px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00e6ae, #00c99a);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.change-plan-select:hover:not(:disabled) {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.change-plan-select.is-current,
+.change-plan-select:disabled {
+    color: #9eabb5;
+    background: #28343c;
+    border-color: #3b4a54;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+}
+
+.change-plan-error {
+    padding: 13px 15px;
+    margin-top: 20px;
+    color: #ff9ca6;
+    font-size: 13px;
+    line-height: 1.5;
+    background: rgba(255, 75, 93, 0.08);
+    border: 1px solid rgba(255, 75, 93, 0.25);
+    border-radius: 12px;
+}
+
+.change-plan-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding-top: 20px;
+    margin-top: 22px;
+    border-top: 1px solid #283a45;
+}
+
+.change-plan-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    color: #0c1a23;
+    font-size: 15px;
+    font-weight: 800;
+    font-style: italic;
+    background: #a4b5c3;
+    border-radius: 50%;
+}
+
+.change-plan-footer p {
+    margin: 0;
+    color: #9eafbd;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+@keyframes changePlanAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 850px) {
+    .change-plan-modal {
+        padding: 25px;
+    }
+
+    .change-plan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .change-plan-card {
+        padding: 22px;
+    }
+
+    .change-plan-description {
+        min-height: auto;
+    }
+
+    .change-plan-features {
+        gap: 10px;
+    }
+
+    .change-plan-header {
+        gap: 13px;
+    }
+
+    .change-plan-header-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .change-plan-overlay {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .change-plan-modal {
+        max-height: calc(100vh - 24px);
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    .change-plan-header {
+        align-items: flex-start;
+        padding-right: 28px;
+        margin-bottom: 22px;
+    }
+
+    .change-plan-header h2 {
+        font-size: 23px;
+    }
+
+    .change-plan-header p {
+        font-size: 13px;
+    }
+
+    .change-plan-close {
+        top: 13px;
+        right: 13px;
+        width: 34px;
+        height: 34px;
+        font-size: 24px;
+    }
+
+    .change-plan-card-title h3 {
+        font-size: 21px;
+    }
+
+    .change-plan-price {
+        font-size: 27px;
+    }
+}

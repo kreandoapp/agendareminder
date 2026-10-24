@@ -1,466 +1,266 @@
-/* =========================================================
-   AGENDaREMINDER — GLOBAL INDEX STYLES
-   Light / Dark Theme
-========================================================= */
+/* =====================================================
+   WILBUK — SISTEMA GLOBAL DE COLORES
+   Modo oscuro predeterminado + modo claro
+   ===================================================== */
 
+/* =====================================================
+   MODO CLARO
+   ===================================================== */
 
-/* =========================================================
-   ROOT
-========================================================= */
+:root,
+:root[data-theme="light"] {
+    color-scheme: light;
 
-:root {
-  /*
-   * El tema NO se detecta automáticamente.
-   *
-   * AgendaReminder comienza siempre en LIGHT.
-   *
-   * El cambio Light / Dark lo controla:
-   *
-   * ThemeContext.jsx
-   *
-   * mediante:
-   *
-   * [data-theme="light"]
-   * [data-theme="dark"]
-   */
+    /* Fondos */
+    --color-bg: #F3F6F8;
+    --color-surface: #FFFFFF;
+    --color-surface-secondary: #F7F9FA;
+    --color-surface-hover: #EDF2F4;
 
-  color-scheme: light;
+    /* Textos */
+    --color-text: #172026;
+    --color-text-secondary: #5F6B73;
+    --color-text-muted: #87939B;
+    --color-text-inverse: #FFFFFF;
 
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+    /* Bordes */
+    --color-border: #DFE6EA;
+    --color-border-strong: #C9D4DA;
 
-  font-size: 16px;
-  line-height: 1.45;
+    /* Color principal */
+    --color-primary: #16A34A;
+    --color-primary-hover: #15803D;
+    --color-primary-active: #166534;
+    --color-primary-soft: rgba(22, 163, 74, 0.10);
+    --color-primary-border: rgba(22, 163, 74, 0.25);
 
-  letter-spacing: 0.18px;
+    /* Estados */
+    --color-success: #16A34A;
+    --color-success-soft: rgba(22, 163, 74, 0.10);
 
-  font-synthesis: none;
+    --color-warning: #D97706;
+    --color-warning-soft: rgba(217, 119, 6, 0.10);
 
-  text-rendering: optimizeLegibility;
+    --color-danger: #DC2626;
+    --color-danger-soft: rgba(220, 38, 38, 0.10);
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --color-info: #2563EB;
+    --color-info-soft: rgba(37, 99, 235, 0.10);
+
+    /* Calendario */
+    --calendar-bg: #FFFFFF;
+    --calendar-header-bg: #F7F9FA;
+    --calendar-grid: #E7ECEF;
+    --calendar-time: #64717B;
+
+    /* Citas */
+    --appointment-green-bg: #E6F8EE;
+    --appointment-green-text: #166534;
+    --appointment-green-border: #22C55E;
+
+    --appointment-pink-bg: #FCE7F3;
+    --appointment-pink-text: #9D174D;
+    --appointment-pink-border: #EC4899;
+
+    --appointment-blue-bg: #E8F1FF;
+    --appointment-blue-text: #1D4ED8;
+    --appointment-blue-border: #3B82F6;
+
+    --appointment-purple-bg: #F3E8FF;
+    --appointment-purple-text: #7E22CE;
+    --appointment-purple-border: #A855F7;
+
+    --appointment-orange-bg: #FFF1DC;
+    --appointment-orange-text: #9A3412;
+    --appointment-orange-border: #F59E0B;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.12);
+
+    /* Radios */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+
+    /* Transiciones */
+    --transition-fast: 150ms ease;
+    --transition-normal: 220ms ease;
 }
 
 
-/* =========================================================
-   DARK COLOR SCHEME
-========================================================= */
+/* =====================================================
+   MODO OSCURO
+   ===================================================== */
 
-[data-theme="dark"] {
-  color-scheme: dark;
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* Fondos */
+    --color-bg: #0B1117;
+    --color-surface: #111A22;
+    --color-surface-secondary: #17232D;
+    --color-surface-hover: #1D2B36;
+
+    /* Textos */
+    --color-text: #F1F5F9;
+    --color-text-secondary: #A5B2BD;
+    --color-text-muted: #788996;
+    --color-text-inverse: #07130D;
+
+    /* Bordes */
+    --color-border: #25343F;
+    --color-border-strong: #344754;
+
+    /* Color principal */
+    --color-primary: #10B981;
+    --color-primary-hover: #059669;
+    --color-primary-active: #047857;
+    --color-primary-soft: rgba(16, 185, 129, 0.14);
+    --color-primary-border: rgba(16, 185, 129, 0.30);
+
+    /* Estados */
+    --color-success: #34D399;
+    --color-success-soft: rgba(52, 211, 153, 0.12);
+
+    --color-warning: #FBBF24;
+    --color-warning-soft: rgba(251, 191, 36, 0.12);
+
+    --color-danger: #F87171;
+    --color-danger-soft: rgba(248, 113, 113, 0.12);
+
+    --color-info: #60A5FA;
+    --color-info-soft: rgba(96, 165, 250, 0.12);
+
+    /* Calendario */
+    --calendar-bg: #111A22;
+    --calendar-header-bg: #141F28;
+    --calendar-grid: #24343F;
+    --calendar-time: #A5B2BD;
+
+    /* Citas */
+    --appointment-green-bg: rgba(16, 185, 129, 0.16);
+    --appointment-green-text: #A7F3D0;
+    --appointment-green-border: #10B981;
+
+    --appointment-pink-bg: rgba(236, 72, 153, 0.16);
+    --appointment-pink-text: #FBCFE8;
+    --appointment-pink-border: #EC4899;
+
+    --appointment-blue-bg: rgba(59, 130, 246, 0.16);
+    --appointment-blue-text: #BFDBFE;
+    --appointment-blue-border: #3B82F6;
+
+    --appointment-purple-bg: rgba(168, 85, 247, 0.16);
+    --appointment-purple-text: #E9D5FF;
+    --appointment-purple-border: #A855F7;
+
+    --appointment-orange-bg: rgba(245, 158, 11, 0.16);
+    --appointment-orange-text: #FDE68A;
+    --appointment-orange-border: #F59E0B;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.35);
+
+    /* Radios */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+
+    /* Transiciones */
+    --transition-fast: 150ms ease;
+    --transition-normal: 220ms ease;
 }
 
 
-/* =========================================================
-   HTML
-========================================================= */
+/* =====================================================
+   APLICACIÓN GLOBAL
+   ===================================================== */
 
 html {
-  width: 100%;
-  min-height: 100%;
-
-  margin: 0;
-  padding: 0;
-
-  background: var(--color-bg);
-
-  color: var(--color-text);
-
-  overscroll-behavior: none;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+    min-height: 100%;
+    background: var(--color-bg);
 }
-
-
-/* =========================================================
-   BODY
-========================================================= */
 
 body {
-  width: 100%;
-
-  min-width: 320px;
-  min-height: 100vh;
-
-  margin: 0;
-  padding: 0;
-
-  background: var(--color-bg);
-
-  color: var(--color-text);
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-
-  overscroll-behavior: none;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition:
+        background-color var(--transition-normal),
+        color var(--transition-normal);
 }
-
-
-/* =========================================================
-   ROOT APP
-========================================================= */
 
 #root {
-  width: 100%;
-  max-width: 100%;
-
-  min-height: 100svh;
-
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  box-sizing: border-box;
-
-  background: var(--color-bg);
-
-  color: var(--color-text);
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+    min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 
-/* =========================================================
-   GLOBAL BOX SIZING
-========================================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-/* =========================================================
-   HEADINGS
-========================================================= */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-
-  color: var(--color-text);
-
-  font-weight: 600;
-}
-
-
-/* =========================================================
-   H1
-========================================================= */
-
-h1 {
-  margin-bottom: 24px;
-
-  font-size: 32px;
-  line-height: 1.15;
-
-  letter-spacing: -0.025em;
-}
-
-
-/* =========================================================
-   H2
-========================================================= */
-
-h2 {
-  margin-bottom: 16px;
-
-  font-size: 24px;
-  line-height: 1.2;
-
-  letter-spacing: -0.02em;
-}
-
-
-/* =========================================================
-   H3
-========================================================= */
-
-h3 {
-  margin-bottom: 12px;
-
-  font-size: 18px;
-  line-height: 1.3;
-
-  letter-spacing: -0.01em;
-}
-
-
-/* =========================================================
-   PARAGRAPHS
-========================================================= */
-
-p {
-  margin: 0;
-
-  color: var(--color-text-secondary);
-}
-
-
-/* =========================================================
-   LINKS
-========================================================= */
-
-a {
-  color: var(--color-primary);
-
-  text-decoration: none;
-
-  transition:
-    color 0.15s ease;
-}
-
-a:hover {
-  color: var(--color-primary-hover);
-}
-
-
-/* =========================================================
-   FORM ELEMENTS
-========================================================= */
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-
-/* =========================================================
-   BUTTON RESET
-========================================================= */
-
-button {
-  margin: 0;
-}
-
-
-/* =========================================================
-   INPUTS
-========================================================= */
+/* =====================================================
+   FORMULARIOS
+   ===================================================== */
 
 input,
 select,
 textarea {
-  color: var(--color-text);
-
-  background: var(--color-surface);
-
-  border-color: var(--color-border);
+    color: var(--color-text);
+    background: var(--color-surface-secondary);
+    border-color: var(--color-border);
 }
-
-
-/* =========================================================
-   INPUT PLACEHOLDER
-========================================================= */
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--color-text-muted);
+    color: var(--color-text-muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline-color: var(--color-primary);
 }
 
 
-/* =========================================================
-   SELECTION
-========================================================= */
+/* =====================================================
+   SELECCIÓN DE TEXTO
+   ===================================================== */
 
 ::selection {
-  background: var(--color-primary-soft);
-
-  color: var(--color-text);
+    color: var(--color-text);
+    background: var(--color-primary-soft);
 }
 
 
-/* =========================================================
-   SCROLLBAR
-========================================================= */
+/* =====================================================
+   BARRAS DE DESPLAZAMIENTO
+   ===================================================== */
 
 * {
-  scrollbar-width: thin;
-
-  scrollbar-color:
-    var(--color-border)
-    transparent;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-strong) var(--color-bg);
 }
 
-
-/* =========================================================
-   WEBKIT SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+*::-webkit-scrollbar-track {
+    background: var(--color-bg);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-
-  border-radius: 999px;
+*::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
-}
-
-
-/* =========================================================
-   CODE
-========================================================= */
-
-code {
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    monospace;
-
-  color: var(--color-text);
-
-  background: var(--color-surface-secondary);
-
-  border: 1px solid var(--color-border);
-
-  border-radius: 6px;
-
-  padding:
-    3px
-    7px;
-
-  font-size: 13px;
-
-  line-height: 1.4;
-}
-
-
-/* =========================================================
-   FOCUS
-========================================================= */
-
-:focus-visible {
-  outline:
-    2px solid
-    var(--color-primary);
-
-  outline-offset: 2px;
-}
-
-
-/* =========================================================
-   DISABLED
-========================================================= */
-
-button:disabled,
-input:disabled,
-select:disabled,
-textarea:disabled {
-  cursor: not-allowed;
-
-  opacity: 0.6;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  h1 {
-    font-size: 26px;
-
-    margin-bottom: 20px;
-  }
-
-
-  h2 {
-    font-size: 21px;
-
-    margin-bottom: 14px;
-  }
-
-
-  h3 {
-    font-size: 17px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 380px) {
-
-  h1 {
-    font-size: 24px;
-  }
-
-
-  h2 {
-    font-size: 20px;
-  }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html,
-  body,
-  #root,
-  a {
-    transition: none;
-  }
-
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
 }

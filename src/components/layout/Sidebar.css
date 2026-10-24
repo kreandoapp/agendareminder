@@ -1,914 +1,129 @@
 /* =========================================================
-   AGENDaREMINDER
-   SIDEBAR
+   WILBUK — SIDEBAR
+   Tema oscuro y claro · Responsive · Diseño profesional
    ========================================================= */
 
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
+/* =========================
+   CONTENEDOR PRINCIPAL
+   ========================= */
 
 .sidebar {
-  width: 260px;
-  min-width: 260px;
-
-  height: 100vh;
-
   position: sticky;
   top: 0;
-
-  padding: 20px 14px;
-
-  box-sizing: border-box;
-
-  flex-shrink: 0;
-
-  background: var(--color-surface);
-
-  border-right: 1px solid var(--color-border);
+  left: 0;
 
   display: flex;
   flex-direction: column;
 
-  overflow-y: auto;
+  width: 280px;
+  min-width: 280px;
+  height: 100vh;
+  height: 100dvh;
+
+  padding: 20px 14px;
+
+  background: var(--color-surface);
+  color: var(--color-text);
+
+  border-right: 1px solid var(--color-border);
+
   overflow-x: hidden;
+  overflow-y: auto;
 
   z-index: 1000;
-
-  color: var(--color-text);
 
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
-    color 0.2s ease;
+    transform 0.25s ease;
 }
 
+/* Scrollbar */
 
-/* =========================================================
-   LOGO
-   ========================================================= */
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* =========================
+   LOGO WILBUK
+   ========================= */
 
 .sidebar-logo {
   display: flex;
   align-items: center;
+  gap: 11px;
 
-  gap: 10px;
+  width: 100%;
+  margin-bottom: 26px;
 
-  padding: 2px 7px;
-
-  margin-bottom: 20px;
-
-  flex-shrink: 0;
+  text-decoration: none;
 }
-
 
 .sidebar-logo-icon {
-  width: 38px;
-  height: 38px;
-
-  min-width: 38px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border-radius: 11px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #25d366,
-      #159447
-    );
-
-  box-shadow:
-    0 5px 16px rgba(37, 211, 102, 0.16);
-
-  font-size: 20px;
-
-  line-height: 1;
-
-  user-select: none;
-}
-
-
-.sidebar-logo-text {
-  min-width: 0;
-}
-
-
-.sidebar-logo-title {
-  color: var(--color-text);
-
-  font-size: 15px;
-
-  line-height: 18px;
-
-  font-weight: 750;
-
-  white-space: nowrap;
-}
-
-
-.sidebar-logo-subtitle {
-  margin-top: 3px;
-
-  color: var(--color-text-muted);
-
-  font-size: 10px;
-
-  line-height: 13px;
-
-  white-space: nowrap;
-}
-
-
-/* =========================================================
-   BOTÓN CERRAR MOBILE
-   ========================================================= */
-
-.sidebar-mobile-close {
-  display: none;
-
-  margin-left: auto;
-
-  width: 36px;
-  height: 36px;
-
-  border: 1px solid var(--color-border);
-
-  border-radius: 9px;
-
-  background: var(--color-surface-secondary);
-
-  color: var(--color-text-secondary);
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
-}
-
-
-.sidebar-mobile-close:hover {
-  background: var(--color-primary-soft);
-
-  border-color: var(--color-primary);
-
-  color: var(--color-text);
-}
-
-
-/* =========================================================
-   USUARIO
-   ========================================================= */
-
-.sidebar-user {
-  margin: 0 2px 20px;
-
-  padding: 12px 13px;
-
-  border-radius: 11px;
-
-  background: var(--color-surface-secondary);
-
-  border: 1px solid var(--color-border);
-
-  display: flex;
-  align-items: center;
-
-  gap: 10px;
-
-  flex-shrink: 0;
-
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-
-.sidebar-user-avatar {
-  width: 32px;
-  height: 32px;
-
-  min-width: 32px;
-
-  border-radius: 9px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: var(--color-border);
-
-  color: var(--color-text);
-
-  font-size: 12px;
-
-  font-weight: 700;
-}
-
-
-.sidebar-user-info {
-  min-width: 0;
-
-  overflow: hidden;
-}
-
-
-.sidebar-user-name {
-  color: var(--color-text);
-
-  font-size: 13px;
-
-  font-weight: 650;
-
-  line-height: 17px;
-
-  white-space: nowrap;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-}
-
-
-.sidebar-user-email {
-  margin-top: 2px;
-
-  color: var(--color-text-muted);
-
-  font-size: 10px;
-
-  line-height: 14px;
-
-  white-space: nowrap;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-}
-
-
-/* =========================================================
-   SECTION TITLE
-   ========================================================= */
-
-.sidebar-section-title {
-  padding: 0 9px 8px;
-
-  color: var(--color-text-muted);
-
-  font-size: 9px;
-
-  font-weight: 750;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.09em;
-
-  flex-shrink: 0;
-}
-
-
-/* =========================================================
-   NAV BUTTONS
-   ========================================================= */
-
-.sidebar-nav-button {
-  width: 100%;
-
-  height: 42px;
-  min-height: 42px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 0 12px;
-
-  margin: 0 0 4px 0;
-
-  box-sizing: border-box;
-
-  background: transparent;
-
-  color: var(--color-text-secondary);
-
-  border: 1px solid transparent;
-
-  border-radius: 9px;
-
-  cursor: pointer;
-
-  font-size: 13px;
-
-  font-weight: 500;
-
-  text-align: left;
-
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease,
-    border-color 0.15s ease;
-
-  flex-shrink: 0;
-}
-
-
-.sidebar-nav-button:hover {
-  background: var(--color-primary-soft);
-
-  color: var(--color-text);
-
-  border-color: transparent;
-}
-
-
-.sidebar-nav-button.active {
-  background: var(--color-primary-soft);
-
-  color: var(--color-text);
-
-  border-color: var(--color-border);
-
-  font-weight: 650;
-}
-
-
-/* =========================================================
-   NAV ICON
-   ========================================================= */
-
-.sidebar-nav-icon {
-  width: 22px;
-  min-width: 22px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 15px;
-}
-
-
-.sidebar-nav-label {
-  flex: 1;
-}
-
-
-/* =========================================================
-   WHATSAPP DOT
-   ========================================================= */
-
-.sidebar-whatsapp-dot {
-  width: 7px;
-  height: 7px;
-
-  min-width: 7px;
-  min-height: 7px;
-
-  border-radius: 50%;
-}
-
-
-.sidebar-whatsapp-dot.connected {
-  background: #25d366;
-
-  box-shadow:
-    0 0 8px rgba(37, 211, 102, 0.65);
-}
-
-
-.sidebar-whatsapp-dot.disconnected {
-  background: #ef5350;
-
-  box-shadow:
-    0 0 7px rgba(239, 83, 80, 0.45);
-}
-
-
-/* =========================================================
-   SPACER
-   ========================================================= */
-
-.sidebar-spacer-small {
-  height: 18px;
-
-  flex-shrink: 0;
-}
-
-
-/* =========================================================
-   WHATSAPP STATUS
-   ========================================================= */
-
-.sidebar-whatsapp-status {
-  margin: 0 2px 8px;
-
-  padding: 11px 12px;
-
-  border-radius: 10px;
-
-  flex-shrink: 0;
-
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-
-.sidebar-whatsapp-status.connected {
-  background:
-    rgba(37, 211, 102, 0.055);
-
-  border:
-    1px solid rgba(37, 211, 102, 0.18);
-}
-
-
-.sidebar-whatsapp-status.disconnected {
-  background:
-    rgba(239, 83, 80, 0.045);
-
-  border:
-    1px solid rgba(239, 83, 80, 0.15);
-}
-
-
-/* =========================================================
-   WHATSAPP STATUS HEADER
-   ========================================================= */
-
-.sidebar-whatsapp-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 5px;
-
-  color: var(--color-text-muted);
-
-  font-size: 9px;
-
-  font-weight: 750;
-
-  letter-spacing: 0.06em;
-}
-
-
-/* =========================================================
-   WHATSAPP STATUS DOT
-   ========================================================= */
-
-.sidebar-whatsapp-status-dot {
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-}
-
-
-.sidebar-whatsapp-status.connected
-.sidebar-whatsapp-status-dot {
-  background: #25d366;
-
-  box-shadow:
-    0 0 7px rgba(37, 211, 102, 0.7);
-}
-
-
-.sidebar-whatsapp-status.disconnected
-.sidebar-whatsapp-status-dot {
-  background: #ef5350;
-
-  box-shadow:
-    0 0 7px rgba(239, 83, 80, 0.5);
-}
-
-
-/* =========================================================
-   WHATSAPP STATE
-   ========================================================= */
-
-.sidebar-whatsapp-state {
-  font-size: 12px;
-
-  font-weight: 650;
-}
-
-
-.sidebar-whatsapp-status.connected
-.sidebar-whatsapp-state {
-  color: #22c55e;
-}
-
-
-.sidebar-whatsapp-status.disconnected
-.sidebar-whatsapp-state {
-  color: #ef5350;
-}
-
-
-/* =========================================================
-   WHATSAPP PHONE
-   ========================================================= */
-
-.sidebar-whatsapp-phone {
-  margin-top: 3px;
-
-  color: var(--color-text-muted);
-
-  font-size: 10px;
-}
-
-
-/* =========================================================
-   LOGOUT
-   ========================================================= */
-
-.sidebar-logout {
-  width: 100%;
-
-  height: 40px;
-  min-height: 40px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 0 12px;
-
-  margin: 0;
-
-  box-sizing: border-box;
-
-  background: transparent;
-
-  color: var(--color-danger);
-
-  border: 1px solid transparent;
-
-  border-radius: 9px;
-
-  cursor: pointer;
-
-  font-size: 13px;
-
-  font-weight: 500;
-
-  text-align: left;
-
-  flex-shrink: 0;
-
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease,
-    border-color 0.15s ease;
-}
-
-
-.sidebar-logout:hover {
-  background:
-    rgba(239, 68, 68, 0.08);
-
-  color: var(--color-danger);
-
-  border-color:
-    rgba(239, 68, 68, 0.12);
-}
-
-
-/* =========================================================
-   OVERLAY
-   ========================================================= */
-
-.sidebar-overlay {
-  display: none;
-}
-
-
-/* =========================================================
-   MOBILE / TABLET
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-  .sidebar {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: min(85vw, 340px);
-
-    min-width: 0;
-
-    height: 100dvh;
-
-    max-height: 100dvh;
-
-    padding: 18px 14px;
-
-    background: var(--color-surface);
-
-    transform:
-      translateX(-105%);
-
-    transition:
-      transform 0.25s ease,
-      background-color 0.2s ease;
-
-    box-shadow:
-      12px 0 40px rgba(0, 0, 0, 0.18);
-
-    z-index: 1100;
-  }
-
-
-  .sidebar.mobile-open {
-    transform:
-      translateX(0);
-  }
-
-
-  /* =====================================================
-     EL LOGO YA ESTÁ EN EL HEADER MÓVIL
-     ===================================================== */
-
-  .sidebar-logo {
-    display: none;
-  }
-
-
-  /* =====================================================
-     CLOSE BUTTON
-     ===================================================== */
-
-  .sidebar-mobile-close {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-  }
-
-
-  /* =====================================================
-     OVERLAY
-     ===================================================== */
-
-  .sidebar-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    display: block;
-
-    background:
-      rgba(0, 0, 0, 0.45);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transition:
-      opacity 0.25s ease,
-      visibility 0.25s ease;
-
-    z-index: 1050;
-  }
-
-
-  .sidebar-overlay.visible {
-    opacity: 1;
-
-    visibility: visible;
-
-    pointer-events: auto;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-  .sidebar {
-    width: 88vw;
-
-    padding:
-      16px 12px;
-  }
-
-
-  .sidebar-nav-button {
-    height: 44px;
-
-    min-height: 44px;
-  }
-
-
-  .sidebar-mobile-close {
-    width: 34px;
-    height: 34px;
-  }
-
-}
-
-
-/* =========================================================
-   DARK THEME
-   ========================================================= */
-
-[data-theme="dark"] .sidebar {
-  box-shadow:
-    12px 0 40px rgba(0, 0, 0, 0.35);
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .sidebar,
-  .sidebar-mobile-close,
-  .sidebar-nav-button,
-  .sidebar-whatsapp-status,
-  .sidebar-logout,
-  .sidebar-overlay {
-    transition: none;
-  }
-
-}
-
-/* =========================================================
-   ADMIN / USUARIO SWITCH
-   ========================================================= */
-
-.sidebar-mode-switch {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin: 0 2px 14px;
-  padding: 10px 12px;
-
-  border-radius: 10px;
-
-  background: var(--color-surface-secondary);
-  border: 1px solid var(--color-border);
-
-  box-sizing: border-box;
-}
-
-.sidebar-mode-info {
-  display: flex;
-  align-items: center;
-
-  gap: 8px;
-
-  min-width: 0;
-}
-
-.sidebar-mode-icon {
-  width: 20px;
-  min-width: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 14px;
-}
-
-.sidebar-mode-label {
-  color: var(--color-text);
-
-  font-size: 12px;
-  font-weight: 650;
-
-  white-space: nowrap;
-}
-
-/* =========================================================
-   IOS SWITCH
-   ========================================================= */
-
-.ios-switch {
-  position: relative;
 
   width: 42px;
-  height: 25px;
+  height: 42px;
 
-  min-width: 42px;
+  flex-shrink: 0;
 
-  padding: 0;
+  border-radius: 12px;
 
-  border: none;
-  border-radius: 999px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
 
-  background: #d1d1d6;
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
-
-  box-sizing: border-box;
+  font-size: 23px;
 }
 
-.ios-switch:hover {
-  box-shadow:
-    0 0 0 3px
-    rgba(52, 199, 89, 0.08);
-}
-
-.ios-switch.active {
-  background: #34c759;
-}
-
-.ios-switch-knob {
-  position: absolute;
-
-  top: 2px;
-  left: 2px;
-
-  width: 21px;
-  height: 21px;
-
-  border-radius: 50%;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 1px 3px
-    rgba(0, 0, 0, 0.28);
-
-  transition:
-    transform 0.2s
-    cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ios-switch.active .ios-switch-knob {
-  transform: translateX(17px);
-}
-
-.ios-switch:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-/* =========================================================
-   DARK THEME
-   ========================================================= */
-
-[data-theme="dark"] .ios-switch {
-  background: #48484a;
-}
-
-[data-theme="dark"] .ios-switch.active {
-  background: #34c759;
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .ios-switch,
-  .ios-switch-knob {
-    transition: none;
-  }
-
-}
-
-.sidebar-wilbuk-logo {
+.sidebar-logo img {
+  display: block;
   width: 42px;
   height: 42px;
   object-fit: contain;
-  flex-shrink: 0;
+}
+
+.sidebar-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
 }
 
 .sidebar-logo-title {
-  display: flex;
-  align-items: center;
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 19px;
   font-weight: 800;
-  letter-spacing: -0.8px;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+}
+
+.sidebar-logo-subtitle {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .sidebar-logo-wil {
@@ -916,14 +131,715 @@
 }
 
 .sidebar-logo-buk {
-  background: linear-gradient(
-    135deg,
-    #08bdf5 0%,
-    #168cff 42%,
-    #6638ff 100%
+  color: var(--color-primary);
+}
+
+/* =========================
+   TARJETA DEL USUARIO
+   ========================= */
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0 0 24px;
+  padding: 12px;
+
+  background: var(--color-surface-secondary);
+
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.sidebar-user:hover {
+  border-color: var(--color-primary);
+}
+
+.sidebar-user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-user-name {
+  display: block;
+
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-user-email {
+  display: block;
+
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Si el componente utiliza otros nombres para los
+   elementos internos de la tarjeta del usuario. */
+
+.sidebar-user strong {
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sidebar-user small {
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   SECCIONES DEL MENÚ
+   ========================= */
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.sidebar-section-title {
+  margin: 0 0 10px;
+  padding: 0 10px;
+
+  color: var(--color-text-muted);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   BOTONES DE NAVEGACIÓN
+   ========================= */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 100%;
+}
+
+.sidebar-nav-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 45px;
+
+  margin: 0;
+  padding: 0 12px;
+
+  background: transparent;
+  color: var(--color-text-secondary);
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.sidebar-nav-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+
+  width: 3px;
+
+  background: transparent;
+  border-radius: 0 4px 4px 0;
+
+  transition: background-color 0.18s ease;
+}
+
+.sidebar-nav-button:hover {
+  background: var(--color-primary-soft);
+  color: var(--color-text);
+
+  border-color: var(--color-border);
+}
+
+.sidebar-nav-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Sección activa */
+
+.sidebar-nav-button.active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+
+  border-color: transparent;
+
+  font-weight: 700;
+}
+
+.sidebar-nav-button.active::before {
+  background: var(--color-primary);
+}
+
+.sidebar-nav-button.active:hover {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+/* Iconos */
+
+.sidebar-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  font-size: 17px;
+  line-height: 1;
+}
+
+.sidebar-nav-label {
+  flex: 1;
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================
+   INDICADOR DE WHATSAPP
+   ========================= */
+
+.sidebar-whatsapp-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-text-muted);
+}
+
+.sidebar-whatsapp-status.connected {
+  background: var(--color-success);
+
+  box-shadow: 0 0 10px
+    color-mix(in srgb, var(--color-success) 40%, transparent);
+}
+
+.sidebar-whatsapp-status.disconnected {
+  background: var(--color-danger);
+}
+
+/* =========================
+   ESTADO DE CONEXIÓN
+   ========================= */
+
+.sidebar-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 11px 12px;
+  margin-bottom: 18px;
+
+  background: var(--color-surface-secondary);
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sidebar-status-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+}
+
+.sidebar-status.connected .sidebar-status-dot {
+  background: var(--color-success);
+}
+
+.sidebar-status.disconnected .sidebar-status-dot {
+  background: var(--color-danger);
+}
+
+/* =========================
+   CAMBIO DE TEMA
+   ========================= */
+
+.sidebar-mode-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  width: 100%;
+
+  margin-top: auto;
+  padding: 12px;
+
+  background: var(--color-surface-secondary);
+
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.sidebar-mode-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  min-width: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Interruptor tipo iOS */
+
+.ios-switch {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: 42px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  padding: 3px;
+
+  background: var(--color-border);
+
+  border: none;
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.ios-switch.active {
+  background: var(--color-primary);
+}
+
+.ios-switch-thumb {
+  display: block;
+
+  width: 18px;
+  height: 18px;
+
+  background: #FFFFFF;
+
+  border-radius: 50%;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+
+  transform: translateX(0);
+
+  transition: transform 0.2s ease;
+}
+
+.ios-switch.active .ios-switch-thumb {
+  transform: translateX(18px);
+}
+
+.ios-switch:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* =========================
+   BOTÓN CERRAR SESIÓN
+   ========================= */
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  min-height: 43px;
+
+  margin-top: 10px;
+  padding: 0 12px;
+
+  background: transparent;
+  color: var(--color-danger);
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.sidebar-logout:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 9%,
+    transparent
   );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  border-color: color-mix(
+    in srgb,
+    var(--color-danger) 20%,
+    transparent
+  );
+}
+
+/* =========================
+   PIE DEL SIDEBAR
+   ========================= */
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Evita que el footer se pegue al menú. */
+
+.sidebar-footer .sidebar-mode-switch {
+  margin-top: 0;
+}
+
+/* =========================
+   BOTÓN CERRAR EN MÓVIL
+   ========================= */
+
+.sidebar .sidebar-mobile-close {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  background: var(--color-surface-secondary);
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+/* Fondo detrás del menú móvil */
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* =========================
+   TEMA OSCURO
+   ========================= */
+
+:root[data-theme="dark"] .sidebar {
+  background: #101820;
+  border-right-color: #253440;
+}
+
+:root[data-theme="dark"] .sidebar-user {
+  background: #151F28;
+  border-color: #253440;
+}
+
+:root[data-theme="dark"] .sidebar-user:hover {
+  border-color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .sidebar-mode-switch,
+:root[data-theme="dark"] .sidebar-status {
+  background: #151F28;
+  border-color: #253440;
+}
+
+:root[data-theme="dark"] .sidebar-nav-button:hover {
+  background: rgba(34, 197, 94, 0.07);
+  border-color: transparent;
+}
+
+:root[data-theme="dark"] .sidebar-nav-button.active {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22C55E;
+}
+
+:root[data-theme="dark"] .sidebar-nav-button.active:hover {
+  background: rgba(34, 197, 94, 0.16);
+  color: #22C55E;
+}
+
+/* =========================
+   TEMA CLARO
+   ========================= */
+
+:root[data-theme="light"] .sidebar {
+  background: #FFFFFF;
+  border-right-color: #DCE3E7;
+}
+
+:root[data-theme="light"] .sidebar-user {
+  background: #F5F7F8;
+  border-color: #DCE3E7;
+}
+
+:root[data-theme="light"] .sidebar-nav-button.active {
+  background: rgba(22, 163, 74, 0.09);
+  color: #15803D;
+}
+
+:root[data-theme="light"] .sidebar-nav-button.active:hover {
+  background: rgba(22, 163, 74, 0.13);
+  color: #15803D;
+}
+
+/* =========================
+   RESPONSIVE — TABLET
+   ========================= */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 250px;
+    min-width: 250px;
+
+    padding: 18px 12px;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 22px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — MÓVIL
+   ========================= */
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: min(85vw, 320px);
+    min-width: 0;
+    max-width: 320px;
+
+    height: 100vh;
+    height: 100dvh;
+
+    padding: 18px 14px;
+
+    transform: translateX(-105%);
+
+    box-shadow: none;
+
+    z-index: 1200;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+
+    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .sidebar .sidebar-mobile-close {
+    display: inline-flex;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: block;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+
+    z-index: 1199;
+  }
+
+  .sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* =========================
+   ACCESIBILIDAD
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .sidebar *,
+  .sidebar-overlay {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* SIDEBAR: estructura y scroll */
+
+.sidebar {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Zona superior: logo y usuario */
+.sidebar-header {
+  flex-shrink: 0;
+}
+
+/* Menú: único elemento con scroll */
+.sidebar-nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+  padding-bottom: 12px;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
+
+/* Pie: siempre debajo del menú */
+.sidebar-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 10px;
+  background: var(--color-surface);
+}
+
+/* Ocultar la tarjeta de estado de WhatsApp, si sigue presente */
+.sidebar-whatsapp-status,
+.sidebar-whatsapp-card {
+  display: none !important;
 }

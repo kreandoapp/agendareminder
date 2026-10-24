@@ -69,6 +69,8 @@ export default function useOnboarding({
         const data =
           result.data || {}
 
+          console.log('[ONBOARDING] Respuesta de la base de datos:', data)
+
         const completed =
           data.completed === true
 
